@@ -15,7 +15,7 @@ const MindARController = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const [isTracking, setIsTracking] = useState(false);
   const [error, setError] = useState(null);
-  const [loadingStep, setLoadingStep] = useState('正在載入 Three.js...');
+  const [loadingStep, setLoadingStep] = useState('正在初始化 AR...');
   const [loadingTimeout, setLoadingTimeout] = useState(false);
   const [errorDetails, setErrorDetails] = useState(null);
 
