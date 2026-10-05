@@ -14,6 +14,7 @@ const ARScene = ({ speciesId, onClose }) => {
   const [error, setError] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const [arReady, setArReady] = useState(false);
+  const [retryKey, setRetryKey] = useState(0);
   
   const arModelInfo = getARModelInfo(speciesId);
   const isDebug = import.meta.env.VITE_AR_DEBUG === 'true';
@@ -56,6 +57,12 @@ const ARScene = ({ speciesId, onClose }) => {
     onClose();
   };
   
+  const handleRetry = () => {
+    setError(null);
+    setArReady(false);
+    setRetryKey(prev => prev + 1);
+  };
+  
   // Desktop fallback
   if (!isMobile) {
     return (
@@ -87,10 +94,7 @@ const ARScene = ({ speciesId, onClose }) => {
         <ARError 
           errorType="ar_init_failed"
           message={error}
-          onRetry={() => {
-            setError(null);
-            window.location.reload();
-          }}
+          onRetry={handleRetry}
           onView3D={handleView3D}
           onClose={onClose}
         />
@@ -102,6 +106,7 @@ const ARScene = ({ speciesId, onClose }) => {
   return (
     <div className="ar-scene">
       <MindARController
+        key={retryKey}
         onAnchorFound={handleAnchorFound}
         onAnchorLost={handleAnchorLost}
         onError={handleARError}
