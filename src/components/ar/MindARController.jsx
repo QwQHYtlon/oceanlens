@@ -16,6 +16,7 @@ const MindARController = ({
   const [error, setError] = useState(null);
   const [loadingStep, setLoadingStep] = useState('正在載入 Three.js...');
   const [loadingTimeout, setLoadingTimeout] = useState(false);
+  const [errorDetails, setErrorDetails] = useState(null);
 
   useEffect(() => {
     let mindarScript = null;
@@ -141,7 +142,20 @@ const MindARController = ({
       } catch (err) {
         console.error('[MindAR] Initialization error:', err);
         if (timeoutId) clearTimeout(timeoutId);
-        setError(err.message || 'AR 初始化失敗');
+        
+        const errorMessage = err.message || 'AR 初始化失敗';
+        const errorStack = err.stack || '';
+        const userAgent = navigator.userAgent;
+        
+        setError(errorMessage);
+        setErrorDetails({
+          step: loadingStep,
+          message: errorMessage,
+          stack: errorStack,
+          userAgent: userAgent,
+          url: window.location.href,
+          timestamp: new Date().toISOString()
+        });
         setLoadingStep('');
         if (onError) onError(err);
       }
@@ -243,6 +257,21 @@ const MindARController = ({
       <div className="mindar-controller__error">
         <p>AR 載入失敗</p>
         <p className="mindar-controller__error-detail">{error}</p>
+        {errorDetails && (
+          <div className="mindar-controller__error-debug">
+            <p className="mindar-controller__error-debug-title">錯誤詳情：</p>
+            <p className="mindar-controller__error-debug-item">步驟: {errorDetails.step}</p>
+            <p className="mindar-controller__error-debug-item">時間: {errorDetails.timestamp}</p>
+            <p className="mindar-controller__error-debug-item">設備: {errorDetails.userAgent}</p>
+            <p className="mindar-controller__error-debug-item">URL: {errorDetails.url}</p>
+            {errorDetails.stack && (
+              <details className="mindar-controller__error-debug-stack">
+                <summary>查看錯誤堆疊</summary>
+                <pre>{errorDetails.stack}</pre>
+              </details>
+            )}
+          </div>
+        )}
         <p className="mindar-controller__error-hint">請檢查網路連線後重新整理頁面</p>
       </div>
     );

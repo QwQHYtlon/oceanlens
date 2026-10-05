@@ -54,6 +54,50 @@
   margin-top: 0.5rem;
 }
 
+.mindar-controller__error-debug {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  text-align: left;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.mindar-controller__error-debug-title {
+  font-weight: bold;
+  color: #00f5d4;
+  margin: 0 0 0.5rem 0;
+}
+
+.mindar-controller__error-debug-item {
+  margin: 0.25rem 0;
+  color: #cbd5e1;
+  word-break: break-all;
+}
+
+.mindar-controller__error-debug-stack {
+  margin-top: 0.5rem;
+}
+
+.mindar-controller__error-debug-stack summary {
+  cursor: pointer;
+  color: #00b4d8;
+  margin-bottom: 0.25rem;
+}
+
+.mindar-controller__error-debug-stack pre {
+  margin: 0.5rem 0 0 0;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.25rem;
+  font-size: 0.625rem;
+  color: #94a3b8;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
 .mindar-controller__instruction {
   top: 20%;
 }
