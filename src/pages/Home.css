@@ -1,0 +1,232 @@
+.home {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.home__hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-deep-dark) 0%, var(--color-deep) 50%, var(--color-ocean-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.home__hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 245, 212, 0.1) 0%, transparent 50%);
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.home__hero-content {
+  text-align: center;
+  z-index: 1;
+  padding: 0 var(--spacing-lg);
+  max-width: 900px;
+}
+
+.home__title {
+  font-size: 5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-ocean-light), var(--color-ocean));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: -0.02em;
+}
+
+.home__subtitle {
+  font-size: 2rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 500;
+}
+
+.home__tagline {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.home__description {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home__cta {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Sections */
+.home__section {
+  padding: var(--spacing-2xl) 0;
+}
+
+.home__section--cta {
+  background: linear-gradient(135deg, var(--color-surface), var(--color-surface-light));
+  padding: var(--spacing-2xl) 0;
+}
+
+/* Metrics */
+.home__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+/* Features */
+.home__features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.home__feature-card {
+  text-decoration: none;
+  height: 100%;
+  transition: all var(--transition-base);
+}
+
+.home__feature-icon {
+  margin-bottom: var(--spacing-md);
+}
+
+.home__feature-title {
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.home__feature-description {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Comparison */
+.home__comparison {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.home__comparison-card {
+  height: 100%;
+}
+
+.home__comparison-card--highlight {
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 0 30px rgba(0, 245, 212, 0.2);
+}
+
+.home__comparison-title {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.home__comparison-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.home__comparison-item {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.home__comparison-item--traditional {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.home__comparison-item--oceanlens {
+  background: rgba(0, 245, 212, 0.1);
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+/* Final CTA */
+.home__final-cta {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.home__final-title {
+  font-size: 2.5rem;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.home__final-description {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (max-width: 1024px) {
+  .home__features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .home__title {
+    font-size: 3rem;
+  }
+  
+  .home__subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .home__tagline {
+    font-size: 1.25rem;
+  }
+  
+  .home__metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .home__features {
+    grid-template-columns: 1fr;
+  }
+  
+  .home__comparison {
+    grid-template-columns: 1fr;
+  }
+  
+  .home__cta {
+    flex-direction: column;
+  }
+  
+  .home__cta .button {
+    width: 100%;
+  }
+}

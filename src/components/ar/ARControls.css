@@ -1,0 +1,64 @@
+.ar-controls {
+  position: fixed;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  z-index: var(--z-fixed);
+}
+
+.ar-controls__group {
+  display: flex;
+  gap: var(--spacing-sm);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-sm);
+  border: 1px solid var(--glass-border);
+}
+
+.ar-controls__button {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  border: none;
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.ar-controls__button:hover {
+  background: var(--color-accent);
+  color: var(--color-deep-dark);
+  transform: scale(1.05);
+}
+
+.ar-controls__button--active {
+  background: var(--color-accent);
+  color: var(--color-deep-dark);
+}
+
+.ar-controls__button:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .ar-controls {
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+  }
+  
+  .ar-controls__button {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .ar-controls__group {
+    padding: var(--spacing-xs);
+  }
+}

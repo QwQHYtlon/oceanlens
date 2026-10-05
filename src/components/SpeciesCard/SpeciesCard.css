@@ -1,0 +1,66 @@
+.species-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.species-card__image {
+  font-size: 4rem;
+  text-align: center;
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, rgba(0, 245, 212, 0.1), rgba(0, 180, 216, 0.1));
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.species-card__emoji {
+  display: block;
+}
+
+.species-card__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--spacing-sm);
+}
+
+.species-card__name {
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.species-card__english {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin: 0;
+}
+
+.species-card__meta {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.species-card__depth,
+.species-card__habitat {
+  font-size: 0.75rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: rgba(0, 245, 212, 0.1);
+  border-radius: var(--radius-sm);
+  color: var(--color-accent);
+}
+
+.species-card__description {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  flex: 1;
+  margin: 0;
+}
+
+.species-card__button {
+  margin-top: var(--spacing-sm);
+  width: 100%;
+}

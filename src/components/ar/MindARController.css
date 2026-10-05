@@ -1,0 +1,55 @@
+.mindar-controller {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.mindar-controller__canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mindar-controller__loading,
+.mindar-controller__error,
+.mindar-controller__instruction,
+.mindar-controller__status {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(10, 25, 47, 0.9);
+  color: #00f5d4;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 245, 212, 0.3);
+}
+
+.mindar-controller__instruction {
+  top: 20%;
+}
+
+.mindar-controller__status {
+  top: 10%;
+  background: rgba(0, 245, 212, 0.2);
+  border-color: #00f5d4;
+}
+
+@media (max-width: 768px) {
+  .mindar-controller__instruction {
+    top: 15%;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .mindar-controller__status {
+    top: 8%;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}

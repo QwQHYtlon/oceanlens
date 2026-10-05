@@ -1,0 +1,47 @@
+.ar-permission {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(2, 12, 27, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  padding: var(--spacing-lg);
+}
+
+.ar-permission__content {
+  background: var(--color-surface-light);
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-2xl);
+  border: 1px solid var(--glass-border);
+  max-width: 400px;
+  text-align: center;
+  box-shadow: var(--shadow-glow);
+}
+
+.ar-permission__icon {
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-lg);
+}
+
+.ar-permission__title {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.ar-permission__message {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.6;
+}
+
+.ar-permission__actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-direction: column;
+}

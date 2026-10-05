@@ -1,0 +1,13 @@
+.chart-card {
+  padding: var(--spacing-lg);
+}
+
+.chart-card__title {
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.chart-card__content {
+  min-height: 300px;
+}
