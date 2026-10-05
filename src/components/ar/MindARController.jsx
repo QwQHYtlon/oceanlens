@@ -55,9 +55,9 @@ const MindARController = ({
         });
 
         setLoadingStep('正在載入 MindAR...');
-        // Load MindAR from CDN
+        // Load MindAR from CDN - try alternative version
         mindarScript = document.createElement('script');
-        mindarScript.src = 'https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js';
+        mindarScript.src = 'https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-three.prod.js';
         mindarScript.async = true;
         
         await new Promise((resolve, reject) => {
