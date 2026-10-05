@@ -29,7 +29,7 @@ const MindARController = ({
     const loadMindAR = async () => {
       try {
         console.log('[MindAR] Starting initialization...');
-        setLoadingStep('正在載入 MindAR...');
+        setLoadingStep('正在初始化 AR...');
         
         // Set timeout to prevent infinite loading
         timeoutId = setTimeout(() => {
@@ -40,9 +40,12 @@ const MindARController = ({
         
         // Three.js is already imported from node_modules
         console.log('[MindAR] Three.js loaded from node_modules');
+        console.log('[MindAR] THREE object:', THREE);
         
         // Make THREE available globally for MindAR
+        setLoadingStep('正在設定 Three.js...');
         window.THREE = THREE;
+        console.log('[MindAR] window.THREE set:', window.THREE);
 
         setLoadingStep('正在載入 MindAR...');
         // Load MindAR from CDN with fallback
@@ -55,6 +58,7 @@ const MindARController = ({
         for (const url of mindarCdnUrls) {
           try {
             console.log(`[MindAR] Trying MindAR from: ${url}`);
+            setLoadingStep(`正在載入 MindAR (${url})...`);
             mindarScript = document.createElement('script');
             mindarScript.src = url;
             mindarScript.async = true;
@@ -99,6 +103,7 @@ const MindARController = ({
         }
 
         console.log('[MindAR] Creating MindARThree instance...');
+        setLoadingStep('正在建立 MindAR 實例...');
         mindarThree = new window.MindARThree({
           container: containerRef.current,
           imageTargetSrc: '/ar/oceanlens-target.mind',
