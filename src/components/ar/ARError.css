@@ -35,3 +35,48 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.ar-error__debug {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  text-align: left;
+  max-height: 300px;
+  overflow-y: auto;
+  max-width: 400px;
+}
+
+.ar-error__debug-title {
+  font-weight: bold;
+  color: var(--color-accent);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.ar-error__debug-item {
+  margin: var(--spacing-xs) 0;
+  color: var(--color-text-secondary);
+  word-break: break-all;
+}
+
+.ar-error__debug-stack {
+  margin-top: var(--spacing-sm);
+}
+
+.ar-error__debug-stack summary {
+  cursor: pointer;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-xs);
+}
+
+.ar-error__debug-stack pre {
+  margin: var(--spacing-xs) 0 0 0;
+  padding: var(--spacing-sm);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius-sm);
+  font-size: 0.625rem;
+  color: var(--color-text-secondary);
+  white-space: pre-wrap;
+  word-break: break-all;
+}

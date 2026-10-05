@@ -157,7 +157,18 @@ const MindARController = ({
           timestamp: new Date().toISOString()
         });
         setLoadingStep('');
-        if (onError) onError(err);
+        
+        // Pass error with details to parent
+        const errorObj = new Error(errorMessage);
+        errorObj.details = {
+          step: loadingStep,
+          message: errorMessage,
+          stack: errorStack,
+          userAgent: userAgent,
+          url: window.location.href,
+          timestamp: new Date().toISOString()
+        };
+        if (onError) onError(errorObj);
       }
     };
 

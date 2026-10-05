@@ -12,6 +12,7 @@ const ARScene = ({ speciesId, onClose }) => {
   const [showInstructions, setShowInstructions] = useState(true);
   const [isTracking, setIsTracking] = useState(false);
   const [error, setError] = useState(null);
+  const [errorDetails, setErrorDetails] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const [arReady, setArReady] = useState(false);
   const [retryKey, setRetryKey] = useState(0);
@@ -47,6 +48,7 @@ const ARScene = ({ speciesId, onClose }) => {
   
   const handleARError = (err) => {
     setError(err.message || 'AR 載入失敗');
+    setErrorDetails(err.details || null);
   };
   
   const handleARReady = () => {
@@ -94,6 +96,7 @@ const ARScene = ({ speciesId, onClose }) => {
         <ARError 
           errorType="ar_init_failed"
           message={error}
+          errorDetails={errorDetails}
           onRetry={handleRetry}
           onView3D={handleView3D}
           onClose={onClose}

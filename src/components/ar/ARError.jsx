@@ -6,6 +6,7 @@ import './ARError.css';
 const ARError = ({ 
   errorType = 'general',
   message = '3D 模型載入失敗',
+  errorDetails = null,
   onRetry,
   onView3D,
   onClose
@@ -56,6 +57,21 @@ const ARError = ({
       <Icon className="ar-error__icon" size={48} />
       <h3 className="ar-error__title">{config.title}</h3>
       <p className="ar-error__message">{config.message}</p>
+      {errorDetails && (
+        <div className="ar-error__debug">
+          <p className="ar-error__debug-title">錯誤詳情：</p>
+          <p className="ar-error__debug-item">步驟: {errorDetails.step}</p>
+          <p className="ar-error__debug-item">時間: {errorDetails.timestamp}</p>
+          <p className="ar-error__debug-item">設備: {errorDetails.userAgent}</p>
+          <p className="ar-error__debug-item">URL: {errorDetails.url}</p>
+          {errorDetails.stack && (
+            <details className="ar-error__debug-stack">
+              <summary>查看錯誤堆疊</summary>
+              <pre>{errorDetails.stack}</pre>
+            </details>
+          )}
+        </div>
+      )}
       <div className="ar-error__actions">
         {onRetry && (
           <Button onClick={onRetry} variant="primary" size="small">
