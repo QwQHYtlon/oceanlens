@@ -14,86 +14,135 @@ const MindARController = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const [isTracking, setIsTracking] = useState(false);
   const [error, setError] = useState(null);
+  const [loadingStep, setLoadingStep] = useState('正在載入 Three.js...');
+  const [loadingTimeout, setLoadingTimeout] = useState(false);
 
   useEffect(() => {
     let mindarScript = null;
     let threeScript = null;
     let mindarThree = null;
     let renderer = null;
+    let timeoutId = null;
 
     const loadMindAR = async () => {
       try {
+        console.log('[MindAR] Starting initialization...');
+        setLoadingStep('正在載入 Three.js...');
+        
+        // Set timeout to prevent infinite loading
+        timeoutId = setTimeout(() => {
+          console.error('[MindAR] Loading timeout after 30 seconds');
+          setLoadingTimeout(true);
+          setError('AR 載入超時，請檢查網路連線或重新整理頁面');
+        }, 30000);
+        
         // Load Three.js from CDN
         threeScript = document.createElement('script');
         threeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
         threeScript.async = true;
         
         await new Promise((resolve, reject) => {
-          threeScript.onload = resolve;
-          threeScript.onerror = reject;
+          threeScript.onload = () => {
+            console.log('[MindAR] Three.js loaded');
+            resolve();
+          };
+          threeScript.onerror = () => {
+            console.error('[MindAR] Three.js failed to load');
+            clearTimeout(timeoutId);
+            reject(new Error('Three.js 載入失敗，請檢查網路連線'));
+          };
           document.head.appendChild(threeScript);
         });
 
+        setLoadingStep('正在載入 MindAR...');
         // Load MindAR from CDN
         mindarScript = document.createElement('script');
         mindarScript.src = 'https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js';
         mindarScript.async = true;
         
         await new Promise((resolve, reject) => {
-          mindarScript.onload = resolve;
-          mindarScript.onerror = reject;
+          mindarScript.onload = () => {
+            console.log('[MindAR] MindAR loaded');
+            resolve();
+          };
+          mindarScript.onerror = () => {
+            console.error('[MindAR] MindAR failed to load');
+            clearTimeout(timeoutId);
+            reject(new Error('MindAR 載入失敗，請檢查網路連線'));
+          };
           document.head.appendChild(mindarScript);
         });
 
+        setLoadingStep('正在初始化 MindAR...');
         // Initialize MindAR after scripts load
-        if (window.MindARThree && containerRef.current) {
-          mindarThree = new window.MindARThree({
-            container: containerRef.current,
-            imageTargetSrc: '/ar/oceanlens-target.mind',
-            maxTrack: 1,
-            uiScanning: false,
-            uiLoading: false,
-          });
-
-          const { renderer: mindarRenderer, scene, camera } = await mindarThree.start();
-          
-          renderer = mindarRenderer;
-          mindarThreeRef.current = mindarThree;
-          rendererRef.current = renderer;
-
-          // Add anchor for target 0
-          const anchor = mindarThree.addAnchor(0);
-          
-          // Add placeholder fish geometry
-          const fishGroup = createPlaceholderFish();
-          anchor.group.add(fishGroup);
-
-          // Handle anchor events
-          anchor.onTargetFound = () => {
-            console.log('Target found');
-            setIsTracking(true);
-            if (onAnchorFound) onAnchorFound();
-          };
-
-          anchor.onTargetLost = () => {
-            console.log('Target lost');
-            setIsTracking(false);
-            if (onAnchorLost) onAnchorLost();
-          };
-
-          // Start animation loop
-          const animate = () => {
-            animationFrameRef.current = requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-          };
-          animate();
-
-          setIsLoaded(true);
-          if (onReady) onReady();
+        if (!window.MindARThree) {
+          clearTimeout(timeoutId);
+          throw new Error('MindARThree 未正確載入');
         }
+        
+        if (!containerRef.current) {
+          clearTimeout(timeoutId);
+          throw new Error('容器 ref 未設置');
+        }
+
+        console.log('[MindAR] Creating MindARThree instance...');
+        mindarThree = new window.MindARThree({
+          container: containerRef.current,
+          imageTargetSrc: '/ar/oceanlens-target.mind',
+          maxTrack: 1,
+          uiScanning: false,
+          uiLoading: false,
+        });
+
+        console.log('[MindAR] Starting MindAR...');
+        setLoadingStep('正在啟動相機...');
+        const { renderer: mindarRenderer, scene, camera } = await mindarThree.start();
+        
+        console.log('[MindAR] MindAR started successfully');
+        clearTimeout(timeoutId);
+        renderer = mindarRenderer;
+        mindarThreeRef.current = mindarThree;
+        rendererRef.current = renderer;
+
+        // Add anchor for target 0
+        console.log('[MindAR] Adding anchor for target 0...');
+        const anchor = mindarThree.addAnchor(0);
+        
+        // Add placeholder fish geometry
+        console.log('[MindAR] Creating placeholder fish...');
+        const fishGroup = createPlaceholderFish();
+        anchor.group.add(fishGroup);
+
+        // Handle anchor events
+        anchor.onTargetFound = () => {
+          console.log('[MindAR] Target found');
+          setIsTracking(true);
+          if (onAnchorFound) onAnchorFound();
+        };
+
+        anchor.onTargetLost = () => {
+          console.log('[MindAR] Target lost');
+          setIsTracking(false);
+          if (onAnchorLost) onAnchorLost();
+        };
+
+        // Start animation loop
+        console.log('[MindAR] Starting animation loop...');
+        const animate = () => {
+          animationFrameRef.current = requestAnimationFrame(animate);
+          renderer.render(scene, camera);
+        };
+        animate();
+
+        console.log('[MindAR] Initialization complete');
+        setIsLoaded(true);
+        setLoadingStep('');
+        if (onReady) onReady();
       } catch (err) {
-        console.error('MindAR initialization error:', err);
-        setError(err.message);
+        console.error('[MindAR] Initialization error:', err);
+        if (timeoutId) clearTimeout(timeoutId);
+        setError(err.message || 'AR 初始化失敗');
+        setLoadingStep('');
         if (onError) onError(err);
       }
     };
@@ -192,7 +241,9 @@ const MindARController = ({
   if (error) {
     return (
       <div className="mindar-controller__error">
-        <p>AR 載入失敗: {error}</p>
+        <p>AR 載入失敗</p>
+        <p className="mindar-controller__error-detail">{error}</p>
+        <p className="mindar-controller__error-hint">請檢查網路連線後重新整理頁面</p>
       </div>
     );
   }
@@ -201,7 +252,12 @@ const MindARController = ({
     <div className="mindar-controller">
       {!isLoaded && (
         <div className="mindar-controller__loading">
-          <p>載入 AR 引擎中...</p>
+          <p className="mindar-controller__loading-step">{loadingStep}</p>
+          {loadingTimeout && (
+            <p className="mindar-controller__loading-timeout">
+              載入超時，請重新整理頁面
+            </p>
+          )}
         </div>
       )}
       <div 
