@@ -98,10 +98,10 @@ const MindARController = ({
 
           setLoadingStep('正在載入 MindAR...');
           
-          // Load MindAR from CDN with fallback
+          // Load MindAR from CDN - use the non-module version
           const mindarCdnUrls = [
-            'https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-three.prod.js',
-            'https://unpkg.com/mind-ar@1.2.2/dist/mindar-image-three.prod.js'
+            'https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-three.js',
+            'https://unpkg.com/mind-ar@1.2.2/dist/mindar-image-three.js'
           ];
           
           let mindarLoaded = false;
