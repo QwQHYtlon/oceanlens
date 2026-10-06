@@ -19,9 +19,10 @@ const MindARController = ({
   const [errorDetails, setErrorDetails] = useState(null);
 
   useEffect(() => {
-    console.log('[MindAR] useEffect called');
+    console.log('[MindAR] useEffect called - START');
     
     try {
+      console.log('[MindAR] Entering try block');
       let mindarScript = null;
       let threeScript = null;
       let mindarThree = null;
@@ -29,6 +30,7 @@ const MindARController = ({
       let timeoutId = null;
 
       const loadMindAR = async () => {
+        console.log('[MindAR] loadMindAR function START');
         try {
           console.log('[MindAR] loadMindAR function started');
           setLoadingStep('正在載入 Three.js...');
@@ -312,7 +314,9 @@ const MindARController = ({
       }
     };
 
+    console.log('[MindAR] About to call loadMindAR');
     loadMindAR();
+    console.log('[MindAR] loadMindAR called');
 
     // Cleanup
     return () => {
