@@ -98,46 +98,24 @@ const MindARController = ({
 
           setLoadingStep('正在載入 MindAR...');
           
-          // Load MindAR from CDN - use the non-module version
-          const mindarCdnUrls = [
-            'https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-three.js',
-            'https://unpkg.com/mind-ar@1.2.2/dist/mindar-image-three.js'
-          ];
-          
-          let mindarLoaded = false;
-          for (const url of mindarCdnUrls) {
-            try {
-              console.log(`[MindAR] Trying MindAR from: ${url}`);
-              setLoadingStep(`正在載入 MindAR (${url})...`);
-              mindarScript = document.createElement('script');
-              mindarScript.src = url;
-              mindarScript.async = true;
-              
-              await new Promise((resolve, reject) => {
-                mindarScript.onload = () => {
-                  console.log('[MindAR] MindAR loaded');
-                  resolve();
-                };
-                mindarScript.onerror = () => {
-                  console.error(`[MindAR] MindAR failed to load from: ${url}`);
-                  reject(new Error(`MindAR 載入失敗: ${url}`));
-                };
-                document.head.appendChild(mindarScript);
-              });
-              mindarLoaded = true;
-              break;
-            } catch (err) {
-              console.error(`[MindAR] Failed to load MindAR from ${url}, trying next...`);
-              if (mindarScript) {
-                document.head.removeChild(mindarScript);
-              }
-              continue;
+          // Load MindAR using dynamic import for ES modules
+          try {
+            console.log('[MindAR] Dynamically importing MindAR...');
+            const mindarModule = await import('https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-three.prod.js');
+            console.log('[MindAR] MindAR module imported:', mindarModule);
+            
+            // MindAR should export MindARThree globally or we need to use the module
+            if (mindarModule.MindARThree) {
+              window.MindARThree = mindarModule.MindARThree;
+              console.log('[MindAR] MindARThree set from module');
+            } else if (window.MindARThree) {
+              console.log('[MindAR] MindARThree already on window');
+            } else {
+              throw new Error('MindARThree not found in module or window');
             }
-          }
-          
-          if (!mindarLoaded) {
-            clearTimeout(timeoutId);
-            throw new Error('所有 MindAR CDN 來源載入失敗，請檢查網路連線');
+          } catch (err) {
+            console.error('[MindAR] Failed to import MindAR module:', err);
+            throw new Error('MindAR 模組載入失敗: ' + err.message);
           }
 
           setLoadingStep('正在初始化 MindAR...');
