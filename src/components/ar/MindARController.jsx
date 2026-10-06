@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import * as THREE from 'three';
 import './MindARController.css';
 
 const MindARController = ({ 
@@ -15,45 +14,10 @@ const MindARController = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const [isTracking, setIsTracking] = useState(false);
   const [error, setError] = useState(null);
-  const [loadingStep, setLoadingStep] = useState('正在檢查 Three.js...');
+  const [loadingStep, setLoadingStep] = useState('正在載入 Three.js...');
   const [loadingTimeout, setLoadingTimeout] = useState(false);
   const [errorDetails, setErrorDetails] = useState(null);
-
-  // Early check for THREE
-  if (!THREE) {
-    console.error('[MindAR] THREE is null at component render');
-    return (
-      <div className="mindar-controller__error">
-        <p>AR 載入失敗</p>
-        <p className="mindar-controller__error-detail">Three.js 未正確載入</p>
-        <p className="mindar-controller__error-hint">請重新整理頁面</p>
-      </div>
-    );
-  }
-
-  // Check Three.js availability immediately
-  useEffect(() => {
-    console.log('[MindAR] Component mounted');
-    console.log('[MindAR] THREE object:', THREE);
-    
-    if (!THREE) {
-      const errorMsg = 'Three.js 未正確載入';
-      console.error('[MindAR]', errorMsg);
-      setError(errorMsg);
-      setErrorDetails({
-        step: '正在檢查 Three.js...',
-        message: errorMsg,
-        stack: 'THREE object is null or undefined',
-        userAgent: navigator.userAgent,
-        url: window.location.href,
-        timestamp: new Date().toISOString()
-      });
-      if (onError) onError(new Error(errorMsg));
-      return;
-    }
-    
-    setLoadingStep('正在初始化 AR...');
-  }, []);
+  const [THREE, setTHREE] = useState(null);
 
   useEffect(() => {
     let mindarScript = null;
@@ -65,28 +29,25 @@ const MindARController = ({
     const loadMindAR = async () => {
       try {
         console.log('[MindAR] Starting initialization...');
-        setLoadingStep('正在初始化 AR...');
+        setLoadingStep('正在載入 Three.js...');
         
-        // Check THREE again before proceeding
-        if (!THREE) {
-          throw new Error('Three.js 未正確載入');
-        }
+        // Dynamic import Three.js
+        console.log('[MindAR] Dynamically importing Three.js...');
+        const threeModule = await import('three');
+        console.log('[MindAR] Three.js imported:', threeModule);
+        setTHREE(threeModule);
         
+        // Make THREE available globally for MindAR
+        setLoadingStep('正在設定 Three.js...');
+        window.THREE = threeModule;
+        console.log('[MindAR] window.THREE set:', window.THREE);
+
         // Set timeout to prevent infinite loading
         timeoutId = setTimeout(() => {
           console.error('[MindAR] Loading timeout after 30 seconds');
           setLoadingTimeout(true);
           setError('AR 載入超時，請檢查網路連線或重新整理頁面');
         }, 30000);
-        
-        // Three.js is already imported from node_modules
-        console.log('[MindAR] Three.js loaded from node_modules');
-        console.log('[MindAR] THREE object:', THREE);
-        
-        // Make THREE available globally for MindAR
-        setLoadingStep('正在設定 Three.js...');
-        window.THREE = THREE;
-        console.log('[MindAR] window.THREE set:', window.THREE);
 
         setLoadingStep('正在載入 MindAR...');
         // Load MindAR from CDN with fallback
