@@ -142,7 +142,19 @@ const MindARController = ({
 
           console.log('[MindAR] Starting MindAR...');
           setLoadingStep('正在啟動相機...');
-          const { renderer: mindarRenderer, scene, camera } = await mindarThree.start();
+          const startResult = await mindarThree.start();
+          
+          if (!startResult) {
+            clearTimeout(timeoutId);
+            throw new Error('MindAR start() 返回 null，相機啟動失敗');
+          }
+          
+          const { renderer: mindarRenderer, scene, camera } = startResult;
+          
+          if (!mindarRenderer || !scene || !camera) {
+            clearTimeout(timeoutId);
+            throw new Error('MindAR start() 返回值不完整，缺少 renderer/scene/camera');
+          }
           
           console.log('[MindAR] MindAR started successfully');
           clearTimeout(timeoutId);
