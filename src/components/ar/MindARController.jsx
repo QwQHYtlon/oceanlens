@@ -17,9 +17,9 @@ const MindARController = ({
   const [loadingStep, setLoadingStep] = useState('正在載入 Three.js...');
   const [loadingTimeout, setLoadingTimeout] = useState(false);
   const [errorDetails, setErrorDetails] = useState(null);
-  const [THREE, setTHREE] = useState(null);
 
   useEffect(() => {
+    console.log('[MindAR] useEffect called');
     let mindarScript = null;
     let threeScript = null;
     let mindarThree = null;
@@ -28,18 +28,61 @@ const MindARController = ({
 
     const loadMindAR = async () => {
       try {
-        console.log('[MindAR] Starting initialization...');
+        console.log('[MindAR] loadMindAR function started');
         setLoadingStep('正在載入 Three.js...');
         
-        // Dynamic import Three.js
-        console.log('[MindAR] Dynamically importing Three.js...');
-        const threeModule = await import('three');
-        console.log('[MindAR] Three.js imported:', threeModule);
-        setTHREE(threeModule);
+        // Load Three.js from CDN with fallback
+        const threeCdnUrls = [
+          'https://unpkg.com/three@0.128.0/build/three.min.js',
+          'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js',
+          'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js'
+        ];
+        
+        console.log('[MindAR] Three.js CDN URLs:', threeCdnUrls);
+        
+        let threeLoaded = false;
+        for (const url of threeCdnUrls) {
+          try {
+            console.log(`[MindAR] Trying Three.js from: ${url}`);
+            setLoadingStep(`正在載入 Three.js (${url})...`);
+            
+            threeScript = document.createElement('script');
+            threeScript.src = url;
+            threeScript.async = true;
+            
+            console.log('[MindAR] Script element created, appending to head');
+            
+            await new Promise((resolve, reject) => {
+              threeScript.onload = () => {
+                console.log('[MindAR] Three.js loaded successfully');
+                resolve();
+              };
+              threeScript.onerror = () => {
+                console.error(`[MindAR] Three.js failed to load from: ${url}`);
+                reject(new Error(`Three.js 載入失敗: ${url}`));
+              };
+              document.head.appendChild(threeScript);
+            });
+            
+            console.log('[MindAR] Three.js Promise resolved');
+            threeLoaded = true;
+            break;
+          } catch (err) {
+            console.error(`[MindAR] Failed to load Three.js from ${url}:`, err);
+            if (threeScript) {
+              document.head.removeChild(threeScript);
+            }
+            continue;
+          }
+        }
+        
+        if (!threeLoaded) {
+          throw new Error('所有 Three.js CDN 來源載入失敗，請檢查網路連線');
+        }
         
         // Make THREE available globally for MindAR
         setLoadingStep('正在設定 Three.js...');
-        window.THREE = threeModule;
+        window.THREE = window.THREE || THREE;
         console.log('[MindAR] window.THREE set:', window.THREE);
 
         // Set timeout to prevent infinite loading
