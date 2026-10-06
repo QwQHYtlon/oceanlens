@@ -20,176 +20,179 @@ const MindARController = ({
 
   useEffect(() => {
     console.log('[MindAR] useEffect called');
-    let mindarScript = null;
-    let threeScript = null;
-    let mindarThree = null;
-    let renderer = null;
-    let timeoutId = null;
+    
+    try {
+      let mindarScript = null;
+      let threeScript = null;
+      let mindarThree = null;
+      let renderer = null;
+      let timeoutId = null;
 
-    const loadMindAR = async () => {
-      try {
-        console.log('[MindAR] loadMindAR function started');
-        setLoadingStep('正在載入 Three.js...');
-        
-        // Load Three.js from CDN with fallback
-        const threeCdnUrls = [
-          'https://unpkg.com/three@0.128.0/build/three.min.js',
-          'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js',
-          'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js'
-        ];
-        
-        console.log('[MindAR] Three.js CDN URLs:', threeCdnUrls);
-        
-        let threeLoaded = false;
-        for (const url of threeCdnUrls) {
-          try {
-            console.log(`[MindAR] Trying Three.js from: ${url}`);
-            setLoadingStep(`正在載入 Three.js (${url})...`);
-            
-            threeScript = document.createElement('script');
-            threeScript.src = url;
-            threeScript.async = true;
-            
-            console.log('[MindAR] Script element created, appending to head');
-            
-            await new Promise((resolve, reject) => {
-              threeScript.onload = () => {
-                console.log('[MindAR] Three.js loaded successfully');
-                resolve();
-              };
-              threeScript.onerror = () => {
-                console.error(`[MindAR] Three.js failed to load from: ${url}`);
-                reject(new Error(`Three.js 載入失敗: ${url}`));
-              };
-              document.head.appendChild(threeScript);
-            });
-            
-            console.log('[MindAR] Three.js Promise resolved');
-            threeLoaded = true;
-            break;
-          } catch (err) {
-            console.error(`[MindAR] Failed to load Three.js from ${url}:`, err);
-            if (threeScript) {
-              document.head.removeChild(threeScript);
+      const loadMindAR = async () => {
+        try {
+          console.log('[MindAR] loadMindAR function started');
+          setLoadingStep('正在載入 Three.js...');
+          
+          // Load Three.js from CDN with fallback
+          const threeCdnUrls = [
+            'https://unpkg.com/three@0.128.0/build/three.min.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js',
+            'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js'
+          ];
+          
+          console.log('[MindAR] Three.js CDN URLs:', threeCdnUrls);
+          
+          let threeLoaded = false;
+          for (const url of threeCdnUrls) {
+            try {
+              console.log(`[MindAR] Trying Three.js from: ${url}`);
+              setLoadingStep(`正在載入 Three.js (${url})...`);
+              
+              threeScript = document.createElement('script');
+              threeScript.src = url;
+              threeScript.async = true;
+              
+              console.log('[MindAR] Script element created, appending to head');
+              
+              await new Promise((resolve, reject) => {
+                threeScript.onload = () => {
+                  console.log('[MindAR] Three.js loaded successfully');
+                  resolve();
+                };
+                threeScript.onerror = () => {
+                  console.error(`[MindAR] Three.js failed to load from: ${url}`);
+                  reject(new Error(`Three.js 載入失敗: ${url}`));
+                };
+                document.head.appendChild(threeScript);
+              });
+              
+              console.log('[MindAR] Three.js Promise resolved');
+              threeLoaded = true;
+              break;
+            } catch (err) {
+              console.error(`[MindAR] Failed to load Three.js from ${url}:`, err);
+              if (threeScript) {
+                document.head.removeChild(threeScript);
+              }
+              continue;
             }
-            continue;
           }
-        }
-        
-        if (!threeLoaded) {
-          throw new Error('所有 Three.js CDN 來源載入失敗，請檢查網路連線');
-        }
-        
-        // Make THREE available globally for MindAR
-        setLoadingStep('正在設定 Three.js...');
-        window.THREE = window.THREE || THREE;
-        console.log('[MindAR] window.THREE set:', window.THREE);
+          
+          if (!threeLoaded) {
+            throw new Error('所有 Three.js CDN 來源載入失敗，請檢查網路連線');
+          }
+          
+          // Make THREE available globally for MindAR
+          setLoadingStep('正在設定 Three.js...');
+          window.THREE = window.THREE || THREE;
+          console.log('[MindAR] window.THREE set:', window.THREE);
 
-        // Set timeout to prevent infinite loading
-        timeoutId = setTimeout(() => {
-          console.error('[MindAR] Loading timeout after 30 seconds');
-          setLoadingTimeout(true);
-          setError('AR 載入超時，請檢查網路連線或重新整理頁面');
-        }, 30000);
+          // Set timeout to prevent infinite loading
+          timeoutId = setTimeout(() => {
+            console.error('[MindAR] Loading timeout after 30 seconds');
+            setLoadingTimeout(true);
+            setError('AR 載入超時，請檢查網路連線或重新整理頁面');
+          }, 30000);
 
-        setLoadingStep('正在載入 MindAR...');
-        // Load MindAR from CDN with fallback
-        const mindarCdnUrls = [
-          'https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-three.prod.js',
-          'https://unpkg.com/mind-ar@1.2.2/dist/mindar-image-three.prod.js'
-        ];
-        
-        let mindarLoaded = false;
-        for (const url of mindarCdnUrls) {
-          try {
-            console.log(`[MindAR] Trying MindAR from: ${url}`);
-            setLoadingStep(`正在載入 MindAR (${url})...`);
-            mindarScript = document.createElement('script');
-            mindarScript.src = url;
-            mindarScript.async = true;
-            
-            await new Promise((resolve, reject) => {
-              mindarScript.onload = () => {
-                console.log('[MindAR] MindAR loaded');
-                resolve();
-              };
-              mindarScript.onerror = () => {
-                console.error(`[MindAR] MindAR failed to load from: ${url}`);
-                reject(new Error(`MindAR 載入失敗: ${url}`));
-              };
-              document.head.appendChild(mindarScript);
-            });
-            mindarLoaded = true;
-            break;
-          } catch (err) {
-            console.error(`[MindAR] Failed to load MindAR from ${url}, trying next...`);
-            if (mindarScript) {
-              document.head.removeChild(mindarScript);
+          setLoadingStep('正在載入 MindAR...');
+          
+          // Load MindAR from CDN with fallback
+          const mindarCdnUrls = [
+            'https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-three.prod.js',
+            'https://unpkg.com/mind-ar@1.2.2/dist/mindar-image-three.prod.js'
+          ];
+          
+          let mindarLoaded = false;
+          for (const url of mindarCdnUrls) {
+            try {
+              console.log(`[MindAR] Trying MindAR from: ${url}`);
+              setLoadingStep(`正在載入 MindAR (${url})...`);
+              mindarScript = document.createElement('script');
+              mindarScript.src = url;
+              mindarScript.async = true;
+              
+              await new Promise((resolve, reject) => {
+                mindarScript.onload = () => {
+                  console.log('[MindAR] MindAR loaded');
+                  resolve();
+                };
+                mindarScript.onerror = () => {
+                  console.error(`[MindAR] MindAR failed to load from: ${url}`);
+                  reject(new Error(`MindAR 載入失敗: ${url}`));
+                };
+                document.head.appendChild(mindarScript);
+              });
+              mindarLoaded = true;
+              break;
+            } catch (err) {
+              console.error(`[MindAR] Failed to load MindAR from ${url}, trying next...`);
+              if (mindarScript) {
+                document.head.removeChild(mindarScript);
+              }
+              continue;
             }
-            continue;
           }
-        }
-        
-        if (!mindarLoaded) {
+          
+          if (!mindarLoaded) {
+            clearTimeout(timeoutId);
+            throw new Error('所有 MindAR CDN 來源載入失敗，請檢查網路連線');
+          }
+
+          setLoadingStep('正在初始化 MindAR...');
+          // Initialize MindAR after scripts load
+          if (!window.MindARThree) {
+            clearTimeout(timeoutId);
+            throw new Error('MindARThree 未正確載入');
+          }
+          
+          if (!containerRef.current) {
+            clearTimeout(timeoutId);
+            throw new Error('容器 ref 未設置');
+          }
+
+          console.log('[MindAR] Creating MindARThree instance...');
+          setLoadingStep('正在建立 MindAR 實例...');
+          mindarThree = new window.MindARThree({
+            container: containerRef.current,
+            imageTargetSrc: '/ar/oceanlens-target.mind',
+            maxTrack: 1,
+            uiScanning: false,
+            uiLoading: false,
+          });
+
+          console.log('[MindAR] Starting MindAR...');
+          setLoadingStep('正在啟動相機...');
+          const { renderer: mindarRenderer, scene, camera } = await mindarThree.start();
+          
+          console.log('[MindAR] MindAR started successfully');
           clearTimeout(timeoutId);
-          throw new Error('所有 MindAR CDN 來源載入失敗，請檢查網路連線');
-        }
+          renderer = mindarRenderer;
+          mindarThreeRef.current = mindarThree;
+          rendererRef.current = renderer;
 
-        setLoadingStep('正在初始化 MindAR...');
-        // Initialize MindAR after scripts load
-        if (!window.MindARThree) {
-          clearTimeout(timeoutId);
-          throw new Error('MindARThree 未正確載入');
-        }
-        
-        if (!containerRef.current) {
-          clearTimeout(timeoutId);
-          throw new Error('容器 ref 未設置');
-        }
+          // Add anchor for target 0
+          console.log('[MindAR] Adding anchor for target 0...');
+          const anchor = mindarThree.addAnchor(0);
+          
+          // Add placeholder fish geometry
+          console.log('[MindAR] Creating placeholder fish...');
+          const fishGroup = createPlaceholderFish();
+          anchor.group.add(fishGroup);
 
-        console.log('[MindAR] Creating MindARThree instance...');
-        setLoadingStep('正在建立 MindAR 實例...');
-        mindarThree = new window.MindARThree({
-          container: containerRef.current,
-          imageTargetSrc: '/ar/oceanlens-target.mind',
-          maxTrack: 1,
-          uiScanning: false,
-          uiLoading: false,
-        });
+          // Handle anchor events
+          anchor.onTargetFound = () => {
+            console.log('[MindAR] Target found');
+            setIsTracking(true);
+            if (onAnchorFound) onAnchorFound();
+          };
 
-        console.log('[MindAR] Starting MindAR...');
-        setLoadingStep('正在啟動相機...');
-        const { renderer: mindarRenderer, scene, camera } = await mindarThree.start();
-        
-        console.log('[MindAR] MindAR started successfully');
-        clearTimeout(timeoutId);
-        renderer = mindarRenderer;
-        mindarThreeRef.current = mindarThree;
-        rendererRef.current = renderer;
+          anchor.onTargetLost = () => {
+            console.log('[MindAR] Target lost');
+            setIsTracking(false);
+            if (onAnchorLost) onAnchorLost();
+          };
 
-        // Add anchor for target 0
-        console.log('[MindAR] Adding anchor for target 0...');
-        const anchor = mindarThree.addAnchor(0);
-        
-        // Add placeholder fish geometry
-        console.log('[MindAR] Creating placeholder fish...');
-        const fishGroup = createPlaceholderFish();
-        anchor.group.add(fishGroup);
-
-        // Handle anchor events
-        anchor.onTargetFound = () => {
-          console.log('[MindAR] Target found');
-          setIsTracking(true);
-          if (onAnchorFound) onAnchorFound();
-        };
-
-        anchor.onTargetLost = () => {
-          console.log('[MindAR] Target lost');
-          setIsTracking(false);
-          if (onAnchorLost) onAnchorLost();
-        };
-
-        // Start animation loop
+          // Start animation loop
         console.log('[MindAR] Starting animation loop...');
         const animate = () => {
           animationFrameRef.current = requestAnimationFrame(animate);
@@ -204,7 +207,7 @@ const MindARController = ({
       } catch (err) {
         console.error('[MindAR] Initialization error:', err);
         if (timeoutId) clearTimeout(timeoutId);
-        
+
         const errorMessage = err.message || 'AR 初始化失敗';
         const errorStack = err.stack || '';
         const userAgent = navigator.userAgent;
@@ -238,6 +241,7 @@ const MindARController = ({
 
     // Cleanup
     return () => {
+      console.log('[MindAR] Cleanup called');
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
@@ -254,7 +258,19 @@ const MindARController = ({
         document.head.removeChild(threeScript);
       }
     };
-  }, [onAnchorFound, onAnchorLost, onError, onReady]);
+  } catch (err) {
+    console.error('[MindAR] useEffect error:', err);
+    setError('組件初始化失敗: ' + err.message);
+    setErrorDetails({
+      step: 'useEffect 初始化',
+      message: err.message,
+      stack: err.stack || '',
+      userAgent: navigator.userAgent,
+      url: window.location.href,
+      timestamp: new Date().toISOString()
+    });
+  }
+}, [onAnchorFound, onAnchorLost, onError, onReady]);
 
   // Create placeholder fish geometry
   const createPlaceholderFish = () => {
