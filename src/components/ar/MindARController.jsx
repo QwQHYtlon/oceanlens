@@ -176,6 +176,81 @@ const MindARController = ({
           
           // Add placeholder fish geometry
           console.log('[MindAR] Creating placeholder fish...');
+          const createPlaceholderFish = () => {
+            const group = new window.THREE.Group();
+            
+            // Fish body (sphere)
+            const bodyGeometry = new window.THREE.SphereGeometry(0.5, 32, 32);
+            const bodyMaterial = new window.THREE.MeshStandardMaterial({ 
+              color: 0x00f5d4,
+              roughness: 0.5,
+              metalness: 0.3
+            });
+            const body = new window.THREE.Mesh(bodyGeometry, bodyMaterial);
+            body.scale.set(1, 0.6, 0.4);
+            group.add(body);
+
+            // Fish tail (cone)
+            const tailGeometry = new window.THREE.ConeGeometry(0.3, 0.5, 32);
+            const tailMaterial = new window.THREE.MeshStandardMaterial({ 
+              color: 0x00b4d8,
+              roughness: 0.5,
+              metalness: 0.3
+            });
+            const tail = new window.THREE.Mesh(tailGeometry, tailMaterial);
+            tail.rotation.z = Math.PI / 2;
+            tail.position.x = -0.6;
+            group.add(tail);
+
+            // Fish fins
+            const finGeometry = new window.THREE.ConeGeometry(0.15, 0.3, 32);
+            const finMaterial = new window.THREE.MeshStandardMaterial({ 
+              color: 0x0077b6,
+              roughness: 0.5,
+              metalness: 0.3
+            });
+            
+            const topFin = new window.THREE.Mesh(finGeometry, finMaterial);
+            topFin.position.set(0, 0.4, 0);
+            group.add(topFin);
+
+            const bottomFin = new window.THREE.Mesh(finGeometry, finMaterial);
+            bottomFin.position.set(0, -0.4, 0);
+            bottomFin.rotation.x = Math.PI;
+            group.add(bottomFin);
+
+            // Eyes
+            const eyeGeometry = new window.THREE.SphereGeometry(0.08, 16, 16);
+            const eyeMaterial = new window.THREE.MeshStandardMaterial({ 
+              color: 0xffffff,
+              roughness: 0.1
+            });
+            
+            const leftEye = new window.THREE.Mesh(eyeGeometry, eyeMaterial);
+            leftEye.position.set(0.3, 0.1, 0.35);
+            group.add(leftEye);
+
+            const rightEye = new window.THREE.Mesh(eyeGeometry, eyeMaterial);
+            rightEye.position.set(0.3, 0.1, -0.35);
+            group.add(rightEye);
+
+            // Pupils
+            const pupilGeometry = new window.THREE.SphereGeometry(0.04, 16, 16);
+            const pupilMaterial = new window.THREE.MeshStandardMaterial({ 
+              color: 0x000000
+            });
+            
+            const leftPupil = new window.THREE.Mesh(pupilGeometry, pupilMaterial);
+            leftPupil.position.set(0.35, 0.1, 0.35);
+            group.add(leftPupil);
+
+            const rightPupil = new window.THREE.Mesh(pupilGeometry, pupilMaterial);
+            rightPupil.position.set(0.35, 0.1, -0.35);
+            group.add(rightPupil);
+
+            return group;
+          };
+          
           const fishGroup = createPlaceholderFish();
           anchor.group.add(fishGroup);
 
@@ -271,75 +346,6 @@ const MindARController = ({
     });
   }
 }, [onAnchorFound, onAnchorLost, onError, onReady]);
-
-  // Create placeholder fish geometry
-  const createPlaceholderFish = () => {
-    const group = new THREE.Group();
-    
-    // Fish body (sphere)
-    const bodyGeometry = new THREE.SphereGeometry(0.5, 32, 32);
-    const bodyMaterial = new THREE.MeshStandardMaterial({ 
-      color: 0x00f5d4,
-      roughness: 0.5,
-      metalness: 0.3
-    });
-    const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
-    body.scale.set(1, 0.6, 0.4);
-    group.add(body);
-
-    // Fish tail (cone)
-    const tailGeometry = new THREE.ConeGeometry(0.3, 0.5, 32);
-    const tailMaterial = new THREE.MeshStandardMaterial({ 
-      color: 0x00b4d8,
-      roughness: 0.5,
-      metalness: 0.3
-    });
-    const tail = new THREE.Mesh(tailGeometry, tailMaterial);
-    tail.rotation.z = Math.PI / 2;
-    tail.position.x = -0.6;
-    group.add(tail);
-
-    // Fish fins
-    const finGeometry = new THREE.ConeGeometry(0.15, 0.3, 32);
-    const finMaterial = new THREE.MeshStandardMaterial({ 
-      color: 0x0077b6,
-      roughness: 0.5,
-      metalness: 0.3
-    });
-    
-    const topFin = new THREE.Mesh(finGeometry, finMaterial);
-    topFin.position.set(0, 0.4, 0);
-    group.add(topFin);
-
-    const bottomFin = new THREE.Mesh(finGeometry, finMaterial);
-    bottomFin.position.set(0, -0.4, 0);
-    bottomFin.rotation.x = Math.PI;
-    group.add(bottomFin);
-
-    // Eyes
-    const eyeGeometry = new THREE.SphereGeometry(0.08, 16, 16);
-    const eyeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
-    const pupilGeometry = new THREE.SphereGeometry(0.04, 16, 16);
-    const pupilMaterial = new THREE.MeshStandardMaterial({ color: 0x000000 });
-
-    const leftEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
-    leftEye.position.set(0.3, 0.1, 0.35);
-    group.add(leftEye);
-
-    const leftPupil = new THREE.Mesh(pupilGeometry, pupilMaterial);
-    leftPupil.position.set(0.35, 0.1, 0.4);
-    group.add(leftPupil);
-
-    const rightEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
-    rightEye.position.set(0.3, 0.1, -0.35);
-    group.add(rightEye);
-
-    const rightPupil = new THREE.Mesh(pupilGeometry, pupilMaterial);
-    rightPupil.position.set(0.35, 0.1, -0.4);
-    group.add(rightPupil);
-
-    return group;
-  };
 
   if (error) {
     return (
