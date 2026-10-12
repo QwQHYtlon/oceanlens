@@ -153,7 +153,7 @@ const MindARController = ({
             throw new Error('MindAR start() 拋出錯誤: ' + startErr.message);
           }
           
-          console.log('[MindAR] MindAR started successfully');
+          console.log('[MindAR] MindAR started successfully - v2');
           console.log('[MindAR] MindAR instance methods:', Object.getOwnPropertyNames(Object.getPrototypeOf(mindarThree)));
           console.log('[MindAR] MindAR instance properties:', Object.keys(mindarThree));
           
