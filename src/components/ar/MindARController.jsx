@@ -154,6 +154,22 @@ const MindARController = ({
           }
           
           console.log('[MindAR] MindAR started successfully');
+          console.log('[MindAR] MindAR instance methods:', Object.getOwnPropertyNames(Object.getPrototypeOf(mindarThree)));
+          console.log('[MindAR] MindAR instance properties:', Object.keys(mindarThree));
+          
+          // Check if there's a video element created
+          if (containerRef.current) {
+            const video = containerRef.current.querySelector('video');
+            const canvas = containerRef.current.querySelector('canvas');
+            console.log('[MindAR] Container elements:', { 
+              hasVideo: !!video, 
+              hasCanvas: !!canvas,
+              videoReadyState: video ? video.readyState : 'N/A',
+              canvasWidth: canvas ? canvas.width : 'N/A',
+              canvasHeight: canvas ? canvas.height : 'N/A'
+            });
+          }
+          
           clearTimeout(timeoutId);
           mindarThreeRef.current = mindarThree;
 
