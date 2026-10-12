@@ -192,6 +192,15 @@ const MindARController = ({
                 width: video.style.width,
                 height: video.style.height
               });
+              console.log('[MindAR] Video stream info:', {
+                hasSrcObject: !!video.srcObject,
+                isPlaying: !video.paused,
+                currentTime: video.currentTime,
+                duration: video.duration,
+                muted: video.muted,
+                autoplay: video.autoplay,
+                playsInline: video.playsInline
+              });
             }
             if (canvas) {
               console.log('[MindAR] Canvas styles:', {
