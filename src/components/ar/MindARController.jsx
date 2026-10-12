@@ -168,6 +168,24 @@ const MindARController = ({
               canvasWidth: canvas ? canvas.width : 'N/A',
               canvasHeight: canvas ? canvas.height : 'N/A'
             });
+            
+            // Check video and canvas styles
+            if (video) {
+              console.log('[MindAR] Video styles:', {
+                display: window.getComputedStyle(video).display,
+                visibility: window.getComputedStyle(video).visibility,
+                opacity: window.getComputedStyle(video).opacity,
+                width: video.style.width,
+                height: video.style.height
+              });
+            }
+            if (canvas) {
+              console.log('[MindAR] Canvas styles:', {
+                display: window.getComputedStyle(canvas).display,
+                visibility: window.getComputedStyle(canvas).visibility,
+                opacity: window.getComputedStyle(canvas).opacity
+              });
+            }
           }
           
           clearTimeout(timeoutId);
