@@ -153,40 +153,9 @@ const MindARController = ({
             throw new Error('MindAR start() 拋出錯誤: ' + startErr.message);
           }
           
-          // Try to get renderer, scene, camera from MindAR instance
-          console.log('[MindAR] MindAR instance properties:', Object.keys(mindarThree));
-          console.log('[MindAR] MindAR instance full object:', mindarThree);
-          
-          // MindAR 1.2.2 might have different property names
-          let mindarRenderer = mindarThree.renderer || mindarThree._renderer;
-          let scene = mindarThree.scene || mindarThree._scene;
-          let camera = mindarThree.camera || mindarThree._camera;
-          
-          // If still not found, try accessing through the container
-          if (!mindarRenderer && containerRef.current) {
-            console.log('[MindAR] Trying to get renderer from container...');
-            const canvas = containerRef.current.querySelector('canvas');
-            if (canvas) {
-              console.log('[MindAR] Found canvas in container');
-            }
-          }
-          
-          if (!mindarRenderer || !scene || !camera) {
-            console.error('[MindAR] MindAR instance missing required properties:', { 
-              hasRenderer: !!mindarRenderer, 
-              hasScene: !!scene, 
-              hasCamera: !!camera,
-              allProps: Object.keys(mindarThree)
-            });
-            clearTimeout(timeoutId);
-            throw new Error('MindAR 實例缺少 renderer/scene/camera 屬性。MindAR 版本可能不兼容');
-          }
-          
           console.log('[MindAR] MindAR started successfully');
           clearTimeout(timeoutId);
-          renderer = mindarRenderer;
           mindarThreeRef.current = mindarThree;
-          rendererRef.current = renderer;
 
           // Add anchor for target 0
           console.log('[MindAR] Adding anchor for target 0...');
@@ -285,18 +254,10 @@ const MindARController = ({
             if (onAnchorLost) onAnchorLost();
           };
 
-          // Start animation loop
-        console.log('[MindAR] Starting animation loop...');
-        const animate = () => {
-          animationFrameRef.current = requestAnimationFrame(animate);
-          renderer.render(scene, camera);
-        };
-        animate();
-
-        console.log('[MindAR] Initialization complete');
-        setIsLoaded(true);
-        setLoadingStep('');
-        if (onReady) onReady();
+          console.log('[MindAR] Initialization complete');
+          setIsLoaded(true);
+          setLoadingStep('');
+          if (onReady) onReady();
       } catch (err) {
         console.error('[MindAR] Initialization error:', err);
         if (timeoutId) clearTimeout(timeoutId);
