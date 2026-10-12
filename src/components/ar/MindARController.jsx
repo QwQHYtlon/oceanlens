@@ -157,6 +157,20 @@ const MindARController = ({
           console.log('[MindAR] MindAR instance methods:', Object.getOwnPropertyNames(Object.getPrototypeOf(mindarThree)));
           console.log('[MindAR] MindAR instance properties:', Object.keys(mindarThree));
           
+          // Try calling _startAR to start AR rendering
+          try {
+            console.log('[MindAR] Calling mindarThree._startAR()...');
+            if (typeof mindarThree._startAR === 'function') {
+              await mindarThree._startAR();
+              console.log('[MindAR] _startAR completed');
+            } else {
+              console.log('[MindAR] _startAR is not a function, skipping');
+            }
+          } catch (arErr) {
+            console.error('[MindAR] _startAR threw error:', arErr);
+            // Don't throw, continue anyway
+          }
+          
           // Check if there's a video element created
           if (containerRef.current) {
             const video = containerRef.current.querySelector('video');
