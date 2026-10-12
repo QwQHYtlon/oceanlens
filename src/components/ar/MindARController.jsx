@@ -190,7 +190,9 @@ const MindARController = ({
                 visibility: window.getComputedStyle(video).visibility,
                 opacity: window.getComputedStyle(video).opacity,
                 width: video.style.width,
-                height: video.style.height
+                height: video.style.height,
+                zIndex: window.getComputedStyle(video).zIndex,
+                position: window.getComputedStyle(video).position
               });
               console.log('[MindAR] Video stream info:', {
                 hasSrcObject: !!video.srcObject,
@@ -201,13 +203,30 @@ const MindARController = ({
                 autoplay: video.autoplay,
                 playsInline: video.playsInline
               });
+              // Ensure video is behind canvas
+              video.style.position = 'absolute';
+              video.style.top = '0';
+              video.style.left = '0';
+              video.style.width = '100%';
+              video.style.height = '100%';
+              video.style.objectFit = 'cover';
+              video.style.zIndex = '0';
             }
             if (canvas) {
               console.log('[MindAR] Canvas styles:', {
                 display: window.getComputedStyle(canvas).display,
                 visibility: window.getComputedStyle(canvas).visibility,
-                opacity: window.getComputedStyle(canvas).opacity
+                opacity: window.getComputedStyle(canvas).opacity,
+                zIndex: window.getComputedStyle(canvas).zIndex,
+                position: window.getComputedStyle(canvas).position
               });
+              // Ensure canvas is on top of video
+              canvas.style.position = 'absolute';
+              canvas.style.top = '0';
+              canvas.style.left = '0';
+              canvas.style.width = '100%';
+              canvas.style.height = '100%';
+              canvas.style.zIndex = '1';
             }
           }
           
