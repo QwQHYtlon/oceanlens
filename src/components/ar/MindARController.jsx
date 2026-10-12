@@ -142,16 +142,28 @@ const MindARController = ({
 
           console.log('[MindAR] Starting MindAR...');
           setLoadingStep('正在啟動相機...');
-          const startResult = await mindarThree.start();
+          
+          let startResult;
+          try {
+            console.log('[MindAR] Calling mindarThree.start()...');
+            startResult = await mindarThree.start();
+            console.log('[MindAR] mindarThree.start() returned:', startResult);
+          } catch (startErr) {
+            console.error('[MindAR] mindarThree.start() threw error:', startErr);
+            clearTimeout(timeoutId);
+            throw new Error('MindAR start() 拋出錯誤: ' + startErr.message);
+          }
           
           if (!startResult) {
+            console.error('[MindAR] mindarThree.start() returned null/undefined');
             clearTimeout(timeoutId);
-            throw new Error('MindAR start() 返回 null，相機啟動失敗');
+            throw new Error('MindAR start() 返回 null，相機啟動失敗。可能是相機權限被拒絕或設備不支持 WebXR');
           }
           
           const { renderer: mindarRenderer, scene, camera } = startResult;
           
           if (!mindarRenderer || !scene || !camera) {
+            console.error('[MindAR] startResult incomplete:', { renderer: mindarRenderer, scene, camera });
             clearTimeout(timeoutId);
             throw new Error('MindAR start() 返回值不完整，缺少 renderer/scene/camera');
           }
