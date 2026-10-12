@@ -143,29 +143,30 @@ const MindARController = ({
           console.log('[MindAR] Starting MindAR...');
           setLoadingStep('正在啟動相機...');
           
-          let startResult;
           try {
             console.log('[MindAR] Calling mindarThree.start()...');
-            startResult = await mindarThree.start();
-            console.log('[MindAR] mindarThree.start() returned:', startResult);
+            await mindarThree.start();
+            console.log('[MindAR] mindarThree.start() completed');
           } catch (startErr) {
             console.error('[MindAR] mindarThree.start() threw error:', startErr);
             clearTimeout(timeoutId);
             throw new Error('MindAR start() 拋出錯誤: ' + startErr.message);
           }
           
-          if (!startResult) {
-            console.error('[MindAR] mindarThree.start() returned null/undefined');
-            clearTimeout(timeoutId);
-            throw new Error('MindAR start() 返回 null，相機啟動失敗。可能是相機權限被拒絕或設備不支持 WebXR');
-          }
-          
-          const { renderer: mindarRenderer, scene, camera } = startResult;
+          // Try to get renderer, scene, camera from MindAR instance
+          console.log('[MindAR] MindAR instance properties:', Object.keys(mindarThree));
+          const mindarRenderer = mindarThree.renderer;
+          const scene = mindarThree.scene;
+          const camera = mindarThree.camera;
           
           if (!mindarRenderer || !scene || !camera) {
-            console.error('[MindAR] startResult incomplete:', { renderer: mindarRenderer, scene, camera });
+            console.error('[MindAR] MindAR instance missing required properties:', { 
+              hasRenderer: !!mindarRenderer, 
+              hasScene: !!scene, 
+              hasCamera: !!camera 
+            });
             clearTimeout(timeoutId);
-            throw new Error('MindAR start() 返回值不完整，缺少 renderer/scene/camera');
+            throw new Error('MindAR 實例缺少 renderer/scene/camera 屬性');
           }
           
           console.log('[MindAR] MindAR started successfully');
