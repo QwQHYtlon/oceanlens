@@ -204,6 +204,17 @@ const MindARController = ({
           
           clearTimeout(timeoutId);
           mindarThreeRef.current = mindarThree;
+          
+          // Get renderer, scene, camera from MindAR instance
+          const renderer = mindarThree.renderer;
+          const scene = mindarThree.scene;
+          const camera = mindarThree.camera;
+          
+          console.log('[MindAR] Got renderer/scene/camera from instance:', {
+            hasRenderer: !!renderer,
+            hasScene: !!scene,
+            hasCamera: !!camera
+          });
 
           // Add anchor for target 0
           console.log('[MindAR] Adding anchor for target 0...');
@@ -301,6 +312,18 @@ const MindARController = ({
             setIsTracking(false);
             if (onAnchorLost) onAnchorLost();
           };
+
+          // Start animation loop
+          if (renderer && scene && camera) {
+            console.log('[MindAR] Starting animation loop...');
+            const animate = () => {
+              animationFrameRef.current = requestAnimationFrame(animate);
+              renderer.render(scene, camera);
+            };
+            animate();
+          } else {
+            console.error('[MindAR] Cannot start animation loop - missing renderer/scene/camera');
+          }
 
           console.log('[MindAR] Initialization complete');
           setIsLoaded(true);
