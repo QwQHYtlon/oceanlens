@@ -2636,6 +2636,87 @@ export const speciesData = [
       '腹部柔軟',
       '雜食性動物'
     ]
+  },
+  // 更多遠洋魚類和群游魚類
+  {
+    id: 'herring',
+    name: '鯡魚',
+    englishName: 'Herring',
+    depth: '0-200m',
+    habitat: '北半球海洋',
+    category: '魚類',
+    description: '鯡魚是小型群游魚類，以其銀白色的身體聞名。牠們是重要的經濟魚類和食物鏈環節。',
+    detailedDescription: '鯡魚是小型群游魚類，可長達45公分。牠們以其銀白色的身體聞名。鯡魚是重要的經濟魚類，用於製作魚罐頭和飼料。牠們是食物鏈的重要環節，為大型魚類和鯨魚提供食物。',
+    image: '🐟',
+    size: '20-45cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '銀白色的身體',
+      '重要的經濟魚類',
+      '食物鏈的重要環節',
+      '群游行為'
+    ]
+  },
+  {
+    id: 'mackerel',
+    name: '鯖魚',
+    englishName: 'Mackerel',
+    depth: '0-200m',
+    habitat: '全球海洋',
+    category: '魚類',
+    description: '鯖魚是游速極快的魚類，以其鮮豔的條紋聞名。牠們是重要的經濟魚類。',
+    detailedDescription: '鯖魚是游速極快的魚類，可長達60公分。牠們以其鮮豔的條紋聞名，背部有深色條紋。鯖魚是重要的經濟魚類，富含Omega-3脂肪酸。牠們會進行長距離洄游。',
+    image: '🐟',
+    size: '30-60cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '游速極快',
+      '擁有鮮豔的條紋',
+      '富含Omega-3脂肪酸',
+      '會進行長距離洄游'
+    ]
+  },
+  {
+    id: 'bonito',
+    name: '鮪魚',
+    englishName: 'Bonito',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '鮪魚是游速極快的魚類，是金槍魚的近親。牠們是重要的經濟魚類。',
+    detailedDescription: '鮪魚是游速極快的魚類，可長達1公尺。牠們是金槍魚的近親，時速可達60公里。鮪魚是重要的經濟魚類，用於製作鮪魚片。牠們會進行長距離洄游。',
+    image: '🐟',
+    size: '40-100cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '時速可達60公里',
+      '金槍魚的近親',
+      '用於製作鮪魚片',
+      '會進行長距離洄游'
+    ]
+  },
+  {
+    id: 'wahoo',
+    name: '鰹魚',
+    englishName: 'Wahoo',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '鰹魚是游速極快的魚類，時速可達80公里。牠們是優秀的遊釣魚類。',
+    detailedDescription: '鰹魚是游速極快的魚類，可長達2.5公尺。牠們時速可達80公里，是海洋中游速最快的魚類之一。鰹魚是優秀的遊釣魚類，以其強烈的抗爭聞名。牠們主要以魚類為食。',
+    image: '🐟',
+    size: '1-2.5m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '時速可達80公里',
+      '海洋中游速最快的魚類之一',
+      '優秀的遊釣魚類',
+      '強烈的抗爭'
+    ]
   }
 ];
 
