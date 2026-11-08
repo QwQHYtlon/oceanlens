@@ -2293,6 +2293,127 @@ export const speciesData = [
       '出色的潛水者',
       '生活在北半球沿海'
     ]
+  },
+  // 更多深海生物和水母
+  {
+    id: 'moon-jellyfish',
+    name: '海月水母',
+    englishName: 'Moon Jellyfish',
+    depth: '0-50m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '海月水母是最常見的水母之一，以其透明的身體和四個環形生殖腺聞名。',
+    detailedDescription: '海月水母是最常見的水母之一，可長達40公分。牠們以其透明的身體和四個環形生殖腺聞名。海月水母的觸手有毒，但對人類無害。牠們主要以浮游生物為食。',
+    image: '🪼',
+    size: '10-40cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '最常見的水母之一',
+      '透明的身體',
+      '四個環形生殖腺',
+      '對人類無害'
+    ]
+  },
+  {
+    id: 'box-jellyfish',
+    name: '箱水母',
+    englishName: 'Box Jellyfish',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '箱水母是世界上毒性最強的水母，其毒液可以致人死亡。牠們生活在澳洲和東南亞海域。',
+    detailedDescription: '箱水母是世界上毒性最強的水母，可長達30公分。牠們的毒液可以致人死亡，被稱為「海洋毒殺者」。箱水母擁有24隻眼睛，可以看見物體。牠們生活在澳洲和東南亞海域。',
+    image: '🪼',
+    size: '10-30cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '世界上最強毒的水母',
+      '毒液可以致人死亡',
+      '擁有24隻眼睛',
+      '被稱為「海洋毒殺者」'
+    ]
+  },
+  {
+    id: 'comb-jelly',
+    name: '櫛水母',
+    englishName: 'Comb Jelly',
+    depth: '0-4000m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '櫛水母是透明的海洋生物，以其發光的櫛板聞名。牠們不是真正的水母。',
+    detailedDescription: '櫛水母是透明的海洋生物，可長達15公分。牠們以其發光的櫛板聞名，用於游動。櫛水母不是真正的水母，屬於櫛水母門。牠們主要以浮游生物為食。',
+    image: '🪼',
+    size: '1-15cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '透明的海洋生物',
+      '發光的櫛板',
+      '不是真正的水母',
+      '用於游動'
+    ]
+  },
+  {
+    id: 'giant-isopod',
+    name: '巨型等足蟲',
+    englishName: 'Giant Isopod',
+    depth: '200-2000m',
+    habitat: '全球深海',
+    category: '無脊椎動物',
+    description: '巨型等足蟲是深海中的大型甲殼類動物，可長達50公分。牠們是清道夫，吃掉海底的有機物質。',
+    detailedDescription: '巨型等足蟲是深海中的大型甲殼類動物，可長達50公分。牠們是清道夫，吃掉海底的有機物質。巨型等足蟲適應高壓環境，可以長達數年不進食。牠們的外骨骼堅硬，保護牠們免受捕食者攻擊。',
+    image: '🦐',
+    size: '20-50cm',
+    diet: '雜食性',
+    conservation: '資料不足',
+    facts: [
+      '可長達50公分',
+      '清道夫',
+      '可以數年不進食',
+      '適應高壓環境'
+    ]
+  },
+  {
+    id: 'grenadier',
+    name: '鼠尾魚',
+    englishName: 'Grenadier',
+    depth: '100-4000m',
+    habitat: '全球深海',
+    category: '魚類',
+    description: '鼠尾魚是深海魚類，以其長長的尾巴聞名。牠們生活在深海，是重要的深海捕食者。',
+    detailedDescription: '鼠尾魚是深海魚類，可長達1.5公尺。牠們以其長長的尾巴聞名，佔體長的三分之二。鼠尾魚生活在深海，是重要的深海捕食者。牠們主要以魚類和頭足類為食。',
+    image: '🐟',
+    size: '0.5-1.5m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '長長的尾巴佔體長三分之二',
+      '生活在深海',
+      '重要的深海捕食者',
+      '可長達1.5公尺'
+    ]
+  },
+  {
+    id: 'fangtooth',
+    name: '牙齒魚',
+    englishName: 'Fangtooth',
+    depth: '200-5000m',
+    habitat: '全球深海',
+    category: '魚類',
+    description: '牙齒魚是深海魚類，以其巨大的牙齒聞名。牠們的牙齒比例是所有魚類中最大的。',
+    detailedDescription: '牙齒魚是深海魚類，可長達18公分。牠們以其巨大的牙齒聞名，牙齒比例是所有魚類中最大的。牙齒魚生活在深海，是兇猛的捕食者。牠們主要以魚類和頭足類為食。',
+    image: '🐟',
+    size: '10-18cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '牙齒比例是所有魚類中最大的',
+      '生活在深海',
+      '兇猛的捕食者',
+      '巨大的牙齒'
+    ]
   }
 ];
 
