@@ -2414,6 +2414,127 @@ export const speciesData = [
       '兇猛的捕食者',
       '巨大的牙齒'
     ]
+  },
+  // 更多珊瑚礁魚類和甲殼類
+  {
+    id: 'spiny-lobster',
+    name: '龍蝦',
+    englishName: 'Spiny Lobster',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '龍蝦是大型甲殼類動物，以其長長的觸角聞名。牠們沒有大螯，但有堅硬的外殼。',
+    detailedDescription: '龍蝦是大型甲殼類動物，可長達60公分。牠們以其長長的觸角聞名，用於偵測環境。龍蝦沒有大螯，但有堅硬的外殼。牠們是夜行性動物，白天躲在洞穴中。',
+    image: '🦞',
+    size: '20-60cm',
+    diet: '雜食性',
+    conservation: '易危',
+    facts: [
+      '長長的觸角',
+      '沒有大螯',
+      '夜行性動物',
+      '躲在洞穴中'
+    ]
+  },
+  {
+    id: 'blue-crab',
+    name: '藍蟹',
+    englishName: 'Blue Crab',
+    depth: '0-60m',
+    habitat: '大西洋',
+    category: '無脊椎動物',
+    description: '藍蟹以其藍色的爪子聞名，是重要的經濟物種。牠們生活在河口和沿海地區。',
+    detailedDescription: '藍蟹以其藍色的爪子聞名，可長達23公分。牠們是重要的經濟物種，被視為美食。藍蟹生活在河口和沿海地區，可以適應淡水環境。牠們是兇猛的捕食者。',
+    image: '🦀',
+    size: '10-23cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '藍色的爪子',
+      '重要的經濟物種',
+      '可以適應淡水環境',
+      '兇猛的捕食者'
+    ]
+  },
+  {
+    id: 'king-crab',
+    name: '帝王蟹',
+    englishName: 'King Crab',
+    depth: '20-200m',
+    habitat: '北太平洋',
+    category: '無脊椎動物',
+    description: '帝王蟹是大型蟹類，可長達1.8公尺。牠們以其長長的腿和美味的肉聞名。',
+    detailedDescription: '帝王蟹是大型蟹類，可長達1.8公尺。牠們以其長長的腿和美味的肉聞名。帝王蟹生活在北太平洋的冷水環境中。牠們是重要的經濟物種，被視為昂貴的美食。',
+    image: '🦀',
+    size: '腿展可達1.8m',
+    diet: '雜食性',
+    conservation: '易危',
+    facts: [
+      '可長達1.8公尺',
+      '長長的腿',
+      '昂貴的美食',
+      '生活在冷水環境'
+    ]
+  },
+  {
+    id: 'shrimp',
+    name: '蝦',
+    englishName: 'Shrimp',
+    depth: '0-500m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '蝦是常見的甲殼類動物，以其彎曲的身體和跳躍能力聞名。牠們是重要的經濟物種。',
+    detailedDescription: '蝦是常見的甲殼類動物，可長達30公分。牠們以其彎曲的身體和跳躍能力聞名。蝦是重要的經濟物種，被視為美食。牠們生活在各種海洋環境中，從淺水到深海。',
+    image: '🦐',
+    size: '2-30cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '彎曲的身體',
+      '跳躍能力',
+      '重要的經濟物種',
+      '生活在各種環境'
+    ]
+  },
+  {
+    id: 'parrotfish',
+    name: '鸚哥魚',
+    englishName: 'Parrotfish',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '珊瑚礁',
+    description: '鸚哥魚以其鳥嘴般的牙齒聞名，用於啃食珊瑚。牠們是珊瑚礁的重要維護者。',
+    detailedDescription: '鸚哥魚以其鳥嘴般的牙齒聞名，用於啃食珊瑚。牠們是珊瑚礁的重要維護者，可以控制珊瑚生長。鸚哥魚可長達1.2公尺。牠們會分泌黏液包裹自己睡眠。',
+    image: '🐠',
+    size: '20-120cm',
+    diet: '雜食性',
+    conservation: '易危',
+    facts: [
+      '鳥嘴般的牙齒',
+      '啃食珊瑚',
+      '控制珊瑚生長',
+      '分泌黏液睡眠'
+    ]
+  },
+  {
+    id: 'triggerfish',
+    name: '扳機魚',
+    englishName: 'Triggerfish',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '珊瑚礁',
+    description: '扳機魚以其堅硬的背鰭聞名，可以鎖定在直立位置。牠們是領域性強的魚類。',
+    detailedDescription: '扳機魚以其堅硬的背鰭聞名，可以鎖定在直立位置。牠們是領域性強的魚類，會攻擊入侵者。扳機魚可長達75公分。牠們擁有強大的牙齒，可以咬碎貝殼。',
+    image: '🐠',
+    size: '25-75cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '背鰭可以鎖定',
+      '領域性強',
+      '強大的牙齒',
+      '可以咬碎貝殼'
+    ]
   }
 ];
 
