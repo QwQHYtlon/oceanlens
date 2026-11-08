@@ -1043,6 +1043,691 @@ export const speciesData = [
       '游動緩慢',
       '肉含有毒素'
     ]
+  },
+  // 全球廣布物種（續）
+  {
+    id: 'swordfish',
+    name: '劍魚',
+    englishName: 'Swordfish',
+    depth: '0-550m',
+    habitat: '全球海洋',
+    category: '魚類',
+    description: '劍魚以其長長的上顎聞名，是游速最快的海洋生物之一。牠們用劍狀吻部攻擊獵物。',
+    detailedDescription: '劍魚以其長長的上顎聞名，可長達3公尺。牠們是游速最快的海洋生物之一，時速可達110公里。劍魚用劍狀吻部攻擊獵物，可以切斷魚群。牠們是重要的經濟魚類，因過度捕撈而數量下降。',
+    image: '🐟',
+    size: '2-3m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '時速可達110公里',
+      '用劍狀吻部攻擊獵物',
+      '可以切斷魚群',
+      '重要的經濟魚類'
+    ]
+  },
+  {
+    id: 'yellowfin-tuna',
+    name: '黃鰭金槍魚',
+    englishName: 'Yellowfin Tuna',
+    depth: '0-200m',
+    habitat: '全球海洋',
+    category: '魚類',
+    description: '黃鰭金槍魚以其鮮黃色的背鰭和胸鰭聞名。牠們是游速極快的魚類，是重要的經濟物種。',
+    detailedDescription: '黃鰭金槍魚以其鮮黃色的背鰭和胸鰭聞名，可長達2公尺。牠們是游速極快的魚類，時速可達75公里。黃鰭金槍魚是重要的經濟物種，用於壽司和刺身。牠們會進行長距離洄游。',
+    image: '🐟',
+    size: '1-2m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '擁有鮮黃色的背鰭',
+      '時速可達75公里',
+      '用於壽司和刺身',
+      '會進行長距離洄游'
+    ]
+  },
+  {
+    id: 'copepod',
+    name: '橈足類',
+    englishName: 'Copepod',
+    depth: '0-4000m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '橈足類是海洋中最豐富的動物，是海洋食物鏈的基礎。牠們是微小甲殼類動物。',
+    detailedDescription: '橈足類是海洋中最豐富的動物，數量超過其他所有動物的總和。牠們是海洋食物鏈的基礎，為魚類、鯨魚等提供食物。橈足類是微小甲殼類動物，體型通常只有1-2毫米。牠們每天會進行垂直遷移。',
+    image: '🦐',
+    size: '1-2mm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '海洋中最豐富的動物',
+      '海洋食物鏈的基礎',
+      '每天進行垂直遷移',
+      '體型通常只有1-2毫米'
+    ]
+  },
+  // 太平洋特有物種（續）
+  {
+    id: 'california-sea-lion',
+    name: '加州海獅',
+    englishName: 'California Sea Lion',
+    depth: '0-200m',
+    habitat: '東太平洋',
+    category: '哺乳動物',
+    description: '加州海獅是聰明的海洋哺乳動物，以其靈活的游泳能力和社交行為聞名。牠們經常在水族館表演。',
+    detailedDescription: '加州海獅是聰明的海洋哺乳動物，可長達2.5公尺。牠們以其靈活的游泳能力和社交行為聞名。加州海獅經常在水族館表演，可以學習複雜的動作。牠們生活在東太平洋，從阿拉斯加到墨西哥。雄性體型遠大於雌性。',
+    image: '🦭',
+    size: '1.5-2.5m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '聰明的海洋哺乳動物',
+      '經常在水族館表演',
+      '可以學習複雜的動作',
+      '雄性體型遠大於雌性'
+    ]
+  },
+  {
+    id: 'red-coral',
+    name: '紅珊瑚',
+    englishName: 'Red Coral',
+    depth: '10-300m',
+    habitat: '太平洋',
+    category: '珊瑚礁',
+    description: '紅珊瑚是珍貴的珊瑚物種，以其鮮紅色聞名。牠們被用於製作珠寶，因過度採集而瀕危。',
+    detailedDescription: '紅珊瑚是珍貴的珊瑚物種，以其鮮紅色聞名。牠們被用於製作珠寶已有數千年歷史。紅珊瑚生長緩慢，每年只長幾毫米。因過度採集，紅珊瑚已瀕臨絕跡。牠們生活在深水區，通常在100-300公尺深處。',
+    image: '🪸',
+    size: '可達30cm',
+    diet: '共生藻類光合作用',
+    conservation: '瀕危',
+    facts: [
+      '被用於製作珠寶',
+      '每年只長幾毫米',
+      '因過度採集而瀕危',
+      '生活在深水區'
+    ]
+  },
+  {
+    id: 'yellow-croaker',
+    name: '大黃魚',
+    englishName: 'Yellow Croaker',
+    depth: '0-100m',
+    habitat: '西北太平洋',
+    category: '魚類',
+    description: '大黃魚是重要的經濟魚類，以其金黃色的身體和響亮的叫聲聞名。牠們是中國沿海的重要物種。',
+    detailedDescription: '大黃魚是重要的經濟魚類，可長達80公分。牠們以其金黃色的身體和響亮的叫聲聞名。大黃魚是中國沿海的重要物種，但因過度捕撈而數量大幅下降。牠們有鳔，可以發出聲音進行溝通。',
+    image: '🐟',
+    size: '30-80cm',
+    diet: '雜食性',
+    conservation: '易危',
+    facts: [
+      '中國沿海的重要物種',
+      '有鳔可以發出聲音',
+      '因過度捕撈而數量下降',
+      '擁有金黃色的身體'
+    ]
+  },
+  {
+    id: 'hairtail',
+    name: '帶魚',
+    englishName: 'Hairtail',
+    depth: '0-200m',
+    habitat: '西北太平洋',
+    category: '魚類',
+    description: '帶魚以其細長的銀白色身體聞名，像帶子一樣。牠們是重要的經濟魚類，廣泛分佈於亞洲沿海。',
+    detailedDescription: '帶魚以其細長的銀白色身體聞名，可長達2公尺。牠們像帶子一樣，因此得名。帶魚是重要的經濟魚類，廣泛分佈於亞洲沿海。牠們是兇猛的捕食者，擁有鋒利的牙齒。帶魚在夜間會游到淺水區覓食。',
+    image: '🐟',
+    size: '0.5-2m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '像帶子一樣細長',
+      '可長達2公尺',
+      '擁有鋒利的牙齒',
+      '夜間游到淺水區覓食'
+    ]
+  },
+  {
+    id: 'butterflyfish',
+    name: '蝶魚',
+    englishName: 'Butterflyfish',
+    depth: '0-50m',
+    habitat: '熱帶太平洋',
+    category: '珊瑚礁',
+    description: '蝶魚以其鮮豔的顏色和獨特的斑紋聞名。牠們是珊瑚礁的標誌性物種，主要以珊瑚為食。',
+    detailedDescription: '蝶魚以其鮮豔的顏色和獨特的斑紋聞名，體型通常為15-25公分。牠們是珊瑚礁的標誌性物種，主要以珊瑚為食。蝶魚通常成對出現，是終身伴侶。牠們的顏色用於偽裝和種類識別。',
+    image: '🐠',
+    size: '15-25cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '鮮豔的顏色和斑紋',
+      '珊瑚礁的標誌性物種',
+      '通常成對出現',
+      '是終身伴侶'
+    ]
+  },
+  {
+    id: 'damselfish',
+    name: '雀鯛',
+    englishName: 'Damselfish',
+    depth: '0-50m',
+    habitat: '熱帶太平洋',
+    category: '珊瑚礁',
+    description: '雀鯛是小型色彩鮮豔的珊瑚礁魚類，以其攻擊性聞名。牠們會保護自己的領地。',
+    detailedDescription: '雀鯛是小型色彩鮮豔的珊瑚礁魚類，體型通常為5-15公分。牠們以其攻擊性聞名，會保護自己的領地。雀鯛是珊瑚礁中最常見的魚類之一。牠們主要以藻類和浮游生物為食。',
+    image: '🐠',
+    size: '5-15cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '小型色彩鮮豔',
+      '以其攻擊性聞名',
+      '會保護自己的領地',
+      '珊瑚礁中最常見的魚類之一'
+    ]
+  },
+  {
+    id: 'sea-cucumber',
+    name: '海參',
+    englishName: 'Sea Cucumber',
+    depth: '0-4000m',
+    habitat: '太平洋',
+    category: '無脊椎動物',
+    description: '海參是棘皮動物，以其長筒形身體聞名。牠們是重要的經濟物種，用於中藥和美食。',
+    detailedDescription: '海參是棘皮動物，以其長筒形身體聞名。牠們是重要的經濟物種，用於中藥和美食。海參可以再生失去的部分，包括內臟。牠們生活在海底，以有機物質為食。海參有防禦機制，會吐出內臟嚇退捕食者。',
+    image: '🥒',
+    size: '10-50cm',
+    diet: '雜食性',
+    conservation: '易危',
+    facts: [
+      '可以再生失去的部分',
+      '會吐出內臟嚇退捕食者',
+      '用於中藥和美食',
+      '生活在海底'
+    ]
+  },
+  {
+    id: 'yeti-crab',
+    name: '雪人蟹',
+    englishName: 'Yeti Crab',
+    depth: '2000-2800m',
+    habitat: '深海熱泉',
+    category: '無脊椎動物',
+    description: '雪人蟹是深海熱泉特有的物種，以其毛茸茸的螯聞名。牠們在螯上「種植」細菌作為食物。',
+    detailedDescription: '雪人蟹是深海熱泉特有的物種，以其毛茸茸的螯聞名。牠們在螯上「種植」細菌，利用熱泉的化學能量生長，然後刮下細菌作為食物。雪人蟹體型很小，約15公分。牠們生活在太平洋的深海熱泉中。',
+    image: '🦀',
+    size: '15cm',
+    diet: '化學合成',
+    conservation: '資料不足',
+    facts: [
+      '擁有毛茸茸的螯',
+      '在螯上「種植」細菌',
+      '利用化學能量生長',
+      '生活在深海熱泉'
+    ]
+  },
+  // 大西洋特有物種（續）
+  {
+    id: 'sturgeon',
+    name: '鱘魚',
+    englishName: 'Sturgeon',
+    depth: '0-100m',
+    habitat: '大西洋',
+    category: '魚類',
+    description: '鱘魚是古老的魚類，已存在超過2億年。牠們以其魚子醬聞名，但因過度捕撈而瀕危。',
+    detailedDescription: '鱘魚是古老的魚類，已存在超過2億年，被稱為活化石。牠們以其魚子醬聞名，但因過度捕撈而瀕危。鱘魚可長達6公尺，壽命可達100年以上。牠們生活在河流和海洋中，會洄游產卵。',
+    image: '🐟',
+    size: '1-6m',
+    diet: '雜食性',
+    conservation: '瀕危',
+    facts: [
+      '已存在超過2億年',
+      '被稱為活化石',
+      '以其魚子醬聞名',
+      '壽命可達100年以上'
+    ]
+  },
+  {
+    id: 'hagfish',
+    name: '盲鰻',
+    englishName: 'Hagfish',
+    depth: '50-2000m',
+    habitat: '大西洋',
+    category: '無脊椎動物',
+    description: '盲鰻是原始的脊椎動物，沒有下巴和眼睛。牠們會分泌黏液防禦，可以吞噬獵物。',
+    detailedDescription: '盲鰻是原始的脊椎動物，沒有下巴和眼睛。牠們會分泌大量黏液防禦，可以瞬間將海水變成黏膠。盲鰻可以吞噬獵物，從內部吃掉。牠們是清道夫，會吃掉死去的魚類。盲鰻已存在超過3億年。',
+    image: '🐍',
+    size: '40-80cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '沒有下巴和眼睛',
+      '會分泌大量黏液防禦',
+      '可以吞噬獵物',
+      '已存在超過3億年'
+    ]
+  },
+  {
+    id: 'european-lobster',
+    name: '歐洲龍蝦',
+    englishName: 'European Lobster',
+    depth: '0-150m',
+    habitat: '大西洋',
+    category: '無脊椎動物',
+    description: '歐洲龍蝦是大型甲殼類動物，以其強大的螯聞名。牠們是重要的經濟物種。',
+    detailedDescription: '歐洲龍蝦是大型甲殼類動物，可長達1公尺，重達10公斤。牠們以其強大的螯聞名，用於捕食和防禦。歐洲龍蝦是重要的經濟物種，被視為美食。牠們壽命可達50年以上，會脫殼成長。',
+    image: '🦞',
+    size: '30-100cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '可長達1公尺',
+      '擁有強大的螯',
+      '壽命可達50年以上',
+      '會脫殼成長'
+    ]
+  },
+  {
+    id: 'spiny-dogfish',
+    name: '白斑角鯊',
+    englishName: 'Spiny Dogfish',
+    depth: '0-900m',
+    habitat: '大西洋',
+    category: '大型生物',
+    description: '白斑角鯊是小型鯊魚，以其背鰭前的刺聞名。牠們是群體游動的鯊魚，壽命很長。',
+    detailedDescription: '白斑角鯊是小型鯊魚，可長達1.5公尺。牠們以其背鰭前的刺聞名，這些刺有毒。白斑角鯊是群體游動的鯊魚，壽命可達100年以上。牠們是重要的經濟魚類，用於魚和薯條。',
+    image: '🦈',
+    size: '0.8-1.5m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '背鰭前的刺有毒',
+      '壽命可達100年以上',
+      '群體游動的鯊魚',
+      '用於魚和薯條'
+    ]
+  },
+  {
+    id: 'atlantic-mackerel',
+    name: '大西洋馬鲛',
+    englishName: 'Atlantic Mackerel',
+    depth: '0-200m',
+    habitat: '大西洋',
+    category: '魚類',
+    description: '大西洋馬鲛是游速極快的魚類，以其鮮豔的條紋聞名。牠們是重要的經濟魚類。',
+    detailedDescription: '大西洋馬鲛是游速極快的魚類，可長達60公分。牠們以其鮮豔的條紋聞名，背部有深色條紋。大西洋馬鲛是重要的經濟魚類，富含Omega-3脂肪酸。牠們會進行長距離洄游。',
+    image: '🐟',
+    size: '30-60cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '游速極快',
+      '擁有鮮豔的條紋',
+      '富含Omega-3脂肪酸',
+      '會進行長距離洄游'
+    ]
+  },
+  {
+    id: 'north-atlantic-right-whale',
+    name: '北大西洋露脊鯨',
+    englishName: 'North Atlantic Right Whale',
+    depth: '0-200m',
+    habitat: '北大西洋',
+    category: '大型生物',
+    description: '北大西洋露脊鯨是瀕危的鯨魚，以其頭部的白色斑點聞名。牠們經常在水面活動。',
+    detailedDescription: '北大西洋露脊鯨是瀕危的鯨魚，全球只剩約400隻。牠們以其頭部的白色斑點聞名。露脊鯨經常在水面活動，容易被船隻撞傷。牠們游動緩慢，曾被稱為「正確的鯨」因為容易捕獵。',
+    image: '🐋',
+    size: '13-17m',
+    diet: '濾食性',
+    conservation: '瀕危',
+    facts: [
+      '全球只剩約400隻',
+      '經常在水面活動',
+      '容易被船隻撞傷',
+      '游動緩慢'
+    ]
+  },
+  {
+    id: 'puffin',
+    name: '海雀',
+    englishName: 'Atlantic Puffin',
+    depth: '0-60m',
+    habitat: '北大西洋',
+    category: '鳥類',
+    description: '海雀是可愛的海鳥，以其色彩鮮豔的喙聞名。牠們是出色的潛水者，可以潛水捕魚。',
+    detailedDescription: '海雀是可愛的海鳥，以其色彩鮮豔的喙聞名。牠們是出色的潛水者，可以潛水60公尺深處捕魚。海雀生活在北大西洋的懸崖上，每年會回到同一個地方築巢。牠們一次可以銜住多條小魚。',
+    image: '🐦',
+    size: '25-30cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '擁有色彩鮮豔的喙',
+      '可以潛水60公尺',
+      '一次可以銜住多條小魚',
+      '回到同一個地方築巢'
+    ]
+  },
+  {
+    id: 'cold-water-coral',
+    name: '冷水珊瑚',
+    englishName: 'Cold-water Coral',
+    depth: '200-1000m',
+    habitat: '大西洋',
+    category: '珊瑚礁',
+    description: '冷水珊瑚生活在深海的冷水環境中，不需要光合作用。牠們形成巨大的珊瑚礁。',
+    detailedDescription: '冷水珊瑚生活在深海的冷水環境中，不需要光合作用。牠們形成巨大的珊瑚礁，有些可達數公里長。冷水珊瑚生長非常緩慢，每年只長幾毫米。牠們是深海生態系統的重要基礎。',
+    image: '🪸',
+    size: '可達數公里',
+    diet: '濾食性',
+    conservation: '易危',
+    facts: [
+      '生活在深海冷水環境',
+      '不需要光合作用',
+      '每年只長幾毫米',
+      '形成巨大的珊瑚礁'
+    ]
+  },
+  // 印度洋特有物種（續）
+  {
+    id: 'indian-ocean-coral',
+    name: '印度洋珊瑚',
+    englishName: 'Indian Ocean Coral',
+    depth: '0-50m',
+    habitat: '印度洋',
+    category: '珊瑚礁',
+    description: '印度洋擁有豐富的珊瑚礁生物多樣性，是許多特有物種的家園。紅海約有10%的物種是特有種。',
+    detailedDescription: '印度洋擁有豐富的珊瑚礁生物多樣性，特別是紅海和印度洋西部。紅海約有10%的物種是特有種，適應高溫高鹽環境。印度洋珊瑚礁面臨氣候變遷和海洋酸化的威脅。牠們是海洋生態系統的重要基礎。',
+    image: '🪸',
+    size: '微米-數公里',
+    diet: '共生藻類光合作用',
+    conservation: '易危',
+    facts: [
+      '紅海約有10%物種是特有種',
+      '適應高溫高鹽環境',
+      '面臨氣候變遷威脅',
+      '海洋生態系統的重要基礎'
+    ]
+  },
+  {
+    id: 'sardine',
+    name: '沙丁魚',
+    englishName: 'Sardine',
+    depth: '0-200m',
+    habitat: '印度洋',
+    category: '魚類',
+    description: '沙丁魚是小型群游魚類，以其巨大的魚群聞名。牠們是重要的經濟魚類。',
+    detailedDescription: '沙丁魚是小型群游魚類，可長達30公分。牠們以其巨大的魚群聞名，魚群可達數百萬條。沙丁魚是重要的經濟魚類，用於罐頭和飼料。牠們是食物鏈的重要環節，為大型魚類提供食物。',
+    image: '🐟',
+    size: '15-30cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '魚群可達數百萬條',
+      '重要的經濟魚類',
+      '食物鏈的重要環節',
+      '群游行為'
+    ]
+  },
+  {
+    id: 'indian-ocean-octopus',
+    name: '印度洋章魚',
+    englishName: 'Indian Ocean Octopus',
+    depth: '0-200m',
+    habitat: '印度洋',
+    category: '無脊椎動物',
+    description: '印度洋章魚是聰明的無脊椎動物，擁有出色的偽裝能力。牠們可以改變身體顏色和紋理。',
+    detailedDescription: '印度洋章魚是聰明的無脊椎動物，可長達1公尺。牠們擁有出色的偽裝能力，可以改變身體顏色和紋理。章魚有三顆心臟和藍色的血液。牠們可以使用工具，通過測試學習。',
+    image: '🐙',
+    size: '30-100cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '可以改變身體顏色和紋理',
+      '有三顆心臟',
+      '擁有藍色的血液',
+      '可以使用工具'
+    ]
+  },
+  {
+    id: 'indian-ocean-squid',
+    name: '印度洋烏賊',
+    englishName: 'Indian Ocean Squid',
+    depth: '0-500m',
+    habitat: '印度洋',
+    category: '無脊椎動物',
+    description: '印度洋烏賊是重要的經濟物種，以其快速的游動能力聞名。牠們是海洋食物鏈的重要環節。',
+    detailedDescription: '印度洋烏賊是重要的經濟物種，可長達50公分。牠們以其快速的游動能力聞名，時速可達40公里。印度洋烏賊是海洋食物鏈的重要環節，為大型魚類和鯨魚提供食物。牠們可以噴射墨汁逃脫。',
+    image: '🦑',
+    size: '20-50cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '時速可達40公里',
+      '海洋食物鏈的重要環節',
+      '可以噴射墨汁',
+      '重要的經濟物種'
+    ]
+  },
+  {
+    id: 'hawksbill-turtle',
+    name: '玳瑁海龜',
+    englishName: 'Hawksbill Sea Turtle',
+    depth: '0-20m',
+    habitat: '熱帶印度洋',
+    category: '哺乳動物',
+    description: '玳瑁海龜以其美麗的龜殼聞名，主要食珊瑚。牠們是瀕危物種，因龜殼被過度採集。',
+    detailedDescription: '玳瑁海龜以其美麗的龜殼聞名，可長達1公尺。牠們主要食珊瑚，是珊瑚礁生態系統的重要維護者。玳瑁海龜是瀕危物種，因龜殼被過度採集製作珠寶。牠們會洄游數千公里回到出生地產卵。',
+    image: '🐢',
+    size: '60-90cm',
+    diet: '肉食性',
+    conservation: '瀕危',
+    facts: [
+      '以其美麗的龜殼聞名',
+      '主要食珊瑚',
+      '因龜殼被過度採集',
+      '洄游數千公里產卵'
+    ]
+  },
+  {
+    id: 'indian-ocean-tuna',
+    name: '印度洋金槍魚',
+    englishName: 'Indian Ocean Tuna',
+    depth: '0-200m',
+    habitat: '印度洋',
+    category: '魚類',
+    description: '印度洋金槍魚是重要的經濟物種，以其高速游泳能力聞名。牠們會進行長距離洄游。',
+    detailedDescription: '印度洋金槍魚是重要的經濟物種，可長達2公尺。牠們以其高速游泳能力聞名，時速可達70公里。印度洋金槍魚會進行長距離洄游。牠們是壽司和刺身的重要食材。',
+    image: '🐟',
+    size: '1-2m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '時速可達70公里',
+      '會進行長距離洄游',
+      '壽司和刺身的重要食材',
+      '重要的經濟物種'
+    ]
+  },
+  {
+    id: 'indian-ocean-mollusk',
+    name: '印度洋軟體動物',
+    englishName: 'Indian Ocean Mollusk',
+    depth: '0-1000m',
+    habitat: '印度洋',
+    category: '無脊椎動物',
+    description: '印度洋擁有豐富的軟體動物多樣性，包括許多特有物種。牠們是海洋生態系統的重要組成部分。',
+    detailedDescription: '印度洋擁有豐富的軟體動物多樣性，包括許多特有物種。印度洋的軟體動物包括貝類、章魚、烏賊等。牠們是海洋生態系統的重要組成部分，為其他動物提供食物。許多物種因過度捕撈而瀕危。',
+    image: '🐚',
+    size: '1cm-1m',
+    diet: '雜食性',
+    conservation: '易危',
+    facts: [
+      '擁有豐富的多樣性',
+      '包括許多特有物種',
+      '海洋生態系統的重要組成',
+      '因過度捕撈而瀕危'
+    ]
+  },
+  // 北冰洋特有物種（續）
+  {
+    id: 'polar-bear',
+    name: '北極熊',
+    englishName: 'Polar Bear',
+    depth: '0m',
+    habitat: '北冰洋',
+    category: '哺乳動物',
+    description: '北極熊是北極最大的陸生捕食者，高度依賴海冰和海洋食物。牠們是氣候變遷的受害者。',
+    detailedDescription: '北極熊是北極最大的陸生捕食者，可長達3公尺，重達600公斤。牠們高度依賴海冰捕食海豹。北極熊是氣候變遷的受害者，海冰減少威脅牠們的生存。牠們是優秀的游泳者，可以游數百公里。',
+    image: '🐻‍❄️',
+    size: '1.8-3m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '北極最大的陸生捕食者',
+      '高度依賴海冰',
+      '氣候變遷的受害者',
+      '可以游數百公里'
+    ]
+  },
+  {
+    id: 'ice-algae',
+    name: '冰藻',
+    englishName: 'Ice Algae',
+    depth: '0-50m',
+    habitat: '北冰洋',
+    category: '植物',
+    description: '冰藻是生長在海冰上的藻類，是北極食物鏈的基礎。牠們為浮游生物提供食物。',
+    detailedDescription: '冰藻是生長在海冰上的藻類，是北極食物鏈的基礎。牠們為浮游生物提供食物，進而支持整個北極生態系統。冰藻適應極端寒冷環境，可以在冰下生長。海冰減少威脅冰藻的生存。',
+    image: '🌿',
+    size: '微米級',
+    diet: '光合作用',
+    conservation: '易危',
+    facts: [
+      '北極食物鏈的基礎',
+      '為浮游生物提供食物',
+      '適應極端寒冷環境',
+      '海冰減少威脅生存'
+    ]
+  },
+  {
+    id: 'arctic-krill',
+    name: '極地磷蝦',
+    englishName: 'Arctic Krill',
+    depth: '0-500m',
+    habitat: '北冰洋',
+    category: '無脊椎動物',
+    description: '極地磷蝦是北極食物鏈的重要環節，為魚類、鯨魚和海豹提供食物。牠們是群游動物。',
+    detailedDescription: '極地磷蝦是北極食物鏈的重要環節，可長達6公分。牠們為魚類、鯨魚和海豹提供食物。極地磷蝦是群游動物，魚群可達數百萬條。牠們適應寒冷環境，體內含有抗凍蛋白。',
+    image: '🦐',
+    size: '2-6cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '北極食物鏈的重要環節',
+      '群游動物',
+      '魚群可達數百萬條',
+      '體內含有抗凍蛋白'
+    ]
+  },
+  {
+    id: 'thick-billed-murre',
+    name: '厚嘴海鴉',
+    englishName: 'Thick-billed Murre',
+    depth: '0-200m',
+    habitat: '北冰洋',
+    category: '鳥類',
+    description: '厚嘴海鴉是北極的海鳥，以其出色的潛水能力聞名。牠們可以潛水深達200公尺捕魚。',
+    detailedDescription: '厚嘴海鴉是北極的海鳥，可長達45公分。牠們以其出色的潛水能力聞名，可以潛水深達200公尺捕魚。厚嘴海鴉生活在北極的懸崖上，每年會回到同一個地方築巢。牠們一次可以潛水長達4分鐘。',
+    image: '🐦',
+    size: '38-45cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '可以潛水深達200公尺',
+      '一次潛水長達4分鐘',
+      '生活在懸崖上',
+      '回到同一個地方築巢'
+    ]
+  },
+  {
+    id: 'ivory-gull',
+    name: '象牙鷗',
+    englishName: 'Ivory Gull',
+    depth: '0-50m',
+    habitat: '北冰洋',
+    category: '鳥類',
+    description: '象牙鷗是純白色的北極海鳥，以其美麗的外觀聞名。牠們生活在海冰上。',
+    detailedDescription: '象牙鷗是純白色的北極海鳥，可長達45公分。牠們以其美麗的外觀聞名。象牙鷗生活在海冰上，跟隨海冰移動。牠們主要以魚類和無脊椎動物為食。象牙鷗因氣候變遷和汙染而數量下降。',
+    image: '🐦',
+    size: '40-45cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '純白色的北極海鳥',
+      '生活在海冰上',
+      '跟隨海冰移動',
+      '因氣候變遷而數量下降'
+    ]
+  },
+  {
+    id: 'arctic-anemone',
+    name: '北極海葵',
+    englishName: 'Arctic Anemone',
+    depth: '0-500m',
+    habitat: '北冰洋',
+    category: '無脊椎動物',
+    description: '北極海葵是適應寒冷環境的海葵，生活在北極海底。牠們是底棲無脊椎動物。',
+    detailedDescription: '北極海葵是適應寒冷環境的海葵，可長達30公分。牠們生活在北極海底，是底棲無脊椎動物。北極海葵擁有觸手，用於捕食浮游生物。牠們可以再生失去的部分，適應極端環境。',
+    image: '🪸',
+    size: '5-30cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '適應寒冷環境',
+      '生活在北極海底',
+      '可以再生失去的部分',
+      '用觸手捕食'
+    ]
+  },
+  {
+    id: 'arctic-sea-star',
+    name: '北極海星',
+    englishName: 'Arctic Sea Star',
+    depth: '0-500m',
+    habitat: '北冰洋',
+    category: '無脊椎動物',
+    description: '北極海星是適應寒冷環境的海星，生活在北極海底。牠們是底棲捕食者。',
+    detailedDescription: '北極海星是適應寒冷環境的海星，可長達50公分。牠們生活在北極海底，是底棲捕食者。北極海星可以再生失去的手臂，甚至從一隻手臂再生整個身體。牠們主要以貝類和海膽為食。',
+    image: '⭐',
+    size: '10-50cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '適應寒冷環境',
+      '可以再生失去的手臂',
+      '從一隻手臂再生整個身體',
+      '主要以貝類為食'
+    ]
+  },
+  {
+    id: 'arctic-sea-cucumber',
+    name: '北極海參',
+    englishName: 'Arctic Sea Cucumber',
+    depth: '0-1000m',
+    habitat: '北冰洋',
+    category: '無脊椎動物',
+    description: '北極海參是適應寒冷環境的海參，生活在北極海底。牠們是底棲濾食者。',
+    detailedDescription: '北極海參是適應寒冷環境的海參，可長達30公分。牠們生活在北極海底，是底棲濾食者。北極海參可以再生失去的部分，包括內臟。牠們過濾海底沉積物中的有機物質。牠們適應極端寒冷環境。',
+    image: '🥒',
+    size: '10-30cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '適應寒冷環境',
+      '可以再生失去的部分',
+      '底棲濾食者',
+      '過濾海底沉積物'
+    ]
   }
 ];
 
@@ -1054,5 +1739,6 @@ export const speciesCategories = [
   { id: 'invertebrate', name: '無脊椎動物' },
   { id: 'mammal', name: '哺乳動物' },
   { id: 'plant', name: '植物' },
-  { id: 'fish', name: '魚類' }
+  { id: 'fish', name: '魚類' },
+  { id: 'bird', name: '鳥類' }
 ];
