@@ -2717,6 +2717,67 @@ export const speciesData = [
       '優秀的遊釣魚類',
       '強烈的抗爭'
     ]
+  },
+  // 更多獨特物種
+  {
+    id: 'flying-fish',
+    name: '飛魚',
+    englishName: 'Flying Fish',
+    depth: '0-20m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '飛魚以其飛行能力聞名，可以跳出水面滑翔數百公尺。牠們用於逃避捕食者。',
+    detailedDescription: '飛魚以其飛行能力聞名，可長達30公分。牠們可以跳出水面滑翔數百公尺，用於逃避捕食者。飛魚擁有巨大的胸鰭，像翅膀一樣。牠們是群游動物，經常成群跳出水面。',
+    image: '🐟',
+    size: '15-30cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '可以滑翔數百公尺',
+      '巨大的胸鰭像翅膀',
+      '用於逃避捕食者',
+      '成群跳出水面'
+    ]
+  },
+  {
+    id: 'remora',
+    name: '鮣魚',
+    englishName: 'Remora',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '鮣魚以其吸盤聞名，可以吸附在大型海洋動物身上。牠們是搭便車的專家。',
+    detailedDescription: '鮣魚以其吸盤聞名，可長達1公尺。牠們可以吸附在鯊魚、鯨魚和海龜身上，搭便車旅行。鮣魚的吸盤是變形的背鰭。牠們主要以宿主的食物殘渣為食。',
+    image: '🐟',
+    size: '30-100cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '擁有吸盤',
+      '可以吸附在大型動物身上',
+      '吸盤是變形的背鰭',
+      '搭便車的專家'
+    ]
+  },
+  {
+    id: 'electric-eel',
+    name: '電鰻',
+    englishName: 'Electric Eel',
+    depth: '0-10m',
+    habitat: '南美洲河流',
+    category: '魚類',
+    description: '電鰻以其強大的電擊聞名，可以產生高達600伏特的電流。牠們生活在淡水環境。',
+    detailedDescription: '電鰻以其強大的電擊聞名，可長達2公尺。牠們可以產生高達600伏特的電流，用於捕食和防禦。電鰻生活在南美洲的淡水環境中。牠們擁有三個發電器官，用於不同目的。',
+    image: '🐍',
+    size: '1-2m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '可產生600伏特電流',
+      '生活在淡水環境',
+      '擁有三個發電器官',
+      '用於捕食和防禦'
+    ]
   }
 ];
 
