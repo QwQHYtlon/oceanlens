@@ -2778,6 +2778,107 @@ export const speciesData = [
       '擁有三個發電器官',
       '用於捕食和防禦'
     ]
+  },
+  // 更多深海和奇特物種
+  {
+    id: 'blobfish',
+    name: '水滴魚',
+    englishName: 'Blobfish',
+    depth: '600-1200m',
+    habitat: '澳洲深海',
+    category: '無脊椎動物',
+    description: '水滴魚以其奇特的外表聞名，被稱為「世界上最醜的動物」。牠們生活在深海高壓環境。',
+    detailedDescription: '水滴魚以其奇特的外表聞名，可長達30公分。牠們被稱為「世界上最醜的動物」，但在深海中看起來正常。水滴魚生活在深海高壓環境，身體呈膠狀以適應壓力。牠們主要以浮游生物為食。',
+    image: '🐟',
+    size: '20-30cm',
+    diet: '雜食性',
+    conservation: '資料不足',
+    facts: [
+      '被稱為「世界上最醜的動物」',
+      '身體呈膠狀適應壓力',
+      '在深海中看起來正常',
+      '主要以浮游生物為食'
+    ]
+  },
+  {
+    id: 'anglerfish',
+    name: '鮟鱇魚',
+    englishName: 'Anglerfish',
+    depth: '200-2000m',
+    habitat: '全球深海',
+    category: '魚類',
+    description: '鮟鱇魚以其發光的誘餌聞名，用於吸引獵物。雄性遠小於雌性，會寄生在雌性身上。',
+    detailedDescription: '鮟鱇魚以其發光的誘餌聞名，可長達1公尺。牠們用發光的誘餌吸引獵物。雄性遠小於雌性，會找到雌性後寄生在雌性身上。鮟鱇魚擁有巨大的嘴巴和鋒利的牙齒。',
+    image: '🐟',
+    size: '20-100cm',
+    diet: '肉食性',
+    conservation: '資料不足',
+    facts: [
+      '發光的誘餌',
+      '雄性寄生在雌性身上',
+      '巨大的嘴巴',
+      '鋒利的牙齒'
+    ]
+  },
+  {
+    id: 'giant-tube-worm',
+    name: '巨型管蟲',
+    englishName: 'Giant Tube Worm',
+    depth: '1500-2500m',
+    habitat: '深海熱泉',
+    category: '無脊椎動物',
+    description: '巨型管蟲生活在深海熱泉附近，可長達2公尺。牠們沒有消化系統，依靠共生細菌獲得營養。',
+    detailedDescription: '巨型管蟲生活在深海熱泉附近，可長達2公尺。牠們沒有消化系統，依靠共生細菌獲得營養。巨型管蟲的紅色血液含有血紅蛋白，用於運輸氧氣。牠們可以活達250年。',
+    image: '🪱',
+    size: '1-2m',
+    diet: '化學合成',
+    conservation: '資料不足',
+    facts: [
+      '沒有消化系統',
+      '依靠共生細菌獲得營養',
+      '紅色血液含有血紅蛋白',
+      '可以活達250年'
+    ]
+  },
+  {
+    id: 'sea-pig',
+    name: '海豬',
+    englishName: 'Sea Pig',
+    depth: '4000-6000m',
+    habitat: '深海平原',
+    category: '無脊椎動物',
+    description: '海豬是一種深海海參，以其粉紅色的身體和管足聞名。牠們生活在深海平原。',
+    detailedDescription: '海豬是一種深海海參，可長達10公分。牠們以其粉紅色的身體和管足聞名。海豬生活在深海平原，用管足在海底移動。牠們主要以海底的有機物質為食。',
+    image: '🥒',
+    size: '4-10cm',
+    diet: '濾食性',
+    conservation: '資料不足',
+    facts: [
+      '深海海參',
+      '粉紅色的身體',
+      '用管足移動',
+      '生活在深海平原'
+    ]
+  },
+  {
+    id: 'barreleye',
+    name: '管眼魚',
+    englishName: 'Barreleye',
+    depth: '600-800m',
+    habitat: '深海',
+    category: '魚類',
+    description: '管眼魚以其透明的頭部和管狀眼睛聞名。牠們的眼睛可以向上看，偵測上方的獵物。',
+    detailedDescription: '管眼魚以其透明的頭部和管狀眼睛聞名，可長達15公分。牠們的眼睛可以向上看，偵測上方的獵物。管眼魚的頭部透明，可以看到內部器官。牠們主要以水母為食。',
+    image: '🐟',
+    size: '6-15cm',
+    diet: '肉食性',
+    conservation: '資料不足',
+    facts: [
+      '透明的頭部',
+      '管狀眼睛',
+      '可以看到內部器官',
+      '偵測上方的獵物'
+    ]
   }
 ];
 
