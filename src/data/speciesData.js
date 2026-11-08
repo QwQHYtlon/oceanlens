@@ -2212,6 +2212,87 @@ export const speciesData = [
       '夜行性動物',
       '經常在淺水區活動'
     ]
+  },
+  // 更多鯨類和海洋哺乳動物
+  {
+    id: 'minke-whale',
+    name: '小鬚鯨',
+    englishName: 'Minke Whale',
+    depth: '0-200m',
+    habitat: '全球海洋',
+    category: '大型生物',
+    description: '小鬚鯨是鬚鯨中最小的物種，可長達10公尺。牠們是獨居動物，經常單獨活動。',
+    detailedDescription: '小鬚鯨是鬚鯨中最小的物種，可長達10公尺。牠們是獨居動物，經常單獨活動。小鬚鯨以其好奇的性格聞名，會靠近船隻觀察。牠們主要以浮游生物和小魚為食。',
+    image: '🐋',
+    size: '7-10m',
+    diet: '濾食性',
+    conservation: '普遍',
+    facts: [
+      '鬚鯨中最小的物種',
+      '獨居動物',
+      '好奇的性格',
+      '會靠近船隻觀察'
+    ]
+  },
+  {
+    id: 'sei-whale',
+    name: '塞鯨',
+    englishName: 'Sei Whale',
+    depth: '0-300m',
+    habitat: '全球海洋',
+    category: '大型生物',
+    description: '塞鯨是大型鬚鯨，可長達20公尺。牠們以其快速游動能力聞名，時速可達50公里。',
+    detailedDescription: '塞鯨是大型鬚鯨，可長達20公尺。牠們以其快速游動能力聞名，時速可達50公里。塞鯨是獨居動物，經常單獨或小群活動。牠們主要以浮游生物和小魚為食。',
+    image: '🐋',
+    size: '12-20m',
+    diet: '濾食性',
+    conservation: '瀕危',
+    facts: [
+      '時速可達50公里',
+      '快速游動能力',
+      '獨居動物',
+      '大型鬚鯨'
+    ]
+  },
+  {
+    id: 'grey-seal',
+    name: '灰海豹',
+    englishName: 'Grey Seal',
+    depth: '0-100m',
+    habitat: '北大西洋',
+    category: '哺乳動物',
+    description: '灰海豹是大型海豹，可長達2.5公尺。牠們生活在北大西洋的沿海地區。',
+    detailedDescription: '灰海豹是大型海豹，可長達2.5公尺。牠們生活在北大西洋的沿海地區。灰海豹是出色的潛水者，可以潛水至300公尺深處。牠們主要以魚類和頭足類為食。雄性體型遠大於雌性。',
+    image: '🦭',
+    size: '1.5-2.5m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '出色的潛水者',
+      '可以潛水至300公尺',
+      '雄性體型遠大於雌性',
+      '生活在北大西洋'
+    ]
+  },
+  {
+    id: 'harbor-seal',
+    name: '港海豹',
+    englishName: 'Harbor Seal',
+    depth: '0-100m',
+    habitat: '北半球沿海',
+    category: '哺乳動物',
+    description: '港海豹是常見的海豹，可長達2公尺。牠們生活在北半球的沿海地區，經常在港口出現。',
+    detailedDescription: '港海豹是常見的海豹，可長達2公尺。牠們生活在北半球的沿海地區，經常在港口出現。港海豹是出色的潛水者，可以潛水至300公尺深處。牠們主要以魚類和頭足類為食。',
+    image: '🦭',
+    size: '1-2m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '常見的海豹',
+      '經常在港口出現',
+      '出色的潛水者',
+      '生活在北半球沿海'
+    ]
   }
 ];
 
