@@ -1970,6 +1970,127 @@ export const speciesData = [
       '用管足移動',
       '沒有大脑'
     ]
+  },
+  // 更多獨特海洋物種
+  {
+    id: 'leafy-seadragon',
+    name: '葉海龍',
+    englishName: 'Leafy Seadragon',
+    depth: '0-50m',
+    habitat: '南大洋',
+    category: '無脊椎動物',
+    description: '葉海龍以其葉狀附肢聞名，是完美的偽裝大師。牠們是海馬的近親，生活在澳洲南部海域。',
+    detailedDescription: '葉海龍以其葉狀附肢聞名，是完美的偽裝大師。牠們是海馬的近親，生活在澳洲南部海域。葉海龍可長達35公分，身體呈黃綠色。牠們不會游泳，而是隨洋流漂流。雄性會攜帶卵直到孵化。',
+    image: '🐉',
+    size: '30-35cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '完美的偽裝大師',
+      '葉狀附肢用於偽裝',
+      '不會游泳，隨洋流漂流',
+      '雄性攜帶卵'
+    ]
+  },
+  {
+    id: 'vampire-squid',
+    name: '吸血魷魚',
+    englishName: 'Vampire Squid',
+    depth: '600-900m',
+    habitat: '全球深海',
+    category: '無脊椎動物',
+    description: '吸血魷魚是深海中的奇特生物，以其紅色的眼睛和黑色披風聞名。牠們可以翻轉身體露出刺。',
+    detailedDescription: '吸血魷魚是深海中的奇特生物，可長達30公分。牠們以其紅色的眼睛和黑色披風聞名。吸血魷魚可以翻轉身體露出刺嚇退捕食者。牠們生活在缺氧的深海環境中，適應極端條件。',
+    image: '🦑',
+    size: '13-30cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '紅色的眼睛',
+      '可以翻轉身體露出刺',
+      '生活在缺氧環境',
+      '適應極端條件'
+    ]
+  },
+  {
+    id: 'angelfish',
+    name: '神仙魚',
+    englishName: 'Angelfish',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '珊瑚礁',
+    description: '神仙魚以其美麗的顏色和扁平的身體聞名。牠們是珊瑚礁的標誌性物種。',
+    detailedDescription: '神仙魚以其美麗的顏色和扁平的身體聞名，可長達30公分。牠們是珊瑚礁的標誌性物種，擁有鮮豔的斑紋。神仙魚是領域性強的魚類，會保護自己的領地。牠們主要以藻類和浮游生物為食。',
+    image: '🐠',
+    size: '15-30cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '美麗的顏色和斑紋',
+      '扁平的身體',
+      '領域性強',
+      '珊瑚礁的標誌性物種'
+    ]
+  },
+  {
+    id: 'pufferfish',
+    name: '河豚',
+    englishName: 'Pufferfish',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '河豚以其充氣能力聞名，遇到威脅時會膨脹成球形。牠們的毒液非常強烈。',
+    detailedDescription: '河豚以其充氣能力聞名，遇到威脅時會膨脹成球形。牠們的毒液非常強烈，是河豚毒素，沒有解毒劑。河豚可長達60公分。牠們擁有堅硬的嘴，可以咬碎貝殼。在日本是昂貴的美食。',
+    image: '🐡',
+    size: '15-60cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '遇威脅時膨脹成球形',
+      '毒液是河豚毒素',
+      '沒有解毒劑',
+      '在日本是昂貴的美食'
+    ]
+  },
+  {
+    id: 'moray-eel',
+    name: '海鰻',
+    englishName: 'Moray Eel',
+    depth: '0-200m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '海鰻是長條形的魚類，以其強大的下顎和鋒利的牙齒聞名。牠們生活在珊瑚礁的洞穴中。',
+    detailedDescription: '海鰻是長條形的魚類，可長達3公尺。牠們以其強大的下顎和鋒利的牙齒聞名。海鰻生活在珊瑚礁的洞穴中，等待獵物經過。牠們有第二套下顎，稱為咽齒，用於吞咽獵物。',
+    image: '🐍',
+    size: '0.5-3m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '可長達3公尺',
+      '擁有第二套下顎',
+      '生活在洞穴中',
+      '強大的下顎'
+    ]
+  },
+  {
+    id: 'barracuda',
+    name: '梭魚',
+    englishName: 'Barracuda',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '梭魚是兇猛的捕食者，以其流線型身體和鋒利的牙齒聞名。牠們可以高速游動攻擊獵物。',
+    detailedDescription: '梭魚是兇猛的捕食者，可長達2公尺。牠們以其流線型身體和鋒利的牙齒聞名。梭魚可以高速游動攻擊獵物，時速可達60公里。牠們經常成群攻擊魚群。梭魚有時會攻擊人類。',
+    image: '🐟',
+    size: '0.5-2m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '時速可達60公里',
+      '鋒利的牙齒',
+      '成群攻擊魚群',
+      '有時會攻擊人類'
+    ]
   }
 ];
 
