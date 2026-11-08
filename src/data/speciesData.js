@@ -2091,6 +2091,127 @@ export const speciesData = [
       '成群攻擊魚群',
       '有時會攻擊人類'
     ]
+  },
+  // 更多鯊魚和魟魚
+  {
+    id: 'hammerhead-shark',
+    name: '雙髻鯊',
+    englishName: 'Hammerhead Shark',
+    depth: '0-300m',
+    habitat: '熱帶海洋',
+    category: '大型生物',
+    description: '雙髻鯊以其獨特的錘形頭部聞名。牠們的頭部擁有特殊的感覺器官，用於偵測獵物。',
+    detailedDescription: '雙髻鯊以其獨特的錘形頭部聞名，可長達6公尺。牠們的頭部擁有特殊的感覺器官，用於偵測獵物。雙髻鯊是群居動物，會形成大型魚群。牠們主要以魚類和頭足類為食。',
+    image: '🦈',
+    size: '1-6m',
+    diet: '肉食性',
+    conservation: '瀕危',
+    facts: [
+      '獨特的錘形頭部',
+      '頭部有特殊感覺器官',
+      '群居動物',
+      '形成大型魚群'
+    ]
+  },
+  {
+    id: 'nurse-shark',
+    name: '護士鯊',
+    englishName: 'Nurse Shark',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '大型生物',
+    description: '護士鯊是溫和的底棲鯊魚，以其扁平的身體和鬍鬚聞名。牠們經常躺在海底休息。',
+    detailedDescription: '護士鯊是溫和的底棲鯊魚，可長達3公尺。牠們以其扁平的身體和鬍鬚聞名。護士鯊經常躺在海底休息，白天活動較少。牠們主要以貝類和甲殼類為食。護士鯊對人類通常無害。',
+    image: '🦈',
+    size: '2-3m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '溫和的底棲鯊魚',
+      '經常躺在海底休息',
+      '對人類通常無害',
+      '擁有鬍鬚'
+    ]
+  },
+  {
+    id: 'lemon-shark',
+    name: '檸檬鯊',
+    englishName: 'Lemon Shark',
+    depth: '0-90m',
+    habitat: '熱帶海洋',
+    category: '大型生物',
+    description: '檸檬鯊以其黃褐色的身體聞名。牠們是群居鯊魚，經常在淺水區活動。',
+    detailedDescription: '檸檬鯊以其黃褐色的身體聞名，可長達3.5公尺。牠們是群居鯊魚，經常在淺水區活動。檸檬鯊擁有出色的視覺和嗅覺。牠們主要以魚類和頭足類為食。',
+    image: '🦈',
+    size: '2-3.5m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '黃褐色的身體',
+      '群居鯊魚',
+      '出色的視覺和嗅覺',
+      '經常在淺水區活動'
+    ]
+  },
+  {
+    id: 'bull-shark',
+    name: '公牛鯊',
+    englishName: 'Bull Shark',
+    depth: '0-150m',
+    habitat: '熱帶海洋',
+    category: '大型生物',
+    description: '公牛鯊以其攻擊性聞名，是最危險的鯊魚之一。牠們可以在淡水中生存。',
+    detailedDescription: '公牛鯊以其攻擊性聞名，可長達3.5公尺。牠們是最危險的鯊魚之一，經常攻擊人類。公牛鯊可以在淡水中生存，會游入河流。牠們主要以魚類和哺乳動物為食。',
+    image: '🦈',
+    size: '2-3.5m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '最危險的鯊魚之一',
+      '可以在淡水中生存',
+      '會游入河流',
+      '攻擊性強'
+    ]
+  },
+  {
+    id: 'stingray',
+    name: '魟魚',
+    englishName: 'Stingray',
+    depth: '0-200m',
+    habitat: '全球海洋',
+    category: '大型生物',
+    description: '魟魚是扁平的鰩魚，擁有有毒的尾刺。牠們生活在海底，經常埋藏在沙中。',
+    detailedDescription: '魟魚是扁平的鰩魚，可長達2公尺。牠們擁有有毒的尾刺，用於防禦。魟魚生活在海底，經常埋藏在沙中。牠們主要以貝類和甲殼類為食。魟魚是鯊魚的近親。',
+    image: '🐟',
+    size: '0.5-2m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '擁有有毒的尾刺',
+      '經常埋藏在沙中',
+      '鯊魚的近親',
+      '扁平的身體'
+    ]
+  },
+  {
+    id: 'leopard-shark',
+    name: '豹鯊',
+    englishName: 'Leopard Shark',
+    depth: '0-90m',
+    habitat: '東太平洋',
+    category: '大型生物',
+    description: '豹鯊以其身上的斑點聞名，像豹子一樣。牠們是溫和的鯊魚，經常在淺水區活動。',
+    detailedDescription: '豹鯊以其身上的斑點聞名，像豹子一樣，可長達2公尺。牠們是溫和的鯊魚，經常在淺水區活動。豹鯊主要以貝類和甲殼類為食。牠們是夜行性動物，白天休息。',
+    image: '🦈',
+    size: '1-2m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '身上的斑點像豹子',
+      '溫和的鯊魚',
+      '夜行性動物',
+      '經常在淺水區活動'
+    ]
   }
 ];
 
