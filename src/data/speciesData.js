@@ -2535,6 +2535,107 @@ export const speciesData = [
       '強大的牙齒',
       '可以咬碎貝殼'
     ]
+  },
+  // 更多獨特海洋物種
+  {
+    id: 'clown-anemonefish',
+    name: '小丑魚',
+    englishName: 'Clownfish',
+    depth: '0-15m',
+    habitat: '熱帶海洋',
+    category: '珊瑚礁',
+    description: '小丑魚以其橙色和白色的斑紋聞名，與海葵共生。牠們是電影《海底總動員》的主角。',
+    detailedDescription: '小丑魚以其橙色和白色的斑紋聞名，可長達18公分。牠們與海葵共生，海葵提供保護，小丑魚提供食物。小丑魚是雌雄同體，所有個體出生時都是雄性。最大的會變性為雌性。',
+    image: '🐠',
+    size: '8-18cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '與海葵共生',
+      '雌雄同體',
+      '最大的會變性為雌性',
+      '電影《海底總動員》的主角'
+    ]
+  },
+  {
+    id: 'lionfish',
+    name: '獅子魚',
+    englishName: 'Lionfish',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '珊瑚礁',
+    description: '獅子魚以其美麗的斑紋和有毒的背鰭聞名。牠們是入侵物種，對珊瑚礁造成威脅。',
+    detailedDescription: '獅子魚以其美麗的斑紋和有毒的背鰭聞名，可長達47公分。牠們是入侵物種，對珊瑚礁造成威脅。獅子魚的毒液可以致人死亡。牠們是兇猛的捕食者，會吞下比自己大的獵物。',
+    image: '🐠',
+    size: '30-47cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '有毒的背鰭',
+      '入侵物種',
+      '毒液可以致人死亡',
+      '吞下比自己大的獵物'
+    ]
+  },
+  {
+    id: 'garden-eel',
+    name: '園鰻',
+    englishName: 'Garden Eel',
+    depth: '10-50m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '園鰻以其從沙中探出頭部的行為聞名，像花園一樣。牠們生活在沙質海底。',
+    detailedDescription: '園鰻以其從沙中探出頭部的行為聞名，可長達120公分。牠們生活在沙質海底，從沙中探出頭部捕食浮游生物。園鰻是群居動物，會形成「花園」。牠們很少離開洞穴。',
+    image: '🐍',
+    size: '40-120cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '從沙中探出頭部',
+      '形成「花園」',
+      '群居動物',
+      '很少離開洞穴'
+    ]
+  },
+  {
+    id: 'mantis-shrimp',
+    name: '螳螂蝦',
+    englishName: 'Mantis Shrimp',
+    depth: '0-150m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '螳螂蝦以其強大的螯聞名，可以擊碎貝殼。牠們擁有最複雜的眼睛。',
+    detailedDescription: '螳螂蝦以其強大的螯聞名，可長達38公分。牠們的螯可以擊碎貝殼，速度可達每秒23公尺。螳螂蝦擁有最複雜的眼睛，可以看到偏振光和紫外線。牠們是兇猛的捕食者。',
+    image: '🦐',
+    size: '10-38cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '螯速度可達每秒23公尺',
+      '可以擊碎貝殼',
+      '擁有最複雜的眼睛',
+      '可以看到偏振光和紫外線'
+    ]
+  },
+  {
+    id: 'hermit-crab',
+    name: '寄居蟹',
+    englishName: 'Hermit Crab',
+    depth: '0-200m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '寄居蟹以其使用貝殼作為家聞名。牠們會隨著成長更換更大的貝殼。',
+    detailedDescription: '寄居蟹以其使用貝殼作為家聞名，可長達10公分。牠們會隨著成長更換更大的貝殼。寄居蟹是雜食性動物，吃藻類和有機物質。牠們的腹部柔軟，需要貝殼保護。',
+    image: '🦀',
+    size: '1-10cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '使用貝殼作為家',
+      '隨成長更換貝殼',
+      '腹部柔軟',
+      '雜食性動物'
+    ]
   }
 ];
 
