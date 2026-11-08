@@ -1728,6 +1728,107 @@ export const speciesData = [
       '底棲濾食者',
       '過濾海底沉積物'
     ]
+  },
+  // 其他未分類物種
+  {
+    id: 'hooded-seal',
+    name: '冠海豹',
+    englishName: 'Hooded Seal',
+    depth: '0-1000m',
+    habitat: '北冰洋',
+    category: '哺乳動物',
+    description: '冠海豹以其雄性頭部可膨脹的囊狀物聞名。牠們是北冰洋的海豹，可以潛水至1000公尺。',
+    detailedDescription: '冠海豹以其雄性頭部可膨脹的囊狀物聞名，用於吸引雌性和威嚇對手。牠們是北冰洋的海豹，可長達2.5公尺。冠海豹可以潛水至1000公尺深處，停留長達1小時。牠們主要以魚類和頭足類為食。',
+    image: '🦭',
+    size: '2-2.5m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '雄性頭部可膨脹',
+      '用於吸引雌性和威嚇',
+      '可以潛水至1000公尺',
+      '停留長達1小時'
+    ]
+  },
+  {
+    id: 'anchovy',
+    name: '鯷魚',
+    englishName: 'Anchovy',
+    depth: '0-100m',
+    habitat: '全球海洋',
+    category: '魚類',
+    description: '鯷魚是小型群游魚類，以其強烈的魚腥味聞名。牠們是重要的經濟魚類和食物鏈環節。',
+    detailedDescription: '鯷魚是小型群游魚類，可長達20公分。牠們以其強烈的魚腥味聞名，用於製作魚醬和醃製。鯷魚是重要的經濟魚類，也是食物鏈的重要環節。牠們的魚群可達數百萬條。',
+    image: '🐟',
+    size: '10-20cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '強烈的魚腥味',
+      '用於製作魚醬',
+      '魚群可達數百萬條',
+      '食物鏈的重要環節'
+    ]
+  },
+  {
+    id: 'limpet',
+    name: '笠螺',
+    englishName: 'Limpet',
+    depth: '0-50m',
+    habitat: '大西洋',
+    category: '無脊椎動物',
+    description: '笠螺是具有錐形殼的腹足綱動物，生活在潮間帶。牠們用強大的足部吸附在岩石上。',
+    detailedDescription: '笠螺是具有錐形殼的腹足綱動物，可長達10公分。牠們生活在潮間帶，用強大的足部吸附在岩石上抵抗波浪。笠螺以藻類為食，會在岩石上刮食。牠們的殼形狀像斗笠，因此得名。',
+    image: '🐚',
+    size: '2-10cm',
+    diet: '草食性',
+    conservation: '普遍',
+    facts: [
+      '用強大的足部吸附岩石',
+      '生活在潮間帶',
+      '以藻類為食',
+      '殼形狀像斗笠'
+    ]
+  },
+  {
+    id: 'arctic-right-whale',
+    name: '北極露脊鯨',
+    englishName: 'Arctic Right Whale',
+    depth: '0-200m',
+    habitat: '北冰洋',
+    category: '大型生物',
+    description: '北極露脊鯨是瀕危的鯨魚，以其沒有背鰭聞名。牠們生活在北極的寒冷水域。',
+    detailedDescription: '北極露脊鯨是瀕危的鯨魚，可長達18公尺。牠們以其沒有背鰭聞名，這是露脊鯨的特徵。北極露脊鯨生活在北極的寒冷水域，游動緩慢。牠們主要以浮游生物為食。',
+    image: '🐋',
+    size: '15-18m',
+    diet: '濾食性',
+    conservation: '瀕危',
+    facts: [
+      '沒有背鰭',
+      '游動緩慢',
+      '生活在北極寒冷水域',
+      '主要以浮游生物為食'
+    ]
+  },
+  {
+    id: 'deep-sea-isopod',
+    name: '深海等足類',
+    englishName: 'Deep-sea Isopod',
+    depth: '200-4000m',
+    habitat: '全球深海',
+    category: '無脊椎動物',
+    description: '深海等足類是深海中的甲殼類動物，可以長達50公分。牠們是清道夫，吃掉海底的有機物質。',
+    detailedDescription: '深海等足類是深海中的甲殼類動物，可長達50公分。牠們是清道夫，吃掉海底的有機物質。深海等足類適應高壓環境，可以長達數年不進食。牠們的外骨骼堅硬，保護牠們免受捕食者攻擊。',
+    image: '🦐',
+    size: '5-50cm',
+    diet: '雜食性',
+    conservation: '資料不足',
+    facts: [
+      '可長達50公分',
+      '清道夫',
+      '可以數年不進食',
+      '適應高壓環境'
+    ]
   }
 ];
 
