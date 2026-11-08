@@ -1167,6 +1167,26 @@ export const speciesData = [
     ]
   },
   {
+    id: 'small-yellow-croaker',
+    name: '小黃魚',
+    englishName: 'Small Yellow Croaker',
+    depth: '0-100m',
+    habitat: '西北太平洋',
+    category: '魚類',
+    description: '小黃魚是重要的經濟魚類，與大黃魚同屬石首魚科。牠們是中國沿海的重要物種。',
+    detailedDescription: '小黃魚是重要的經濟魚類，可長達40公分。牠們與大黃魚同屬石首魚科，體型較小。小黃魚是中國沿海的重要物種，但因過度捕撈而數量大幅下降。牠們有鳔，可以發出聲音進行溝通。',
+    image: '🐟',
+    size: '15-40cm',
+    diet: '雜食性',
+    conservation: '易危',
+    facts: [
+      '與大黃魚同屬石首魚科',
+      '體型較小',
+      '有鳔可以發出聲音',
+      '因過度捕撈而數量下降'
+    ]
+  },
+  {
     id: 'hairtail',
     name: '帶魚',
     englishName: 'Hairtail',
