@@ -1849,6 +1849,127 @@ export const speciesData = [
       '可以數年不進食',
       '適應高壓環境'
     ]
+  },
+  // 其他常見海洋物種
+  {
+    id: 'bottlenose-dolphin',
+    name: '瓶鼻海豚',
+    englishName: 'Bottlenose Dolphin',
+    depth: '0-300m',
+    habitat: '全球海洋',
+    category: '哺乳動物',
+    description: '瓶鼻海豚是最著名的海豚物種，以其高智能和友善性格聞名。牠們經常與人類互動。',
+    detailedDescription: '瓶鼻海豚是最著名的海豚物種，可長達4公尺。牠們以其高智能和友善性格聞名，經常與人類互動。瓶鼻海豚擁有複雜的社會結構和溝通系統。牠們使用回聲定位來導航和捕食。',
+    image: '🐬',
+    size: '2-4m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '最著名的海豚物種',
+      '擁有高智能',
+      '使用回聲定位',
+      '複雜的社會結構'
+    ]
+  },
+  {
+    id: 'common-octopus',
+    name: '普通章魚',
+    englishName: 'Common Octopus',
+    depth: '0-200m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '普通章魚是聰明的無脊椎動物，擁有出色的偽裝能力。牠們可以改變身體顏色和紋理。',
+    detailedDescription: '普通章魚是聰明的無脊椎動物，可長達1公尺。牠們擁有出色的偽裝能力，可以改變身體顏色和紋理。章魚有三顆心臟和藍色的血液。牠們可以使用工具，通過測試學習。',
+    image: '🐙',
+    size: '30-100cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '可以改變身體顏色和紋理',
+      '有三顆心臟',
+      '擁有藍色的血液',
+      '可以使用工具'
+    ]
+  },
+  {
+    id: 'giant-squid',
+    name: '巨型魷魚',
+    englishName: 'Giant Squid',
+    depth: '300-1000m',
+    habitat: '全球深海',
+    category: '無脊椎動物',
+    description: '巨型魷魚是世界上最大的無脊椎動物，可長達13公尺。牠們生活在深海中，很少被人類目擊。',
+    detailedDescription: '巨型魷魚是世界上最大的無脊椎動物，可長達13公尺。牠們生活在深海中，很少被人類目擊。巨型魷魚擁有巨大的眼睛，直徑可達25公分。牠們是抹香鯨的主要食物之一。',
+    image: '🦑',
+    size: '6-13m',
+    diet: '肉食性',
+    conservation: '資料不足',
+    facts: [
+      '世界上最大的無脊椎動物',
+      '眼睛直徑可達25公分',
+      '抹香鯨的主要食物',
+      '生活在深海'
+    ]
+  },
+  {
+    id: 'portuguese-man-of-war',
+    name: '僧帽水母',
+    englishName: 'Portuguese Man-of-War',
+    depth: '0-50m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '僧帽水母不是真正的水母，而是由多個個體組成的群落。牠們的觸手有毒，可達數十公尺。',
+    detailedDescription: '僧帽水母不是真正的水母，而是由多個個體組成的群落。牠們的觸手有毒，可達數十公尺。僧帽水母漂浮在海面上，依靠風和洋流移動。牠們的毒液可以致人死亡。',
+    image: '🪼',
+    size: '觸手可達50m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '不是真正的水母',
+      '由多個個體組成',
+      '觸手可達數十公尺',
+      '毒液可以致人死亡'
+    ]
+  },
+  {
+    id: 'sea-urchin',
+    name: '海膽',
+    englishName: 'Sea Urchin',
+    depth: '0-5000m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '海膽是棘皮動物，擁有尖刺的外殼。牠們是草食性動物，主要以藻類為食。',
+    detailedDescription: '海膽是棘皮動物，擁有尖刺的外殼。牠們是草食性動物，主要以藻類為食。海膽的生殖腺可食用，被視為美食。牠們生活在海底，用管足移動。有些海膽的刺有毒。',
+    image: '🔴',
+    size: '3-30cm',
+    diet: '草食性',
+    conservation: '普遍',
+    facts: [
+      '擁有尖刺的外殼',
+      '生殖腺可食用',
+      '用管足移動',
+      '有些刺有毒'
+    ]
+  },
+  {
+    id: 'starfish',
+    name: '海星',
+    englishName: 'Starfish',
+    depth: '0-6000m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '海星是棘皮動物，擁有星形的身體。牠們可以再生失去的手臂，甚至從一隻手臂再生整個身體。',
+    detailedDescription: '海星是棘皮動物，擁有星形的身體。牠們可以再生失去的手臂，甚至從一隻手臂再生整個身體。海星用管足移動和捕食。牠們主要以貝類和海膽為食。海星沒有大脑。',
+    image: '⭐',
+    size: '5-50cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '可以再生失去的手臂',
+      '從一隻手臂再生整個身體',
+      '用管足移動',
+      '沒有大脑'
+    ]
   }
 ];
 
