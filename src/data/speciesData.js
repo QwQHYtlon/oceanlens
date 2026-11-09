@@ -2960,6 +2960,107 @@ export const speciesData = [
       '夜行性動物',
       '兇猛的捕食者'
     ]
+  },
+  // 更多獨特物種
+  {
+    id: 'seahorse',
+    name: '海馬',
+    englishName: 'Seahorse',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '海馬以其獨特的形狀聞名，像馬一樣。牠們是雄性懷孕的動物。',
+    detailedDescription: '海馬以其獨特的形狀聞名，可長達35公分。牠們像馬一樣，有彎曲的尾巴。海馬是雄性懷孕的動物，雄性會攜帶卵直到孵化。牠們是優秀的偽裝大師，可以改變顏色。',
+    image: '🐴',
+    size: '1-35cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '雄性懷孕',
+      '像馬一樣的形狀',
+      '優秀的偽裝大師',
+      '可以改變顏色'
+    ]
+  },
+  {
+    id: 'pipefish',
+    name: '管口魚',
+    englishName: 'Pipefish',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '管口魚是海馬的近親，以其細長的身體聞名。牠們也像海馬一樣雄性懷孕。',
+    detailedDescription: '管口魚是海馬的近親，可長達50公分。牠們以其細長的身體聞名，像管子一樣。管口魚也像海馬一樣雄性懷孕。牠們是優秀的偽裝大師，可以融入環境。',
+    image: '🐟',
+    size: '10-50cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '海馬的近親',
+      '細長的身體',
+      '雄性懷孕',
+      '優秀的偽裝大師'
+    ]
+  },
+  {
+    id: 'dragonet',
+    name: '龍魚',
+    englishName: 'Dragonet',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '龍魚以其華麗的顏色聞名，像龍一樣。牠們是珊瑚礁的底棲魚類。',
+    detailedDescription: '龍魚以其華麗的顏色聞名，可長達30公分。牠們像龍一樣，擁有鮮豔的斑紋。龍魚是珊瑚礁的底棲魚類，主要以無脊椎動物為食。牠們是領域性強的魚類。',
+    image: '🐠',
+    size: '5-30cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '華麗的顏色',
+      '像龍一樣',
+      '底棲魚類',
+      '領域性強'
+    ]
+  },
+  {
+    id: 'filefish',
+    name: '單棘魨',
+    englishName: 'Filefish',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '單棘魨以其扁平的身體聞名，像文件一樣。牠們是珊瑚礁的常見物種。',
+    detailedDescription: '單棘魨以其扁平的身體聞名，可長達50公分。牠們像文件一樣，身體扁平。單棘魨是珊瑚礁的常見物種，主要以藻類和無脊椎動物為食。牠們可以改變顏色以適應環境。',
+    image: '🐟',
+    size: '15-50cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '扁平的身體',
+      '像文件一樣',
+      '可以改變顏色',
+      '珊瑚礁的常見物種'
+    ]
+  },
+  {
+    id: 'boxfish',
+    name: '箱魨',
+    englishName: 'Boxfish',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '箱魨以其方形身體聞名，像盒子一樣。牠們是珊瑚礁的獨特物種。',
+    detailedDescription: '箱魨以其方形身體聞名，可長達50公分。牠們像盒子一樣，身體呈方形。箱魨是珊瑚礁的獨特物種，主要以藻類和無脊椎動物為食。牠們的皮膚有毒，用於防禦。',
+    image: '🐟',
+    size: '10-50cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '方形身體',
+      '像盒子一樣',
+      '皮膚有毒',
+      '用於防禦'
+    ]
   }
 ];
 
