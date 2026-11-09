@@ -3505,6 +3505,127 @@ export const speciesData = [
       '已存在數億年',
       '主要以浮游生物為食'
     ]
+  },
+  // 更多軟體動物
+  {
+    id: 'abalone',
+    name: '鮑魚',
+    englishName: 'Abalone',
+    depth: '0-50m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '鮑魚以其美麗的貝殼聞名，是高級美食。牠們生活在岩石上。',
+    detailedDescription: '鮑魚以其美麗的貝殼聞名，可長達30公分。牠們是高級美食，被視為珍饈。鮑魚生活在岩石上，用強大的足吸附在岩石上。牠們主要以藻類為食。',
+    image: '🐚',
+    size: '10-30cm',
+    diet: '草食性',
+    conservation: '易危',
+    facts: [
+      '美麗的貝殼',
+      '高級美食',
+      '用足吸附在岩石上',
+      '主要以藻類為食'
+    ]
+  },
+  {
+    id: 'conch',
+    name: '海螺',
+    englishName: 'Conch',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '海螺以其螺旋形的貝殼聞名，是重要的經濟物種。牠們生活在沙質海底。',
+    detailedDescription: '海螺以其螺旋形的貝殼聞名，可長達30公分。牠們是重要的經濟物種，被視為美食。海螺生活在沙質海底，主要以藻類和無脊椎動物為食。牠們的貝殼用於製作珠寶。',
+    image: '🐚',
+    size: '15-30cm',
+    diet: '雜食性',
+    conservation: '易危',
+    facts: [
+      '螺旋形的貝殼',
+      '重要的經濟物種',
+      '貝殼用於製作珠寶',
+      '生活在沙質海底'
+    ]
+  },
+  {
+    id: 'scallop',
+    name: '扇貝',
+    englishName: 'Scallop',
+    depth: '0-200m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '扇貝以其扇形的貝殼聞名，是高級美食。牠們可以通過拍打貝殼游動。',
+    detailedDescription: '扇貝以其扇形的貝殼聞名，可長達20公分。牠們是高級美食，被視為珍饈。扇貝可以通過拍打貝殼游動，逃避捕食者。牠們有許多眼睛，分布在貝殼邊緣。',
+    image: '🐚',
+    size: '5-20cm',
+    diet: '濾食性',
+    conservation: '易危',
+    facts: [
+      '扇形的貝殼',
+      '可以通過拍打貝殼游動',
+      '有許多眼睛',
+      '高級美食'
+    ]
+  },
+  {
+    id: 'oyster',
+    name: '牡蠣',
+    englishName: 'Oyster',
+    depth: '0-50m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '牡蠣以其粗糙的貝殼聞名，是重要的經濟物種。牠們可以生產珍珠。',
+    detailedDescription: '牡蠣以其粗糙的貝殼聞名，可長達30公分。牠們是重要的經濟物種，被視為美食。牡蠣可以生產珍珠，當沙粒進入貝殼時會形成珍珠。牠們是濾食性動物，過濾海水獲得食物。',
+    image: '🐚',
+    size: '5-30cm',
+    diet: '濾食性',
+    conservation: '易危',
+    facts: [
+      '粗糙的貝殼',
+      '可以生產珍珠',
+      '濾食性動物',
+      '過濾海水獲得食物'
+    ]
+  },
+  {
+    id: 'clam',
+    name: '蛤蜊',
+    englishName: 'Clam',
+    depth: '0-200m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '蛤蜊以其雙殼聞名，是重要的經濟物種。牠們生活在沙質海底。',
+    detailedDescription: '蛤蜊以其雙殼聞名，可長達20公分。牠們是重要的經濟物種，被視為美食。蛤蜊生活在沙質海底，埋藏在沙中。牠們是濾食性動物，過濾海水獲得食物。',
+    image: '🐚',
+    size: '2-20cm',
+    diet: '濾食性',
+    conservation: '普遍',
+    facts: [
+      '雙殼',
+      '埋藏在沙中',
+      '濾食性動物',
+      '重要的經濟物種'
+    ]
+  },
+  {
+    id: 'nudibranch',
+    name: '海蛞蝓',
+    englishName: 'Nudibranch',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '海蛞蝓以其鮮豔的顏色聞名，是海洋中最美麗的動物之一。牠們沒有貝殼。',
+    detailedDescription: '海蛞蝓以其鮮豔的顏色聞名，可長達30公分。牠們是海洋中最美麗的動物之一，擁有各種顏色和斑紋。海蛞蝓沒有貝殼，用鮮豔的顏色警告捕食者。牠們主要以海綿和其他無脊椎動物為食。',
+    image: '🐌',
+    size: '1-30cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '海洋中最美麗的動物之一',
+      '沒有貝殼',
+      '鮮豔的顏色警告捕食者',
+      '主要以海綿為食'
+    ]
   }
 ];
 
