@@ -3384,6 +3384,127 @@ export const speciesData = [
       '時速可達110公里',
       '背鰭可以豎起'
     ]
+  },
+  // 更多棘皮動物
+  {
+    id: 'sea-cucumber',
+    name: '海參',
+    englishName: 'Sea Cucumber',
+    depth: '0-500m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '海參是長條形的棘皮動物，以其柔軟的身體聞名。牠們是重要的經濟物種。',
+    detailedDescription: '海參是長條形的棘皮動物，可長達40公分。牠們以其柔軟的身體聞名，像黃瓜一樣。海參是重要的經濟物種，被視為美食。牠們是底棲動物，主要以海底的有機物質為食。',
+    image: '🥒',
+    size: '10-40cm',
+    diet: '濾食性',
+    conservation: '易危',
+    facts: [
+      '像黃瓜一樣',
+      '重要的經濟物種',
+      '底棲動物',
+      '主要以有機物質為食'
+    ]
+  },
+  {
+    id: 'sea-urchin',
+    name: '海膽',
+    englishName: 'Sea Urchin',
+    depth: '0-500m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '海膽是球形棘皮動物，以其尖刺聞名。牠們是底棲動物，主要以藻類為食。',
+    detailedDescription: '海膽是球形棘皮動物，可長達30公分。牠們以其尖刺聞名，用於防禦。海膽是底棲動物，主要以藻類為食。牠們的生殖腺被視為美食，稱為海膽子。',
+    image: '🔮',
+    size: '5-30cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '球形棘皮動物',
+      '尖刺用於防禦',
+      '生殖腺被視為美食',
+      '主要以藻類為食'
+    ]
+  },
+  {
+    id: 'brittle-star',
+    name: '脆海星',
+    englishName: 'Brittle Star',
+    depth: '0-500m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '脆海星是海星的近親，以其細長的手臂聞名。牠們可以快速移動。',
+    detailedDescription: '脆海星是海星的近親，可長達60公分。牠們以其細長的手臂聞名，像蛇一樣。脆海星可以快速移動，用於逃避捕食者。牠們是底棲動物，主要以浮游生物為食。',
+    image: '⭐',
+    size: '10-60cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '海星的近親',
+      '細長的手臂',
+      '可以快速移動',
+      '用於逃避捕食者'
+    ]
+  },
+  {
+    id: 'feather-star',
+    name: '羽海星',
+    englishName: 'Feather Star',
+    depth: '0-500m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '羽海星以其羽毛狀的手臂聞名，像鳥一樣。牠們是珊瑚礁的常見物種。',
+    detailedDescription: '羽海星以其羽毛狀的手臂聞名，可長達30公分。牠們像鳥一樣，擁有美麗的羽毛狀手臂。羽海星是珊瑚礁的常見物種，主要以浮游生物為食。牠們會用羽毛狀手臂捕捉食物。',
+    image: '⭐',
+    size: '10-30cm',
+    diet: '濾食性',
+    conservation: '普遍',
+    facts: [
+      '羽毛狀的手臂',
+      '像鳥一樣',
+      '珊瑚礁的常見物種',
+      '用羽毛狀手臂捕捉食物'
+    ]
+  },
+  {
+    id: 'sand-dollar',
+    name: '沙錢',
+    englishName: 'Sand Dollar',
+    depth: '0-100m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '沙錢是扁平的海膽，以其圓形扁平的身體聞名。牠們生活在沙質海底。',
+    detailedDescription: '沙錢是扁平的海膽，可長達10公分。牠們以其圓形扁平的身體聞名，像硬幣一樣。沙錢生活在沙質海底，埋藏在沙中。牠們主要以海底的有機物質為食。',
+    image: '🪙',
+    size: '5-10cm',
+    diet: '濾食性',
+    conservation: '普遍',
+    facts: [
+      '扁平的海膽',
+      '像硬幣一樣',
+      '埋藏在沙中',
+      '生活在沙質海底'
+    ]
+  },
+  {
+    id: 'sea-lily',
+    name: '海百合',
+    englishName: 'Sea Lily',
+    depth: '100-5000m',
+    habitat: '深海',
+    category: '無脊椎動物',
+    description: '海百合以其花朵般的外形聞名，像百合花一樣。牠們是古老的棘皮動物。',
+    detailedDescription: '海百合以其花朵般的外形聞名，可長達1公尺。牠們像百合花一樣，擁有美麗的冠部。海百合是古老的棘皮動物，已存在數億年。牠們主要以浮游生物為食。',
+    image: '🌸',
+    size: '20-100cm',
+    diet: '濾食性',
+    conservation: '資料不足',
+    facts: [
+      '像百合花一樣',
+      '古老的棘皮動物',
+      '已存在數億年',
+      '主要以浮游生物為食'
+    ]
   }
 ];
 
