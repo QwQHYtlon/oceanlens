@@ -4070,6 +4070,127 @@ export const speciesData = [
       '游速極快',
       '可以跳出水面'
     ]
+  },
+  // 更多魟魚
+  {
+    id: 'manta-ray',
+    name: '魔鬼魟',
+    englishName: 'Manta Ray',
+    depth: '0-1000m',
+    habitat: '熱帶海洋',
+    category: '大型生物',
+    description: '魔鬼魟以其巨大的胸鰭聞名，像鳥一樣在水中飛翔。牠們是溫和的濾食性動物。',
+    detailedDescription: '魔鬼魟以其巨大的胸鰭聞名，可長達7公尺，重達2噸。牠們像鳥一樣在水中飛翔，優雅地游動。魔鬼魟是溫和的濾食性動物，主要以浮游生物為食。牠們是高度智慧的動物，擁有最大的大腦與體重比例之一。',
+    image: '🐟',
+    size: '3-7m',
+    diet: '濾食性',
+    conservation: '易危',
+    facts: [
+      '像鳥一樣在水中飛翔',
+      '溫和的濾食性動物',
+      '高度智慧的動物',
+      '最大的大腦與體重比例之一'
+    ]
+  },
+  {
+    id: 'eagle-ray',
+    name: '鷹魟',
+    englishName: 'Eagle Ray',
+    depth: '0-300m',
+    habitat: '熱帶海洋',
+    category: '大型生物',
+    description: '鷹魟以其點狀斑紋聞名，像鷹一樣。牠們是優雅的游泳者。',
+    detailedDescription: '鷹魟以其點狀斑紋聞名，可長達3公尺。牠們像鷹一樣，擁有點狀斑紋。鷹魟是優雅的游泳者，經常跳出水面。牠們主要以貝類和甲殼類為食。',
+    image: '🐟',
+    size: '1-3m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '點狀斑紋',
+      '像鷹一樣',
+      '優雅的游泳者',
+      '經常跳出水面'
+    ]
+  },
+  {
+    id: 'stingray',
+    name: '黃貂魟',
+    englishName: 'Stingray',
+    depth: '0-500m',
+    habitat: '全球海洋',
+    category: '大型生物',
+    description: '黃貂魟以其有毒的尾刺聞名，是危險的海洋動物。牠們是底棲動物。',
+    detailedDescription: '黃貂魚以其有毒的尾刺聞名，可長達2公尺。牠們是危險的海洋動物，尾刺可以致人死亡。黃貂魚是底棲動物，躺在海底等待獵物。牠們主要以魚類和無脊椎動物為食。',
+    image: '🐟',
+    size: '1-2m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '有毒的尾刺',
+      '危險的海洋動物',
+      '底棲動物',
+      '尾刺可以致人死亡'
+    ]
+  },
+  {
+    id: 'electric-ray',
+    name: '電魟',
+    englishName: 'Electric Ray',
+    depth: '0-200m',
+    habitat: '全球海洋',
+    category: '大型生物',
+    description: '電魟以其發電能力聞名，可以產生強大的電流。牠們用於防禦和捕食。',
+    detailedDescription: '電魟以其發電能力聞名，可長達1.5公尺。牠們可以產生強大的電流，用於防禦和捕食。電魟是底棲動物，躺在海底等待獵物。牠們的電流可以暈暈獵物或威嚇捕食者。',
+    image: '🐟',
+    size: '30-150cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '可以產生強大的電流',
+      '用於防禦和捕食',
+      '底棲動物',
+      '電流可以暈暈獵物'
+    ]
+  },
+  {
+    id: 'guitarfish',
+    name: '吉他魟',
+    englishName: 'Guitarfish',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category:魚類',
+    description: '吉他魟以其吉他狀的身體聞名，像吉他一樣。牠們是鯊魚和魟魚的過渡物種。',
+    detailedDescription: '吉他魟以其吉他狀的身體聞名，可長達2公尺。牠們像吉他一樣，身體扁平。吉他魟是鯊魚和魟魚的過渡物種，擁有兩者的特徵。牠們是底棲動物，主要以魚類和無脊椎動物為食。',
+    image: '🐟',
+    size: '50-200cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '吉他狀的身體',
+      '鯊魚和魟魚的過渡物種',
+      '底棲動物',
+      '擁有兩者的特徵'
+    ]
+  },
+  {
+    id: 'sawfish',
+    name: '鋸鰩',
+    englishName: 'Sawfish',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '大型生物',
+    description: '鋸鰩以其長長的鋸狀吻聞名，像鋸子一樣。牠們是瀕危物種。',
+    detailedDescription: '鋸鰩以其長長的鋸狀吻聞名，可長達7公尺。牠們像鋸子一樣，擁有鋸狀吻。鋸鰩是瀕危物種，受到過度漁撈的威脅。牠們用鋸狀吻挖掘海底和攻擊獵物。',
+    image: '🐟',
+    size: '2-7m',
+    diet: '肉食性',
+    conservation: '瀕危',
+    facts: [
+      '鋸狀吻',
+      '像鋸子一樣',
+      '瀕危物種',
+      '用鋸狀吻挖掘海底'
+    ]
   }
 ];
 
