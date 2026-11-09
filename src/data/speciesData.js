@@ -4918,6 +4918,107 @@ export const speciesData = [
       '優雅的游泳者',
       '經常成對出現'
     ]
+  },
+  // 更多鰻魚和蛇形魚類
+  {
+    id: 'garden-eel',
+    name: '花園鰻',
+    englishName: 'Garden Eel',
+    depth: '10-50m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '花園鰻以其直立姿勢聞名，像花園裡的花朵一樣。牠們生活在沙質海底。',
+    detailedDescription: '花園鰻以其直立姿勢聞名，可長達1.2公尺。牠們像花園裡的花朵一樣，直立在沙質海底。花園鰻從沙質洞穴中伸出上半身，捕捉浮游生物。牠們是群居動物，形成花園般的景象。',
+    image: '🐍',
+    size: '30-120cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '直立姿勢',
+      '像花園裡的花朵',
+      '從洞穴中伸出上半身',
+      '形成花園般的景象'
+    ]
+  },
+  {
+    id: 'spotted-eel',
+    name: '斑點鰻',
+    englishName: 'Spotted Eel',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '斑點鰻以其斑點斑紋聞名，是珊瑚礁的常見鰻魚。',
+    detailedDescription: '斑點鰻以其斑點斑紋聞名，可長達1公尺。牠們是珊瑚礁的常見鰻魚，擁有明顯的斑點。斑點鰻躲在岩石縫隙中，主要以魚類和無脊椎動物為食。牠們是夜行性動物。',
+    image: '🐍',
+    size: '30-100cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '斑點斑紋',
+      '珊瑚礁的常見鰻魚',
+      '躲在岩石縫隙中',
+      '夜行性動物'
+    ]
+  },
+  {
+    id: 'snake-eel',
+    name: '蛇鰻',
+    englishName: 'Snake Eel',
+    depth: '0-200m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '蛇鰻以其蛇形身體聞名，像蛇一樣。牠們生活在沙質海底。',
+    detailedDescription: '蛇鰻以其蛇形身體聞名，可長達1.5公尺。牠們像蛇一樣，身體細長。蛇鰻生活在沙質海底，埋藏在沙中。牠們主要以魚類和無脊椎動物為食。',
+    image: '🐍',
+    size: '30-150cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '蛇形身體',
+      '埋藏在沙中',
+      '生活在沙質海底',
+      '像蛇一樣'
+    ]
+  },
+  {
+    id: 'conger-eel',
+    name: '康吉鰻',
+    englishName: 'Conger Eel',
+    depth: '0-500m',
+    habitat: '全球海洋',
+    category: '魚類',
+    description: '康吉鰻是最大的鰻魚之一，可長達3公尺。牠們是強大的捕食者。',
+    detailedDescription: '康吉鰻是最大的鰻魚之一，可長達3公尺，重達60公斤。牠們是強大的捕食者，擁有強大的咬合力。康吉鰻生活在岩石和珊瑚礁中，主要以魚類為食。牠們是夜行性動物。',
+    image: '🐍',
+    size: '50-300cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '最大的鰻魚之一',
+      '強大的捕食者',
+      '夜行性動物',
+      '重達60公斤'
+    ]
+  },
+  {
+    id: 'electric-eel',
+    name: '電鰻',
+    englishName: 'Electric Eel',
+    depth: '0-20m',
+    habitat: '淡水',
+    category: '魚類',
+    description: '電鰻以其發電能力聞名，可以產生強大的電流。牠們生活在淡水環境。',
+    detailedDescription: '電鰻以其發電能力聞名，可長達2.5公尺。牠們可以產生高達600伏特的電流，用於捕食和防禦。電鰻生活在淡水環境，主要在南美洲。牠們是夜行性動物。',
+    image: '🐍',
+    size: '1-2.5m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '可以產生600伏特電流',
+      '用於捕食和防禦',
+      '生活在淡水環境',
+      '夜行性動物'
+    ]
   }
 ];
 
