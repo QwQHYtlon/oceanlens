@@ -4292,6 +4292,107 @@ export const speciesData = [
       '深海常見魚類',
       '生活在海底'
     ]
+  },
+  // 更多遠洋魚類
+  {
+    id: 'albacore',
+    name: '長鰭鮪',
+    englishName: 'Albacore',
+    depth: '0-600m',
+    habitat: '全球海洋',
+    category: '魚類',
+    description: '長鰭鮪以其長長的胸鰭聞名，是重要的經濟魚類。牠們是游速極快的魚類。',
+    detailedDescription: '長鰭鮪以其長長的胸鰭聞名，可長達1.4公尺。牠們是重要的經濟魚類，用於製作罐頭。長鰭鮪是游速極快的魚類，時速可達80公里。牠們會進行長距離洄游。',
+    image: '🐟',
+    size: '60-140cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '長長的胸鰭',
+      '時速可達80公里',
+      '重要的經濟魚類',
+      '會進行長距離洄游'
+    ]
+  },
+  {
+    id: 'skipjack-tuna',
+    name: '正鰹',
+    englishName: 'Skipjack Tuna',
+    depth: '0-200m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '正鰹以其深色的條紋聞名，是重要的經濟魚類。牠們是群游魚類。',
+    detailedDescription: '正鰭以其深色的條紋聞名，可長達1公尺。牠們是重要的經濟魚類，用於製作罐頭。正鰭是群游魚類，形成巨大的群體。牠們主要以魚類和頭足類為食。',
+    image: '🐟',
+    size: '40-100cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '深色的條紋',
+      '群游魚類',
+      '形成巨大的群體',
+      '重要的經濟魚類'
+    ]
+  },
+  {
+    id: 'bigeye-tuna',
+    name: '大目鮪',
+    englishName: 'Bigeye Tuna',
+    depth: '0-500m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '大目鮪以其巨大的眼睛聞名，可以潛到深海。牠們是重要的經濟魚類。',
+    detailedDescription: '大目鮪以其巨大的眼睛聞名，可長達2.5公尺。牠們可以潛到深海，適應低光環境。大目鮪是重要的經濟魚類，用於製作刺身和罐頭。牠們會進行長距離洄游。',
+    image: '🐟',
+    size: '50-250cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '巨大的眼睛',
+      '可以潛到深海',
+      '適應低光環境',
+      '重要的經濟魚類'
+    ]
+  },
+  {
+    id: 'dolphinfish',
+    name: '鯕鰍',
+    englishName: 'Dolphinfish',
+    depth: '0-85m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '鯕鰍以其鮮豔的顏色聞名，像海豚一樣。牠們是優秀的遊釣魚類。',
+    detailedDescription: '鯕鰍以其鮮豔的顏色聞名，可長達2公尺。牠們像海豚一樣，擁有鮮豔的顏色。鯕鰍是優秀的遊釣魚類，以其強烈的抗爭聞名。牠們主要以魚類和頭足類為食。',
+    image: '🐟',
+    size: '50-200cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '鮮豔的顏色',
+      '像海豚一樣',
+      '優秀的遊釣魚類',
+      '強烈的抗爭'
+    ]
+  },
+  {
+    id: 'barracuda',
+    name: '梭魚',
+    englishName: 'Barracuda',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '梭魚以其長長的身體和牙齒聞名，是兇猛的捕食者。牠們是快速的游泳者。',
+    detailedDescription: '梭魚以其長長的身體和牙齒聞名，可長達2公尺。牠們是兇猛的捕食者，擁有鋒利的牙齒。梭魚是快速的游泳者，時速可達60公里。牠們會突然攻擊獵物。',
+    image: '🐟',
+    size: '60-200cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '長長的身體',
+      '鋒利的牙齒',
+      '時速可達60公里',
+      '會突然攻擊獵物'
+    ]
   }
 ];
 
