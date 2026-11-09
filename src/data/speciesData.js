@@ -4393,6 +4393,107 @@ export const speciesData = [
       '時速可達60公里',
       '會突然攻擊獵物'
     ]
+  },
+  // 更多簡單生物
+  {
+    id: 'sponge',
+    name: '海綿',
+    englishName: 'Sponge',
+    depth: '0-9000m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '海綿是最簡單的多細胞動物，以其多孔的身體聞名。牠們是濾食性動物。',
+    detailedDescription: '海綿是最簡單的多細胞動物，可長達2公尺。牠們以其多孔的身體聞名，像海綿一樣。海綿是濾食性動物，過濾海水獲得食物。牠們沒有神經系統和器官，是最古老的動物之一。',
+    image: '🧽',
+    size: '1cm-2m',
+    diet: '濾食性',
+    conservation: '資料不足',
+    facts: [
+      '最簡單的多細胞動物',
+      '多孔的身體',
+      '沒有神經系統',
+      '最古老的動物之一'
+    ]
+  },
+  {
+    id: 'comb-jelly',
+    name: '櫛水母',
+    englishName: 'Comb Jelly',
+    depth: '0-3000m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '櫛水母以其發光的櫛板聞名，像彩虹一樣。牠們不是真正的水母。',
+    detailedDescription: '櫛水母以其發光的櫛板聞名，可長達1.5公尺。牠們像彩虹一樣，擁有發光的櫛板。櫛水母不是真正的水母，沒有刺細胞。牠們是最古老的動物之一，用櫛板游動。',
+    image: '🪼',
+    size: '5mm-1.5m',
+    diet: '肉食性',
+    conservation: '資料不足',
+    facts: [
+      '像彩虹一樣',
+      '不是真正的水母',
+      '沒有刺細胞',
+      '用櫛板游動'
+    ]
+  },
+  {
+    id: 'sea-squirt',
+    name: '海鞘',
+    englishName: 'Sea Squirt',
+    depth: '0-200m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '海鞘以其囊狀的身體聞名，像袋子一樣。牠們是脊椎動物的近親。',
+    detailedDescription: '海鞘以其囊狀的身體聞名，可長達30公分。牠們像袋子一樣，身體呈囊狀。海鞘是脊椎動物的近親，擁有脊索。牠們是濾食性動物，過濾海水獲得食物。幼體會游泳，成體會固著在岩石上。',
+    image: '🧽',
+    size: '1-30cm',
+    diet: '濾食性',
+    conservation: '普遍',
+    facts: [
+      '像袋子一樣',
+      '脊椎動物的近親',
+      '擁有脊索',
+      '幼體會游泳'
+    ]
+  },
+  {
+    id: 'bryozoan',
+    name: '苔蘚蟲',
+    englishName: 'Bryozoan',
+    depth: '0-500m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '苔蘚蟲以其群落聞名，像苔蘚一樣。牠們是群體動物。',
+    detailedDescription: '苔蘚蟲以其群落聞名，可長達50公分。牠們像苔蘚一樣，形成群落。苔蘚蟲是群體動物，由許多個體組成。牠們是濾食性動物，過濾海水獲得食物。',
+    image: '🧽',
+    size: '1mm-50cm',
+    diet: '濾食性',
+    conservation: '資料不足',
+    facts: [
+      '像苔蘚一樣',
+      '群體動物',
+      '由許多個體組成',
+      '濾食性動物'
+    ]
+  },
+  {
+    id: 'foraminifera',
+    name: '有孔蟲',
+    englishName: 'Foraminifera',
+    depth: '0-10000m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '有孔蟲以其殼聞名，是單細胞生物。牠們是重要的化石指標。',
+    detailedDescription: '有孔蟲以其殼聞名，可長達數毫米。牠們是單細胞生物，擁有殼。有孔蟲是重要的化石指標，用於地質研究。牠們是海洋食物鏈的重要環節。',
+    image: '🦠',
+    size: '0.1mm-數cm',
+    diet: '雜食性',
+    conservation: '資料不足',
+    facts: [
+      '單細胞生物',
+      '擁有殼',
+      '重要的化石指標',
+      '海洋食物鏈的重要環節'
+    ]
   }
 ];
 
