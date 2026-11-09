@@ -3162,6 +3162,127 @@ export const speciesData = [
       '沒有游泳鰾',
       '用胸鰭移動'
     ]
+  },
+  // 更多底棲魚類
+  {
+    id: 'flounder',
+    name: '鮃魚',
+    englishName: 'Flounder',
+    depth: '0-500m',
+    habitat: '全球海洋',
+    category: '魚類',
+    description: '鮃魚是扁平的底棲魚類，以其兩隻眼睛在同一側聞名。牠們躺在海底等待獵物。',
+    detailedDescription: '鮃魚是扁平的底棲魚類，可長達1公尺。牠們以其兩隻眼睛在同一側聞名，這是適應底棲生活的特徵。鮃魚躺在海底等待獵物，是優秀的偽裝大師。牠們會隨著成長改變身體顏色。',
+    image: '🐟',
+    size: '30-100cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '兩隻眼睛在同一側',
+      '扁平的身體',
+      '優秀的偽裝大師',
+      '會改變身體顏色'
+    ]
+  },
+  {
+    id: 'halibut',
+    name: '大比目魚',
+    englishName: 'Halibut',
+    depth: '0-1000m',
+    habitat: '北半球海洋',
+    category: '魚類',
+    description: '大比目魚是最大的鮃魚，可長達3公尺。牠們是重要的經濟魚類。',
+    detailedDescription: '大比目魚是最大的鮃魚，可長達3公尺，重達300公斤。牠們是重要的經濟魚類，被視為美食。大比目魚是底棲魚類，躺在海底等待獵物。牠們主要以魚類和頭足類為食。',
+    image: '🐟',
+    size: '50-300cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '最大的鮃魚',
+      '可重達300公斤',
+      '重要的經濟魚類',
+      '底棲魚類'
+    ]
+  },
+  {
+    id: 'sole',
+    name: '鰨魚',
+    englishName: 'Sole',
+    depth: '0-200m',
+    habitat: '全球海洋',
+    category: '魚類',
+    description: '鰨魚是小型扁平魚類，以其細長的身體聞名。牠們是重要的經濟魚類。',
+    detailedDescription: '鰨魚是小型扁平魚類，可長達70公分。牠們以其細長的身體聞名，像鞋底一樣。鰨魚是重要的經濟魚類，被視為美食。牠們是底棲魚類，躺在海底等待獵物。',
+    image: '🐟',
+    size: '20-70cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '細長的身體',
+      '像鞋底一樣',
+      '重要的經濟魚類',
+      '底棲魚類'
+    ]
+  },
+  {
+    id: 'turbot',
+    name: '大菱鮃',
+    englishName: 'Turbot',
+    depth: '0-100m',
+    habitat: '北大西洋',
+    category: '魚類',
+    description: '大菱鮃是大型扁平魚類，以其菱形的身體聞名。牠們是高級美食。',
+    detailedDescription: '大菱鮃是大型扁平魚類，可長達1公尺。牠們以其菱形的身體聞名，是高級美食。大菱鮃是底棲魚類，躺在海底等待獵物。牠們主要以魚類和頭足類為食。',
+    image: '🐟',
+    size: '40-100cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '菱形的身體',
+      '高級美食',
+      '底棲魚類',
+      '可長達1公尺'
+    ]
+  },
+  {
+    id: 'plaice',
+    name: '鰈魚',
+    englishName: 'Plaice',
+    depth: '0-200m',
+    habitat: '北大西洋',
+    category: '魚類',
+    description: '鰈魚是常見的扁平魚類，以其紅色的斑點聞名。牠們是重要的經濟魚類。',
+    detailedDescription: '鰈魚是常見的扁平魚類，可長達1公尺。牠們以其紅色的斑點聞名，分布在身體兩側。鰈魚是重要的經濟魚類，被視為美食。牠們是底棲魚類，躺在海底等待獵物。',
+    image: '🐟',
+    size: '30-100cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '紅色的斑點',
+      '重要的經濟魚類',
+      '底棲魚類',
+      '常見的扁平魚類'
+    ]
+  },
+  {
+    id: 'skate',
+    name: '鰩魚',
+    englishName: 'Skate',
+    depth: '0-1000m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '鰩魚是扁平的鰩魚類，以其菱形的身體聞名。牠們是鯊魚的近親。',
+    detailedDescription: '鰩魚是扁平的鰩魚類，可長達2.5公尺。牠們以其菱形的身體聞名，像鰈魚一樣。鰩魚是鯊魚的近親，擁有軟骨骨骼。牠們是底棲魚類，躺在海底等待獵物。',
+    image: '🐟',
+    size: '50-250cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '鯊魚的近親',
+      '擁有軟骨骨骼',
+      '菱形的身體',
+      '底棲魚類'
+    ]
   }
 ];
 
