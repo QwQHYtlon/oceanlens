@@ -5019,6 +5019,107 @@ export const speciesData = [
       '生活在淡水環境',
       '夜行性動物'
     ]
+  },
+  // 更多甲殼類
+  {
+    id: 'american-lobster',
+    name: '美洲龍蝦',
+    englishName: 'American Lobster',
+    depth: '0-500m',
+    habitat: '北大西洋',
+    category: '無脊椎動物',
+    description: '美洲龍蝦以其巨大的爪子聞名，是重要的經濟甲殼類。牠們是底棲動物。',
+    detailedDescription: '美洲龍蝦以其巨大的爪子聞名，可長達60公分，重達20公斤。牠們是重要的經濟甲殼類，用於美食。美洲龍蝦是底棲動物，生活在岩石海底。牠們可以活超過100年。',
+    image: '🦞',
+    size: '20-60cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '巨大的爪子',
+      '重要的經濟甲殼類',
+      '可以活超過100年',
+      '重達20公斤'
+    ]
+  },
+  {
+    id: 'norway-lobster',
+    name: '挪威海螯蝦',
+    englishName: 'Norway Lobster',
+    depth: '10-500m',
+    habitat: '北大西洋',
+    category: '無脊椎動物',
+    description: '挪威海螯蝦以其細長的爪子聞名，是常見的食用蝦類。',
+    detailedDescription: '挪威海螯蝦以其細長的爪子聞名，可長達25公分。牠們是常見的食用蝦類，用於美食。挪威海螯蝦生活在泥質海底，主要以無脊椎動物為食。',
+    image: '🦞',
+    size: '10-25cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '細長的爪子',
+      '常見的食用蝦類',
+      '生活在泥質海底',
+      '主要以無脊椎動物為食'
+    ]
+  },
+  {
+    id: 'rock-lobster',
+    name: '岩龍蝦',
+    englishName: 'Rock Lobster',
+    depth: '0-200m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '岩龍蝦以其堅硬的外殼聞名，沒有大爪子。牠們是熱帶地區的常見龍蝦。',
+    detailedDescription: '岩龍蝦以其堅硬的外殼聞名，可長達60公分。牠們沒有大爪子，這與美洲龍蝦不同。岩龍蝦是熱帶地區的常見龍蝦，生活在珊瑚礁。牠們主要以藻類和無脊椎動物為食。',
+    image: '🦞',
+    size: '20-60cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '堅硬的外殼',
+      '沒有大爪子',
+      '熱帶地區的常見龍蝦',
+      '生活在珊瑚礁'
+    ]
+  },
+  {
+    id: 'peacock-mantis-shrimp',
+    name: '雀尾螳螂蝦',
+    englishName: 'Peacock Mantis Shrimp',
+    depth: '0-40m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '雀尾螳螂蝦以其鮮豔的顏色和強大的拳頭聞名，可以打碎貝殼。',
+    detailedDescription: '雀尾螳螂蝦以其鮮豔的顏色和強大的拳頭聞名，可長達18公分。牠們的拳頭可以打碎貝殼，力量相當於子彈。雀尾螳螂蝦擁有最好的視力，可以看到紫外線和偏振光。',
+    image: '🦐',
+    size: '3-18cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '鮮豔的顏色',
+      '拳頭可以打碎貝殼',
+      '力量相當於子彈',
+      '擁有最好的視力'
+    ]
+  },
+  {
+    id: 'pistol-shrimp',
+    name: '手槍蝦',
+    englishName: 'Pistol Shrimp',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '手槍蝦以其巨大的螯聞名，可以產生巨大的聲音和氣泡。',
+    detailedDescription: '手槍蝦以其巨大的螯聞名，可長達5公分。牠們的螯可以產生巨大的聲音和氣泡，用於擊暈獵物。手槍蝦的氣泡溫度可以達到太陽表面溫度。牠們經常與清潔魚合作。',
+    image: '🦐',
+    size: '1-5cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '巨大的螯',
+      '產生巨大聲音和氣泡',
+      '氣泡溫度達太陽表面',
+      '與清潔魚合作'
+    ]
   }
 ];
 
