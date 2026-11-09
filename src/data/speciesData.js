@@ -4494,6 +4494,107 @@ export const speciesData = [
       '重要的化石指標',
       '海洋食物鏈的重要環節'
     ]
+  },
+  // 更多海洋鳥類
+  {
+    id: 'albatross',
+    name: '信天翁',
+    englishName: 'Albatross',
+    depth: '0m',
+    habitat: '南半球海洋',
+    category: '鳥類',
+    description: '信天翁以其巨大的翅膀聞名，是最大的飛行鳥類。牠們可以滑翔數小時。',
+    detailedDescription: '信天翁以其巨大的翅膀聞名，翼展可達3.7公尺。牠們是最大的飛行鳥類，可以滑翔數小時不拍翅膀。信天翁一生大部分時間在海上飛行，只在繁殖時上岸。牠們主要以魚類和頭足類為食。',
+    image: '🦅',
+    size: '翼展2.5-3.7m',
+    diet: '肉食性',
+    conservation: '瀕危',
+    facts: [
+      '最大的飛行鳥類',
+      '翼展可達3.7公尺',
+      '可以滑翔數小時',
+      '一生大部分時間在海上'
+    ]
+  },
+  {
+    id: 'penguin',
+    name: '企鵝',
+    englishName: 'Penguin',
+    depth: '0-500m',
+    habitat: '南半球海洋',
+    category: '鳥類',
+    description: '企鵝以其不會飛聞名，是優秀的游泳者。牠們生活在南半球。',
+    detailedDescription: '企鵝以其不會飛聞名，可長達1.2公尺。牠們是優秀的游泳者，時速可達30公里。企鵝生活在南半球，主要在南極地區。牠們擁有厚厚的羽毛保暖。',
+    image: '🐧',
+    size: '30-120cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '不會飛',
+      '優秀的游泳者',
+      '時速可達30公里',
+      '厚厚的羽毛保暖'
+    ]
+  },
+  {
+    id: 'seagull',
+    name: '海鷗',
+    englishName: 'Seagull',
+    depth: '0m',
+    habitat: '全球海洋',
+    category: '鳥類',
+    description: '海鷗以其適應能力聞名，是常見的海鳥。牠們生活在沿海地區。',
+    detailedDescription: '海鷗以其適應能力聞名，可長達70公分。牠們是常見的海鳥，生活在沿海地區。海鷗是雜食性動物，吃魚類、無脊椎動物和人類食物。牠們擁有強大的消化系統。',
+    image: '🐦',
+    size: '30-70cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '適應能力強',
+      '常見的海鳥',
+      '雜食性動物',
+      '強大的消化系統'
+    ]
+  },
+  {
+    id: 'pelican',
+    name: '鵜鶘',
+    englishName: 'Pelican',
+    depth: '0m',
+    habitat: '全球海洋',
+    category: '鳥類',
+    description: '鵜鶘以其巨大的喙囊聞名，可以吞下大型魚類。牠們是優秀的漁夫。',
+    detailedDescription: '鵜鶘以其巨大的喙囊聞名，可長達1.8公尺。牠們的喙囊可以吞下大型魚類。鵜鶘是優秀的漁夫，會協作捕魚。牠們生活在沿海地區和湖泊。',
+    image: '🐦',
+    size: '1-1.8m',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '巨大的喙囊',
+      '可以吞下大型魚類',
+      '會協作捕魚',
+      '優秀的漁夫'
+    ]
+  },
+  {
+    id: 'cormorant',
+    name: '鸕鶿',
+    englishName: 'Cormorant',
+    depth: '0-50m',
+    habitat: '全球海洋',
+    category: '鳥類',
+    description: '鸕鶿以其潛水能力聞名，是優秀的捕魚者。牠們的羽毛不防水。',
+    detailedDescription: '鸕鶿以其潛水能力聞名，可長達1公尺。牠們是優秀的捕魚者，可以潛到深處捕魚。鸕鶿的羽毛不防水，需要晾乾。牠們經常被用於捕魚協助人類。',
+    image: '🐦',
+    size: '50-100cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '優秀的潛水者',
+      '羽毛不防水',
+      '需要晾乾',
+      '被用於捕魚'
+    ]
   }
 ];
 
