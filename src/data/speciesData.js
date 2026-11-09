@@ -3868,6 +3868,107 @@ export const speciesData = [
       '可以致人死亡',
       '常見的水母'
     ]
+  },
+  // 更多海洋哺乳動物
+  {
+    id: 'manatee',
+    name: '海牛',
+    englishName: 'Manatee',
+    depth: '0-10m',
+    habitat: '熱帶海洋',
+    category: '哺乳動物',
+    description: '海牛以其溫和的性格聞名，被稱為「海中美人魚」。牠們是草食性動物。',
+    detailedDescription: '海牛以其溫和的性格聞名，可長達4公尺，重達1.6噸。牠們被稱為「海中美人魚」，擁有圓潤的身體。海牛是草食性動物，主要以海草為食。牠們是瀕危物種，受到船隻碰撞的威脅。',
+    image: '🐄',
+    size: '2.5-4m',
+    diet: '草食性',
+    conservation: '瀕危',
+    facts: [
+      '被稱為「海中美人魚」',
+      '草食性動物',
+      '主要以海草為食',
+      '瀕危物種'
+    ]
+  },
+  {
+    id: 'narwhal',
+    name: '獨角鯨',
+    englishName: 'Narwhal',
+    depth: '0-1500m',
+    habitat: '北極海洋',
+    category: '哺乳動物',
+    description: '獨角鯨以其長長的獠牙聞名，像獨角獸一樣。牠們生活在北極海洋。',
+    detailedDescription: '獨角鯨以其長長的獠牙聞名，可長達5公尺。牠們像獨角獸一樣，擁有長長的獠牙。獨角鯨生活在北極海洋，是深海動物。牠們的獠牙實際上是變形的牙齒，用於感應和社交。',
+    image: '🐋',
+    size: '4-5m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '像獨角獸一樣',
+      '長長的獠牙',
+      '變形的牙齒',
+      '生活在北極海洋'
+    ]
+  },
+  {
+    id: 'beluga',
+    name: '白鯨',
+    englishName: 'Beluga',
+    depth: '0-1000m',
+    habitat: '北極海洋',
+    category: '哺乳動物',
+    description: '白鯨以其白色的身體聞名，被稱為「海中金絲雀」。牠們發出各種聲音。',
+    detailedDescription: '白鯨以其白色的身體聞名，可長達5.5公尺。牠們被稱為「海中金絲雀」，發出各種聲音。白鯨生活在北極海洋，是群居動物。牠們擁有圓形的頭部，可以改變面部表情。',
+    image: '🐋',
+    size: '4-5.5m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '被稱為「海中金絲雀」',
+      '發出各種聲音',
+      '圓形的頭部',
+      '可以改變面部表情'
+    ]
+  },
+  {
+    id: 'orca',
+    name: '虎鯨',
+    englishName: 'Orca',
+    depth: '0-500m',
+    habitat: '全球海洋',
+    category: '哺乳動物',
+    description: '虎鯨以其黑白相間的斑紋聞名，是海洋中最強大的捕食者。牠們是高度智慧的動物。',
+    detailedDescription: '虎鯨以其黑白相間的斑紋聞名，可長達9公尺，重達6噸。牠們是海洋中最強大的捕食者，甚至捕食鯊魚。虎鯨是高度智慧的動物，擁有複雜的社交結構。牠們會使用協作狩獵策略。',
+    image: '🐋',
+    size: '5-9m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '黑白相間的斑紋',
+      '海洋中最強大的捕食者',
+      '高度智慧的動物',
+      '使用協作狩獵策略'
+    ]
+  },
+  {
+    id: 'sperm-whale',
+    name: '抹香鯨',
+    englishName: 'Sperm Whale',
+    depth: '0-2000m',
+    habitat: '全球海洋',
+    category: '哺乳動物',
+    description: '抹香鯨以其巨大的頭部聞名，是最大的齒鯨。牠們可以潛到深海。',
+    detailedDescription: '抹香鯨以其巨大的頭部聞名，可長達20公尺，重達50噸。牠們是最大的齒鯨，可以潛到2000公尺深。抹香鯨主要以巨型魷魚為食。牠們的頭部含有鯨蠟，用於聲納定位。',
+    image: '🐋',
+    size: '11-20m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '最大的齒鯨',
+      '可潛到2000公尺深',
+      '主要以巨型魷魚為食',
+      '頭部含有鯨蠟'
+    ]
   }
 ];
 
