@@ -2879,6 +2879,87 @@ export const speciesData = [
       '可以看到內部器官',
       '偵測上方的獵物'
     ]
+  },
+  // 更多珊瑚礁魚類
+  {
+    id: 'tang',
+    name: '刺尾魚',
+    englishName: 'Tang',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '珊瑚礁',
+    description: '刺尾魚以其鮮豔的顏色和尾柄上的刺聞名。牠們是珊瑚礁的重要草食者。',
+    detailedDescription: '刺尾魚以其鮮豔的顏色和尾柄上的刺聞名，可長達40公分。牠們是珊瑚礁的重要草食者，主要以藻類為食。刺尾魚的刺用於防禦，可以造成傷害。牠們是領域性強的魚類。',
+    image: '🐠',
+    size: '15-40cm',
+    diet: '草食性',
+    conservation: '普遍',
+    facts: [
+      '尾柄上有刺',
+      '重要的草食者',
+      '刺用於防禦',
+      '領域性強'
+    ]
+  },
+  {
+    id: 'wrasse',
+    name: '隆頭魚',
+    englishName: 'Wrasse',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '珊瑚礁',
+    description: '隆頭魚以其鮮豔的顏色和變性能力聞名。牠們是珊瑚礁的清潔魚。',
+    detailedDescription: '隆頭魚以其鮮豔的顏色和變性能力聞名，可長達60公分。牠們是珊瑚礁的清潔魚，會為其他魚類清理寄生蟲。隆頭魚是雌雄同體，所有個體出生時都是雌性。最大的會變性為雄性。',
+    image: '🐠',
+    size: '10-60cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '清潔魚',
+      '雌雄同體',
+      '最大的會變性為雄性',
+      '為其他魚類清理寄生蟲'
+    ]
+  },
+  {
+    id: 'goatfish',
+    name: '山羊魚',
+    englishName: 'Goatfish',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '珊瑚礁',
+    description: '山羊魚以其鬍鬚聞名，用於在沙中尋找食物。牠們是底棲魚類。',
+    detailedDescription: '山羊魚以其鬍鬚聞名，可長達60公分。牠們用鬍鬚在沙中尋找食物，主要是無脊椎動物。山羊魚是底棲魚類，經常在沙質海底活動。牠們會改變顏色以適應環境。',
+    image: '🐟',
+    size: '20-60cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '擁有鬍鬚',
+      '用鬍鬚在沙中尋找食物',
+      '底棲魚類',
+      '會改變顏色'
+    ]
+  },
+  {
+    id: 'snapper',
+    name: '笛鯛',
+    englishName: 'Snapper',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '笛鯛是重要的經濟魚類，以其鮮豔的紅色身體聞名。牠們是兇猛的捕食者。',
+    detailedDescription: '笛鯛是重要的經濟魚類，可長達1公尺。牠們以其鮮豔的紅色身體聞名。笛鯛是兇猛的捕食者，主要以魚類和頭足類為食。牠們是夜行性動物，白天躲在洞穴中。',
+    image: '🐟',
+    size: '30-100cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '鮮豔的紅色身體',
+      '重要的經濟魚類',
+      '夜行性動物',
+      '兇猛的捕食者'
+    ]
   }
 ];
 
