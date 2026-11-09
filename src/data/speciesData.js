@@ -3283,6 +3283,107 @@ export const speciesData = [
       '菱形的身體',
       '底棲魚類'
     ]
+  },
+  // 更多經濟魚類
+  {
+    id: 'red-snapper',
+    name: '紅笛鯛',
+    englishName: 'Red Snapper',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '紅笛鯛以其鮮豔的紅色身體聞名，是重要的經濟魚類。牠們生活在珊瑚礁附近。',
+    detailedDescription: '紅笛鯛以其鮮豔的紅色身體聞名，可長達90公分。牠們是重要的經濟魚類，被視為美食。紅笛鯛生活在珊瑚礁附近，主要以魚類和頭足類為食。牠們是夜行性動物，白天躲在洞穴中。',
+    image: '🐟',
+    size: '30-90cm',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '鮮豔的紅色身體',
+      '重要的經濟魚類',
+      '夜行性動物',
+      '生活在珊瑚礁附近'
+    ]
+  },
+  {
+    id: 'yellowfin-tuna',
+    name: '黃鰭金槍魚',
+    englishName: 'Yellowfin Tuna',
+    depth: '0-200m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '黃鰭金槍魚以其黃色的背鰭聞名，是重要的經濟魚類。牠們是游速極快的魚類。',
+    detailedDescription: '黃鰭金槍魚以其黃色的背鰭聞名，可長達2.4公尺。牠們是重要的經濟魚類，用於製作刺身和罐頭。黃鰭金槍魚是游速極快的魚類，時速可達75公里。牠們會進行長距離洄游。',
+    image: '🐟',
+    size: '1-2.4m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '黃色的背鰭',
+      '時速可達75公里',
+      '重要的經濟魚類',
+      '會進行長距離洄游'
+    ]
+  },
+  {
+    id: 'bluefin-tuna',
+    name: '藍鰭金槍魚',
+    englishName: 'Bluefin Tuna',
+    depth: '0-500m',
+    habitat: '全球海洋',
+    category: '魚類',
+    description: '藍鰭金槍魚以其藍色的背鰭聞名，是最大的金槍魚。牠們是高級美食。',
+    detailedDescription: '藍鰭金槍魚以其藍色的背鰭聞名，可長達3公尺。牠們是最大的金槍魚，重達680公斤。藍鰭金槍魚是高級美食，用於製作高級刺身。牠們是游速極快的魚類，時速可達70公里。',
+    image: '🐟',
+    size: '1-3m',
+    diet: '肉食性',
+    conservation: '瀕危',
+    facts: [
+      '最大的金槍魚',
+      '可重達680公斤',
+      '高級美食',
+      '時速可達70公里'
+    ]
+  },
+  {
+    id: 'marlin',
+    name: '馬林魚',
+    englishName: 'Marlin',
+    depth: '0-500m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '馬林魚以其長長的吻和背鰭聞名，是優秀的遊釣魚類。牠們是游速極快的魚類。',
+    detailedDescription: '馬林魚以其長長的吻和背鰭聞名，可長達5公尺。牠們是優秀的遊釣魚類，以其強烈的抗爭聞名。馬林魚是游速極快的魚類，時速可達110公里。牠們主要以魚類為食。',
+    image: '🐟',
+    size: '1-5m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '長長的吻和背鰭',
+      '優秀的遊釣魚類',
+      '時速可達110公里',
+      '強烈的抗爭'
+    ]
+  },
+  {
+    id: 'sailfish',
+    name: '旗魚',
+    englishName: 'Sailfish',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '旗魚以其巨大的背鰭聞名，像帆一樣。牠們是海洋中游速最快的魚類。',
+    detailedDescription: '旗魚以其巨大的背鰭聞名，可長達3公尺。牠們像帆一樣，背鰭可以豎起。旗魚是海洋中游速最快的魚類，時速可達110公里。牠們是兇猛的捕食者，主要以魚類為食。',
+    image: '🐟',
+    size: '1-3m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '巨大的背鰭像帆',
+      '海洋中游速最快的魚類',
+      '時速可達110公里',
+      '背鰭可以豎起'
+    ]
   }
 ];
 
