@@ -4595,6 +4595,107 @@ export const speciesData = [
       '需要晾乾',
       '被用於捕魚'
     ]
+  },
+  // 更多獨特物種
+  {
+    id: 'mimic-octopus',
+    name: '擬態章魚',
+    englishName: 'Mimic Octopus',
+    depth: '0-20m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '擬態章魚以其擬態能力聞名，可以模仿其他海洋動物。牠們是天才演員。',
+    detailedDescription: '擬態章魚以其擬態能力聞名，可長達60公分。牠們可以模仿其他海洋動物，包括獅子魚、海蛇和比目魚。擬態章魚是天才演員，用擬態來防禦和捕食。牠們生活在沙質海底。',
+    image: '🦑',
+    size: '30-60cm',
+    diet: '肉食性',
+    conservation: '資料不足',
+    facts: [
+      '可以模仿其他動物',
+      '天才演員',
+      '用擬態防禦和捕食',
+      '模仿15種以上動物'
+    ]
+  },
+  {
+    id: 'blue-ringed-octopus',
+    name: '藍環章魚',
+    englishName: 'Blue-ringed Octopus',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '藍環章魚以其藍色環紋聞名，有劇毒。牠們是危險的海洋動物。',
+    detailedDescription: '藍環章魚以其藍色環紋聞名，可長達20公分。牠們有劇毒，一口可以致人死亡。藍環章魚的毒液比河豚毒強1000倍。牠們受到威脅時會顯示藍色環紋警告。',
+    image: '🦑',
+    size: '5-20cm',
+    diet: '肉食性',
+    conservation: '資料不足',
+    facts: [
+      '有劇毒',
+      '毒液比河豚毒強1000倍',
+      '可以致人死亡',
+      '受威脅時顯示藍色環紋'
+    ]
+  },
+  {
+    id: 'flamboyant-cuttlefish',
+    name: '華麗墨魚',
+    englishName: 'Flamboyant Cuttlefish',
+    depth: '0-80m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '華麗墨魚以其鮮豔的顏色聞名，像火焰一樣。牠們是唯一會行走的頭足類。',
+    detailedDescription: '華麗墨魚以其鮮豔的顏色聞名，可長達8公分。牠們像火焰一樣，擁有鮮豔的顏色。華麗墨魚是唯一會行走的頭足類，用觸手在海底行走。牠們的肌肉有毒。',
+    image: '🦑',
+    size: '3-8cm',
+    diet: '肉食性',
+    conservation: '資料不足',
+    facts: [
+      '鮮豔的顏色',
+      '唯一會行走的頭足類',
+      '用觸手在海底行走',
+      '肌肉有毒'
+    ]
+  },
+  {
+    id: 'weedy-seadragon',
+    name: '草海龍',
+    englishName: 'Weedy Seadragon',
+    depth: '0-50m',
+    habitat: '澳洲海洋',
+    category: '魚類',
+    description: '草海龍以其草狀附肢聞名，像海草一樣。牠們是葉海龍的近親。',
+    detailedDescription: '草海龍以其草狀附肢聞名，可長達45公分。牠們像海草一樣，擁有草狀附肢偽裝。草海龍是葉海龍的近親，生活在澳洲南部。牠們是瀕危物種。',
+    image: '🐉',
+    size: '30-45cm',
+    diet: '肉食性',
+    conservation: '瀕危',
+    facts: [
+      '草狀附肢',
+      '像海草一樣偽裝',
+      '葉海龍的近親',
+      '瀕危物種'
+    ]
+  },
+  {
+    id: 'frogfish',
+    name: '躄魚',
+    englishName: 'Frogfish',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '躄魚以其擬態能力聞名，像青蛙一樣。牠們用誘餌吸引獵物。',
+    detailedDescription: '躄魚以其擬態能力聞名，可長達40公分。牠們像青蛙一樣，擁有擬態能力。躄魚用頭部的誘餌吸引獵物，然後快速吞下。牠們可以吞下比自己大的獵物。',
+    image: '🐸',
+    size: '10-40cm',
+    diet: '肉食性',
+    conservation: '資料不足',
+    facts: [
+      '像青蛙一樣',
+      '用誘餌吸引獵物',
+      '可以吞下比自己大的獵物',
+      '優秀的擬態者'
+    ]
   }
 ];
 
