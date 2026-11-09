@@ -4696,6 +4696,107 @@ export const speciesData = [
       '可以吞下比自己大的獵物',
       '優秀的擬態者'
     ]
+  },
+  // 更多海洋爬行動物
+  {
+    id: 'sea-turtle',
+    name: '海龜',
+    englishName: 'Sea Turtle',
+    depth: '0-500m',
+    habitat: '熱帶海洋',
+    category: '爬行動物',
+    description: '海龜以其堅硬的殼聞名，是古老的海洋爬行動物。牠們會洄游長距離。',
+    detailedDescription: '海龜以其堅硬的殼聞名，可長達2公尺。牠們是古老的海洋爬行動物，已存在數億年。海龜會洄游長距離，回到出生地產卵。牠們是瀕危物種，受到污染和漁網的威脅。',
+    image: '🐢',
+    size: '60-200cm',
+    diet: '雜食性',
+    conservation: '瀕危',
+    facts: [
+      '古老的海洋爬行動物',
+      '會洄游長距離',
+      '回到出生地產卵',
+      '瀕危物種'
+    ]
+  },
+  {
+    id: 'green-sea-turtle',
+    name: '綠海龜',
+    englishName: 'Green Sea Turtle',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '爬行動物',
+    description: '綠海龜以其綠色的脂肪聞名，是最大的海龜之一。牠們主要以海草為食。',
+    detailedDescription: '綠海龜以其綠色的脂肪聞名，可長達1.5公尺。牠們是最大的海龜之一，重達200公斤。綠海龜主要以海草為食，這使牠們的脂肪呈綠色。牠們是瀕危物種。',
+    image: '🐢',
+    size: '80-150cm',
+    diet: '草食性',
+    conservation: '瀕危',
+    facts: [
+      '綠色的脂肪',
+      '最大的海龜之一',
+      '主要以海草為食',
+      '瀕危物種'
+    ]
+  },
+  {
+    id: 'leatherback-turtle',
+    name: '棱皮龜',
+    englishName: 'Leatherback Turtle',
+    depth: '0-1200m',
+    habitat: '全球海洋',
+    category: '爬行動物',
+    description: '棱皮龜以其皮革狀的皮膚聞名，是最大的海龜。牠們可以潛到深海。',
+    detailedDescription: '棱皮龜以其皮革狀的皮膚聞名，可長達2.5公尺，重達900公斤。牠們是最大的海龜，也是最大的爬行動物。棱皮龜可以潛到1200公尺深，主要以水母為食。牠們是瀕危物種。',
+    image: '🐢',
+    size: '1.5-2.5m',
+    diet: '肉食性',
+    conservation: '瀕危',
+    facts: [
+      '皮革狀的皮膚',
+      '最大的海龜',
+      '可以潛到1200公尺深',
+      '主要以水母為食'
+    ]
+  },
+  {
+    id: 'loggerhead-turtle',
+    name: '赤蠵龜',
+    englishName: 'Loggerhead Turtle',
+    depth: '0-100m',
+    habitat: '全球海洋',
+    category: '爬行動物',
+    description: '赤蠵龜以其巨大的頭部聞名，是常見的海龜。牠們有強大的咬合力。',
+    detailedDescription: '赤蠵龜以其巨大的頭部聞名，可長達1.2公尺。牠們是常見的海龜，擁有強大的咬合力。赤蠵龜主要以貝類和甲殼類為食，用強大的顎咬碎貝殼。牠們是瀕危物種。',
+    image: '🐢',
+    size: '70-120cm',
+    diet: '肉食性',
+    conservation: '瀕危',
+    facts: [
+      '巨大的頭部',
+      '強大的咬合力',
+      '咬碎貝殼',
+      '瀕危物種'
+    ]
+  },
+  {
+    id: 'marine-iguana',
+    name: '海鬣蜥',
+    englishName: 'Marine Iguana',
+    depth: '0-10m',
+    habitat: '加拉帕戈斯群島',
+    category: '爬行動物',
+    description: '海鬣蜥是唯一的海生蜥蜴，以海藻為食。牠們生活在加拉帕戈斯群島。',
+    detailedDescription: '海鬣蜥是唯一的海生蜥蜴，可長達1.5公尺。牠們生活在加拉帕戈斯群島，以海藻為食。海鬣蜥可以潛水尋找海藻，有強大的爪子抓住岩石。牠們是瀕危物種。',
+    image: '🦎',
+    size: '50-150cm',
+    diet: '草食性',
+    conservation: '瀕危',
+    facts: [
+      '唯一的海生蜥蜴',
+      '以海藻為食',
+      '可以潛水尋找海藻',
+      '生活在加拉帕戈斯群島'
+    ]
   }
 ];
 
