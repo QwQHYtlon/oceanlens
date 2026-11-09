@@ -3969,6 +3969,107 @@ export const speciesData = [
       '主要以巨型魷魚為食',
       '頭部含有鯨蠟'
     ]
+  },
+  // 更多鯊魚
+  {
+    id: 'great-white-shark',
+    name: '大白鯊',
+    englishName: 'Great White Shark',
+    depth: '0-1200m',
+    habitat: '全球海洋',
+    category: '大型生物',
+    description: '大白鯊以其強大的咬合力聞名，是海洋中最著名的捕食者。牠們是頂級捕食者。',
+    detailedDescription: '大白鯊以其強大的咬合力聞名，可長達6公尺，重達2噸。牠們是海洋中最著名的捕食者，是頂級捕食者。大白鯊擁有敏銳的嗅覺，可以聞到幾公里外的血液。牠們主要以海豹和魚類為食。',
+    image: '🦈',
+    size: '4-6m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '強大的咬合力',
+      '頂級捕食者',
+      '敏銳的嗅覺',
+      '可以聞到幾公里外的血液'
+    ]
+  },
+  {
+    id: 'tiger-shark',
+    name: '虎鯊',
+    englishName: 'Tiger Shark',
+    depth: '0-900m',
+    habitat: '熱帶海洋',
+    category: '大型生物',
+    description: '虎鯊以其身上的條紋聞名，像老虎一樣。牠們是兇猛的捕食者。',
+    detailedDescription: '虎鯊以其身上的條紋聞名，可長達5.5公尺。牠們像老虎一樣，擁有條紋。虎鯊是兇猛的捕食者，會吃幾乎任何東西。牠們被稱為「海洋垃圾桶」，因為牠們會吞下各種物體。',
+    image: '🦈',
+    size: '3-5.5m',
+    diet: '肉食性',
+    conservation: '瀕危',
+    facts: [
+      '像老虎一樣的條紋',
+      '被稱為「海洋垃圾桶」',
+      '會吃幾乎任何東西',
+      '兇猛的捕食者'
+    ]
+  },
+  {
+    id: 'whale-shark',
+    name: '鯨鯊',
+    englishName: 'Whale Shark',
+    depth: '0-2000m',
+    habitat: '熱帶海洋',
+    category: '大型生物',
+    description: '鯨鯊是最大的魚類，可長達12公尺。牠們是溫和的濾食性動物。',
+    detailedDescription: '鯨鯊是最大的魚類，可長達12公尺，重達20噸。牠們是溫和的濾食性動物，主要以浮游生物為食。鯨鯊對人類無害，經常讓潛水員靠近。牠們是瀕危物種，受到過度漁撈的威脅。',
+    image: '🦈',
+    size: '5-12m',
+    diet: '濾食性',
+    conservation: '瀕危',
+    facts: [
+      '最大的魚類',
+      '溫和的濾食性動物',
+      '對人類無害',
+      '瀕危物種'
+    ]
+  },
+  {
+    id: 'basking-shark',
+    name: '姥鯊',
+    englishName: 'Basking Shark',
+    depth: '0-1000m',
+    habitat: '全球海洋',
+    category: '大型生物',
+    description: '姥鯊是第二大魚類，可長達10公尺。牠們是溫和的濾食性動物。',
+    detailedDescription: '姥鯊是第二大魚類，可長達10公尺，重達5噸。牠們是溫和的濾食性動物，主要以浮游生物為食。姥鯊經常在水面上游動，張開嘴巴過濾海水。牠們是瀕危物種。',
+    image: '🦈',
+    size: '6-10m',
+    diet: '濾食性',
+    conservation: '瀕危',
+    facts: [
+      '第二大魚類',
+      '溫和的濾食性動物',
+      '在水面上游動',
+      '瀕危物種'
+    ]
+  },
+  {
+    id: 'thresher-shark',
+    name: '長尾鯊',
+    englishName: 'Thresher Shark',
+    depth: '0-500m',
+    habitat: '全球海洋',
+    category: '大型生物',
+    description: '長尾鯊以其長長的尾巴聞名，用於擊暈獵物。牠們是游速極快的鯊魚。',
+    detailedDescription: '長尾鯊以其長長的尾巴聞名，可長達6公尺。牠們的尾巴可以長達身體的一半，用於擊暈獵物。長尾鯊是游速極快的鯊魚，可以跳出水面。牠們主要以魚類為食。',
+    image: '🦈',
+    size: '3-6m',
+    diet: '肉食性',
+    conservation: '易危',
+    facts: [
+      '長長的尾巴',
+      '尾巴用於擊暈獵物',
+      '游速極快',
+      '可以跳出水面'
+    ]
   }
 ];
 
