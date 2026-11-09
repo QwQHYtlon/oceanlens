@@ -3626,6 +3626,127 @@ export const speciesData = [
       '鮮豔的顏色警告捕食者',
       '主要以海綿為食'
     ]
+  },
+  // 更多甲殼類動物
+  {
+    id: 'fiddler-crab',
+    name: '招潮蟹',
+    englishName: 'Fiddler Crab',
+    depth: '0-5m',
+    habitat: '潮間帶',
+    category: '無脊椎動物',
+    description: '招潮蟹以其巨大的螯聞名，雄性有一隻特別大的螯。牠們生活在潮間帶。',
+    detailedDescription: '招潮蟹以其巨大的螯聞名，可長達5公分。雄性有一隻特別大的螯，用於吸引雌性和防禦。招潮蟹生活在潮間帶，會隨著潮汐活動。牠們主要以藻類和有機物質為食。',
+    image: '🦀',
+    size: '2-5cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '雄性有一隻巨大的螯',
+      '生活在潮間帶',
+      '隨著潮汐活動',
+      '用螯吸引雌性'
+    ]
+  },
+  {
+    id: 'horseshoe-crab',
+    name: '鱟',
+    englishName: 'Horseshoe Crab',
+    depth: '0-50m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '鱟以其馬蹄形的身體聞名，是古老的生物，已存在數億年。牠們不是真正的螃蟹。',
+    detailedDescription: '鱟以其馬蹄形的身體聞名，可長達60公分。牠們是古老的生物，已存在數億年，被稱為活化石。鱟不是真正的螃蟹，而是蛛形綱的近親。牠們的藍色血液用於醫學檢測。',
+    image: '🦀',
+    size: '20-60cm',
+    diet: '雜食性',
+    conservation: '易危',
+    facts: [
+      '馬蹄形的身體',
+      '已存在數億年',
+      '不是真正的螃蟹',
+      '藍色血液用於醫學檢測'
+    ]
+  },
+  {
+    id: 'barnacle',
+    name: '藤壺',
+    englishName: 'Barnacle',
+    depth: '0-50m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '藤壺以其石灰質的殼聞名，會吸附在岩石和船隻上。牠們是濾食性動物。',
+    detailedDescription: '藤壺以其石灰質的殼聞名，可長達5公分。牠們會吸附在岩石和船隻上，形成群落。藤壺是濾食性動物，用觸手捕捉浮游生物。牠們是甲殼類動物，與螃蟹和蝦是近親。',
+    image: '🦐',
+    size: '1-5cm',
+    diet: '濾食性',
+    conservation: '普遍',
+    facts: [
+      '石灰質的殼',
+      '吸附在岩石和船隻上',
+      '濾食性動物',
+      '與螃蟹和蝦是近親'
+    ]
+  },
+  {
+    id: 'krill',
+    name: '磷蝦',
+    englishName: "Krill",
+    depth: '0-500m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '磷蝦是小型甲殼類動物，是海洋食物鏈的重要環節。牠們發光。',
+    detailedDescription: '磷蝦是小型甲殼類動物，可長達6公分。牠們是海洋食物鏈的重要環節，為鯨魚、企鵝和魚類提供食物。磷蝦發光，用於溝通和偽裝。牠們形成巨大的群體，數量可達數十億。',
+    image: '🦐',
+    size: '1-6cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '海洋食物鏈的重要環節',
+      '發光',
+      '形成巨大的群體',
+      '為鯨魚提供食物'
+    ]
+  },
+  {
+    id: 'copepod',
+    name: '橈足類',
+    englishName: 'Copepod',
+    depth: '0-1000m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '橈足類是小型甲殼類動物，是海洋中最豐富的動物。牠們是浮游生物。',
+    detailedDescription: '橈足類是小型甲殼類動物，可長達2毫米。牠們是海洋中最豐富的動物，數量超過所有其他動物的總和。橈足類是浮游生物，隨洋流漂動。牠們是食物鏈的重要環節。',
+    image: '🦐',
+    size: '0.5-2mm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '海洋中最豐富的動物',
+      '浮游生物',
+      '食物鏈的重要環節',
+      '隨洋流漂動'
+    ]
+  },
+  {
+    id: 'amphipod',
+    name: '端足類',
+    englishName: 'Amphipod',
+    depth: '0-5000m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '端足類是小型甲殼類動物，以其側扁的身體聞名。牠們生活在各種海洋環境。',
+    detailedDescription: '端足類是小型甲殼類動物，可長達3公分。牠們以其側扁的身體聞名，像蝦一樣。端足類生活在各種海洋環境，從淺海到深海。牠們是雜食性動物，吃藻類和有機物質。',
+    image: '🦐',
+    size: '2-30mm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '側扁的身體',
+      '生活在各種海洋環境',
+      '從淺海到深海',
+      '雜食性動物'
+    ]
   }
 ];
 
