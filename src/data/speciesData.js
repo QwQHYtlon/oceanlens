@@ -4797,6 +4797,127 @@ export const speciesData = [
       '可以潛水尋找海藻',
       '生活在加拉帕戈斯群島'
     ]
+  },
+  // 更多珊瑚礁魚類
+  {
+    id: 'emperor-angelfish',
+    name: '皇帝神仙魚',
+    englishName: 'Emperor Angelfish',
+    depth: '0-100m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '皇帝神仙魚以其鮮豔的斑紋聞名，是珊瑚礁中最美麗的魚類之一。',
+    detailedDescription: '皇帝神仙魚以其鮮豔的斑紋聞名，可長達40公分。牠們是珊瑚礁中最美麗的魚類之一，擁有藍色和黃色的斑紋。皇帝神仙魚主要以海綿和藻類為食。幼體和成體的顏色完全不同。',
+    image: '🐟',
+    size: '15-40cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '鮮豔的斑紋',
+      '珊瑚礁中最美麗的魚類之一',
+      '幼體和成體顏色不同',
+      '主要以海綿為食'
+    ]
+  },
+  {
+    id: 'queen-angelfish',
+    name: '皇后神仙魚',
+    englishName: 'Queen Angelfish',
+    depth: '0-70m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '皇后神仙魚以其藍色和黃色的斑紋聞名，像皇冠一樣。',
+    detailedDescription: '皇后神仙魚以其藍色和黃色的斑紋聞名，可長達45公分。牠們像皇冠一樣，擁有藍色和黃色的斑紋。皇后神仙魚主要以海綿和藻類為食。牠們是珊瑚礁的常見物種。',
+    image: '🐟',
+    size: '20-45cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '藍色和黃色的斑紋',
+      '像皇冠一樣',
+      '珊瑚礁的常見物種',
+      '主要以海綿為食'
+    ]
+  },
+  {
+    id: 'royal-gamma',
+    name: '皇家伽馬魚',
+    englishName: 'Royal Gamma',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '皇家伽馬魚以其紫色和黃色的身體聞名，是珊瑚礁的小型魚類。',
+    detailedDescription: '皇家伽馬魚以其紫色和黃色的身體聞名，可長達8公分。牠們是珊瑚礁的小型魚類，擁有鮮豔的顏色。皇家伽馬魚主要以浮游生物為食。牠們是群居動物。',
+    image: '🐟',
+    size: '3-8cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '紫色和黃色的身體',
+      '珊瑚礁的小型魚類',
+      '群居動物',
+      '主要以浮游生物為食'
+    ]
+  },
+  {
+    id: 'sixbar-wrasse',
+    name: '六條紋隆頭魚',
+    englishName: 'Sixbar Wrasse',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '六條紋隆頭魚以其六條黑色條紋聞名，是珊瑚礁的常見魚類。',
+    detailedDescription: '六條紋隆頭魚以其六條黑色條紋聞名，可長達20公分。牠們是珊瑚礁的常見魚類，擁有六條明顯的黑色條紋。六條紋隆頭魚主要以無脊椎動物為食。牠們會改變顏色。',
+    image: '🐟',
+    size: '10-20cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '六條黑色條紋',
+      '珊瑚礁的常見魚類',
+      '會改變顏色',
+      '主要以無脊椎動物為食'
+    ]
+  },
+  {
+    id: 'cleaner-wrasse',
+    name: '清潔魚',
+    englishName: 'Cleaner Wrasse',
+    depth: '0-40m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '清潔魚以其清潔行為聞名，會幫其他魚類清潔身體。',
+    detailedDescription: '清潔魚以其清潔行為聞名，可長達12公分。牠們會幫其他魚類清潔身體，吃掉身上的寄生蟲。清潔魚有特殊的「清潔站」，其他魚類會來清潔。牠們是珊瑚礁的重要物種。',
+    image: '🐟',
+    size: '4-12cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '幫其他魚類清潔身體',
+      '吃掉寄生蟲',
+      '有清潔站',
+      '珊瑚礁的重要物種'
+    ]
+  },
+  {
+    id: 'moorish-idol',
+    name: '摩里神仙魚',
+    englishName: 'Moorish Idol',
+    depth: '0-180m',
+    habitat: '熱帶海洋',
+    category: '魚類',
+    description: '摩里神仙魚以其長長的背鰭聞名，像皇冠一樣。牠們是優雅的游泳者。',
+    detailedDescription: '摩里神仙魚以其長長的背鰭聞名，可長達25公分。牠們像皇冠一樣，擁有長長的背鰭。摩里神仙魚是優雅的游泳者，經常成對出現。牠們主要以海綿和藻類為食。',
+    image: '🐟',
+    size: '15-25cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '長長的背鰭',
+      '像皇冠一樣',
+      '優雅的游泳者',
+      '經常成對出現'
+    ]
   }
 ];
 
