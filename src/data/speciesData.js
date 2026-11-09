@@ -3061,6 +3061,107 @@ export const speciesData = [
       '皮膚有毒',
       '用於防禦'
     ]
+  },
+  // 更多珊瑚礁魚類
+  {
+    id: 'cardinalfish',
+    name: '天竺鯛',
+    englishName: 'Cardinalfish',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '珊瑚礁',
+    description: '天竺鯛以其紅色的眼睛聞名，像紅衣主教一樣。牠們是夜行性動物。',
+    detailedDescription: '天竺鯛以其紅色的眼睛聞名，可長達20公分。牠們像紅衣主教一樣，擁有鮮豔的紅色眼睛。天竺鯛是夜行性動物，白天躲在珊瑚中。牠們是口孵魚類，雄性會在口中孵化卵。',
+    image: '🐠',
+    size: '5-20cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '紅色的眼睛',
+      '夜行性動物',
+      '口孵魚類',
+      '雄性在口中孵化卵'
+    ]
+  },
+  {
+    id: 'firefish',
+    name: '火鳥魚',
+    englishName: 'Firefish',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '珊瑚礁',
+    description: '火鳥魚以其紅色和黃色的斑紋聞名，像火焰一樣。牠們是珊瑚礁的獨特物種。',
+    detailedDescription: '火鳥魚以其紅色和黃色的斑紋聞名，可長達10公分。牠們像火焰一樣，擁有鮮豔的顏色。火鳥魚是珊瑚礁的獨特物種，主要以浮游生物為食。牠們是害羞的魚類，經常躲在岩石中。',
+    image: '🐠',
+    size: '5-10cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '紅色和黃色的斑紋',
+      '像火焰一樣',
+      '害羞的魚類',
+      '躲在岩石中'
+    ]
+  },
+  {
+    id: 'blenny',
+    name: '鰕虎魚',
+    englishName: 'Blenny',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '珊瑚礁',
+    description: '鰕虎魚以其大眼睛和獨特的行為聞名。牠們是珊瑚礁的底棲魚類。',
+    detailedDescription: '鰕虎魚以其大眼睛和獨特的行為聞名，可長達15公分。牠們是珊瑚礁的底棲魚類，經常在岩石上休息。鰕虎魚主要以藻類和無脊椎動物為食。牠們是領域性強的魚類。',
+    image: '🐟',
+    size: '3-15cm',
+    diet: '雜食性',
+    conservation: '普遍',
+    facts: [
+      '大眼睛',
+      '底棲魚類',
+      '經常在岩石上休息',
+      '領域性強'
+    ]
+  },
+  {
+    id: 'goby',
+    name: '蝦虎魚',
+    englishName: 'Goby',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '珊瑚礁',
+    description: '蝦虎魚以其與蝦的共生關係聞名。牠們是珊瑚礁的常見物種。',
+    detailedDescription: '蝦虎魚以其與蝦的共生關係聞名，可長達15公分。牠們與槍蝦共生，蝦挖掘洞穴，蝦虎魚警戒。蝦虎魚是珊瑚礁的常見物種，主要以浮游生物為食。牠們是底棲魚類。',
+    image: '🐟',
+    size: '2-15cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '與蝦共生',
+      '蝦挖掘洞穴',
+      '蝦虎魚警戒',
+      '底棲魚類'
+    ]
+  },
+  {
+    id: 'hawkfish',
+    name: '鷹魚',
+    englishName: 'Hawkfish',
+    depth: '0-50m',
+    habitat: '熱帶海洋',
+    category: '珊瑚礁',
+    description: '鷹魚以其棲息在珊瑚上的行為聞名，像鷹一樣。牠們是珊瑚礁的捕食者。',
+    detailedDescription: '鷹魚以其棲息在珊瑚上的行為聞名，可長達30公分。牠們像鷹一樣，從高處俯視獵物。鷹魚是珊瑚礁的捕食者，主要以小魚和無脊椎動物為食。牠們沒有游泳鰾，用胸鰭移動。',
+    image: '🐟',
+    size: '10-30cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '棲息在珊瑚上',
+      '像鷹一樣俯視',
+      '沒有游泳鰾',
+      '用胸鰭移動'
+    ]
   }
 ];
 
