@@ -3747,6 +3747,127 @@ export const speciesData = [
       '從淺海到深海',
       '雜食性動物'
     ]
+  },
+  // 更多刺胞動物
+  {
+    id: 'upside-down-jellyfish',
+    name: '倒立水母',
+    englishName: 'Upside-down Jellyfish',
+    depth: '0-10m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '倒立水母以其倒立的姿勢聞名，觸手朝上。牠們與藻類共生。',
+    detailedDescription: '倒立水母以其倒立的姿勢聞名，可長達30公分。牠們觸手朝上，像花朵一樣。倒立水母與藻類共生，藻類為牠們提供食物。牠們生活在淺水區，經常在海草床中。',
+    image: '🪼',
+    size: '10-30cm',
+    diet: '濾食性',
+    conservation: '普遍',
+    facts: [
+      '倒立的姿勢',
+      '與藻類共生',
+      '觸手朝上',
+      '生活在淺水區'
+    ]
+  },
+  {
+    id: 'sea-anemone',
+    name: '海葵',
+    englishName: 'Sea Anemone',
+    depth: '0-50m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '海葵以其美麗的觸手聞名，像花朵一樣。牠們與小丑魚共生。',
+    detailedDescription: '海葵以其美麗的觸手聞名，可長達1公尺。牠們像花朵一樣，擁有鮮豔的觸手。海葵與小丑魚共生，為小丑魚提供保護。牠們的觸手有毒，用於捕食和防禦。',
+    image: '🪼',
+    size: '10-100cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '像花朵一樣',
+      '與小丑魚共生',
+      '觸手有毒',
+      '用於捕食和防禦'
+    ]
+  },
+  {
+    id: 'coral',
+    name: '珊瑚',
+    englishName: 'Coral',
+    depth: '0-200m',
+    habitat: '熱帶海洋',
+    category: '無脊椎動物',
+    description: '珊瑚以其堅硬的骨骼聞名，是珊瑚礁的建設者。牠們與藻類共生。',
+    detailedDescription: '珊瑚以其堅硬的骨骼聞名，可長達數公尺。牠們是珊瑚礁的建設者，形成巨大的珊瑚礁。珊瑚與藻類共生，藻類為牠們提供食物。珊瑚對環境變化非常敏感。',
+    image: '🪸',
+    size: '10cm-數公尺',
+    diet: '濾食性',
+    conservation: '瀕危',
+    facts: [
+      '珊瑚礁的建設者',
+      '與藻類共生',
+      '對環境變化敏感',
+      '形成巨大的珊瑚礁'
+    ]
+  },
+  {
+    id: 'hydra',
+    name: '水螅',
+    englishName: 'Hydra',
+    depth: '0-5m',
+    habitat: '淡水',
+    category: '無脊椎動物',
+    description: '水螅是小型刺胞動物，以其再生能力聞名。牠們生活在淡水環境。',
+    detailedDescription: '水螅是小型刺胞動物，可長達3公分。牠們以其再生能力聞名，可以從一小塊身體再生出完整的個體。水螅生活在淡水環境，主要以小動物為食。牠們是研究再生的重要模式生物。',
+    image: '🪼',
+    size: '1-3cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '再生能力強',
+      '生活在淡水環境',
+      '可以從一小塊再生',
+      '研究再生的重要模式生物'
+    ]
+  },
+  {
+    id: 'siphonophore',
+    name: '管水母',
+    englishName: 'Siphonophore',
+    depth: '0-4000m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '管水母是群體刺胞動物，由許多個體組成。牠們可以長達50公尺。',
+    detailedDescription: '管水母是群體刺胞動物，可長達50公尺。牠們由許多個體組成，每個個體有不同的功能。管水母是最長的動物之一。牠們主要以浮游生物為食，用觸手捕捉獵物。',
+    image: '🪼',
+    size: '10cm-50m',
+    diet: '肉食性',
+    conservation: '資料不足',
+    facts: [
+      '群體刺胞動物',
+      '由許多個體組成',
+      '最長的動物之一',
+      '可長達50公尺'
+    ]
+  },
+  {
+    id: 'sea-nettle',
+    name: '海蕁麻',
+    englishName: 'Sea Nettle',
+    depth: '0-50m',
+    habitat: '全球海洋',
+    category: '無脊椎動物',
+    description: '海蕁麻以其美麗的觸手聞名，有毒的刺細胞。牠們是常見的水母。',
+    detailedDescription: '海蕁麻以其美麗的觸手聞名，可長達50公分。牠們有有毒的刺細胞，可以致人死亡。海蕁麻是常見的水母，經常在沿海地區出現。牠們主要以浮游生物為食。',
+    image: '🪼',
+    size: '10-50cm',
+    diet: '肉食性',
+    conservation: '普遍',
+    facts: [
+      '美麗的觸手',
+      '有毒的刺細胞',
+      '可以致人死亡',
+      '常見的水母'
+    ]
   }
 ];
 
