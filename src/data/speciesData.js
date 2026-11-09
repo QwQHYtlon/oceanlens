@@ -4191,6 +4191,107 @@ export const speciesData = [
       '瀕危物種',
       '用鋸狀吻挖掘海底'
     ]
+  },
+  // 更多深海生物
+  {
+    id: 'hatchetfish',
+    name: '斧頭魚',
+    englishName: 'Hatchetfish',
+    depth: '200-1000m',
+    habitat: '深海',
+    category: '魚類',
+    description: '斧頭魚以其扁平的身體聞名，像斧頭一樣。牠們可以發光。',
+    detailedDescription: '斧頭魚以其扁平的身體聞名，可長達10公分。牠們像斧頭一樣，身體扁平。斧頭魚可以發光，用於偽裝和溝通。牠們是深海魚類，眼睛朝上看以觀察上方的獵物。',
+    image: '🐟',
+    size: '3-10cm',
+    diet: '肉食性',
+    conservation: '資料不足',
+    facts: [
+      '像斧頭一樣',
+      '可以發光',
+      '眼睛朝上看',
+      '用於偽裝和溝通'
+    ]
+  },
+  {
+    id: 'lanternfish',
+    name: '燈籠魚',
+    englishName: 'Lanternfish',
+    depth: '200-1000m',
+    habitat: '深海',
+    category: '魚類',
+    description: '燈籠魚以其發光器官聞名，像燈籠一樣。牠們是深海中最豐富的魚類。',
+    detailedDescription: '燈籠魚以其發光器官聞名，可長達15公分。牠們像燈籠一樣，擁有發光器官。燈籠魚是深海中最豐富的魚類，形成巨大的群體。牠們用發光器官進行溝通和偽裝。',
+    image: '🐟',
+    size: '2-15cm',
+    diet: '肉食性',
+    conservation: '資料不足',
+    facts: [
+      '擁有發光器官',
+      '深海中最豐富的魚類',
+      '形成巨大的群體',
+      '用於溝通和偽裝'
+    ]
+  },
+  {
+    id: 'viperfish',
+    name: '蝰魚',
+    englishName: 'Viperfish',
+    depth: '200-1000m',
+    habitat: '深海',
+    category: '魚類',
+    description: '蝰魚以其長長的牙齒聞名，像毒蛇一樣。牠們是兇猛的捕食者。',
+    detailedDescription: '蝰魚以其長長的牙齒聞名，可長達30公分。牠們像毒蛇一樣，擁有長長的牙齒。蝰魚是兇猛的捕食者，用發光器官吸引獵物。牠們的牙齒太長，無法完全閉上嘴巴。',
+    image: '🐟',
+    size: '15-30cm',
+    diet: '肉食性',
+    conservation: '資料不足',
+    facts: [
+      '像毒蛇一樣',
+      '長長的牙齒',
+      '用發光器官吸引獵物',
+      '牙齒太長無法閉上嘴巴'
+    ]
+  },
+  {
+    id: 'dragonfish',
+    name: '龍魚',
+    englishName: 'Dragonfish',
+    depth: '200-1000m',
+    habitat: '深海',
+    category: '魚類',
+    description: '龍魚以其長長的牙齒和發光器官聞名，像龍一樣。牠們是兇猛的捕食者。',
+    detailedDescription: '龍魚以其長長的牙齒和發光器官聞名，可長達50公分。牠們像龍一樣，擁有長長的牙齒和發光器官。龍魚是兇猛的捕食者，用發光器官吸引獵物。牠們的牙齒相對於身體比例是最大的之一。',
+    image: '🐟',
+    size: '15-50cm',
+    diet: '肉食性',
+    conservation: '資料不足',
+    facts: [
+      '像龍一樣',
+      '擁有發光器官',
+      '牙齒比例最大之一',
+      '用發光器官吸引獵物'
+    ]
+  },
+  {
+    id: 'grenadier',
+    name: '鼠尾魚',
+    englishName: 'Grenadier',
+    depth: '100-4000m',
+    habitat: '深海',
+    category: '魚類',
+    description: '鼠尾魚以其長長的尾巴聞名，像老鼠一樣。牠們是深海常見魚類。',
+    detailedDescription: '鼠尾魚以其長長的尾巴聞名，可長達1.5公尺。牠們像老鼠一樣，擁有長長的尾巴。鼠尾魚是深海常見魚類，生活在海底。牠們主要以無脊椎動物為食。',
+    image: '🐟',
+    size: '30-150cm',
+    diet: '肉食性',
+    conservation: '資料不足',
+    facts: [
+      '像老鼠一樣',
+      '長長的尾巴',
+      '深海常見魚類',
+      '生活在海底'
+    ]
   }
 ];
 
