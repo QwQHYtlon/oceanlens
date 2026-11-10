@@ -124,7 +124,7 @@ export function validateSimulationData(data = simulationData) {
     ['getTemperatureSeries', [0, 0], 9, 24, 32],
     ['getPollutionSeries', [28, 0], 11, 0, 100],
     ['getPlasticSeries', [28, 0], 11, 0, 100],
-    ['getStressSeries', [], 11, 0, 100],
+    ['getPressureMultiplierSeries', [28, 20, 15], 16, 0, 150],
   ];
 
   for (const [method, args, length, minX, maxX] of seriesDefinitions) {

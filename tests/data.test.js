@@ -169,3 +169,17 @@ test('category and ocean filters combine', () => {
     results.every((species) => getSpeciesOceans(species.habitat).includes('pacific')),
   );
 });
+
+
+test('pressure multiplier chart matches the current ecosystem score', () => {
+  const current = simulationData.calculate(28, 20, 15);
+  const series = simulationData.getPressureMultiplierSeries(28, 20, 15);
+  const currentPoint = series.find((point) => point.x === 100);
+
+  assert.ok(currentPoint);
+  assert.equal(currentPoint.y, current.ecosystemHealth);
+  assert.equal(series[0].x, 0);
+  assert.equal(series[series.length - 1].x, 150);
+  assert.equal(series.length, 16);
+  assert.ok(series.every((point) => point.y >= 0 && point.y <= 100));
+});

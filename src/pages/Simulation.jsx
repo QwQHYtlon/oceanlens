@@ -30,7 +30,7 @@ const Simulation = () => {
       temperature: simulationData.getTemperatureSeries(pollution, plastic),
       pollution: simulationData.getPollutionSeries(temperature, plastic),
       plastic: simulationData.getPlasticSeries(temperature, pollution),
-      ecosystem: simulationData.getStressSeries(),
+      ecosystem: simulationData.getPressureMultiplierSeries(temperature, pollution, plastic),
     }),
     [temperature, pollution, plastic],
   );
@@ -150,20 +150,33 @@ const Simulation = () => {
                 data={series.temperature}
                 referenceX={temperature}
                 referenceLabel="目前水溫"
+                currentLabel={`目前水溫 ${temperature}°C`}
+                currentValue={metrics.coralHealth}
               />
               <SimulationChart
                 {...chartConfig.pollution}
                 data={series.pollution}
                 referenceX={pollution}
                 referenceLabel="目前污染"
+                currentLabel={`目前污染 ${pollution}%`}
+                currentValue={metrics.biodiversity}
               />
               <SimulationChart
                 {...chartConfig.plastic}
                 data={series.plastic}
                 referenceX={plastic}
                 referenceLabel="目前塑膠"
+                currentLabel={`目前塑膠 ${plastic}%`}
+                currentValue={metrics.fishPopulation}
               />
-              <SimulationChart {...chartConfig.ecosystem} data={series.ecosystem} />
+              <SimulationChart
+                {...chartConfig.ecosystem}
+                data={series.ecosystem}
+                referenceX={100}
+                referenceLabel="目前設定"
+                currentLabel="目前設定（倍率 100%）"
+                currentValue={metrics.ecosystemHealth}
+              />
             </div>
           </div>
         </div>

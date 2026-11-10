@@ -26,8 +26,14 @@ const SimulationChart = ({
   color,
   referenceX,
   referenceLabel,
+  currentLabel,
+  currentValue,
 }) => {
-  const currentPoint = data.find((point) => point.x === referenceX);
+  const hasCurrentValue = Number.isFinite(currentValue);
+  const xMin = data[0]?.x;
+  const xMax = data[data.length - 1]?.x;
+  const showReference =
+    typeof referenceX === 'number' && referenceX > xMin && referenceX < xMax;
 
   return (
     <ChartCard title={title}>
@@ -35,9 +41,20 @@ const SimulationChart = ({
         className="simulation-chart"
         role="img"
         aria-label={`${title}。${
-          currentPoint ? `${referenceLabel || xLabel} ${referenceX}，${lineName} ${currentPoint.y}%。` : ''
+          hasCurrentValue && currentLabel
+            ? `${currentLabel}，${lineName} ${currentValue}%。`
+            : ''
         }`}
       >
+        {hasCurrentValue && currentLabel && (
+          <p className="simulation-chart__current">
+            {currentLabel}
+            <span aria-hidden="true"> · </span>
+            <strong>
+              {lineName} {currentValue}%
+            </strong>
+          </p>
+        )}
         <ResponsiveContainer width="100%" height={280}>
           <LineChart data={data} margin={{ top: 12, right: 18, left: -6, bottom: 22 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
@@ -75,7 +92,7 @@ const SimulationChart = ({
               formatter={(value) => [`${value}%`, lineName]}
               labelFormatter={(value) => `${xLabel}: ${value}`}
             />
-            {typeof referenceX === 'number' && (
+            {showReference && (
               <ReferenceLine
                 x={referenceX}
                 stroke="rgba(255,255,255,0.4)"

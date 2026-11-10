@@ -74,14 +74,20 @@ export const simulationData = {
     return data;
   },
 
-  // Ramps up all three stressors together to visualise their combined effect.
-  getStressSeries: () => {
+  // 0% = pristine baseline, 100% = current slider settings, 150% = worse.
+  // This keeps the current point on the curve instead of mixing a synthetic
+  // stress index with the current ecosystem score.
+  getPressureMultiplierSeries: (temperature, pollution, plastic) => {
     const data = [];
-    for (let stress = 0; stress <= 100; stress += 10) {
-      const temperature = 24 + (stress / 100) * 8;
+    for (let factor = 0; factor <= 150; factor += 10) {
+      const ratio = factor / 100;
       data.push({
-        x: stress,
-        y: calculate(temperature, stress, stress).ecosystemHealth,
+        x: factor,
+        y: calculate(
+          24 + (temperature - 24) * ratio,
+          pollution * ratio,
+          plastic * ratio,
+        ).ecosystemHealth,
       });
     }
     return data;
@@ -107,8 +113,8 @@ export const simulationData = {
       color: '#ffd93d',
     },
     ecosystem: {
-      title: '整體環境壓力 vs 生態健康度',
-      xLabel: '環境壓力指數 (%)',
+      title: '環境壓力倍率 vs 生態健康度',
+      xLabel: '壓力倍率 (%)',
       lineName: '生態健康度',
       color: '#90e0ef',
     },
