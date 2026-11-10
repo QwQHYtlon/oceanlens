@@ -55,6 +55,7 @@ const Simulation = () => {
     <div className="simulation">
       <div className="container">
         <SectionTitle
+          eyebrow="ECOSYSTEM LAB"
           title="生態模擬"
           subtitle="調整環境參數，觀察生態系統的即時變化"
           align="center"

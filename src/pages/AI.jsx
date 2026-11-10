@@ -74,6 +74,7 @@ const AI = () => {
     <div className="ai">
       <div className="container">
         <SectionTitle
+          eyebrow="AI OCEAN GUIDE"
           title="AI 海洋科普助手"
           subtitle="你的 AI 海洋研究助手"
           align="center"

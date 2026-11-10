@@ -1,5 +1,19 @@
 .explore {
+  position: relative;
   padding: var(--spacing-xl) 0;
+}
+
+.explore::before {
+  content: '';
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  width: min(780px, 100vw);
+  height: 430px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(0, 180, 216, 0.1), transparent 68%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .explore__scene {
@@ -70,7 +84,8 @@
   align-items: center;
   gap: var(--spacing-md);
   padding: var(--spacing-md);
-  background: var(--color-surface-light);
+  background: linear-gradient(150deg, rgba(17, 34, 64, 0.9), rgba(10, 25, 47, 0.72));
+  border: 1px solid rgba(0, 180, 216, 0.12);
   border-radius: var(--radius-lg);
 }
 

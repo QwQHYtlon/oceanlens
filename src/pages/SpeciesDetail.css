@@ -1,5 +1,19 @@
 .species-detail {
+  position: relative;
   padding: var(--spacing-xl) 0;
+}
+
+.species-detail::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  width: min(760px, 100vw);
+  height: 440px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(0, 180, 216, 0.09), transparent 66%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .species-detail__back {
@@ -8,20 +22,42 @@
 }
 
 .species-detail__header {
+  position: relative;
   text-align: center;
   margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
 }
 
 .species-detail__emoji {
+  position: relative;
+  display: inline-block;
   font-size: clamp(4rem, 10vw, 6rem);
   line-height: 1;
   margin-bottom: var(--spacing-md);
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35));
+}
+
+.species-detail__emoji::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  width: 92px;
+  height: 18px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(0, 245, 212, 0.12);
+  filter: blur(8px);
 }
 
 .species-detail__name {
   font-size: clamp(2rem, 5vw, 3rem);
   color: var(--color-text);
   margin-bottom: var(--spacing-sm);
+  background: linear-gradient(120deg, #ffffff 25%, var(--color-accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .species-detail__english {

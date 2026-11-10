@@ -1,5 +1,19 @@
 .simulation {
+  position: relative;
   padding: var(--spacing-xl) 0;
+}
+
+.simulation::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  width: min(720px, 100vw);
+  height: 380px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(0, 119, 182, 0.1), transparent 68%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .simulation__layout {
@@ -18,6 +32,9 @@
 
 .simulation__card {
   padding: var(--spacing-lg);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(0, 245, 212, 0.06), transparent 45%),
+    linear-gradient(160deg, rgba(17, 34, 64, 0.86), rgba(10, 25, 47, 0.72));
 }
 
 .simulation__card-header {
@@ -191,6 +208,9 @@
 .simulation__metric-card {
   text-align: center;
   padding: var(--spacing-md) var(--spacing-sm);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0, 245, 212, 0.08), transparent 55%),
+    linear-gradient(160deg, rgba(17, 34, 64, 0.86), rgba(10, 25, 47, 0.72));
 }
 
 .simulation__metric-label {

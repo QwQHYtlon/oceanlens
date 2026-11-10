@@ -2,24 +2,63 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding: var(--spacing-md);
   overflow: hidden;
 }
 
 .species-card__image {
+  position: relative;
   display: grid;
   place-items: center;
-  min-height: 104px;
-  font-size: clamp(3rem, 8vw, 4rem);
-  line-height: 1;
-  text-align: center;
+  min-height: 132px;
   padding: var(--spacing-md);
-  background: linear-gradient(135deg, rgba(0, 245, 212, 0.1), rgba(0, 180, 216, 0.1));
-  border-radius: var(--radius-lg);
   margin-bottom: var(--spacing-md);
+  border-radius: calc(var(--radius-lg) + 2px);
+  border: 1px solid rgba(0, 180, 216, 0.12);
+  background:
+    radial-gradient(circle at 50% 45%, rgba(0, 245, 212, 0.14), transparent 44%),
+    radial-gradient(circle at 50% 100%, rgba(0, 119, 182, 0.18), transparent 65%),
+    linear-gradient(160deg, rgba(17, 34, 64, 0.9), rgba(10, 25, 47, 0.7));
+  overflow: hidden;
+}
+
+.species-card__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(2, 12, 27, 0.32));
+  pointer-events: none;
+}
+
+.species-card__category {
+  position: absolute;
+  top: 0.55rem;
+  left: 0.55rem;
+  z-index: 2;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 245, 212, 0.2);
+  background: rgba(2, 12, 27, 0.55);
+  color: var(--color-accent-secondary);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .species-card__emoji {
+  position: relative;
+  z-index: 1;
   display: block;
+  font-size: clamp(3.2rem, 8vw, 4.4rem);
+  line-height: 1;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.3));
+  transition: transform var(--transition-slow);
+}
+
+.species-card:hover .species-card__emoji {
+  transform: translateY(-4px) scale(1.06);
 }
 
 .species-card__content {
@@ -44,17 +83,19 @@
 
 .species-card__meta {
   display: flex;
-  gap: var(--spacing-sm);
+  gap: 0.45rem;
   flex-wrap: wrap;
 }
 
 .species-card__depth,
 .species-card__habitat {
   font-size: 0.75rem;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  background: rgba(0, 245, 212, 0.1);
+  padding: 0.28rem 0.55rem;
+  background: rgba(0, 245, 212, 0.08);
+  border: 1px solid rgba(0, 245, 212, 0.12);
   border-radius: var(--radius-sm);
   color: var(--color-accent);
+  line-height: 1.4;
 }
 
 .species-card__description {
@@ -64,7 +105,7 @@
   overflow: hidden;
   font-size: 0.875rem;
   color: var(--color-text-secondary);
-  line-height: 1.55;
+  line-height: 1.6;
   flex: 1;
   margin: 0;
 }
@@ -72,4 +113,12 @@
 .species-card__button {
   margin-top: auto;
   width: 100%;
+}
+
+.species-card__button svg {
+  transition: transform var(--transition-base);
+}
+
+.species-card__button:hover svg {
+  transform: translateX(3px);
 }

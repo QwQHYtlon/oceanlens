@@ -1,5 +1,19 @@
 .ai {
+  position: relative;
   padding: var(--spacing-xl) 0;
+}
+
+.ai::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  width: min(760px, 100vw);
+  height: 420px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(0, 180, 216, 0.08), transparent 68%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .ai__layout {
@@ -19,6 +33,9 @@
 
 .ai__sidebar-card {
   padding: var(--spacing-lg);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0, 245, 212, 0.07), transparent 45%),
+    linear-gradient(160deg, rgba(17, 34, 64, 0.86), rgba(10, 25, 47, 0.72));
 }
 
 .ai__sidebar-header {
@@ -139,12 +156,27 @@
 }
 
 .ai__chat-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: clamp(520px, calc(100dvh - 210px), 760px);
   min-height: 0;
   padding: 0;
   overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0, 245, 212, 0.04), transparent 42%),
+    linear-gradient(160deg, rgba(17, 34, 64, 0.78), rgba(10, 25, 47, 0.7));
+}
+
+.ai__chat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 245, 212, 0.45), transparent);
+  z-index: 2;
 }
 
 .ai__messages {
@@ -261,7 +293,7 @@
   flex-shrink: 0;
   width: 52px;
   height: 52px;
-  background: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-ocean-light));
   border: none;
   border-radius: var(--radius-lg);
   color: var(--color-deep-dark);
@@ -269,6 +301,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 8px 22px rgba(0, 245, 212, 0.18);
   transition:
     background var(--transition-base),
     transform var(--transition-base),

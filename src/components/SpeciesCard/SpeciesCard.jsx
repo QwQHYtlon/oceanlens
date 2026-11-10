@@ -1,4 +1,5 @@
 import Card from '../Card/Card';
+import { ArrowRight } from 'lucide-react';
 import Button from '../Button/Button';
 import { getSpeciesOceans } from '../../data/oceanTags';
 import './SpeciesCard.css';
@@ -14,7 +15,10 @@ const SpeciesCard = ({ species }) => {
       data-oceans={getSpeciesOceans(species.habitat).join(' ')}
     >
       <div className="species-card__image">
-        <span className="species-card__emoji">{species.image}</span>
+        <span className="species-card__category">{species.category}</span>
+        <span className="species-card__emoji" aria-hidden="true">
+          {species.image}
+        </span>
       </div>
       <div className="species-card__content">
         <h3 className="species-card__name">{species.name}</h3>
@@ -32,6 +36,7 @@ const SpeciesCard = ({ species }) => {
           aria-label={`探索 ${species.name}`}
         >
           探索
+          <ArrowRight size={15} aria-hidden="true" />
         </Button>
       </div>
     </Card>

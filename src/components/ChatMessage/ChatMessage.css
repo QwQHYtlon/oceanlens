@@ -27,13 +27,15 @@
 }
 
 .chat-message--user .chat-message__avatar {
-  background: var(--color-ocean);
+  background: linear-gradient(135deg, var(--color-ocean), var(--color-deep-light));
   color: var(--color-text);
+  box-shadow: 0 6px 16px rgba(0, 119, 182, 0.25);
 }
 
 .chat-message--ai .chat-message__avatar {
-  background: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-ocean-light));
   color: var(--color-deep-dark);
+  box-shadow: 0 6px 18px rgba(0, 245, 212, 0.2);
 }
 
 .chat-message__content {
@@ -49,17 +51,19 @@
 }
 
 .chat-message--user .chat-message__bubble {
-  background: var(--color-surface-light);
+  background: linear-gradient(135deg, rgba(0, 119, 182, 0.42), rgba(2, 62, 138, 0.36));
+  border: 1px solid rgba(144, 224, 239, 0.18);
   color: var(--color-text);
   margin-left: auto;
   max-width: 70%;
 }
 
 .chat-message--ai .chat-message__bubble {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: linear-gradient(150deg, rgba(17, 34, 64, 0.82), rgba(10, 25, 47, 0.7));
+  border: 1px solid rgba(100, 255, 218, 0.14);
   color: var(--color-text);
   max-width: 80%;
+  box-shadow: inset 2px 0 0 rgba(0, 245, 212, 0.28);
 }
 
 

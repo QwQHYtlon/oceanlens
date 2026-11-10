@@ -8,6 +8,7 @@
   font-weight: 600;
   font-size: 1rem;
   line-height: 1.2;
+  letter-spacing: 0.01em;
   cursor: pointer;
   transition:
     transform var(--transition-base),
@@ -36,24 +37,33 @@
 
 /* Variants */
 .button--primary {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-ocean-light));
+  background: linear-gradient(120deg, var(--color-accent) 0%, #5df7e2 28%, var(--color-ocean-light) 62%, var(--color-accent) 100%);
+  background-size: 220% 100%;
   color: var(--color-deep-dark);
-  box-shadow: 0 4px 15px rgba(0, 245, 212, 0.3);
+  box-shadow:
+    0 6px 20px rgba(0, 245, 212, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .button--primary:hover:not(:disabled) {
-  box-shadow: 0 6px 20px rgba(0, 245, 212, 0.5);
+  background-position: 100% 0;
+  box-shadow:
+    0 10px 30px rgba(0, 245, 212, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
 }
 
 .button--secondary {
-  background: transparent;
+  background: rgba(0, 245, 212, 0.03);
   color: var(--color-accent);
-  border: 2px solid var(--color-accent);
+  border: 1px solid rgba(0, 245, 212, 0.55);
+  box-shadow: inset 0 0 24px rgba(0, 245, 212, 0.03);
 }
 
 .button--secondary:hover:not(:disabled) {
-  background: rgba(0, 245, 212, 0.1);
+  background: rgba(0, 245, 212, 0.09);
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 24px rgba(0, 245, 212, 0.12);
   transform: translateY(-2px);
 }
 
@@ -64,7 +74,7 @@
 }
 
 .button--ghost:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.07);
   border-color: var(--glass-border);
 }
 
@@ -81,7 +91,7 @@
 
 .button--large {
   padding: var(--spacing-md) var(--spacing-xl);
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
 }
 
 @media (max-width: 480px) {

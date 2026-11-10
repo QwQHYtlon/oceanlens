@@ -1,5 +1,19 @@
 .species {
+  position: relative;
   padding: var(--spacing-xl) 0;
+}
+
+.species::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  width: min(760px, 100vw);
+  height: 420px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(0, 180, 216, 0.08), transparent 66%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .species__filters {
@@ -23,12 +37,13 @@
 .species__search-input {
   width: 100%;
   padding: 0.9rem 3.25rem 0.9rem 3rem;
-  background: var(--color-surface-light);
-  border: 1px solid var(--glass-border);
+  background: linear-gradient(150deg, rgba(17, 34, 64, 0.92), rgba(10, 25, 47, 0.78));
+  border: 1px solid rgba(100, 255, 218, 0.14);
   border-radius: var(--radius-lg);
   color: var(--color-text);
   font-size: 1rem;
   outline: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
@@ -95,9 +110,10 @@
 }
 
 .species__category--active {
-  background: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent), #71f8e8);
   color: var(--color-deep-dark);
   border-color: var(--color-accent);
+  box-shadow: 0 6px 18px rgba(0, 245, 212, 0.2);
 }
 
 .species__category-count {
@@ -175,8 +191,9 @@
 
 .species__ocean--active {
   border-color: var(--color-ocean-light);
-  background: rgba(0, 180, 216, 0.2);
-  color: #e6f9ff;
+  background: linear-gradient(135deg, rgba(0, 180, 216, 0.3), rgba(0, 119, 182, 0.22));
+  color: #f0fcff;
+  box-shadow: 0 6px 18px rgba(0, 180, 216, 0.14);
 }
 
 .species__ocean-count {

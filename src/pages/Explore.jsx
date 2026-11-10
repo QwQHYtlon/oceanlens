@@ -35,6 +35,7 @@ const Explore = () => {
     <div className="explore">
       <div className="container">
         <SectionTitle
+          eyebrow="DEPTH EXPLORER"
           title="海洋深度探索"
           subtitle="點擊不同深度，探索神秘的海洋世界"
           align="center"

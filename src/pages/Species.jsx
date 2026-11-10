@@ -98,6 +98,7 @@ const Species = () => {
     <div className="species">
       <div className="container">
         <SectionTitle
+          eyebrow="SPECIES DATABASE"
           title="海洋生物"
           subtitle="探索神奇的海洋生命"
           align="center"
