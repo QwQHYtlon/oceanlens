@@ -5,8 +5,14 @@ import { simulationData } from '../src/data/simulationData.js';
 import { navItems } from '../src/data/navigation.js';
 import { filterSpecies, sortSpecies, getDepthValue } from '../src/utils/species.js';
 import {
+  OCEAN_TAGS,
+  getSpeciesOceans,
+  speciesMatchesOcean,
+} from '../src/data/oceanTags.js';
+import {
   collectValidationErrors,
   validateNavigationData,
+  validateOceanTags,
   validateSimulationData,
   validateSpeciesData,
 } from '../scripts/validate-data.mjs';
@@ -122,4 +128,44 @@ test('known taxonomic labels stay correct', () => {
   assert.equal(byId.get('sea-snake').category, '爬行動物');
   assert.equal(byId.get('turtle').category, '爬行動物');
   assert.equal(byId.get('whale').category, '哺乳動物');
+});
+
+
+test('ocean tags are derived correctly from habitat', () => {
+  assert.deepEqual(getSpeciesOceans('全球海洋'), ['global']);
+  assert.deepEqual(getSpeciesOceans('印度-太平洋'), ['indian', 'pacific']);
+  assert.deepEqual(getSpeciesOceans('南大洋'), ['southern']);
+  assert.deepEqual(getSpeciesOceans('淡水'), ['freshwater']);
+  assert.deepEqual(getSpeciesOceans('澳洲深海'), ['pacific', 'indian']);
+  assert.deepEqual(validateOceanTags(), []);
+  assert.equal(OCEAN_TAGS.length, 8);
+});
+
+test('ocean filter tags are strict and keep global species separate', () => {
+  const pacific = filterSpecies(speciesData, { ocean: 'pacific' });
+  assert.ok(pacific.length > 0);
+  assert.ok(pacific.every((species) => getSpeciesOceans(species.habitat).includes('pacific')));
+
+  const global = filterSpecies(speciesData, { ocean: 'global' });
+  assert.ok(global.length > 0);
+  assert.ok(global.every((species) => getSpeciesOceans(species.habitat).includes('global')));
+
+  const freshwater = filterSpecies(speciesData, { ocean: 'freshwater' });
+  assert.equal(freshwater.length, 2);
+  assert.ok(freshwater.every((species) => speciesMatchesOcean(species, 'freshwater')));
+
+  assert.ok(!pacific.some((species) => species.id === 'whale'));
+  assert.ok(global.some((species) => species.id === 'whale'));
+});
+
+test('category and ocean filters combine', () => {
+  const results = filterSpecies(speciesData, {
+    category: '珊瑚礁',
+    ocean: 'pacific',
+  });
+  assert.ok(results.length > 0);
+  assert.ok(results.every((species) => species.category === '珊瑚礁'));
+  assert.ok(
+    results.every((species) => getSpeciesOceans(species.habitat).includes('pacific')),
+  );
 });

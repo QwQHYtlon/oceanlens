@@ -9,6 +9,7 @@ import Fallback3D from '../components/3d/Fallback3D';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import { speciesData } from '../data/speciesData';
+import { getOceanLabels } from '../data/oceanTags';
 import { getCreatureTypeForSpecies } from '../data/species3D';
 import './SpeciesDetail.css';
 
@@ -40,6 +41,7 @@ const SpeciesDetail = () => {
   }
 
   const creatureType = getCreatureTypeForSpecies(species);
+  const oceanLabels = getOceanLabels(species.habitat);
 
   return (
     <div className="species-detail">
@@ -143,6 +145,16 @@ const SpeciesDetail = () => {
                   <div className="species-detail__meta-item">
                     <span className="species-detail__meta-label">棲息地</span>
                     <span className="species-detail__meta-value">{species.habitat}</span>
+                  </div>
+                  <div className="species-detail__meta-item">
+                    <span className="species-detail__meta-label">大洋分布</span>
+                    <span className="species-detail__ocean-tags">
+                      {oceanLabels.map((label) => (
+                        <span key={label} className="species-detail__ocean-tag">
+                          {label}
+                        </span>
+                      ))}
+                    </span>
                   </div>
                   <div className="species-detail__meta-item">
                     <span className="species-detail__meta-label">分類</span>

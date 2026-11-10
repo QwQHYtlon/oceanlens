@@ -1,5 +1,6 @@
 import Card from '../Card/Card';
 import Button from '../Button/Button';
+import { getSpeciesOceans } from '../../data/oceanTags';
 import './SpeciesCard.css';
 
 const SpeciesCard = ({ species }) => {
@@ -10,6 +11,7 @@ const SpeciesCard = ({ species }) => {
       className="species-card"
       data-category={species.category}
       data-species-id={species.id}
+      data-oceans={getSpeciesOceans(species.habitat).join(' ')}
     >
       <div className="species-card__image">
         <span className="species-card__emoji">{species.image}</span>

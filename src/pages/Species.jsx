@@ -1,10 +1,11 @@
 import { useDeferredValue, useMemo, useState } from 'react';
-import { Search, SlidersHorizontal, X } from 'lucide-react';
+import { Search, SlidersHorizontal, Waves, X } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle/SectionTitle';
 import SpeciesCard from '../components/SpeciesCard/SpeciesCard';
 import Button from '../components/Button/Button';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import { speciesData, speciesCategories } from '../data/speciesData';
+import { OCEAN_TAGS, speciesMatchesOcean } from '../data/oceanTags';
 import { SORT_OPTIONS, filterSpecies, sortSpecies } from '../utils/species';
 import './Species.css';
 
@@ -14,6 +15,7 @@ const Species = () => {
   useDocumentTitle('海洋生物');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedOcean, setSelectedOcean] = useState('all');
   const [sortBy, setSortBy] = useState('default');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
@@ -33,9 +35,25 @@ const Species = () => {
     return counts;
   }, []);
 
+  const oceanCounts = useMemo(() => {
+    const counts = {};
+    for (const tag of OCEAN_TAGS) {
+      counts[tag.id] =
+        tag.id === 'all'
+          ? speciesData.length
+          : speciesData.filter((species) => speciesMatchesOcean(species, tag.id)).length;
+    }
+    return counts;
+  }, []);
+
   const filteredSpecies = useMemo(
-    () => filterSpecies(speciesData, { query: normalizedQuery, category: categoryFilter }),
-    [categoryFilter, normalizedQuery],
+    () =>
+      filterSpecies(speciesData, {
+        query: normalizedQuery,
+        category: categoryFilter,
+        ocean: selectedOcean,
+      }),
+    [categoryFilter, normalizedQuery, selectedOcean],
   );
 
   const sortedSpecies = useMemo(
@@ -44,7 +62,8 @@ const Species = () => {
   );
 
   const visibleSpecies = sortedSpecies.slice(0, visibleCount);
-  const hasFilters = searchTerm.trim() !== '' || selectedCategory !== 'all';
+  const hasFilters =
+    searchTerm.trim() !== '' || selectedCategory !== 'all' || selectedOcean !== 'all';
   const remainingCount = Math.max(sortedSpecies.length - visibleSpecies.length, 0);
 
   const handleSearchChange = (event) => {
@@ -57,6 +76,11 @@ const Species = () => {
     setVisibleCount(PAGE_SIZE);
   };
 
+  const handleOceanChange = (oceanId) => {
+    setSelectedOcean(oceanId);
+    setVisibleCount(PAGE_SIZE);
+  };
+
   const handleSortChange = (event) => {
     setSortBy(event.target.value);
     setVisibleCount(PAGE_SIZE);
@@ -65,6 +89,7 @@ const Species = () => {
   const handleClearFilters = () => {
     setSearchTerm('');
     setSelectedCategory('all');
+    setSelectedOcean('all');
     setSortBy('default');
     setVisibleCount(PAGE_SIZE);
   };
@@ -123,6 +148,33 @@ const Species = () => {
                 </button>
               );
             })}
+          </div>
+
+          <div className="species__oceans" role="group" aria-label="依海域篩選">
+            <span className="species__oceans-label">
+              <Waves size={15} aria-hidden="true" />
+              海域
+            </span>
+            <div className="species__ocean-list">
+              {OCEAN_TAGS.map((tag) => {
+                const active = selectedOcean === tag.id;
+                return (
+                  <button
+                    key={tag.id}
+                    type="button"
+                    className={`species__ocean ${active ? 'species__ocean--active' : ''}`}
+                    onClick={() => handleOceanChange(tag.id)}
+                    aria-pressed={active}
+                  >
+                    {tag.name}
+                    <span className="species__ocean-count">{oceanCounts[tag.id] ?? 0}</span>
+                  </button>
+                );
+              })}
+            </div>
+            <p className="species__ocean-hint">
+              同一物種可能分布於多個大洋；全球分布物種請使用「全球分布」標籤。
+            </p>
           </div>
         </div>
 

@@ -1,3 +1,5 @@
+import { speciesMatchesOcean } from '../data/oceanTags.js';
+
 export const SORT_OPTIONS = [
   { id: 'default', label: '預設排序' },
   { id: 'name', label: '名稱' },
@@ -33,11 +35,15 @@ export const sortSpecies = (species, sortBy = 'default') => {
   return copy;
 };
 
-export const filterSpecies = (species, { query = '', category = null } = {}) => {
+export const filterSpecies = (
+  species,
+  { query = '', category = null, ocean = 'all' } = {},
+) => {
   const normalizedQuery = query.trim().toLowerCase();
 
   return species.filter((item) => {
     if (category && item.category !== category) return false;
+    if (ocean && ocean !== 'all' && !speciesMatchesOcean(item, ocean)) return false;
     if (!normalizedQuery) return true;
 
     return [item.name, item.englishName, item.habitat, item.category]
