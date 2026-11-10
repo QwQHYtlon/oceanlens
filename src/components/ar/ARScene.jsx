@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import MindARController from './MindARController';
-import ARLoading from './ARLoading';
 import ARError from './ARError';
 import ARFallback from './ARFallback';
 import ARInstructions from './ARInstructions';
@@ -8,92 +7,86 @@ import ARInfoCard from './ARInfoCard';
 import { getARModelInfo } from '../../data/arModels';
 import './ARScene.css';
 
+const detectMobileOrTablet = () => {
+  if (typeof navigator === 'undefined') return false;
+  const userAgent = navigator.userAgent || '';
+  const isIPadOS = /Macintosh/i.test(userAgent) && navigator.maxTouchPoints > 1;
+  return /android|iphone|ipad|ipod|mobile|tablet/i.test(userAgent) || isIPadOS;
+};
+
 const ARScene = ({ speciesId, onClose }) => {
   const [showInstructions, setShowInstructions] = useState(true);
   const [isTracking, setIsTracking] = useState(false);
   const [error, setError] = useState(null);
   const [errorDetails, setErrorDetails] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile] = useState(detectMobileOrTablet);
   const [arReady, setArReady] = useState(false);
   const [retryKey, setRetryKey] = useState(0);
-  
+
   const arModelInfo = getARModelInfo(speciesId);
   const isDebug = import.meta.env.VITE_AR_DEBUG === 'true';
-  
-  // Check if mobile device
+
   useEffect(() => {
-    const checkMobile = () => {
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-      return /android/i.test(userAgent) || /iPad|iPhone|iPod/.test(userAgent);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') onClose();
     };
-    
-    setIsMobile(checkMobile());
-  }, []);
-  
-  const handleStartAR = () => {
-    setShowInstructions(false);
-  };
-  
-  const handleCancel = () => {
-    onClose();
-  };
-  
-  const handleAnchorFound = () => {
-    setIsTracking(true);
-  };
-  
-  const handleAnchorLost = () => {
-    setIsTracking(false);
-  };
-  
-  const handleARError = (err) => {
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onClose]);
+
+  const handleStartAR = useCallback(() => setShowInstructions(false), []);
+  const handleAnchorFound = useCallback(() => setIsTracking(true), []);
+  const handleAnchorLost = useCallback(() => setIsTracking(false), []);
+  const handleARReady = useCallback(() => setArReady(true), []);
+  const handleView3D = useCallback(() => onClose(), [onClose]);
+
+  const handleARError = useCallback((err) => {
     setError(err.message || 'AR 載入失敗');
     setErrorDetails(err.details || null);
-  };
-  
-  const handleARReady = () => {
-    setArReady(true);
-  };
-  
-  const handleView3D = () => {
-    onClose();
-  };
-  
-  const handleRetry = () => {
+  }, []);
+
+  const handleRetry = useCallback(() => {
     setError(null);
+    setErrorDetails(null);
     setArReady(false);
-    setRetryKey(prev => prev + 1);
-  };
-  
-  // Desktop fallback
+    setRetryKey((key) => key + 1);
+  }, []);
+
+  const closeButton = (
+    <button type="button" className="ar-scene__close" onClick={onClose} aria-label="關閉 AR">
+      ✕
+    </button>
+  );
+
   if (!isMobile) {
     return (
-      <div className="ar-scene">
-        <ARFallback 
-          onView3D={handleView3D}
-          currentUrl={window.location.href}
-        />
+      <div className="ar-scene" role="dialog" aria-modal="true" aria-label="AR 探索">
+        <ARFallback onView3D={handleView3D} currentUrl={window.location.href} />
+        {closeButton}
       </div>
     );
   }
-  
-  // Show instructions first
+
   if (showInstructions) {
     return (
-      <div className="ar-scene">
-        <ARInstructions 
-          onStart={handleStartAR}
-          onCancel={handleCancel}
-        />
+      <div className="ar-scene" role="dialog" aria-modal="true" aria-label="AR 探索">
+        <ARInstructions onStart={handleStartAR} onCancel={onClose} />
+        {closeButton}
       </div>
     );
   }
-  
-  // Error state
+
   if (error) {
     return (
-      <div className="ar-scene">
-        <ARError 
+      <div className="ar-scene" role="dialog" aria-modal="true" aria-label="AR 探索">
+        <ARError
           errorType="ar_init_failed"
           message={error}
           errorDetails={errorDetails}
@@ -101,13 +94,13 @@ const ARScene = ({ speciesId, onClose }) => {
           onView3D={handleView3D}
           onClose={onClose}
         />
+        {closeButton}
       </div>
     );
   }
-  
-  // AR Scene with MindAR
+
   return (
-    <div className="ar-scene">
+    <div className="ar-scene" role="dialog" aria-modal="true" aria-label="AR 探索">
       <MindARController
         key={retryKey}
         onAnchorFound={handleAnchorFound}
@@ -115,7 +108,7 @@ const ARScene = ({ speciesId, onClose }) => {
         onError={handleARError}
         onReady={handleARReady}
       />
-      
+
       {arModelInfo && isTracking && (
         <ARInfoCard
           name={arModelInfo.name}
@@ -124,7 +117,7 @@ const ARScene = ({ speciesId, onClose }) => {
           description={arModelInfo.description}
         />
       )}
-      
+
       {isDebug && (
         <div className="ar-scene__debug">
           <div>AR Engine: MindAR</div>
@@ -133,14 +126,8 @@ const ARScene = ({ speciesId, onClose }) => {
           <div>Model: LOADED (placeholder)</div>
         </div>
       )}
-      
-      <button 
-        className="ar-scene__close"
-        onClick={onClose}
-        aria-label="關閉 AR"
-      >
-        ✕
-      </button>
+
+      {closeButton}
     </div>
   );
 };

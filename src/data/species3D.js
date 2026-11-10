@@ -71,3 +71,18 @@ export const isPlaceholderModel = (speciesId) => {
   const data = species3DData[speciesId];
   return data ? data.placeholder : true;
 };
+
+// Pick a sensible placeholder shape for every species, even when a dedicated
+// model does not exist yet.
+export const getCreatureTypeForSpecies = (species) => {
+  if (!species) return 'fish';
+
+  const data = species3DData[species.id];
+  if (data) return data.type;
+
+  if (species.category === '爬行動物') return 'turtle';
+  if (species.category === '哺乳動物') return 'whale';
+  if (species.category === '珊瑚礁' && species.name.includes('珊瑚')) return 'coral';
+
+  return 'fish';
+};

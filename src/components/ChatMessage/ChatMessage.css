@@ -43,7 +43,9 @@
 .chat-message__bubble {
   padding: var(--spacing-md);
   border-radius: var(--radius-lg);
-  line-height: 1.6;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .chat-message--user .chat-message__bubble {
@@ -58,4 +60,34 @@
   border: 1px solid var(--glass-border);
   color: var(--color-text);
   max-width: 80%;
+}
+
+
+@media (max-width: 768px) {
+  .chat-message {
+    gap: var(--spacing-sm);
+  }
+
+  .chat-message__avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .chat-message__avatar svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .chat-message__bubble {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.9375rem;
+  }
+
+  .chat-message--user .chat-message__bubble {
+    max-width: 85%;
+  }
+
+  .chat-message--ai .chat-message__bubble {
+    max-width: 90%;
+  }
 }

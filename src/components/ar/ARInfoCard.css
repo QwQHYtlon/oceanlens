@@ -1,14 +1,16 @@
 .ar-info-card {
   position: fixed;
-  top: var(--spacing-lg);
-  left: var(--spacing-lg);
+  left: 50%;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + var(--spacing-md));
+  transform: translateX(-50%);
   background: var(--glass-bg);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: var(--radius-xl);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
   border: 1px solid var(--glass-border);
-  max-width: 280px;
-  z-index: var(--z-fixed);
+  width: min(360px, calc(100% - var(--spacing-lg)));
+  z-index: 1001;
   box-shadow: var(--shadow-glow);
 }
 
@@ -48,11 +50,12 @@
 
 @media (max-width: 768px) {
   .ar-info-card {
-    top: var(--spacing-md);
-    left: var(--spacing-md);
-    right: var(--spacing-md);
-    max-width: none;
-    padding: var(--spacing-md);
+    left: var(--spacing-sm);
+    right: var(--spacing-sm);
+    bottom: calc(env(safe-area-inset-bottom, 0px) + var(--spacing-sm));
+    transform: none;
+    width: auto;
+    padding: var(--spacing-sm) var(--spacing-md);
   }
   
   .ar-info-card__name {

@@ -13,12 +13,13 @@
 }
 
 .species-detail__emoji {
-  font-size: 6rem;
+  font-size: clamp(4rem, 10vw, 6rem);
+  line-height: 1;
   margin-bottom: var(--spacing-md);
 }
 
 .species-detail__name {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   color: var(--color-text);
   margin-bottom: var(--spacing-sm);
 }
@@ -55,14 +56,26 @@
   gap: var(--spacing-sm);
 }
 
-.loading-placeholder,
-.ar-loading-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
-  color: var(--color-text-secondary);
-  font-size: 0.875rem;
+.species-detail__viewer-loading {
+  min-height: 520px;
+}
+
+.species-detail__viewer-loading .loading-3d {
+  min-height: 520px;
+}
+
+.species-detail__ar-loading {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: grid;
+  place-items: center;
+  padding: var(--spacing-lg);
+  background: rgba(2, 12, 27, 0.96);
+}
+
+.species-detail__ar-loading .loading-3d {
+  width: min(420px, 100%);
 }
 
 .species-detail__sidebar {
@@ -131,7 +144,8 @@
 .species-detail__meta-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
   padding: var(--spacing-sm) 0;
   border-bottom: 1px solid var(--glass-border);
 }
@@ -142,9 +156,12 @@
 }
 
 .species-detail__meta-value {
+  max-width: 62%;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--color-accent);
+  text-align: right;
+  overflow-wrap: anywhere;
 }
 
 .species-detail__facts {
@@ -164,8 +181,16 @@
 }
 
 .species-detail__not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
   text-align: center;
-  padding: var(--spacing-2xl);
+  padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.species-detail__not-found p {
+  margin: 0;
 }
 
 @media (max-width: 1024px) {
@@ -179,6 +204,11 @@
 }
 
 @media (max-width: 768px) {
+  .species-detail__viewer-loading,
+  .species-detail__viewer-loading .loading-3d {
+    min-height: 430px;
+  }
+
   .species-detail__emoji {
     font-size: 4rem;
   }

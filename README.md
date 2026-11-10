@@ -7,7 +7,7 @@
 ## 專案特色
 
 - **互動式海洋深度探索** - 探索不同深度的海洋環境與生物（含 3D 場景）
-- **海洋生物資料庫** - 完整的海洋生物資訊與詳細介紹（含 3D 模型檢視器）
+- **海洋生物資料庫** - 完整的海洋生物資訊、搜尋／分類／排序與詳細介紹（含 3D 模型檢視器）
 - **生態系統模擬** - 即時模擬環境變化對海洋生態的影響
 - **AI 科普助手** - 智能問答系統（UI 已完成，預留 API 整合空間）
 - **3D 沉浸式體驗** - Three.js 3D 海洋場景與生物模型（Phase 2 完成）
@@ -34,7 +34,7 @@
 - **React Three Drei** - Three.js 輔助工具
 
 ### WebAR
-- **AR.js** - WebAR 引擎
+- **MindAR** - WebAR 引擎（CDN 載入，需 HTTPS 與相機權限）
 
 ## 專案結構
 
@@ -91,6 +91,12 @@ src/
 │   ├── variables.css   # CSS 變數
 │   └── global.css      # 全域樣式
 └── App.jsx             # 應用程式入口
+
+scripts/
+└── validate-data.mjs    # 生物／模擬／導覽資料驗證
+
+tests/
+└── data.test.js         # Node 內建 test runner 測試
 ```
 
 ## 安裝與執行
@@ -113,6 +119,14 @@ npm run build
 ### 預覽生產版本
 ```bash
 npm run preview
+```
+
+### 程式碼檢查與測試
+```bash
+npm run lint      # ESLint
+npm run validate  # 生物／模擬／導覽資料驗證
+npm test          # Node 內建 test runner
+npm run check     # lint + validate + test + build
 ```
 
 ## HTTPS 部署注意事項
@@ -231,15 +245,15 @@ npm run dev
 - ⏳ TODO: 替換為授權 GLB/GLTF 模型
 
 ### Phase 3: WebAR ✅ 已完成
-- ✅ AR.js WebAR 整合
+- ✅ MindAR WebAR 整合
 - ✅ 相機權限請求處理
 - ✅ AR 場景與模型載入
-- ✅ AR 控制器（旋轉、縮放、重置）
+- ✅ AR 控制器 UI 元件（尚未接入 AR 場景）
 - ✅ AR 資訊卡（生物資訊）
 - ✅ 桌面 Fallback（QR Code）
 - ✅ 載入/錯誤狀態處理
 - ✅ 響應式 AR UI
-- ⏳ TODO: 整合實際 AR.js marker 追蹤
+- ⏳ TODO: 使用正式 AR Marker 進行實機追蹤測試
 - ⏳ TODO: 替換為授權 GLB/GLTF 模型
 - ⏳ TODO: 建立正式 AR Marker
 
@@ -248,7 +262,7 @@ npm run dev
 - ✅ 步驟式載入訊息（初始化/相機/Marker/模型）
 - ✅ 增強錯誤處理（7 種錯誤類型）
 - ✅ 真實 QR Code 生成（qrcode.react）
-- ✅ GLB/GLTF 載入架構（MarineARModel）
+- ✅ AR 模型資料結構（目前使用 placeholder 幾何體）
 - ✅ 完整 AR 模型資料結構
 - ✅ Lazy loading 3D/AR 元件
 - ✅ HTTPS 部署說明文件
@@ -339,15 +353,16 @@ npm run dev
 ### 修改檔案
 - `src/pages/SpeciesDetail.jsx` - 整合 AR 按鈕與場景
 - `src/pages/SpeciesDetail.css` - 新增 AR 按鈕樣式
-- `package.json` - 新增 AR.js 套件
+- `package.json` - MindAR 由 CDN 載入，未列為 npm 依賴
 
 ### 新增套件
-- `ar.js` - WebAR 引擎
+- `qrcode.react` - QR Code 生成
+- `@react-three/fiber` / `@react-three/drei` / `three` - 3D 場景
 
 ### AR 功能特性
 - **相機權限**: 自動請求相機權限，友善處理拒絕
 - **裝置檢測**: 自動檢測 Mobile/Desktop，Desktop 顯示 Fallback
-- **AR 控制器**: 旋轉、移動、縮放、重置、自動旋轉
+- **AR 控制器 UI**: 元件已建立，尚未接入 AR 場景
 - **AR 資訊卡**: 顯示生物名稱、英文名稱、深度、簡介
 - **載入狀態**: 優雅的載入動畫
 - **錯誤處理**: 友善的錯誤回退與重試機制
@@ -363,13 +378,13 @@ npm run dev
 5. 使用者點擊「開始 AR」
 6. 請求相機權限
 7. 載入 AR 場景與 3D 模型
-8. 顯示 AR 控制器與資訊卡
+8. 偵測到 marker 後顯示 AR 資訊卡
 9. 使用者可互動操作模型
 
 ### Phase 3.5 完成項目
 
 ### 新增檔案
-- `src/components/ar/MarineARModel.jsx` - GLB/GLTF 模型載入元件
+- `src/components/ar/MarineARModel.jsx` - AR 模型擴充元件（目前使用 placeholder）
 - `src/components/ar/ARInstructions.jsx` - AR 使用說明
 - `src/components/ar/ARInstructions.css` - AR 說明樣式
 - `public/ar/oceanlens-marker.png` - AR Marker placeholder
@@ -398,11 +413,19 @@ npm run dev
 - **步驟式載入**: 初始化 → 相機 → Marker → 模型
 - **增強錯誤處理**: 7 種錯誤類型精確處理
 - **真實 QR Code**: 使用 qrcode.react 動態生成
-- **GLB/GLTF 架構**: MarineARModel 支援真實模型載入
+- **GLB/GLTF 擴充點**: MarineARModel 目前使用 placeholder，待授權模型接入
 - **完整資料結構**: arModels.js 包含所有必要資訊
 - **Lazy Loading**: 3D/AR 元件按需載入，優化效能
 - **HTTPS 部署說明**: 完整部署指南
 - **Accessibility**: aria-label 改善
+
+## 目前限制
+
+- **3D 模型**：目前使用幾何體 placeholder，尚未載入授權的 GLB/GLTF 模型。
+- **WebAR**：MindAR 流程、錯誤處理與桌面 QR fallback 已完成，但仍需在 iOS/Android 實機與 HTTPS 環境驗證相機與 marker 追蹤。
+- **AI 助手**：目前為本機 mock 回覆，尚未連接 AI API。
+- **後端 / 資料庫**：尚未實作登入、學習進度與資料持久化。
+- **AR 控制器元件**：ARControls / ARPermission 尚未接入實際 AR 場景。
 
 ## 授權
 

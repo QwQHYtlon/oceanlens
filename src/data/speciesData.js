@@ -45,7 +45,7 @@ export const speciesData = [
     englishName: 'Sea Turtle',
     depth: '0-200m',
     habitat: '熱帶與亞熱帶海洋',
-    category: '大型生物',
+    category: '爬行動物',
     description: '海龜是古老的海洋爬行動物，已存在超過1億年。牠們是優秀的游泳者，可以潛水數小時並游越數千公里。',
     detailedDescription: '海龜是海洋中最古老的爬行動物之一，已存在超過1億年。全球有7種海龜，包括綠蠵龜、玳瑁、棱皮龜等。海龜會洄游數千公里回到出生地產卵。牠們可以潛水深達200公尺，並在水下停留數小時。海龜面臨氣候變遷、塑膠污染和過度捕撈的威脅。',
     image: '🐢',
@@ -85,7 +85,7 @@ export const speciesData = [
     englishName: 'Blue Whale',
     depth: '0-500m',
     habitat: '全球海洋',
-    category: '大型生物',
+    category: '哺乳動物',
     description: '藍鯨是地球史上最大的動物，可以長達30公尺，重達200噸。牠們的心臟有一輛車那麼大，舌頭重如大象。',
     detailedDescription: '藍鯨是地球史上最大的動物，比恐龍還要大。成年藍鯨可以長達30公尺，重達200噸。牠們的心臟有一輛小汽車那麼大，舌頭重如一頭大象。藍鯨主要以磷蝦為食，一天可以吃掉4噸。牠們的叫聲可以傳到數百公里外，是地球上最大的動物。',
     image: '🐋',
@@ -126,7 +126,7 @@ export const speciesData = [
     englishName: 'Sperm Whale',
     depth: '0-2000m',
     habitat: '全球海洋',
-    category: '大型生物',
+    category: '哺乳動物',
     description: '抹香鯨是最大的齒鯨，以其巨大的頭部和潛水能力聞名。牠們可以潛水至2000公尺深處，捕食深海魷魚。',
     detailedDescription: '抹香鯨是海洋中最大的齒鯨，雄性可長達20公尺。牠們的頭部佔體長的三分之一，內含鯨蠟油，用於聲納定位。抹香鯨是深潛高手，可以潛水至2000公尺深處，停留長達90分鐘。牠們主要以深海魷魚為食。',
     image: '🐋',
@@ -146,7 +146,7 @@ export const speciesData = [
     englishName: 'Orca',
     depth: '0-500m',
     habitat: '全球海洋',
-    category: '大型生物',
+    category: '哺乳動物',
     description: '虎鯨是海豚科中最大的物種，以其黑白相間的外觀和高度智能聞名。牠們是頂級捕食者，擁有複雜的社會結構。',
     detailedDescription: '虎鯨實際上是海豚科中最大的物種，而非鯨魚。牠們擁有黑白相間的標誌性外觀和高度智能。虎鯨生活在母系社會中，會傳遞狩獵技巧和文化。不同族群有不同的狩獵策略，有些專門捕食魚類，有些則捕食海洋哺乳動物。',
     image: '🐬',
@@ -166,7 +166,7 @@ export const speciesData = [
     englishName: 'Humpback Whale',
     depth: '0-300m',
     habitat: '全球海洋',
-    category: '大型生物',
+    category: '哺乳動物',
     description: '座頭鯨以其長達15公尺的胸鰭和複雜的歌聲聞名。牠們每年會洄游數千公里，從極地到熱帶海域繁殖。',
     detailedDescription: '座頭鯨以其長達15公尺的胸鰭和複雜的歌聲聞名。牠們每年會洄游數千公里，從極地到熱帶海域繁殖。座頭鯨的歌聲可以持續20分鐘，並在族群間傳遞。牠們使用氣泡網捕食磷蝦，是一種高度合作的狩獵方式。',
     image: '🐋',
@@ -186,7 +186,7 @@ export const speciesData = [
     englishName: 'Fin Whale',
     depth: '0-500m',
     habitat: '全球海洋',
-    category: '大型生物',
+    category: '哺乳動物',
     description: '長鬚鯨是僅次於藍鯨的第二大動物，以其流線型身體和高速游泳能力聞名。牠們被稱為「海洋的灰獵犬」。',
     detailedDescription: '長鬚鯨是僅次於藍鯨的第二大動物，可長達27公尺。牠們擁有流線型的身體和高速游泳能力，被稱為「海洋的灰獵犬」。長鬚鯨的不對稱著色是獨特特徵——右側下巴是白色，左側是深色。牠們主要以磷蝦和小魚為食。',
     image: '🐋',
@@ -246,7 +246,7 @@ export const speciesData = [
     englishName: 'Leatherback Sea Turtle',
     depth: '0-1200m',
     habitat: '全球海洋',
-    category: '大型生物',
+    category: '爬行動物',
     description: '革龜是最大的海龜，也是唯一沒有硬殼的海龜。牠們可以潛水至1200公尺深處，是深潛能力最強的海龜。',
     detailedDescription: '革龜是最大的海龜，可長達2公尺，重達900公斤。牠們是唯一沒有硬殼的海龜，取而代之的是革質的皮膚。革龜可以潛水至1200公尺深處，是深潛能力最強的海龜。牠們主要以水母為食，可以游越數千公里。',
     image: '🐢',
@@ -327,7 +327,7 @@ export const speciesData = [
     englishName: 'Gray Whale',
     depth: '0-200m',
     habitat: '北太平洋',
-    category: '大型生物',
+    category: '哺乳動物',
     description: '灰鯨是北太平洋特有的鯨魚，以其每年從阿拉斯加到墨西哥的長距離洄游聞名。牠們是唯一主要在海底覓食的鯨魚。',
     detailedDescription: '灰鯨是北太平洋特有的鯨魚，每年會進行長達2萬公里的洄游，從阿拉斯加到墨西哥的繁殖地。牠們是唯一主要在海底覓食的鯨魚，側身翻轉過濾海底沉積物中的小型甲殼類。灰鯨曾被稱為「魔鬼魚」，因為牠們會攻擊捕鯨船。',
     image: '🐋',
@@ -487,7 +487,7 @@ export const speciesData = [
     englishName: 'Seahorse',
     depth: '0-50m',
     habitat: '熱帶太平洋',
-    category: '無脊椎動物',
+    category: '魚類',
     description: '海馬是唯一雄性懷孕的動物。牠們擁有馬頭形的頭部、捲曲的尾巴和直立游動的姿態。',
     detailedDescription: '海馬是唯一雄性懷孕的動物。雌性會將卵產入雄性的育儿袋中，由雄性孵化。海馬擁有馬頭形的頭部、捲曲的尾巴和直立游動的姿態。牠們的眼睛可以獨立轉動，一隻看前方一隻看後方。海馬的壽命通常為1-5年。',
     image: '🐴',
@@ -648,7 +648,7 @@ export const speciesData = [
     englishName: 'Pilot Whale',
     depth: '0-1000m',
     habitat: '大西洋',
-    category: '大型生物',
+    category: '哺乳動物',
     description: '領航鯨是海豚科的大型物種，以其強烈的社會結構聞名。牠們經常成群活動，群體數量可達數十隻。',
     detailedDescription: '領航鯨是海豚科的大型物種，可長達6公尺。牠們以其強烈的社會結構聞名，經常成群活動，群體數量可達數十隻。領航鯨會跟隨領隊游動，因此得名。牠們主要以魷魚為食，可以潛水至1000公尺深處。',
     image: '🐬',
@@ -728,7 +728,7 @@ export const speciesData = [
     englishName: 'Electric Ray',
     depth: '0-200m',
     habitat: '大西洋',
-    category: '無脊椎動物',
+    category: '魚類',
     description: '電鰩可以產生強大的電流，用於防禦和捕食。牠們的電擊可以暈倒獵物或嚇退捕食者。',
     detailedDescription: '電鰩可以產生強大的電流，電壓可達220伏特，用於防禦和捕食。牠們的電擊可以暈倒獵物或嚇退捕食者。電鰩的發電器官位於胸鰭之間，由特殊的肌肉組成。牠們通常棲息在海底沙泥中。',
     image: '🐟',
@@ -869,7 +869,7 @@ export const speciesData = [
     englishName: 'Sea Snake',
     depth: '0-50m',
     habitat: '熱帶印度洋',
-    category: '無脊椎動物',
+    category: '爬行動物',
     description: '海蛇是高度適應海洋生活的蛇類，擁有扁平的尾巴用於游泳。牠們的毒液非常強烈。',
     detailedDescription: '海蛇是高度適應海洋生活的蛇類，擁有扁平的尾巴用於游泳。牠們的毒液非常強烈，有些物種的毒液是眼鏡蛇的數倍。海蛇主要分布在熱帶印度洋和太平洋，生活在珊瑚礁中。牠們可以潛水長達2小時。',
     image: '🐍',
@@ -890,7 +890,7 @@ export const speciesData = [
     englishName: 'Beluga Whale',
     depth: '0-500m',
     habitat: '北冰洋',
-    category: '大型生物',
+    category: '哺乳動物',
     description: '白鯨以其純白色的身體和靈活的脖子聞名。牠們可以改變頭部形狀，發出多種聲音。',
     detailedDescription: '白鯨以其純白色的身體和靈活的脖子聞名。牠們是唯一可以轉動頭部的鯨魚。白鯨發出多種聲音，被稱為「海洋金絲雀」。牠們生活在北冰洋的寒冷水域，可以潛水至500公尺深處。白鯨沒有背鰭，適應在冰層下游動。',
     image: '🐋',
@@ -910,7 +910,7 @@ export const speciesData = [
     englishName: 'Narwhal',
     depth: '0-1500m',
     habitat: '北冰洋',
-    category: '大型生物',
+    category: '哺乳動物',
     description: '獨角鯨以其長長的獨角聞名，實際上是延長的犬齒。牠們是北冰洋的神秘生物。',
     detailedDescription: '獨角鯨以其長達3公尺的獨角聞名，實際上是延長的犬齒。只有雄性擁有獨角，用於爭奪配偶。獨角鯨生活在北冰洋的寒冷水域，可以潛水至1500公尺深處。牠們的獨角曾被誤認為獨角獸的角。',
     image: '🐋',
@@ -930,7 +930,7 @@ export const speciesData = [
     englishName: 'Bowhead Whale',
     depth: '0-200m',
     habitat: '北冰洋',
-    category: '大型生物',
+    category: '哺乳動物',
     description: '弓頭鯨擁有巨大的弓形頭部，是北冰洋特有的鯨魚。牠們壽命可達200年以上，是最長壽的哺乳動物。',
     detailedDescription: '弓頭鯨擁有巨大的弓形頭部，佔體長的三分之一。牠們是北冰洋特有的鯨魚，全年生活在海冰中。弓頭鯨壽命可達200年以上，是最長壽的哺乳動物。牠們擁有最厚的鯨脂，可達50公分厚。',
     image: '🐋',
@@ -1393,7 +1393,7 @@ export const speciesData = [
     englishName: 'North Atlantic Right Whale',
     depth: '0-200m',
     habitat: '北大西洋',
-    category: '大型生物',
+    category: '哺乳動物',
     description: '北大西洋露脊鯨是瀕危的鯨魚，以其頭部的白色斑點聞名。牠們經常在水面活動。',
     detailedDescription: '北大西洋露脊鯨是瀕危的鯨魚，全球只剩約400隻。牠們以其頭部的白色斑點聞名。露脊鯨經常在水面活動，容易被船隻撞傷。牠們游動緩慢，曾被稱為「正確的鯨」因為容易捕獵。',
     image: '🐋',
@@ -1534,7 +1534,7 @@ export const speciesData = [
     englishName: 'Hawksbill Sea Turtle',
     depth: '0-20m',
     habitat: '熱帶印度洋',
-    category: '哺乳動物',
+    category: '爬行動物',
     description: '玳瑁海龜以其美麗的龜殼聞名，主要食珊瑚。牠們是瀕危物種，因龜殼被過度採集。',
     detailedDescription: '玳瑁海龜以其美麗的龜殼聞名，可長達1公尺。牠們主要食珊瑚，是珊瑚礁生態系統的重要維護者。玳瑁海龜是瀕危物種，因龜殼被過度採集製作珠寶。牠們會洄游數千公里回到出生地產卵。',
     image: '🐢',
@@ -1816,7 +1816,7 @@ export const speciesData = [
     englishName: 'Arctic Right Whale',
     depth: '0-200m',
     habitat: '北冰洋',
-    category: '大型生物',
+    category: '哺乳動物',
     description: '北極露脊鯨是瀕危的鯨魚，以其沒有背鰭聞名。牠們生活在北極的寒冷水域。',
     detailedDescription: '北極露脊鯨是瀕危的鯨魚，可長達18公尺。牠們以其沒有背鰭聞名，這是露脊鯨的特徵。北極露脊鯨生活在北極的寒冷水域，游動緩慢。牠們主要以浮游生物為食。',
     image: '🐋',
@@ -1978,7 +1978,7 @@ export const speciesData = [
     englishName: 'Leafy Seadragon',
     depth: '0-50m',
     habitat: '南大洋',
-    category: '無脊椎動物',
+    category: '魚類',
     description: '葉海龍以其葉狀附肢聞名，是完美的偽裝大師。牠們是海馬的近親，生活在澳洲南部海域。',
     detailedDescription: '葉海龍以其葉狀附肢聞名，是完美的偽裝大師。牠們是海馬的近親，生活在澳洲南部海域。葉海龍可長達35公分，身體呈黃綠色。牠們不會游泳，而是隨洋流漂流。雄性會攜帶卵直到孵化。',
     image: '🐉',
@@ -2220,7 +2220,7 @@ export const speciesData = [
     englishName: 'Minke Whale',
     depth: '0-200m',
     habitat: '全球海洋',
-    category: '大型生物',
+    category: '哺乳動物',
     description: '小鬚鯨是鬚鯨中最小的物種，可長達10公尺。牠們是獨居動物，經常單獨活動。',
     detailedDescription: '小鬚鯨是鬚鯨中最小的物種，可長達10公尺。牠們是獨居動物，經常單獨活動。小鬚鯨以其好奇的性格聞名，會靠近船隻觀察。牠們主要以浮游生物和小魚為食。',
     image: '🐋',
@@ -2240,7 +2240,7 @@ export const speciesData = [
     englishName: 'Sei Whale',
     depth: '0-300m',
     habitat: '全球海洋',
-    category: '大型生物',
+    category: '哺乳動物',
     description: '塞鯨是大型鬚鯨，可長達20公尺。牠們以其快速游動能力聞名，時速可達50公里。',
     detailedDescription: '塞鯨是大型鬚鯨，可長達20公尺。牠們以其快速游動能力聞名，時速可達50公里。塞鯨是獨居動物，經常單獨或小群活動。牠們主要以浮游生物和小魚為食。',
     image: '🐋',
@@ -2537,26 +2537,7 @@ export const speciesData = [
     ]
   },
   // 更多獨特海洋物種
-  {
-    id: 'clown-anemonefish',
-    name: '小丑魚',
-    englishName: 'Clownfish',
-    depth: '0-15m',
-    habitat: '熱帶海洋',
-    category: '珊瑚礁',
-    description: '小丑魚以其橙色和白色的斑紋聞名，與海葵共生。牠們是電影《海底總動員》的主角。',
-    detailedDescription: '小丑魚以其橙色和白色的斑紋聞名，可長達18公分。牠們與海葵共生，海葵提供保護，小丑魚提供食物。小丑魚是雌雄同體，所有個體出生時都是雄性。最大的會變性為雌性。',
-    image: '🐠',
-    size: '8-18cm',
-    diet: '雜食性',
-    conservation: '普遍',
-    facts: [
-      '與海葵共生',
-      '雌雄同體',
-      '最大的會變性為雌性',
-      '電影《海底總動員》的主角'
-    ]
-  },
+
   {
     id: 'lionfish',
     name: '獅子魚',
@@ -2786,7 +2767,7 @@ export const speciesData = [
     englishName: 'Blobfish',
     depth: '600-1200m',
     habitat: '澳洲深海',
-    category: '無脊椎動物',
+    category: '魚類',
     description: '水滴魚以其奇特的外表聞名，被稱為「世界上最醜的動物」。牠們生活在深海高壓環境。',
     detailedDescription: '水滴魚以其奇特的外表聞名，可長達30公分。牠們被稱為「世界上最醜的動物」，但在深海中看起來正常。水滴魚生活在深海高壓環境，身體呈膠狀以適應壓力。牠們主要以浮游生物為食。',
     image: '🐟',
@@ -2800,26 +2781,7 @@ export const speciesData = [
       '主要以浮游生物為食'
     ]
   },
-  {
-    id: 'anglerfish',
-    name: '鮟鱇魚',
-    englishName: 'Anglerfish',
-    depth: '200-2000m',
-    habitat: '全球深海',
-    category: '魚類',
-    description: '鮟鱇魚以其發光的誘餌聞名，用於吸引獵物。雄性遠小於雌性，會寄生在雌性身上。',
-    detailedDescription: '鮟鱇魚以其發光的誘餌聞名，可長達1公尺。牠們用發光的誘餌吸引獵物。雄性遠小於雌性，會找到雌性後寄生在雌性身上。鮟鱇魚擁有巨大的嘴巴和鋒利的牙齒。',
-    image: '🐟',
-    size: '20-100cm',
-    diet: '肉食性',
-    conservation: '資料不足',
-    facts: [
-      '發光的誘餌',
-      '雄性寄生在雌性身上',
-      '巨大的嘴巴',
-      '鋒利的牙齒'
-    ]
-  },
+
   {
     id: 'giant-tube-worm',
     name: '巨型管蟲',
@@ -2962,33 +2924,14 @@ export const speciesData = [
     ]
   },
   // 更多獨特物種
-  {
-    id: 'seahorse',
-    name: '海馬',
-    englishName: 'Seahorse',
-    depth: '0-50m',
-    habitat: '熱帶海洋',
-    category: '無脊椎動物',
-    description: '海馬以其獨特的形狀聞名，像馬一樣。牠們是雄性懷孕的動物。',
-    detailedDescription: '海馬以其獨特的形狀聞名，可長達35公分。牠們像馬一樣，有彎曲的尾巴。海馬是雄性懷孕的動物，雄性會攜帶卵直到孵化。牠們是優秀的偽裝大師，可以改變顏色。',
-    image: '🐴',
-    size: '1-35cm',
-    diet: '肉食性',
-    conservation: '易危',
-    facts: [
-      '雄性懷孕',
-      '像馬一樣的形狀',
-      '優秀的偽裝大師',
-      '可以改變顏色'
-    ]
-  },
+
   {
     id: 'pipefish',
     name: '管口魚',
     englishName: 'Pipefish',
     depth: '0-50m',
     habitat: '熱帶海洋',
-    category: '無脊椎動物',
+    category: '魚類',
     description: '管口魚是海馬的近親，以其細長的身體聞名。牠們也像海馬一樣雄性懷孕。',
     detailedDescription: '管口魚是海馬的近親，可長達50公分。牠們以其細長的身體聞名，像管子一樣。管口魚也像海馬一樣雄性懷孕。牠們是優秀的偽裝大師，可以融入環境。',
     image: '🐟',
@@ -3004,7 +2947,7 @@ export const speciesData = [
   },
   {
     id: 'dragonet',
-    name: '龍魚',
+    name: '䲗魚',
     englishName: 'Dragonet',
     depth: '0-50m',
     habitat: '熱帶海洋',
@@ -3270,7 +3213,7 @@ export const speciesData = [
     englishName: 'Skate',
     depth: '0-1000m',
     habitat: '全球海洋',
-    category: '無脊椎動物',
+    category: '魚類',
     description: '鰩魚是扁平的鰩魚類，以其菱形的身體聞名。牠們是鯊魚的近親。',
     detailedDescription: '鰩魚是扁平的鰩魚類，可長達2.5公尺。牠們以其菱形的身體聞名，像鰈魚一樣。鰩魚是鯊魚的近親，擁有軟骨骨骼。牠們是底棲魚類，躺在海底等待獵物。',
     image: '🐟',
@@ -3305,46 +3248,8 @@ export const speciesData = [
       '生活在珊瑚礁附近'
     ]
   },
-  {
-    id: 'yellowfin-tuna',
-    name: '黃鰭金槍魚',
-    englishName: 'Yellowfin Tuna',
-    depth: '0-200m',
-    habitat: '熱帶海洋',
-    category: '魚類',
-    description: '黃鰭金槍魚以其黃色的背鰭聞名，是重要的經濟魚類。牠們是游速極快的魚類。',
-    detailedDescription: '黃鰭金槍魚以其黃色的背鰭聞名，可長達2.4公尺。牠們是重要的經濟魚類，用於製作刺身和罐頭。黃鰭金槍魚是游速極快的魚類，時速可達75公里。牠們會進行長距離洄游。',
-    image: '🐟',
-    size: '1-2.4m',
-    diet: '肉食性',
-    conservation: '易危',
-    facts: [
-      '黃色的背鰭',
-      '時速可達75公里',
-      '重要的經濟魚類',
-      '會進行長距離洄游'
-    ]
-  },
-  {
-    id: 'bluefin-tuna',
-    name: '藍鰭金槍魚',
-    englishName: 'Bluefin Tuna',
-    depth: '0-500m',
-    habitat: '全球海洋',
-    category: '魚類',
-    description: '藍鰭金槍魚以其藍色的背鰭聞名，是最大的金槍魚。牠們是高級美食。',
-    detailedDescription: '藍鰭金槍魚以其藍色的背鰭聞名，可長達3公尺。牠們是最大的金槍魚，重達680公斤。藍鰭金槍魚是高級美食，用於製作高級刺身。牠們是游速極快的魚類，時速可達70公里。',
-    image: '🐟',
-    size: '1-3m',
-    diet: '肉食性',
-    conservation: '瀕危',
-    facts: [
-      '最大的金槍魚',
-      '可重達680公斤',
-      '高級美食',
-      '時速可達70公里'
-    ]
-  },
+
+
   {
     id: 'marlin',
     name: '馬林魚',
@@ -3386,46 +3291,8 @@ export const speciesData = [
     ]
   },
   // 更多棘皮動物
-  {
-    id: 'sea-cucumber',
-    name: '海參',
-    englishName: 'Sea Cucumber',
-    depth: '0-500m',
-    habitat: '全球海洋',
-    category: '無脊椎動物',
-    description: '海參是長條形的棘皮動物，以其柔軟的身體聞名。牠們是重要的經濟物種。',
-    detailedDescription: '海參是長條形的棘皮動物，可長達40公分。牠們以其柔軟的身體聞名，像黃瓜一樣。海參是重要的經濟物種，被視為美食。牠們是底棲動物，主要以海底的有機物質為食。',
-    image: '🥒',
-    size: '10-40cm',
-    diet: '濾食性',
-    conservation: '易危',
-    facts: [
-      '像黃瓜一樣',
-      '重要的經濟物種',
-      '底棲動物',
-      '主要以有機物質為食'
-    ]
-  },
-  {
-    id: 'sea-urchin',
-    name: '海膽',
-    englishName: 'Sea Urchin',
-    depth: '0-500m',
-    habitat: '全球海洋',
-    category: '無脊椎動物',
-    description: '海膽是球形棘皮動物，以其尖刺聞名。牠們是底棲動物，主要以藻類為食。',
-    detailedDescription: '海膽是球形棘皮動物，可長達30公分。牠們以其尖刺聞名，用於防禦。海膽是底棲動物，主要以藻類為食。牠們的生殖腺被視為美食，稱為海膽子。',
-    image: '🔮',
-    size: '5-30cm',
-    diet: '雜食性',
-    conservation: '普遍',
-    facts: [
-      '球形棘皮動物',
-      '尖刺用於防禦',
-      '生殖腺被視為美食',
-      '主要以藻類為食'
-    ]
-  },
+
+
   {
     id: 'brittle-star',
     name: '脆海星',
@@ -3648,26 +3515,7 @@ export const speciesData = [
       '用螯吸引雌性'
     ]
   },
-  {
-    id: 'horseshoe-crab',
-    name: '鱟',
-    englishName: 'Horseshoe Crab',
-    depth: '0-50m',
-    habitat: '全球海洋',
-    category: '無脊椎動物',
-    description: '鱟以其馬蹄形的身體聞名，是古老的生物，已存在數億年。牠們不是真正的螃蟹。',
-    detailedDescription: '鱟以其馬蹄形的身體聞名，可長達60公分。牠們是古老的生物，已存在數億年，被稱為活化石。鱟不是真正的螃蟹，而是蛛形綱的近親。牠們的藍色血液用於醫學檢測。',
-    image: '🦀',
-    size: '20-60cm',
-    diet: '雜食性',
-    conservation: '易危',
-    facts: [
-      '馬蹄形的身體',
-      '已存在數億年',
-      '不是真正的螃蟹',
-      '藍色血液用於醫學檢測'
-    ]
-  },
+
   {
     id: 'barnacle',
     name: '藤壺',
@@ -3708,26 +3556,7 @@ export const speciesData = [
       '為鯨魚提供食物'
     ]
   },
-  {
-    id: 'copepod',
-    name: '橈足類',
-    englishName: 'Copepod',
-    depth: '0-1000m',
-    habitat: '全球海洋',
-    category: '無脊椎動物',
-    description: '橈足類是小型甲殼類動物，是海洋中最豐富的動物。牠們是浮游生物。',
-    detailedDescription: '橈足類是小型甲殼類動物，可長達2毫米。牠們是海洋中最豐富的動物，數量超過所有其他動物的總和。橈足類是浮游生物，隨洋流漂動。牠們是食物鏈的重要環節。',
-    image: '🦐',
-    size: '0.5-2mm',
-    diet: '雜食性',
-    conservation: '普遍',
-    facts: [
-      '海洋中最豐富的動物',
-      '浮游生物',
-      '食物鏈的重要環節',
-      '隨洋流漂動'
-    ]
-  },
+
   {
     id: 'amphipod',
     name: '端足類',
@@ -3789,26 +3618,7 @@ export const speciesData = [
       '用於捕食和防禦'
     ]
   },
-  {
-    id: 'coral',
-    name: '珊瑚',
-    englishName: 'Coral',
-    depth: '0-200m',
-    habitat: '熱帶海洋',
-    category: '無脊椎動物',
-    description: '珊瑚以其堅硬的骨骼聞名，是珊瑚礁的建設者。牠們與藻類共生。',
-    detailedDescription: '珊瑚以其堅硬的骨骼聞名，可長達數公尺。牠們是珊瑚礁的建設者，形成巨大的珊瑚礁。珊瑚與藻類共生，藻類為牠們提供食物。珊瑚對環境變化非常敏感。',
-    image: '🪸',
-    size: '10cm-數公尺',
-    diet: '濾食性',
-    conservation: '瀕危',
-    facts: [
-      '珊瑚礁的建設者',
-      '與藻類共生',
-      '對環境變化敏感',
-      '形成巨大的珊瑚礁'
-    ]
-  },
+
   {
     id: 'hydra',
     name: '水螅',
@@ -3870,187 +3680,16 @@ export const speciesData = [
     ]
   },
   // 更多海洋哺乳動物
-  {
-    id: 'manatee',
-    name: '海牛',
-    englishName: 'Manatee',
-    depth: '0-10m',
-    habitat: '熱帶海洋',
-    category: '哺乳動物',
-    description: '海牛以其溫和的性格聞名，被稱為「海中美人魚」。牠們是草食性動物。',
-    detailedDescription: '海牛以其溫和的性格聞名，可長達4公尺，重達1.6噸。牠們被稱為「海中美人魚」，擁有圓潤的身體。海牛是草食性動物，主要以海草為食。牠們是瀕危物種，受到船隻碰撞的威脅。',
-    image: '🐄',
-    size: '2.5-4m',
-    diet: '草食性',
-    conservation: '瀕危',
-    facts: [
-      '被稱為「海中美人魚」',
-      '草食性動物',
-      '主要以海草為食',
-      '瀕危物種'
-    ]
-  },
-  {
-    id: 'narwhal',
-    name: '獨角鯨',
-    englishName: 'Narwhal',
-    depth: '0-1500m',
-    habitat: '北極海洋',
-    category: '哺乳動物',
-    description: '獨角鯨以其長長的獠牙聞名，像獨角獸一樣。牠們生活在北極海洋。',
-    detailedDescription: '獨角鯨以其長長的獠牙聞名，可長達5公尺。牠們像獨角獸一樣，擁有長長的獠牙。獨角鯨生活在北極海洋，是深海動物。牠們的獠牙實際上是變形的牙齒，用於感應和社交。',
-    image: '🐋',
-    size: '4-5m',
-    diet: '肉食性',
-    conservation: '易危',
-    facts: [
-      '像獨角獸一樣',
-      '長長的獠牙',
-      '變形的牙齒',
-      '生活在北極海洋'
-    ]
-  },
-  {
-    id: 'beluga',
-    name: '白鯨',
-    englishName: 'Beluga',
-    depth: '0-1000m',
-    habitat: '北極海洋',
-    category: '哺乳動物',
-    description: '白鯨以其白色的身體聞名，被稱為「海中金絲雀」。牠們發出各種聲音。',
-    detailedDescription: '白鯨以其白色的身體聞名，可長達5.5公尺。牠們被稱為「海中金絲雀」，發出各種聲音。白鯨生活在北極海洋，是群居動物。牠們擁有圓形的頭部，可以改變面部表情。',
-    image: '🐋',
-    size: '4-5.5m',
-    diet: '肉食性',
-    conservation: '易危',
-    facts: [
-      '被稱為「海中金絲雀」',
-      '發出各種聲音',
-      '圓形的頭部',
-      '可以改變面部表情'
-    ]
-  },
-  {
-    id: 'orca',
-    name: '虎鯨',
-    englishName: 'Orca',
-    depth: '0-500m',
-    habitat: '全球海洋',
-    category: '哺乳動物',
-    description: '虎鯨以其黑白相間的斑紋聞名，是海洋中最強大的捕食者。牠們是高度智慧的動物。',
-    detailedDescription: '虎鯨以其黑白相間的斑紋聞名，可長達9公尺，重達6噸。牠們是海洋中最強大的捕食者，甚至捕食鯊魚。虎鯨是高度智慧的動物，擁有複雜的社交結構。牠們會使用協作狩獵策略。',
-    image: '🐋',
-    size: '5-9m',
-    diet: '肉食性',
-    conservation: '易危',
-    facts: [
-      '黑白相間的斑紋',
-      '海洋中最強大的捕食者',
-      '高度智慧的動物',
-      '使用協作狩獵策略'
-    ]
-  },
-  {
-    id: 'sperm-whale',
-    name: '抹香鯨',
-    englishName: 'Sperm Whale',
-    depth: '0-2000m',
-    habitat: '全球海洋',
-    category: '哺乳動物',
-    description: '抹香鯨以其巨大的頭部聞名，是最大的齒鯨。牠們可以潛到深海。',
-    detailedDescription: '抹香鯨以其巨大的頭部聞名，可長達20公尺，重達50噸。牠們是最大的齒鯨，可以潛到2000公尺深。抹香鯨主要以巨型魷魚為食。牠們的頭部含有鯨蠟，用於聲納定位。',
-    image: '🐋',
-    size: '11-20m',
-    diet: '肉食性',
-    conservation: '易危',
-    facts: [
-      '最大的齒鯨',
-      '可潛到2000公尺深',
-      '主要以巨型魷魚為食',
-      '頭部含有鯨蠟'
-    ]
-  },
+
+
+
+
+
   // 更多鯊魚
-  {
-    id: 'great-white-shark',
-    name: '大白鯊',
-    englishName: 'Great White Shark',
-    depth: '0-1200m',
-    habitat: '全球海洋',
-    category: '大型生物',
-    description: '大白鯊以其強大的咬合力聞名，是海洋中最著名的捕食者。牠們是頂級捕食者。',
-    detailedDescription: '大白鯊以其強大的咬合力聞名，可長達6公尺，重達2噸。牠們是海洋中最著名的捕食者，是頂級捕食者。大白鯊擁有敏銳的嗅覺，可以聞到幾公里外的血液。牠們主要以海豹和魚類為食。',
-    image: '🦈',
-    size: '4-6m',
-    diet: '肉食性',
-    conservation: '易危',
-    facts: [
-      '強大的咬合力',
-      '頂級捕食者',
-      '敏銳的嗅覺',
-      '可以聞到幾公里外的血液'
-    ]
-  },
-  {
-    id: 'tiger-shark',
-    name: '虎鯊',
-    englishName: 'Tiger Shark',
-    depth: '0-900m',
-    habitat: '熱帶海洋',
-    category: '大型生物',
-    description: '虎鯊以其身上的條紋聞名，像老虎一樣。牠們是兇猛的捕食者。',
-    detailedDescription: '虎鯊以其身上的條紋聞名，可長達5.5公尺。牠們像老虎一樣，擁有條紋。虎鯊是兇猛的捕食者，會吃幾乎任何東西。牠們被稱為「海洋垃圾桶」，因為牠們會吞下各種物體。',
-    image: '🦈',
-    size: '3-5.5m',
-    diet: '肉食性',
-    conservation: '瀕危',
-    facts: [
-      '像老虎一樣的條紋',
-      '被稱為「海洋垃圾桶」',
-      '會吃幾乎任何東西',
-      '兇猛的捕食者'
-    ]
-  },
-  {
-    id: 'whale-shark',
-    name: '鯨鯊',
-    englishName: 'Whale Shark',
-    depth: '0-2000m',
-    habitat: '熱帶海洋',
-    category: '大型生物',
-    description: '鯨鯊是最大的魚類，可長達12公尺。牠們是溫和的濾食性動物。',
-    detailedDescription: '鯨鯊是最大的魚類，可長達12公尺，重達20噸。牠們是溫和的濾食性動物，主要以浮游生物為食。鯨鯊對人類無害，經常讓潛水員靠近。牠們是瀕危物種，受到過度漁撈的威脅。',
-    image: '🦈',
-    size: '5-12m',
-    diet: '濾食性',
-    conservation: '瀕危',
-    facts: [
-      '最大的魚類',
-      '溫和的濾食性動物',
-      '對人類無害',
-      '瀕危物種'
-    ]
-  },
-  {
-    id: 'basking-shark',
-    name: '姥鯊',
-    englishName: 'Basking Shark',
-    depth: '0-1000m',
-    habitat: '全球海洋',
-    category: '大型生物',
-    description: '姥鯊是第二大魚類，可長達10公尺。牠們是溫和的濾食性動物。',
-    detailedDescription: '姥鯊是第二大魚類，可長達10公尺，重達5噸。牠們是溫和的濾食性動物，主要以浮游生物為食。姥鯊經常在水面上游動，張開嘴巴過濾海水。牠們是瀕危物種。',
-    image: '🦈',
-    size: '6-10m',
-    diet: '濾食性',
-    conservation: '瀕危',
-    facts: [
-      '第二大魚類',
-      '溫和的濾食性動物',
-      '在水面上游動',
-      '瀕危物種'
-    ]
-  },
+
+
+
+
   {
     id: 'thresher-shark',
     name: '長尾鯊',
@@ -4072,26 +3711,7 @@ export const speciesData = [
     ]
   },
   // 更多魟魚
-  {
-    id: 'manta-ray',
-    name: '魔鬼魟',
-    englishName: 'Manta Ray',
-    depth: '0-1000m',
-    habitat: '熱帶海洋',
-    category: '大型生物',
-    description: '魔鬼魟以其巨大的胸鰭聞名，像鳥一樣在水中飛翔。牠們是溫和的濾食性動物。',
-    detailedDescription: '魔鬼魟以其巨大的胸鰭聞名，可長達7公尺，重達2噸。牠們像鳥一樣在水中飛翔，優雅地游動。魔鬼魟是溫和的濾食性動物，主要以浮游生物為食。牠們是高度智慧的動物，擁有最大的大腦與體重比例之一。',
-    image: '🐟',
-    size: '3-7m',
-    diet: '濾食性',
-    conservation: '易危',
-    facts: [
-      '像鳥一樣在水中飛翔',
-      '溫和的濾食性動物',
-      '高度智慧的動物',
-      '最大的大腦與體重比例之一'
-    ]
-  },
+
   {
     id: 'eagle-ray',
     name: '鷹魟',
@@ -4112,53 +3732,15 @@ export const speciesData = [
       '經常跳出水面'
     ]
   },
-  {
-    id: 'stingray',
-    name: '黃貂魟',
-    englishName: 'Stingray',
-    depth: '0-500m',
-    habitat: '全球海洋',
-    category: '大型生物',
-    description: '黃貂魟以其有毒的尾刺聞名，是危險的海洋動物。牠們是底棲動物。',
-    detailedDescription: '黃貂魚以其有毒的尾刺聞名，可長達2公尺。牠們是危險的海洋動物，尾刺可以致人死亡。黃貂魚是底棲動物，躺在海底等待獵物。牠們主要以魚類和無脊椎動物為食。',
-    image: '🐟',
-    size: '1-2m',
-    diet: '肉食性',
-    conservation: '易危',
-    facts: [
-      '有毒的尾刺',
-      '危險的海洋動物',
-      '底棲動物',
-      '尾刺可以致人死亡'
-    ]
-  },
-  {
-    id: 'electric-ray',
-    name: '電魟',
-    englishName: 'Electric Ray',
-    depth: '0-200m',
-    habitat: '全球海洋',
-    category: '大型生物',
-    description: '電魟以其發電能力聞名，可以產生強大的電流。牠們用於防禦和捕食。',
-    detailedDescription: '電魟以其發電能力聞名，可長達1.5公尺。牠們可以產生強大的電流，用於防禦和捕食。電魟是底棲動物，躺在海底等待獵物。牠們的電流可以暈暈獵物或威嚇捕食者。',
-    image: '🐟',
-    size: '30-150cm',
-    diet: '肉食性',
-    conservation: '易危',
-    facts: [
-      '可以產生強大的電流',
-      '用於防禦和捕食',
-      '底棲動物',
-      '電流可以暈暈獵物'
-    ]
-  },
+
+
   {
     id: 'guitarfish',
     name: '吉他魟',
     englishName: 'Guitarfish',
     depth: '0-100m',
     habitat: '熱帶海洋',
-    category:魚類',
+    category: '魚類',
     description: '吉他魟以其吉他狀的身體聞名，像吉他一樣。牠們是鯊魚和魟魚的過渡物種。',
     detailedDescription: '吉他魟以其吉他狀的身體聞名，可長達2公尺。牠們像吉他一樣，身體扁平。吉他魟是鯊魚和魟魚的過渡物種，擁有兩者的特徵。牠們是底棲動物，主要以魚類和無脊椎動物為食。',
     image: '🐟',
@@ -4172,26 +3754,7 @@ export const speciesData = [
       '擁有兩者的特徵'
     ]
   },
-  {
-    id: 'sawfish',
-    name: '鋸鰩',
-    englishName: 'Sawfish',
-    depth: '0-100m',
-    habitat: '熱帶海洋',
-    category: '大型生物',
-    description: '鋸鰩以其長長的鋸狀吻聞名，像鋸子一樣。牠們是瀕危物種。',
-    detailedDescription: '鋸鰩以其長長的鋸狀吻聞名，可長達7公尺。牠們像鋸子一樣，擁有鋸狀吻。鋸鰩是瀕危物種，受到過度漁撈的威脅。牠們用鋸狀吻挖掘海底和攻擊獵物。',
-    image: '🐟',
-    size: '2-7m',
-    diet: '肉食性',
-    conservation: '瀕危',
-    facts: [
-      '鋸狀吻',
-      '像鋸子一樣',
-      '瀕危物種',
-      '用鋸狀吻挖掘海底'
-    ]
-  },
+
   // 更多深海生物
   {
     id: 'hatchetfish',
@@ -4213,26 +3776,7 @@ export const speciesData = [
       '用於偽裝和溝通'
     ]
   },
-  {
-    id: 'lanternfish',
-    name: '燈籠魚',
-    englishName: 'Lanternfish',
-    depth: '200-1000m',
-    habitat: '深海',
-    category: '魚類',
-    description: '燈籠魚以其發光器官聞名，像燈籠一樣。牠們是深海中最豐富的魚類。',
-    detailedDescription: '燈籠魚以其發光器官聞名，可長達15公分。牠們像燈籠一樣，擁有發光器官。燈籠魚是深海中最豐富的魚類，形成巨大的群體。牠們用發光器官進行溝通和偽裝。',
-    image: '🐟',
-    size: '2-15cm',
-    diet: '肉食性',
-    conservation: '資料不足',
-    facts: [
-      '擁有發光器官',
-      '深海中最豐富的魚類',
-      '形成巨大的群體',
-      '用於溝通和偽裝'
-    ]
-  },
+
   {
     id: 'viperfish',
     name: '蝰魚',
@@ -4255,7 +3799,7 @@ export const speciesData = [
   },
   {
     id: 'dragonfish',
-    name: '龍魚',
+    name: '深海龍魚',
     englishName: 'Dragonfish',
     depth: '200-1000m',
     habitat: '深海',
@@ -4273,26 +3817,7 @@ export const speciesData = [
       '用發光器官吸引獵物'
     ]
   },
-  {
-    id: 'grenadier',
-    name: '鼠尾魚',
-    englishName: 'Grenadier',
-    depth: '100-4000m',
-    habitat: '深海',
-    category: '魚類',
-    description: '鼠尾魚以其長長的尾巴聞名，像老鼠一樣。牠們是深海常見魚類。',
-    detailedDescription: '鼠尾魚以其長長的尾巴聞名，可長達1.5公尺。牠們像老鼠一樣，擁有長長的尾巴。鼠尾魚是深海常見魚類，生活在海底。牠們主要以無脊椎動物為食。',
-    image: '🐟',
-    size: '30-150cm',
-    diet: '肉食性',
-    conservation: '資料不足',
-    facts: [
-      '像老鼠一樣',
-      '長長的尾巴',
-      '深海常見魚類',
-      '生活在海底'
-    ]
-  },
+
   // 更多遠洋魚類
   {
     id: 'albacore',
@@ -4374,26 +3899,7 @@ export const speciesData = [
       '強烈的抗爭'
     ]
   },
-  {
-    id: 'barracuda',
-    name: '梭魚',
-    englishName: 'Barracuda',
-    depth: '0-100m',
-    habitat: '熱帶海洋',
-    category: '魚類',
-    description: '梭魚以其長長的身體和牙齒聞名，是兇猛的捕食者。牠們是快速的游泳者。',
-    detailedDescription: '梭魚以其長長的身體和牙齒聞名，可長達2公尺。牠們是兇猛的捕食者，擁有鋒利的牙齒。梭魚是快速的游泳者，時速可達60公里。牠們會突然攻擊獵物。',
-    image: '🐟',
-    size: '60-200cm',
-    diet: '肉食性',
-    conservation: '普遍',
-    facts: [
-      '長長的身體',
-      '鋒利的牙齒',
-      '時速可達60公里',
-      '會突然攻擊獵物'
-    ]
-  },
+
   // 更多簡單生物
   {
     id: 'sponge',
@@ -4415,26 +3921,7 @@ export const speciesData = [
       '最古老的動物之一'
     ]
   },
-  {
-    id: 'comb-jelly',
-    name: '櫛水母',
-    englishName: 'Comb Jelly',
-    depth: '0-3000m',
-    habitat: '全球海洋',
-    category: '無脊椎動物',
-    description: '櫛水母以其發光的櫛板聞名，像彩虹一樣。牠們不是真正的水母。',
-    detailedDescription: '櫛水母以其發光的櫛板聞名，可長達1.5公尺。牠們像彩虹一樣，擁有發光的櫛板。櫛水母不是真正的水母，沒有刺細胞。牠們是最古老的動物之一，用櫛板游動。',
-    image: '🪼',
-    size: '5mm-1.5m',
-    diet: '肉食性',
-    conservation: '資料不足',
-    facts: [
-      '像彩虹一樣',
-      '不是真正的水母',
-      '沒有刺細胞',
-      '用櫛板游動'
-    ]
-  },
+
   {
     id: 'sea-squirt',
     name: '海鞘',
@@ -4617,26 +4104,7 @@ export const speciesData = [
       '模仿15種以上動物'
     ]
   },
-  {
-    id: 'blue-ringed-octopus',
-    name: '藍環章魚',
-    englishName: 'Blue-ringed Octopus',
-    depth: '0-50m',
-    habitat: '熱帶海洋',
-    category: '無脊椎動物',
-    description: '藍環章魚以其藍色環紋聞名，有劇毒。牠們是危險的海洋動物。',
-    detailedDescription: '藍環章魚以其藍色環紋聞名，可長達20公分。牠們有劇毒，一口可以致人死亡。藍環章魚的毒液比河豚毒強1000倍。牠們受到威脅時會顯示藍色環紋警告。',
-    image: '🦑',
-    size: '5-20cm',
-    diet: '肉食性',
-    conservation: '資料不足',
-    facts: [
-      '有劇毒',
-      '毒液比河豚毒強1000倍',
-      '可以致人死亡',
-      '受威脅時顯示藍色環紋'
-    ]
-  },
+
   {
     id: 'flamboyant-cuttlefish',
     name: '華麗墨魚',
@@ -4698,26 +4166,7 @@ export const speciesData = [
     ]
   },
   // 更多海洋爬行動物
-  {
-    id: 'sea-turtle',
-    name: '海龜',
-    englishName: 'Sea Turtle',
-    depth: '0-500m',
-    habitat: '熱帶海洋',
-    category: '爬行動物',
-    description: '海龜以其堅硬的殼聞名，是古老的海洋爬行動物。牠們會洄游長距離。',
-    detailedDescription: '海龜以其堅硬的殼聞名，可長達2公尺。牠們是古老的海洋爬行動物，已存在數億年。海龜會洄游長距離，回到出生地產卵。牠們是瀕危物種，受到污染和漁網的威脅。',
-    image: '🐢',
-    size: '60-200cm',
-    diet: '雜食性',
-    conservation: '瀕危',
-    facts: [
-      '古老的海洋爬行動物',
-      '會洄游長距離',
-      '回到出生地產卵',
-      '瀕危物種'
-    ]
-  },
+
   {
     id: 'green-sea-turtle',
     name: '綠海龜',
@@ -4738,26 +4187,7 @@ export const speciesData = [
       '瀕危物種'
     ]
   },
-  {
-    id: 'leatherback-turtle',
-    name: '棱皮龜',
-    englishName: 'Leatherback Turtle',
-    depth: '0-1200m',
-    habitat: '全球海洋',
-    category: '爬行動物',
-    description: '棱皮龜以其皮革狀的皮膚聞名，是最大的海龜。牠們可以潛到深海。',
-    detailedDescription: '棱皮龜以其皮革狀的皮膚聞名，可長達2.5公尺，重達900公斤。牠們是最大的海龜，也是最大的爬行動物。棱皮龜可以潛到1200公尺深，主要以水母為食。牠們是瀕危物種。',
-    image: '🐢',
-    size: '1.5-2.5m',
-    diet: '肉食性',
-    conservation: '瀕危',
-    facts: [
-      '皮革狀的皮膚',
-      '最大的海龜',
-      '可以潛到1200公尺深',
-      '主要以水母為食'
-    ]
-  },
+
   {
     id: 'loggerhead-turtle',
     name: '赤蠵龜',
@@ -4879,26 +4309,7 @@ export const speciesData = [
       '主要以無脊椎動物為食'
     ]
   },
-  {
-    id: 'cleaner-wrasse',
-    name: '清潔魚',
-    englishName: 'Cleaner Wrasse',
-    depth: '0-40m',
-    habitat: '熱帶海洋',
-    category: '魚類',
-    description: '清潔魚以其清潔行為聞名，會幫其他魚類清潔身體。',
-    detailedDescription: '清潔魚以其清潔行為聞名，可長達12公分。牠們會幫其他魚類清潔身體，吃掉身上的寄生蟲。清潔魚有特殊的「清潔站」，其他魚類會來清潔。牠們是珊瑚礁的重要物種。',
-    image: '🐟',
-    size: '4-12cm',
-    diet: '肉食性',
-    conservation: '普遍',
-    facts: [
-      '幫其他魚類清潔身體',
-      '吃掉寄生蟲',
-      '有清潔站',
-      '珊瑚礁的重要物種'
-    ]
-  },
+
   {
     id: 'moorish-idol',
     name: '摩里神仙魚',
@@ -4920,26 +4331,7 @@ export const speciesData = [
     ]
   },
   // 更多鰻魚和蛇形魚類
-  {
-    id: 'garden-eel',
-    name: '花園鰻',
-    englishName: 'Garden Eel',
-    depth: '10-50m',
-    habitat: '熱帶海洋',
-    category: '魚類',
-    description: '花園鰻以其直立姿勢聞名，像花園裡的花朵一樣。牠們生活在沙質海底。',
-    detailedDescription: '花園鰻以其直立姿勢聞名，可長達1.2公尺。牠們像花園裡的花朵一樣，直立在沙質海底。花園鰻從沙質洞穴中伸出上半身，捕捉浮游生物。牠們是群居動物，形成花園般的景象。',
-    image: '🐍',
-    size: '30-120cm',
-    diet: '肉食性',
-    conservation: '普遍',
-    facts: [
-      '直立姿勢',
-      '像花園裡的花朵',
-      '從洞穴中伸出上半身',
-      '形成花園般的景象'
-    ]
-  },
+
   {
     id: 'spotted-eel',
     name: '斑點鰻',
@@ -5000,26 +4392,7 @@ export const speciesData = [
       '重達60公斤'
     ]
   },
-  {
-    id: 'electric-eel',
-    name: '電鰻',
-    englishName: 'Electric Eel',
-    depth: '0-20m',
-    habitat: '淡水',
-    category: '魚類',
-    description: '電鰻以其發電能力聞名，可以產生強大的電流。牠們生活在淡水環境。',
-    detailedDescription: '電鰻以其發電能力聞名，可長達2.5公尺。牠們可以產生高達600伏特的電流，用於捕食和防禦。電鰻生活在淡水環境，主要在南美洲。牠們是夜行性動物。',
-    image: '🐍',
-    size: '1-2.5m',
-    diet: '肉食性',
-    conservation: '普遍',
-    facts: [
-      '可以產生600伏特電流',
-      '用於捕食和防禦',
-      '生活在淡水環境',
-      '夜行性動物'
-    ]
-  },
+
   // 更多甲殼類
   {
     id: 'american-lobster',
@@ -5124,13 +4497,14 @@ export const speciesData = [
 ];
 
 export const speciesCategories = [
-  { id: 'all', name: '全部' },
-  { id: 'deep', name: '深海' },
-  { id: 'reef', name: '珊瑚礁' },
-  { id: 'large', name: '大型生物' },
-  { id: 'invertebrate', name: '無脊椎動物' },
-  { id: 'mammal', name: '哺乳動物' },
-  { id: 'plant', name: '植物' },
-  { id: 'fish', name: '魚類' },
-  { id: 'bird', name: '鳥類' }
+  { id: 'all', name: '全部', category: null },
+  { id: 'deep', name: '深海', category: '深海' },
+  { id: 'reef', name: '珊瑚礁', category: '珊瑚礁' },
+  { id: 'large', name: '大型生物', category: '大型生物' },
+  { id: 'invertebrate', name: '無脊椎動物', category: '無脊椎動物' },
+  { id: 'mammal', name: '哺乳動物', category: '哺乳動物' },
+  { id: 'reptile', name: '爬行動物', category: '爬行動物' },
+  { id: 'fish', name: '魚類', category: '魚類' },
+  { id: 'bird', name: '鳥類', category: '鳥類' },
+  { id: 'plant', name: '植物', category: '植物' }
 ];

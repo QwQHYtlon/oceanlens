@@ -1,19 +1,5 @@
-@import './styles/variables.css';
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--font-body);
-  background: var(--color-deep-dark);
-  color: var(--color-text);
-  line-height: 1.6;
-  min-height: 100vh;
-}
+@import './styles/global.css';
 
 #root {
-  min-height: 100vh;
+  min-height: 100dvh;
 }

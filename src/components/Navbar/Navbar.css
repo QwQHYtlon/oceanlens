@@ -4,26 +4,35 @@
   left: 0;
   right: 0;
   z-index: var(--z-fixed);
+  height: var(--navbar-height);
   background: rgba(2, 12, 27, 0.9);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--glass-border);
-  padding: var(--spacing-md) 0;
 }
 
 .navbar__container {
-  max-width: 1280px;
+  position: relative;
+  z-index: 3;
+  max-width: var(--container-max);
+  height: 100%;
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--spacing-md);
 }
 
 .navbar__logo {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  line-height: 1;
   text-decoration: none;
   color: var(--color-text);
+  flex-shrink: 0;
 }
 
 .navbar__logo-text {
@@ -45,23 +54,39 @@
   display: none;
   background: transparent;
   color: var(--color-text);
-  border: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
   cursor: pointer;
   padding: var(--spacing-xs);
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__toggle:hover {
+  border-color: var(--glass-border);
+  color: var(--color-accent);
+}
+
+.navbar__backdrop {
+  display: none;
 }
 
 .navbar__menu {
   display: flex;
   align-items: center;
-  gap: var(--spacing-lg);
+  gap: clamp(var(--spacing-sm), 2vw, var(--spacing-lg));
 }
 
 .navbar__link {
+  position: relative;
   color: var(--color-text-secondary);
   text-decoration: none;
   font-weight: 500;
+  padding: 0.35rem 0;
+  white-space: nowrap;
   transition: color var(--transition-base);
-  position: relative;
 }
 
 .navbar__link:hover {
@@ -84,44 +109,108 @@
 }
 
 .navbar__cta {
-  margin-left: var(--spacing-md);
+  margin-left: var(--spacing-sm);
+}
+
+@media (max-width: 900px) {
+  .navbar__container {
+    padding: 0 var(--spacing-md);
+  }
+
+  .navbar__menu {
+    gap: var(--spacing-sm);
+  }
 }
 
 @media (max-width: 768px) {
+  .navbar__container {
+    padding: 0 var(--spacing-sm);
+  }
+
   .navbar__toggle {
     display: flex;
-    align-items: center;
-    justify-content: center;
   }
-  
-  .navbar__menu {
+
+  .navbar__backdrop {
+    display: block;
     position: fixed;
-    top: 70px;
+    top: var(--navbar-height);
     left: 0;
     right: 0;
-    background: var(--color-deep-dark);
+    bottom: 0;
+    z-index: 1;
+    background: rgba(2, 12, 27, 0.62);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 0;
+    cursor: default;
+  }
+
+  .navbar__menu {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
     flex-direction: column;
-    padding: var(--spacing-lg);
-    gap: var(--spacing-md);
-    transform: translateY(-100%);
+    align-items: stretch;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-lg);
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    max-height: calc(100dvh - var(--navbar-height));
+    overflow-y: auto;
+    transform: translateY(-10px);
     opacity: 0;
     visibility: hidden;
-    transition: all var(--transition-base);
-    border-bottom: 1px solid var(--glass-border);
+    pointer-events: none;
+    transition:
+      transform var(--transition-base),
+      opacity var(--transition-base),
+      visibility var(--transition-base);
   }
-  
+
   .navbar__menu--open {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
-  
+
+  .navbar__link {
+    padding: 0.75rem 0.9rem;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+  }
+
+  .navbar__link:hover,
+  .navbar__link--active {
+    background: rgba(0, 245, 212, 0.08);
+  }
+
+  .navbar__link--active::after {
+    display: none;
+  }
+
   .navbar__cta {
     margin-left: 0;
+    margin-top: var(--spacing-sm);
     width: 100%;
   }
-  
+
   .navbar__cta .button {
     width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar__logo-text {
+    font-size: 1.3rem;
+  }
+
+  .navbar__logo-subtitle {
+    font-size: 0.6875rem;
   }
 }

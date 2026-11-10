@@ -1,4 +1,3 @@
-import React from 'react';
 import './Loading3D.css';
 
 const Loading3D = ({ message = '正在載入海洋環境……' }) => {

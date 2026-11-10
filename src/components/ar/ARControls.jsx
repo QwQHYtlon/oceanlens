@@ -1,6 +1,4 @@
-import React from 'react';
 import { RotateCw, Move, ZoomIn, RefreshCw } from 'lucide-react';
-import Button from '../Button/Button';
 import './ARControls.css';
 
 const ARControls = ({ 

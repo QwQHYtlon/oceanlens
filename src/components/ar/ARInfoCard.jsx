@@ -1,4 +1,3 @@
-import React from 'react';
 import './ARInfoCard.css';
 
 const ARInfoCard = ({ 

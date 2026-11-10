@@ -1,5 +1,4 @@
-import React from 'react';
-import { Smartphone, QrCode } from 'lucide-react';
+import { Smartphone } from 'lucide-react';
 import Button from '../Button/Button';
 import { QRCodeSVG } from 'qrcode.react';
 import './ARFallback.css';
@@ -22,8 +21,8 @@ const ARFallback = ({ onView3D, currentUrl }) => {
             <QRCodeSVG 
               value={qrValue}
               size={180}
-              fg="#00f5d4"
-              bg="#0a192f"
+              fgColor="#020c1b"
+              bgColor="#ffffff"
               level="M"
               includeMargin={true}
             />

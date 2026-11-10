@@ -1,4 +1,3 @@
-import React from 'react';
 import { Camera, X } from 'lucide-react';
 import Button from '../Button/Button';
 import './ARPermission.css';

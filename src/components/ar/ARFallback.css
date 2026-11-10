@@ -61,3 +61,23 @@
   display: flex;
   justify-content: center;
 }
+
+
+@media (max-width: 480px) {
+  .ar-fallback {
+    padding: var(--spacing-md);
+  }
+
+  .ar-fallback__content {
+    padding: var(--spacing-lg);
+  }
+
+  .ar-fallback__qr {
+    padding: var(--spacing-md);
+  }
+
+  .ar-fallback__qr-code svg {
+    width: 150px;
+    height: 150px;
+  }
+}

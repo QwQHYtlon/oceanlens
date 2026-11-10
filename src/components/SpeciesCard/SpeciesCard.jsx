@@ -1,11 +1,16 @@
-import React from 'react';
 import Card from '../Card/Card';
 import Button from '../Button/Button';
 import './SpeciesCard.css';
 
 const SpeciesCard = ({ species }) => {
   return (
-    <Card variant="glass" hover className="species-card">
+    <Card
+      variant="glass"
+      hover
+      className="species-card"
+      data-category={species.category}
+      data-species-id={species.id}
+    >
       <div className="species-card__image">
         <span className="species-card__emoji">{species.image}</span>
       </div>
@@ -22,6 +27,7 @@ const SpeciesCard = ({ species }) => {
           variant="secondary" 
           size="small" 
           className="species-card__button"
+          aria-label={`探索 ${species.name}`}
         >
           探索
         </Button>

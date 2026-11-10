@@ -1,4 +1,3 @@
-import React from 'react';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 
 const CameraController = ({ 

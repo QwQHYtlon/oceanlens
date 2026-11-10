@@ -1,24 +1,31 @@
-import React from 'react';
 import './DepthSelector.css';
 
 const DepthSelector = ({ depths, selectedDepth, onSelect }) => {
   return (
     <div className="depth-selector">
-      <div className="depth-selector__track">
-        {depths.map((depth, index) => (
-          <button
-            key={depth.depth}
-            className={`depth-selector__point ${selectedDepth === depth.depth ? 'depth-selector__point--active' : ''}`}
-            onClick={() => onSelect(depth)}
-            style={{ 
-              left: `${(index / (depths.length - 1)) * 100}%`,
-              borderColor: depth.color
-            }}
-          >
-            <span className="depth-selector__label">{depth.depth}m</span>
-          </button>
-        ))}
+      <div className="depth-selector__track" role="group" aria-label="選擇海洋深度">
+        {depths.map((depth) => {
+          const isActive = selectedDepth === depth.depth;
+          return (
+            <button
+              key={depth.depth}
+              type="button"
+              className={`depth-selector__point ${isActive ? 'depth-selector__point--active' : ''}`}
+              onClick={() => onSelect(depth)}
+              aria-pressed={isActive}
+              title={`${depth.depth}m — ${depth.zone}`}
+              style={{ '--depth-color': depth.color }}
+            >
+              <span className="depth-selector__marker" aria-hidden="true" />
+              <span className="depth-selector__text">
+                <span className="depth-selector__label">{depth.depth}m</span>
+                <span className="depth-selector__zone">{depth.zone}</span>
+              </span>
+            </button>
+          );
+        })}
       </div>
+      <p className="depth-selector__hint">由淺至深，點選任一深度查看環境與生物</p>
     </div>
   );
 };

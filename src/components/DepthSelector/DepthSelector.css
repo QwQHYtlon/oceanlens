@@ -1,70 +1,139 @@
 .depth-selector {
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-md) 0 var(--spacing-sm);
 }
 
 .depth-selector__track {
   position: relative;
-  height: 200px;
-  background: linear-gradient(180deg, 
-    var(--color-ocean-light) 0%, 
-    var(--color-ocean) 20%, 
-    var(--color-ocean-dark) 40%, 
-    var(--color-deep) 60%, 
-    var(--color-deep-light) 80%, 
-    var(--color-deep-dark) 100%
-  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing-xs);
+  min-height: 360px;
+  padding: 1.1rem;
   border-radius: var(--radius-xl);
-  position: relative;
-  border: 2px solid var(--glass-border);
+  border: 1px solid rgba(137, 219, 255, 0.18);
+  background: linear-gradient(
+    180deg,
+    #0277a8 0%,
+    #026a99 14%,
+    #024e78 34%,
+    #023e8a 52%,
+    #03045e 72%,
+    #05123a 88%,
+    #020c1b 100%
+  );
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.35);
 }
 
 .depth-selector__point {
-  position: absolute;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--color-surface);
-  border: 3px solid var(--color-accent);
-  cursor: pointer;
-  transition: all var(--transition-base);
-  display: flex;
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
   align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.875rem;
+  gap: var(--spacing-sm);
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-lg);
+  background: transparent;
   color: var(--color-text);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  border: 1px solid transparent;
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base);
 }
 
 .depth-selector__point:hover {
-  transform: translateX(-50%) scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 245, 212, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
 .depth-selector__point--active {
+  background: rgba(0, 245, 212, 0.14);
+  border-color: rgba(0, 245, 212, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.depth-selector__marker {
+  width: 14px;
+  height: 14px;
+  justify-self: center;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 2px solid var(--depth-color);
+  box-shadow: 0 0 0 3px rgba(2, 12, 27, 0.4);
+  transition:
+    background var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.depth-selector__point--active .depth-selector__marker {
   background: var(--color-accent);
-  color: var(--color-deep-dark);
-  transform: translateX(-50%) scale(1.15);
-  box-shadow: 0 0 30px rgba(0, 245, 212, 0.6);
+  border-color: #ffffff;
+  box-shadow: 0 0 0 5px rgba(0, 245, 212, 0.24);
+  transform: scale(1.1);
+}
+
+.depth-selector__text {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-sm);
+  min-width: 0;
 }
 
 .depth-selector__label {
-  position: absolute;
-  bottom: -30px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
   white-space: nowrap;
-  font-size: 0.75rem;
+  color: #ffffff;
+}
+
+.depth-selector__point--active .depth-selector__label {
+  color: var(--color-accent);
+}
+
+.depth-selector__zone {
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: rgba(230, 241, 255, 0.78);
+  overflow-wrap: anywhere;
+}
+
+.depth-selector__hint {
+  margin-top: var(--spacing-sm);
+  text-align: center;
+  font-size: 0.8125rem;
   color: var(--color-text-secondary);
 }
 
 @media (max-width: 768px) {
   .depth-selector__track {
-    height: 150px;
+    min-height: 330px;
+    padding: 0.8rem;
   }
-  
+
   .depth-selector__point {
-    width: 50px;
-    height: 50px;
+    grid-template-columns: 16px minmax(0, 1fr);
+    gap: 0.6rem;
+    padding: 0.45rem 0.5rem;
+  }
+
+  .depth-selector__label {
+    font-size: 0.9375rem;
+  }
+
+  .depth-selector__zone {
     font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .depth-selector__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
   }
 }

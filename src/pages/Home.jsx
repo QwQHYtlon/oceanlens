@@ -1,17 +1,35 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Compass, Fish, Activity, Bot } from 'lucide-react';
 import Button from '../components/Button/Button';
 import Card from '../components/Card/Card';
 import SectionTitle from '../components/SectionTitle/SectionTitle';
 import MetricCard from '../components/MetricCard/MetricCard';
 import { oceanData } from '../data/oceanData';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import './Home.css';
 
 const Home = () => {
+  useDocumentTitle('');
   const { coverage, unexplored, features, comparison } = oceanData;
+  const reduceMotion = useReducedMotion();
   
+  const fadeIn = (delay = 0) =>
+    reduceMotion
+      ? {}
+      : {
+          initial: { opacity: 0, y: 16 },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.45, delay },
+        };
+
+  const handleLearnMore = () => {
+    document.getElementById('features')?.scrollIntoView({
+      behavior: reduceMotion ? 'auto' : 'smooth',
+      block: 'start',
+    });
+  };
+
   const featureIcons = {
     compass: <Compass size={32} />,
     fish: <Fish size={32} />,
@@ -24,48 +42,23 @@ const Home = () => {
       {/* Hero Section */}
       <section className="home__hero">
         <div className="home__hero-content">
-          <motion.h1 
-            className="home__title"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.h1 className="home__title" {...fadeIn(0)}>
             OceanLens
           </motion.h1>
-          <motion.h2 
-            className="home__subtitle"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          <motion.h2 className="home__subtitle" {...fadeIn(0.05)}>
             海洋透視鏡
           </motion.h2>
-          <motion.p 
-            className="home__tagline"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
+          <motion.p className="home__tagline" {...fadeIn(0.1)}>
             讓不能潛水的人，也能探索海洋。
           </motion.p>
-          <motion.p 
-            className="home__description"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
+          <motion.p className="home__description" {...fadeIn(0.15)}>
             透過互動科技，探索海洋生物、環境與生態系統。
           </motion.p>
-          <motion.div 
-            className="home__cta"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
+          <motion.div className="home__cta" {...fadeIn(0.2)}>
             <Button to="/explore" variant="primary" size="large">
               開始探索
             </Button>
-            <Button to="/explore" variant="secondary" size="large">
+            <Button variant="secondary" size="large" onClick={handleLearnMore}>
               了解 OceanLens
             </Button>
           </motion.div>
@@ -96,7 +89,7 @@ const Home = () => {
       </section>
       
       {/* Features Section */}
-      <section className="home__section">
+      <section className="home__section" id="features">
         <div className="container">
           <SectionTitle 
             title="核心功能" 
@@ -120,7 +113,7 @@ const Home = () => {
       </section>
       
       {/* Comparison Section */}
-      <section className="home__section">
+      <section className="home__section" id="comparison">
         <div className="container">
           <SectionTitle 
             title="Why OceanLens" 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { AlertCircle, XCircle, CameraOff, AlertTriangle } from 'lucide-react';
 import Button from '../Button/Button';
 import './ARError.css';

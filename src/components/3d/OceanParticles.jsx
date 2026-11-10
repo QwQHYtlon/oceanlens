@@ -1,5 +1,11 @@
-import React, { useRef, useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
+
+// Deterministic value noise keeps particle generation pure across renders.
+const pseudoRandom = (index, salt, depth) => {
+  const value = Math.sin(index * 12.9898 + salt * 78.233 + depth * 0.017) * 43758.5453;
+  return value - Math.floor(value);
+};
 
 const OceanParticles = ({ depth = 0 }) => {
   const particlesRef = useRef();
@@ -16,12 +22,12 @@ const OceanParticles = ({ depth = 0 }) => {
   const positions = useMemo(() => {
     const pos = new Float32Array(particleCount * 3);
     for (let i = 0; i < particleCount; i++) {
-      pos[i * 3] = (Math.random() - 0.5) * 20; // x
-      pos[i * 3 + 1] = (Math.random() - 0.5) * 20; // y
-      pos[i * 3 + 2] = (Math.random() - 0.5) * 20; // z
+      pos[i * 3] = (pseudoRandom(i, 1, depth) - 0.5) * 20; // x
+      pos[i * 3 + 1] = (pseudoRandom(i, 2, depth) - 0.5) * 20; // y
+      pos[i * 3 + 2] = (pseudoRandom(i, 3, depth) - 0.5) * 20; // z
     }
     return pos;
-  }, [particleCount]);
+  }, [particleCount, depth]);
   
   // Calculate particle size based on depth
   const particleSize = useMemo(() => {
@@ -40,7 +46,7 @@ const OceanParticles = ({ depth = 0 }) => {
     return 0x03045e;
   }, [depth]);
   
-  useFrame((state) => {
+  useFrame(() => {
     if (particlesRef.current) {
       // Animate particles upward (bubbles)
       const positions = particlesRef.current.geometry.attributes.position.array;
@@ -60,7 +66,7 @@ const OceanParticles = ({ depth = 0 }) => {
   });
   
   return (
-    <points ref={particlesRef}>
+    <points key={particleCount} ref={particlesRef}>
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"

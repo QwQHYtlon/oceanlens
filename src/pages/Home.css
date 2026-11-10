@@ -4,7 +4,7 @@
 
 /* Hero Section */
 .home__hero {
-  min-height: 90vh;
+  min-height: calc(100dvh - var(--navbar-height));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,6 +80,7 @@
 /* Sections */
 .home__section {
   padding: var(--spacing-2xl) 0;
+  scroll-margin-top: calc(var(--navbar-height) + var(--spacing-md));
 }
 
 .home__section--cta {
@@ -90,7 +91,7 @@
 /* Metrics */
 .home__metrics {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--spacing-lg);
   margin-top: var(--spacing-xl);
 }
@@ -98,9 +99,15 @@
 /* Features */
 .home__features {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--spacing-lg);
   margin-top: var(--spacing-xl);
+}
+
+.home__features > a {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-xl);
 }
 
 .home__feature-card {
@@ -128,7 +135,7 @@
 /* Comparison */
 .home__comparison {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--spacing-lg);
   margin-top: var(--spacing-xl);
 }
@@ -193,13 +200,18 @@
 
 @media (max-width: 1024px) {
   .home__features {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 768px) {
+  .home__hero {
+    min-height: calc(100svh - var(--navbar-height));
+    padding: var(--spacing-xl) 0;
+  }
+
   .home__title {
-    font-size: 3rem;
+    font-size: clamp(2.5rem, 14vw, 3.5rem);
   }
   
   .home__subtitle {

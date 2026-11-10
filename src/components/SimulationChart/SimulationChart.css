@@ -1,0 +1,16 @@
+.simulation-chart {
+  width: 100%;
+  min-width: 0;
+}
+
+.simulation-chart .recharts-responsive-container {
+  min-width: 0;
+}
+
+.simulation-chart .recharts-surface {
+  overflow: visible;
+}
+
+.simulation-chart .recharts-text {
+  fill: var(--color-text-secondary);
+}

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Sphere, Cone, Torus } from '@react-three/drei';
 
 // TODO: Replace placeholder geometry with licensed GLB/GLTF models

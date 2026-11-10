@@ -1,4 +1,3 @@
-import React from 'react';
 import './SectionTitle.css';
 
 const SectionTitle = ({ title, subtitle, align = 'left' }) => {

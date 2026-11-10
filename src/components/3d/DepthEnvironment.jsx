@@ -1,9 +1,6 @@
-import React, { useMemo } from 'react';
-import { useThree } from '@react-three/fiber';
+import { useMemo } from 'react';
 
 const DepthEnvironment = ({ depth = 0 }) => {
-  const { scene } = useThree();
-  
   // Calculate environment parameters based on depth
   const environment = useMemo(() => {
     if (depth < 100) {

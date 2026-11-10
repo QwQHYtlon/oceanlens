@@ -1,5 +1,4 @@
-import React from 'react';
-import { Camera, Scan, Eye } from 'lucide-react';
+import { Camera, Eye } from 'lucide-react';
 import Button from '../Button/Button';
 import './ARInstructions.css';
 

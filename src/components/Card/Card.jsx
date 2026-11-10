@@ -1,33 +1,44 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import './Card.css';
 
-const Card = ({ 
-  children, 
-  variant = 'default', 
-  hover = true,
+const Card = ({
+  children,
+  variant = 'default',
+  hover = false,
   onClick,
   className = '',
-  ...props 
+  role,
+  tabIndex,
+  onKeyDown,
+  ...props
 }) => {
-  const baseClasses = 'card';
-  const variantClasses = `card--${variant}`;
-  const hoverClasses = hover ? 'card--hover' : '';
-  
-  const classes = `${baseClasses} ${variantClasses} ${hoverClasses} ${className}`.trim();
-  
-  const MotionDiv = motion.div;
-  
+  const classes = ['card', `card--${variant}`, hover ? 'card--hover' : '', className]
+    .filter(Boolean)
+    .join(' ');
+  const interactive = typeof onClick === 'function';
+
+  const handleKeyDown = (event) => {
+    onKeyDown?.(event);
+    if (!interactive || event.defaultPrevented) return;
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClick(event);
+    }
+  };
+
   return (
-    <MotionDiv
+    <motion.div
       className={classes}
       onClick={onClick}
-      whileHover={hover ? { y: -5, boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4)' } : {}}
+      whileHover={hover ? { y: -5, boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4)' } : undefined}
       transition={{ duration: 0.3 }}
+      role={role ?? (interactive ? 'button' : undefined)}
+      tabIndex={tabIndex ?? (interactive ? 0 : undefined)}
+      onKeyDown={handleKeyDown}
       {...props}
     >
       {children}
-    </MotionDiv>
+    </motion.div>
   );
 };
 

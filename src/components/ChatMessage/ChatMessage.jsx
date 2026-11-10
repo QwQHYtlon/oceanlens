@@ -1,11 +1,10 @@
-import React from 'react';
 import { Bot, User } from 'lucide-react';
 import './ChatMessage.css';
 
 const ChatMessage = ({ message, isUser }) => {
   return (
     <div className={`chat-message chat-message--${isUser ? 'user' : 'ai'}`}>
-      <div className="chat-message__avatar">
+      <div className="chat-message__avatar" aria-hidden="true">
         {isUser ? <User /> : <Bot />}
       </div>
       <div className="chat-message__content">

@@ -1,4 +1,3 @@
-import React from 'react';
 import './ARLoading.css';
 
 const ARLoading = ({ 

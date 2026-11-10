@@ -1,44 +1,71 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Button.css';
 
-const Button = ({ 
-  children, 
-  variant = 'primary', 
-  size = 'medium', 
-  onClick, 
+const Button = ({
+  children,
+  variant = 'primary',
+  size = 'medium',
+  onClick,
   disabled = false,
   to,
-  ...props 
+  href,
+  type = 'button',
+  className = '',
+  ...props
 }) => {
-  const baseClasses = 'button';
-  const variantClasses = `button--${variant}`;
-  const sizeClasses = `button--${size}`;
-  
-  const classes = `${baseClasses} ${variantClasses} ${sizeClasses}`.trim();
-  
-  const MotionButton = motion.button;
-  
+  const classes = ['button', `button--${variant}`, `button--${size}`, className]
+    .filter(Boolean)
+    .join(' ');
+
   if (to) {
     return (
-      <Link to={to} className={classes} {...props}>
+      <Link
+        to={to}
+        className={classes}
+        onClick={(event) => {
+          if (disabled) {
+            event.preventDefault();
+            return;
+          }
+          onClick?.(event);
+        }}
+        aria-disabled={disabled || undefined}
+        tabIndex={disabled ? -1 : undefined}
+        {...props}
+      >
         {children}
       </Link>
     );
   }
-  
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={classes}
+        onClick={onClick}
+        aria-disabled={disabled || undefined}
+        tabIndex={disabled ? -1 : undefined}
+        {...props}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <MotionButton
+    <motion.button
+      type={type}
       className={classes}
       onClick={onClick}
       disabled={disabled}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={disabled ? undefined : { scale: 1.03 }}
+      whileTap={disabled ? undefined : { scale: 0.97 }}
       {...props}
     >
       {children}
-    </MotionButton>
+    </motion.button>
   );
 };
 
