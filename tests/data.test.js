@@ -4,6 +4,7 @@ import { speciesData, speciesCategories } from '../src/data/speciesData.js';
 import { simulationData } from '../src/data/simulationData.js';
 import { navItems } from '../src/data/navigation.js';
 import { filterSpecies, sortSpecies, getDepthValue } from '../src/utils/species.js';
+import { getDeepestZone, getDepthZoneLabel, getDepthZones, parseDepth } from '../src/utils/depth.js';
 import {
   OCEAN_TAGS,
   getSpeciesOceans,
@@ -12,6 +13,7 @@ import {
 import {
   collectValidationErrors,
   validateNavigationData,
+  validateDepthZones,
   validateOceanTags,
   validateSimulationData,
   validateSpeciesData,
@@ -193,4 +195,31 @@ test('species catalog reaches at least 300 entries', () => {
   assert.ok(speciesData.some((species) => species.id === 'emperor-penguin'));
   assert.ok(speciesData.some((species) => species.id === 'giant-pacific-octopus'));
   assert.ok(speciesData.some((species) => species.id === 'seagrass'));
+});
+
+
+test('depth zones use the standard boundaries', () => {
+  assert.deepEqual(parseDepth('0-200m'), { min: 0, max: 200, valid: true });
+  assert.deepEqual(parseDepth('200-1000m'), { min: 200, max: 1000, valid: true });
+  assert.deepEqual(parseDepth('6000m'), { min: 6000, max: 6000, valid: true });
+
+  assert.deepEqual(getDepthZones('0-200m').map((zone) => zone.id), ['epipelagic']);
+  assert.deepEqual(getDepthZones('0-1000m').map((zone) => zone.id), [
+    'epipelagic',
+    'mesopelagic',
+  ]);
+  assert.deepEqual(getDepthZones('1000-4000m').map((zone) => zone.id), ['bathypelagic']);
+  assert.deepEqual(getDepthZones('4000-6000m').map((zone) => zone.id), ['abyssopelagic']);
+  assert.deepEqual(getDepthZones('6000m').map((zone) => zone.id), ['hadalpelagic']);
+  assert.equal(getDeepestZone('0-2000m').id, 'bathypelagic');
+  assert.equal(getDepthZoneLabel('0-2000m'), '表層帶–深層帶');
+});
+
+test('every species has a valid depth position tag', () => {
+  assert.deepEqual(validateDepthZones(), []);
+  for (const species of speciesData) {
+    const zones = getDepthZones(species.depth);
+    assert.ok(zones.length > 0, `${species.id} 缺少深度分層`);
+    assert.ok(getDeepestZone(species.depth));
+  }
 });

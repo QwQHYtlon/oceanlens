@@ -21,56 +21,57 @@ export const oceanData = {
       color: '#00b4d8'
     },
     {
-      depth: 100,
+      depth: 200,
       zone: '中層帶 (Mesopelagic Zone)',
-      light: '10-20%',
-      temperature: '10-15°C',
-      pressure: '11 atm',
+      light: '1-10%',
+      temperature: '10-20°C',
+      pressure: '21 atm',
       environment: '光線逐漸減弱，生物開始發光，捕食者增多',
       creatures: ['燈籠魚', '烏賊', '深海鮟鱇魚', '大型水母'],
       color: '#0077b6'
     },
     {
-      depth: 500,
-      zone: '半深層帶 (Bathypelagic Zone)',
-      light: '< 1%',
-      temperature: '4-6°C',
-      pressure: '51 atm',
-      environment: '陽光幾乎無法抵達，生物發光現象普遍',
+      depth: 1000,
+      zone: '深層帶 (Bathypelagic Zone)',
+      light: '0%',
+      temperature: '2-4°C',
+      pressure: '101 atm',
+      environment: '完全黑暗，高壓環境，生物發光現象普遍',
       creatures: ['深海鮟鱇魚', '巨型烏賊', '管蟲', '深海蝦'],
       color: '#023e8a'
     },
     {
-      depth: 1000,
-      zone: '深層帶 (Abyssopelagic Zone)',
+      depth: 4000,
+      zone: '深淵帶 (Abyssopelagic Zone)',
       light: '0%',
-      temperature: '2-4°C',
-      pressure: '101 atm',
-      environment: '完全黑暗，高壓環境，生物適應極端條件',
+      temperature: '1-2°C',
+      pressure: '401 atm',
+      environment: '深淵平原，食物稀少，生物適應極端高壓',
       creatures: ['深海鮟鱇魚', '管蟲', '深海蝦', '盲蝦'],
       color: '#03045e'
     },
     {
-      depth: 4000,
-      zone: '超深層帶 (Hadalpelagic Zone)',
+      depth: 6000,
+      zone: '超深淵帶 (Hadalpelagic Zone)',
       light: '0%',
       temperature: '1-2°C',
-      pressure: '401 atm',
+      pressure: '601 atm',
       environment: '海溝區域，地球最深處，極端高壓',
-      creatures: ['深海鮟鱇魚', '管蟲', '特殊微生物', '盲蝦'],
+      creatures: ['特殊微生物', '管蟲', '深海蝦', '未知生物'],
       color: '#020c1b'
     },
     {
-      depth: 6000,
+      depth: 10994,
       zone: '挑戰者深淵',
       light: '0%',
       temperature: '1-4°C',
-      pressure: '601 atm',
+      pressure: '1099 atm',
       environment: '地球最深點，馬里亞納海溝，極端環境',
-      creatures: ['特殊微生物', '管蟲', '深海蝦', '未知生物'],
+      creatures: ['特殊微生物', '端足類', '未知生物'],
       color: '#020c1b'
     }
   ],
+
   features: [
     {
       id: 1,

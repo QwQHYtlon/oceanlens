@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 const DepthEnvironment = ({ depth = 0 }) => {
   // Calculate environment parameters based on depth
   const environment = useMemo(() => {
-    if (depth < 100) {
+    if (depth < 200) {
       // Surface zone - bright, blue
       return {
         fogColor: 0x00b4d8,
@@ -14,7 +14,7 @@ const DepthEnvironment = ({ depth = 0 }) => {
         directionalIntensity: 1.0,
         lightColor: 0xffffff
       };
-    } else if (depth < 500) {
+    } else if (depth < 1000) {
       // Mesopelagic - dimmer
       return {
         fogColor: 0x0077b6,
@@ -25,7 +25,7 @@ const DepthEnvironment = ({ depth = 0 }) => {
         directionalIntensity: 0.5,
         lightColor: 0x88ccff
       };
-    } else if (depth < 1000) {
+    } else if (depth < 4000) {
       // Bathypelagic - dark
       return {
         fogColor: 0x023e8a,
@@ -36,7 +36,7 @@ const DepthEnvironment = ({ depth = 0 }) => {
         directionalIntensity: 0.2,
         lightColor: 0x4466aa
       };
-    } else if (depth < 4000) {
+    } else if (depth < 6000) {
       // Abyssopelagic - very dark
       return {
         fogColor: 0x03045e,

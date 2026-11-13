@@ -5,6 +5,7 @@ import { ArrowLeft, Ruler, Utensils, Shield, Smartphone } from 'lucide-react';
 import Card from '../components/Card/Card';
 import Button from '../components/Button/Button';
 import Loading3D from '../components/3d/Loading3D';
+import DepthGauge from '../components/DepthGauge/DepthGauge';
 import Fallback3D from '../components/3d/Fallback3D';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 import useDocumentTitle from '../hooks/useDocumentTitle';
@@ -161,6 +162,11 @@ const SpeciesDetail = () => {
                     <span className="species-detail__meta-value">{species.category}</span>
                   </div>
                 </div>
+              </Card>
+
+              <Card variant="glass" className="species-detail__card">
+                <h2 className="species-detail__section-title">深度位置</h2>
+                <DepthGauge depth={species.depth} />
               </Card>
 
               <Card variant="glass" className="species-detail__card">

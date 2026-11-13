@@ -14,7 +14,7 @@ const OceanParticles = ({ depth = 0 }) => {
   const particleCount = useMemo(() => {
     // More particles at deeper depths
     const baseCount = 100;
-    const depthMultiplier = 1 + (depth / 1000);
+    const depthMultiplier = 1 + Math.min(depth, 6000) / 1000;
     return Math.floor(baseCount * depthMultiplier);
   }, [depth]);
   
@@ -33,16 +33,16 @@ const OceanParticles = ({ depth = 0 }) => {
   const particleSize = useMemo(() => {
     // Smaller particles at deeper depths
     const baseSize = 0.05;
-    const depthFactor = 1 - (depth / 6000) * 0.5;
+    const depthFactor = 1 - (Math.min(depth, 6000) / 6000) * 0.5;
     return baseSize * depthFactor;
   }, [depth]);
   
   // Calculate particle color based on depth
   const particleColor = useMemo(() => {
     // Lighter at shallow depths, darker at deep depths
-    if (depth < 100) return 0x00b4d8;
-    if (depth < 500) return 0x0077b6;
-    if (depth < 1000) return 0x023e8a;
+    if (depth < 200) return 0x00b4d8;
+    if (depth < 1000) return 0x0077b6;
+    if (depth < 4000) return 0x023e8a;
     return 0x03045e;
   }, [depth]);
   

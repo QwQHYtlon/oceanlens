@@ -3,6 +3,7 @@ import { speciesData, speciesCategories } from '../src/data/speciesData.js';
 import { simulationData } from '../src/data/simulationData.js';
 import { navItems, isNavItemActive } from '../src/data/navigation.js';
 import { OCEAN_TAGS, getSpeciesOceans, speciesMatchesOcean } from '../src/data/oceanTags.js';
+import { getDepthZones, parseDepth } from '../src/utils/depth.js';
 
 const REQUIRED_SPECIES_FIELDS = [
   'id',
@@ -192,12 +193,32 @@ export function validateOceanTags(data = speciesData) {
   return errors;
 }
 
+export function validateDepthZones(data = speciesData) {
+  const errors = [];
+
+  for (const species of data) {
+    const parsed = parseDepth(species.depth);
+    if (!parsed.valid) {
+      errors.push(`無法解析深度：${species.id} → ${species.depth}`);
+      continue;
+    }
+
+    const zones = getDepthZones(species.depth);
+    if (zones.length === 0) {
+      errors.push(`深度沒有對應分層：${species.id} → ${species.depth}`);
+    }
+  }
+
+  return errors;
+}
+
 export function collectValidationErrors() {
   return [
     ...validateSpeciesData(),
     ...validateSimulationData(),
     ...validateNavigationData(),
     ...validateOceanTags(),
+    ...validateDepthZones(),
   ];
 }
 
