@@ -1,5 +1,5 @@
 import { useDeferredValue, useMemo, useState } from 'react';
-import { ArrowDown, Search, SlidersHorizontal, Waves, X } from 'lucide-react';
+import { ArrowDown, LayoutGrid, RotateCcw, Search, SlidersHorizontal, Waves, X } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle/SectionTitle';
 import SpeciesCard from '../components/SpeciesCard/SpeciesCard';
 import Button from '../components/Button/Button';
@@ -152,101 +152,136 @@ const Species = () => {
             )}
           </div>
 
-          <div className="species__categories" role="group" aria-label="依分類篩選">
-            {speciesCategories.map((category) => {
-              const count = category.category
-                ? categoryCounts[category.category] ?? 0
-                : speciesData.length;
-              const active = selectedCategory === category.id;
-              return (
-                <button
-                  key={category.id}
-                  type="button"
-                  className={`species__category ${active ? 'species__category--active' : ''}`}
-                  onClick={() => handleCategoryChange(category.id)}
-                  aria-pressed={active}
-                >
-                  {category.name}
-                  <span className="species__category-count">{count}</span>
+          <div className="species__filter-panel">
+            <div className="species__filter-header">
+              <span className="species__filter-title">
+                <SlidersHorizontal size={16} aria-hidden="true" />
+                篩選條件
+              </span>
+              {hasFilters && (
+                <button type="button" className="species__clear-filters" onClick={handleClearFilters}>
+                  <RotateCcw size={14} aria-hidden="true" />
+                  清除全部
                 </button>
-              );
-            })}
-          </div>
-
-          <div className="species__oceans" role="group" aria-label="依海域篩選">
-            <span className="species__oceans-label">
-              <Waves size={15} aria-hidden="true" />
-              海域
-            </span>
-            <div className="species__ocean-list">
-              {OCEAN_TAGS.map((tag) => {
-                const active = selectedOcean === tag.id;
-                return (
-                  <button
-                    key={tag.id}
-                    type="button"
-                    className={`species__ocean ${active ? 'species__ocean--active' : ''}`}
-                    onClick={() => handleOceanChange(tag.id)}
-                    aria-pressed={active}
-                  >
-                    {tag.name}
-                    <span className="species__ocean-count">{oceanCounts[tag.id] ?? 0}</span>
-                  </button>
-                );
-              })}
+              )}
             </div>
-            <p className="species__ocean-hint">
-              同一物種可能分布於多個大洋；全球分布物種請使用「全球分布」標籤。
-            </p>
-          </div>
 
-          <div className="species__depths" role="group" aria-label="依深度分層篩選">
-            <span className="species__depths-label">
-              <ArrowDown size={15} aria-hidden="true" />
-              深度
-            </span>
-            <div className="species__depth-list">
-              <button
-                type="button"
-                className={`species__depth ${
-                  selectedDepth === 'all' ? 'species__depth--active' : ''
-                }`}
-                onClick={() => handleDepthChange('all')}
-                aria-pressed={selectedDepth === 'all'}
-                style={{ '--zone-color': 'var(--color-accent)' }}
+            <div className="species__filter-row">
+              <span className="species__filter-label">
+                <LayoutGrid size={15} aria-hidden="true" />
+                分類
+              </span>
+              <div
+                className="species__filter-options species__filter-options--categories"
+                role="group"
+                aria-label="依分類篩選"
               >
-                <span className="species__depth-dot" aria-hidden="true" />
-                全部
-                <span className="species__depth-count">{depthCounts.all}</span>
-              </button>
-              {DEPTH_ZONES.map((zone) => {
-                const active = selectedDepth === zone.id;
-                return (
-                  <button
-                    key={zone.id}
-                    type="button"
-                    className={`species__depth ${
-                      active ? 'species__depth--active' : ''
-                    }`}
-                    onClick={() => handleDepthChange(zone.id)}
-                    aria-pressed={active}
-                    title={`${zone.name}：${zone.min}–${
-                      zone.max === Number.POSITIVE_INFINITY ? '∞' : zone.max
-                    }m`}
-                    style={{ '--zone-color': zone.color }}
-                  >
-                    <span className="species__depth-dot" aria-hidden="true" />
-                    {zone.name}
-                    <span className="species__depth-count">
-                      {depthCounts[zone.id] ?? 0}
-                    </span>
-                  </button>
-                );
-              })}
+                {speciesCategories.map((category) => {
+                  const count = category.category
+                    ? categoryCounts[category.category] ?? 0
+                    : speciesData.length;
+                  const active = selectedCategory === category.id;
+                  return (
+                    <button
+                      key={category.id}
+                      type="button"
+                      className={`species__category ${
+                        active ? 'species__category--active' : ''
+                      }`}
+                      onClick={() => handleCategoryChange(category.id)}
+                      aria-pressed={active}
+                    >
+                      <span className="species__chip-label">{category.name}</span>
+                      <span className="species__category-count">{count}</span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-            <p className="species__depth-hint">
-              依標準海洋深度帶劃分；跨越兩層以上的物種會出現在多個深度標籤中。
+
+            <div className="species__filter-row">
+              <span className="species__filter-label">
+                <Waves size={15} aria-hidden="true" />
+                海域
+              </span>
+              <div
+                className="species__filter-options species__filter-options--oceans"
+                role="group"
+                aria-label="依海域篩選"
+              >
+                {OCEAN_TAGS.map((tag) => {
+                  const active = selectedOcean === tag.id;
+                  return (
+                    <button
+                      key={tag.id}
+                      type="button"
+                      className={`species__ocean ${active ? 'species__ocean--active' : ''}`}
+                      onClick={() => handleOceanChange(tag.id)}
+                      aria-pressed={active}
+                    >
+                      <span className="species__ocean-dot" aria-hidden="true" />
+                      <span className="species__chip-label">{tag.name}</span>
+                      <span className="species__ocean-count">{oceanCounts[tag.id] ?? 0}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="species__filter-row">
+              <span className="species__filter-label">
+                <ArrowDown size={15} aria-hidden="true" />
+                深度
+              </span>
+              <div
+                className="species__filter-options species__filter-options--depths"
+                role="group"
+                aria-label="依深度分層篩選"
+              >
+                <button
+                  type="button"
+                  className={`species__depth ${
+                    selectedDepth === 'all' ? 'species__depth--active' : ''
+                  }`}
+                  onClick={() => handleDepthChange('all')}
+                  aria-pressed={selectedDepth === 'all'}
+                  style={{ '--zone-color': 'var(--color-accent)' }}
+                >
+                  <span className="species__depth-dot" aria-hidden="true" />
+                  <span className="species__chip-label">全部</span>
+                  <span className="species__depth-count">{depthCounts.all}</span>
+                </button>
+                {DEPTH_ZONES.map((zone) => {
+                  const active = selectedDepth === zone.id;
+                  return (
+                    <button
+                      key={zone.id}
+                      type="button"
+                      className={`species__depth ${
+                        active ? 'species__depth--active' : ''
+                      }`}
+                      onClick={() => handleDepthChange(zone.id)}
+                      aria-pressed={active}
+                      title={`${zone.name}：${zone.min}–${
+                        zone.max === Number.POSITIVE_INFINITY ? '∞' : zone.max
+                      }m`}
+                      style={{ '--zone-color': zone.color }}
+                    >
+                      <span className="species__depth-dot" aria-hidden="true" />
+                      <span className="species__chip-label">{zone.name}</span>
+                      <span className="species__depth-count">
+                        {depthCounts[zone.id] ?? 0}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <p className="species__filter-note">
+              同一物種可能跨越多個海域與深度帶；標籤數量代表符合該條件的物種數。
             </p>
+            <p className="species__filter-swipe">手機可左右滑動各列標籤</p>
           </div>
         </div>
 
@@ -266,12 +301,6 @@ const Species = () => {
                 ))}
               </select>
             </label>
-            {hasFilters && (
-              <button type="button" className="species__clear-filters" onClick={handleClearFilters}>
-                <SlidersHorizontal size={14} aria-hidden="true" />
-                清除篩選
-              </button>
-            )}
           </div>
         </div>
 

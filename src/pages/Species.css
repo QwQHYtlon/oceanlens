@@ -81,245 +81,216 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
-.species__categories {
+.species__filter-panel {
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(100, 255, 218, 0.12);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(160deg, rgba(17, 34, 64, 0.55), rgba(10, 25, 47, 0.38));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
-.species__category {
+.species__filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding-bottom: 0.55rem;
+  border-bottom: 1px dashed var(--glass-border);
+}
+
+.species__filter-title {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.5rem 0.8rem;
-  background: var(--color-surface-light);
-  border: 1px solid var(--glass-border);
-  border-radius: 999px;
+  color: var(--color-text);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.species__filter-title svg {
+  color: var(--color-accent);
+}
+
+.species__filter-row {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: var(--spacing-sm);
+  align-items: start;
+}
+
+.species__filter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-top: 0.55rem;
   color: var(--color-text-secondary);
   font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+.species__filter-label svg {
+  color: var(--color-ocean-light);
+}
+
+.species__filter-options {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.species__filter-options--categories {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.species__filter-options--oceans {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.species__filter-options--depths {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.species__filter-options > button {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  width: 100%;
+  min-width: 0;
+  min-height: 40px;
+  padding: 0.42rem 0.5rem;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--color-text-secondary);
+  font-size: 0.7rem;
+  line-height: 1.2;
+  text-align: left;
   cursor: pointer;
   transition:
     border-color var(--transition-base),
     color var(--transition-base),
-    background var(--transition-base);
+    background var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
-.species__category:hover {
+.species__filter-options > button:hover {
   border-color: var(--color-accent);
   color: var(--color-text);
+  background: rgba(0, 245, 212, 0.05);
 }
 
-.species__category--active {
+.species__chip-label {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.species__category {
+  justify-content: space-between;
+}
+
+.species__filter-options > .species__category--active {
   background: linear-gradient(135deg, var(--color-accent), #71f8e8);
   color: var(--color-deep-dark);
   border-color: var(--color-accent);
   box-shadow: 0 6px 18px rgba(0, 245, 212, 0.2);
 }
 
-.species__category-count {
+.species__category-count,
+.species__ocean-count,
+.species__depth-count {
   display: inline-grid;
   place-items: center;
-  min-width: 1.4rem;
-  height: 1.15rem;
-  padding: 0 0.28rem;
+  flex-shrink: 0;
+  min-width: 1.35rem;
+  height: 1.1rem;
+  margin-left: auto;
+  padding: 0 0.25rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
   color: inherit;
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   font-variant-numeric: tabular-nums;
 }
 
-.species__category--active .species__category-count {
+.species__category--active .species__category-count,
+.species__ocean--active .species__ocean-count,
+.species__depth--active .species__depth-count {
   background: rgba(2, 12, 27, 0.18);
 }
 
-
-.species__oceans {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 0.5rem var(--spacing-sm);
-  margin-top: var(--spacing-md);
-  padding-top: var(--spacing-md);
-  border-top: 1px dashed var(--glass-border);
-}
-
-.species__oceans-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  flex-shrink: 0;
-  padding-top: 0.4rem;
-  font-size: 0.8125rem;
-  color: var(--color-text-secondary);
-}
-
-.species__oceans-label svg {
-  color: var(--color-ocean-light);
-}
-
-.species__ocean-list {
-  display: flex;
-  flex: 1 1 240px;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  min-width: 0;
-}
-
 .species__ocean {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.7rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(0, 180, 216, 0.2);
-  background: rgba(0, 180, 216, 0.05);
-  color: var(--color-text-secondary);
-  font-size: 0.8125rem;
-  cursor: pointer;
-  transition:
-    border-color var(--transition-base),
-    color var(--transition-base),
-    background var(--transition-base);
+  border-color: rgba(0, 180, 216, 0.16);
+  background: rgba(0, 180, 216, 0.035);
 }
 
 .species__ocean:hover {
   border-color: var(--color-ocean-light);
-  color: var(--color-text);
-  background: rgba(0, 180, 216, 0.1);
+  background: rgba(0, 180, 216, 0.09);
 }
 
-.species__ocean--active {
+.species__filter-options > .species__ocean--active {
   border-color: var(--color-ocean-light);
-  background: linear-gradient(135deg, rgba(0, 180, 216, 0.3), rgba(0, 119, 182, 0.22));
+  background: rgba(0, 180, 216, 0.22);
   color: #f0fcff;
-  box-shadow: 0 6px 18px rgba(0, 180, 216, 0.14);
+  box-shadow: 0 0 16px rgba(0, 180, 216, 0.14);
 }
 
-.species__ocean-count {
-  display: inline-grid;
-  place-items: center;
-  min-width: 1.4rem;
-  height: 1.15rem;
-  padding: 0 0.28rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  font-size: 0.6875rem;
-  font-variant-numeric: tabular-nums;
-}
-
-.species__ocean--active .species__ocean-count {
-  background: rgba(2, 12, 27, 0.18);
-}
-
-.species__ocean-hint {
-  flex-basis: 100%;
-  margin: 0;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  color: var(--color-text-secondary);
-  opacity: 0.85;
-}
-
-
-.species__depths {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 0.5rem var(--spacing-sm);
-  margin-top: var(--spacing-sm);
-  padding-top: var(--spacing-md);
-  border-top: 1px dashed var(--glass-border);
-}
-
-.species__depths-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  flex-shrink: 0;
-  padding-top: 0.4rem;
-  font-size: 0.8125rem;
-  color: var(--color-text-secondary);
-}
-
-.species__depths-label svg {
-  color: var(--color-accent-secondary);
-}
-
-.species__depth-list {
-  display: flex;
-  flex: 1 1 280px;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  min-width: 0;
-}
-
-.species__depth {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.7rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(144, 224, 239, 0.16);
-  background: rgba(255, 255, 255, 0.025);
-  color: var(--color-text-secondary);
-  font-size: 0.8125rem;
-  cursor: pointer;
-  transition:
-    border-color var(--transition-base),
-    color var(--transition-base),
-    background var(--transition-base);
-}
-
-.species__depth:hover {
-  border-color: var(--zone-color);
-  color: var(--color-text);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.species__depth--active {
-  border-color: var(--zone-color);
-  background: rgba(0, 180, 216, 0.16);
-  color: #f0fcff;
-  box-shadow: 0 0 18px rgba(0, 180, 216, 0.12);
-}
-
+.species__ocean-dot,
 .species__depth-dot {
   width: 7px;
   height: 7px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: var(--zone-color);
+  background: var(--zone-color, var(--color-ocean-light));
   box-shadow: 0 0 8px rgba(0, 180, 216, 0.25);
+}
+
+.species__ocean--active .species__ocean-dot {
+  background: var(--color-accent-secondary);
+}
+
+.species__depth {
+  border-color: rgba(144, 224, 239, 0.14);
+}
+
+.species__depth:hover {
+  border-color: var(--zone-color);
+}
+
+.species__filter-options > .species__depth--active {
+  border-color: var(--zone-color);
+  background: rgba(0, 180, 216, 0.18);
+  color: #f0fcff;
+  box-shadow: 0 0 16px rgba(0, 180, 216, 0.14);
 }
 
 .species__depth--active .species__depth-dot {
   box-shadow: 0 0 10px var(--zone-color);
 }
 
-.species__depth-count {
-  display: inline-grid;
-  place-items: center;
-  min-width: 1.4rem;
-  height: 1.15rem;
-  padding: 0 0.28rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  font-size: 0.6875rem;
-  font-variant-numeric: tabular-nums;
-}
-
-.species__depth--active .species__depth-count {
-  background: rgba(2, 12, 27, 0.18);
-}
-
-.species__depth-hint {
-  flex-basis: 100%;
+.species__filter-note {
   margin: 0;
-  font-size: 0.75rem;
+  padding-top: 0.55rem;
+  border-top: 1px dashed var(--glass-border);
+  font-size: 0.72rem;
   line-height: 1.5;
   color: var(--color-text-secondary);
   opacity: 0.85;
+}
+
+.species__filter-swipe {
+  display: none;
+  margin: -0.25rem 0 0;
+  font-size: 0.7rem;
+  color: var(--color-accent-secondary);
 }
 
 .species__meta {
@@ -435,6 +406,20 @@
   font-size: 0.875rem;
 }
 
+@media (max-width: 1150px) {
+  .species__filter-options--categories {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .species__filter-options--oceans {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .species__filter-options--depths {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .species__meta {
     align-items: flex-start;
@@ -450,28 +435,8 @@
     padding-left: 2.8rem;
   }
 
-  .species__oceans {
-    gap: 0.4rem;
-  }
-
-  .species__ocean-list,
-  .species__depth-list {
-    flex-basis: 100%;
-  }
-
-  .species__ocean,
-  .species__depth {
-    padding: 0.35rem 0.6rem;
-    font-size: 0.75rem;
-  }
-
-  .species__categories {
-    gap: 0.4rem;
-  }
-
-  .species__category {
-    padding: 0.45rem 0.7rem;
-    font-size: 0.78125rem;
+  .species__filter-panel {
+    padding: 0.75rem;
   }
 
   .species__grid {
@@ -487,5 +452,58 @@
 @media (max-width: 420px) {
   .species__grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+@media (max-width: 700px) {
+  .species__filter-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.3rem;
+  }
+
+  .species__filter-label {
+    padding-top: 0;
+  }
+
+  .species__filter-options {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    gap: 0.4rem;
+    padding-bottom: 0.35rem;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 180, 216, 0.4) transparent;
+  }
+
+  .species__filter-options::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .species__filter-options::-webkit-scrollbar-thumb {
+    background: rgba(0, 180, 216, 0.4);
+    border-radius: 999px;
+  }
+
+  .species__filter-options > button {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: max-content;
+    min-height: 38px;
+    padding: 0.4rem 0.55rem;
+    scroll-snap-align: start;
+  }
+
+  .species__chip-label {
+    flex: none;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .species__filter-swipe {
+    display: block;
   }
 }
