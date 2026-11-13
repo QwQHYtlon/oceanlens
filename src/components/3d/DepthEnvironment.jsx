@@ -29,8 +29,8 @@ const DepthEnvironment = ({ depth = 0 }) => {
       // Bathypelagic - dark
       return {
         fogColor: 0x023e8a,
-        fogNear: 3,
-        fogFar: 20,
+        fogNear: 4,
+        fogFar: 30,
         backgroundColor: 0x023e8a,
         ambientIntensity: 0.45,
         directionalIntensity: 0.35,
@@ -40,8 +40,8 @@ const DepthEnvironment = ({ depth = 0 }) => {
       // Abyssopelagic - very dark
       return {
         fogColor: 0x03045e,
-        fogNear: 2,
-        fogFar: 15,
+        fogNear: 3,
+        fogFar: 26,
         backgroundColor: 0x03045e,
         ambientIntensity: 0.3,
         directionalIntensity: 0.22,
@@ -51,8 +51,8 @@ const DepthEnvironment = ({ depth = 0 }) => {
       // Hadal - extremely dark
       return {
         fogColor: 0x020c1b,
-        fogNear: 1,
-        fogFar: 10,
+        fogNear: 2,
+        fogFar: 24,
         backgroundColor: 0x020c1b,
         ambientIntensity: 0.22,
         directionalIntensity: 0.15,
@@ -69,7 +69,6 @@ const DepthEnvironment = ({ depth = 0 }) => {
         near={environment.fogNear}
         far={environment.fogFar}
       />
-      <color attach="background" args={[environment.backgroundColor]} />
       <ambientLight intensity={environment.ambientIntensity} color={environment.lightColor} />
       <directionalLight
         position={[10, 10, 5]}

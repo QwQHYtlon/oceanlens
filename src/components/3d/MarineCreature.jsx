@@ -36,11 +36,27 @@ const MarineCreature = ({ type = 'fish', scale = 1, position = [0, 0, 0] }) => {
       return (
         <group {...creatureProps}>
           <Sphere args={[0.6, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2]} position={[0, 0.3, 0]}>
-            <meshStandardMaterial color="#00b4d8" transparent opacity={0.6} />
+            <meshStandardMaterial color="#7df9ff" emissive="#00f5d4" emissiveIntensity={0.55} transparent opacity={0.78} roughness={0.35} />
           </Sphere>
           <Torus args={[0.3, 0.05, 8, 32]} position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]}>
-            <meshStandardMaterial color="#00b4d8" transparent opacity={0.4} />
+            <meshStandardMaterial color="#90e0ef" emissive="#00b4d8" emissiveIntensity={0.4} transparent opacity={0.55} />
           </Torus>
+          {[-0.32, -0.16, 0, 0.16, 0.32].map((x, index) => (
+            <mesh
+              key={x}
+              position={[x, -0.42, 0]}
+              rotation={[0, 0, (index - 2) * 0.08]}
+            >
+              <cylinderGeometry args={[0.012, 0.004, 0.95, 6]} />
+              <meshStandardMaterial
+                color="#90e0ff"
+                emissive="#00b4d8"
+                emissiveIntensity={0.35}
+                transparent
+                opacity={0.55}
+              />
+            </mesh>
+          ))}
         </group>
       );
     
@@ -125,10 +141,10 @@ const MarineCreature = ({ type = 'fish', scale = 1, position = [0, 0, 0] }) => {
       return (
         <group {...creatureProps}>
           <Sphere args={[0.3, 32, 32]} scale={[1.5, 0.6, 0.5]} position={[0, 0, 0]}>
-            <meshStandardMaterial color="#48bb78" roughness={0.7} />
+            <meshStandardMaterial color="#5eead4" emissive="#0f766e" emissiveIntensity={0.25} roughness={0.55} />
           </Sphere>
           <Cone args={[0.1, 0.3, 8]} position={[0.5, 0, 0]} rotation={[0, Math.PI / 2, 0]}>
-            <meshStandardMaterial color="#48bb78" />
+            <meshStandardMaterial color="#5eead4" emissive="#0f766e" emissiveIntensity={0.25} roughness={0.55} />
           </Cone>
         </group>
       );
