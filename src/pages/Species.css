@@ -221,6 +221,107 @@
   opacity: 0.85;
 }
 
+
+.species__depths {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-md);
+  border-top: 1px dashed var(--glass-border);
+}
+
+.species__depths-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  padding-top: 0.4rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+}
+
+.species__depths-label svg {
+  color: var(--color-accent-secondary);
+}
+
+.species__depth-list {
+  display: flex;
+  flex: 1 1 280px;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.species__depth {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(144, 224, 239, 0.16);
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-base),
+    color var(--transition-base),
+    background var(--transition-base);
+}
+
+.species__depth:hover {
+  border-color: var(--zone-color);
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.species__depth--active {
+  border-color: var(--zone-color);
+  background: rgba(0, 180, 216, 0.16);
+  color: #f0fcff;
+  box-shadow: 0 0 18px rgba(0, 180, 216, 0.12);
+}
+
+.species__depth-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--zone-color);
+  box-shadow: 0 0 8px rgba(0, 180, 216, 0.25);
+}
+
+.species__depth--active .species__depth-dot {
+  box-shadow: 0 0 10px var(--zone-color);
+}
+
+.species__depth-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.4rem;
+  height: 1.15rem;
+  padding: 0 0.28rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.species__depth--active .species__depth-count {
+  background: rgba(2, 12, 27, 0.18);
+}
+
+.species__depth-hint {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  opacity: 0.85;
+}
+
 .species__meta {
   display: flex;
   align-items: center;
@@ -353,11 +454,13 @@
     gap: 0.4rem;
   }
 
-  .species__ocean-list {
+  .species__ocean-list,
+  .species__depth-list {
     flex-basis: 100%;
   }
 
-  .species__ocean {
+  .species__ocean,
+  .species__depth {
     padding: 0.35rem 0.6rem;
     font-size: 0.75rem;
   }

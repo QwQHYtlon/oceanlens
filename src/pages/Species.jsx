@@ -1,11 +1,12 @@
 import { useDeferredValue, useMemo, useState } from 'react';
-import { Search, SlidersHorizontal, Waves, X } from 'lucide-react';
+import { ArrowDown, Search, SlidersHorizontal, Waves, X } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle/SectionTitle';
 import SpeciesCard from '../components/SpeciesCard/SpeciesCard';
 import Button from '../components/Button/Button';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import { speciesData, speciesCategories } from '../data/speciesData';
 import { OCEAN_TAGS, speciesMatchesOcean } from '../data/oceanTags';
+import { DEPTH_ZONES, getDepthZoneIds } from '../utils/depth.js';
 import { SORT_OPTIONS, filterSpecies, sortSpecies } from '../utils/species';
 import './Species.css';
 
@@ -16,6 +17,7 @@ const Species = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedOcean, setSelectedOcean] = useState('all');
+  const [selectedDepth, setSelectedDepth] = useState('all');
   const [sortBy, setSortBy] = useState('default');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
@@ -46,14 +48,25 @@ const Species = () => {
     return counts;
   }, []);
 
+  const depthCounts = useMemo(() => {
+    const counts = { all: speciesData.length };
+    for (const zone of DEPTH_ZONES) {
+      counts[zone.id] = speciesData.filter((species) =>
+        getDepthZoneIds(species.depth).includes(zone.id),
+      ).length;
+    }
+    return counts;
+  }, []);
+
   const filteredSpecies = useMemo(
     () =>
       filterSpecies(speciesData, {
         query: normalizedQuery,
         category: categoryFilter,
         ocean: selectedOcean,
+        depthZone: selectedDepth,
       }),
-    [categoryFilter, normalizedQuery, selectedOcean],
+    [categoryFilter, normalizedQuery, selectedOcean, selectedDepth],
   );
 
   const sortedSpecies = useMemo(
@@ -63,7 +76,10 @@ const Species = () => {
 
   const visibleSpecies = sortedSpecies.slice(0, visibleCount);
   const hasFilters =
-    searchTerm.trim() !== '' || selectedCategory !== 'all' || selectedOcean !== 'all';
+    searchTerm.trim() !== '' ||
+    selectedCategory !== 'all' ||
+    selectedOcean !== 'all' ||
+    selectedDepth !== 'all';
   const remainingCount = Math.max(sortedSpecies.length - visibleSpecies.length, 0);
 
   const handleSearchChange = (event) => {
@@ -81,6 +97,11 @@ const Species = () => {
     setVisibleCount(PAGE_SIZE);
   };
 
+  const handleDepthChange = (depthId) => {
+    setSelectedDepth(depthId);
+    setVisibleCount(PAGE_SIZE);
+  };
+
   const handleSortChange = (event) => {
     setSortBy(event.target.value);
     setVisibleCount(PAGE_SIZE);
@@ -90,6 +111,7 @@ const Species = () => {
     setSearchTerm('');
     setSelectedCategory('all');
     setSelectedOcean('all');
+    setSelectedDepth('all');
     setSortBy('default');
     setVisibleCount(PAGE_SIZE);
   };
@@ -175,6 +197,55 @@ const Species = () => {
             </div>
             <p className="species__ocean-hint">
               同一物種可能分布於多個大洋；全球分布物種請使用「全球分布」標籤。
+            </p>
+          </div>
+
+          <div className="species__depths" role="group" aria-label="依深度分層篩選">
+            <span className="species__depths-label">
+              <ArrowDown size={15} aria-hidden="true" />
+              深度
+            </span>
+            <div className="species__depth-list">
+              <button
+                type="button"
+                className={`species__depth ${
+                  selectedDepth === 'all' ? 'species__depth--active' : ''
+                }`}
+                onClick={() => handleDepthChange('all')}
+                aria-pressed={selectedDepth === 'all'}
+                style={{ '--zone-color': 'var(--color-accent)' }}
+              >
+                <span className="species__depth-dot" aria-hidden="true" />
+                全部
+                <span className="species__depth-count">{depthCounts.all}</span>
+              </button>
+              {DEPTH_ZONES.map((zone) => {
+                const active = selectedDepth === zone.id;
+                return (
+                  <button
+                    key={zone.id}
+                    type="button"
+                    className={`species__depth ${
+                      active ? 'species__depth--active' : ''
+                    }`}
+                    onClick={() => handleDepthChange(zone.id)}
+                    aria-pressed={active}
+                    title={`${zone.name}：${zone.min}–${
+                      zone.max === Number.POSITIVE_INFINITY ? '∞' : zone.max
+                    }m`}
+                    style={{ '--zone-color': zone.color }}
+                  >
+                    <span className="species__depth-dot" aria-hidden="true" />
+                    {zone.name}
+                    <span className="species__depth-count">
+                      {depthCounts[zone.id] ?? 0}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+            <p className="species__depth-hint">
+              依標準海洋深度帶劃分；跨越兩層以上的物種會出現在多個深度標籤中。
             </p>
           </div>
         </div>

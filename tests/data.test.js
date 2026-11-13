@@ -4,7 +4,13 @@ import { speciesData, speciesCategories } from '../src/data/speciesData.js';
 import { simulationData } from '../src/data/simulationData.js';
 import { navItems } from '../src/data/navigation.js';
 import { filterSpecies, sortSpecies, getDepthValue } from '../src/utils/species.js';
-import { getDeepestZone, getDepthZoneLabel, getDepthZones, parseDepth } from '../src/utils/depth.js';
+import {
+  getDeepestZone,
+  getDepthZoneIds,
+  getDepthZoneLabel,
+  getDepthZones,
+  parseDepth,
+} from '../src/utils/depth.js';
 import {
   OCEAN_TAGS,
   getSpeciesOceans,
@@ -222,4 +228,35 @@ test('every species has a valid depth position tag', () => {
     assert.ok(zones.length > 0, `${species.id} 缺少深度分層`);
     assert.ok(getDeepestZone(species.depth));
   }
+});
+
+test('depth zone filter keeps species inside the selected band', () => {
+  const epipelagic = filterSpecies(speciesData, { depthZone: 'epipelagic' });
+  assert.ok(epipelagic.length > 0);
+  assert.ok(
+    epipelagic.every((species) => getDepthZoneIds(species.depth).includes('epipelagic')),
+  );
+  assert.ok(epipelagic.some((species) => species.id === 'turtle'));
+  assert.ok(!epipelagic.some((species) => species.id === 'colossal-squid'));
+
+  const hadal = filterSpecies(speciesData, { depthZone: 'hadalpelagic' });
+  assert.ok(hadal.length > 0);
+  assert.ok(
+    hadal.every((species) => getDepthZoneIds(species.depth).includes('hadalpelagic')),
+  );
+  assert.ok(hadal.some((species) => species.id === 'foraminifera'));
+});
+
+test('category, ocean and depth filters can be combined', () => {
+  const results = filterSpecies(speciesData, {
+    category: '魚類',
+    ocean: 'pacific',
+    depthZone: 'bathypelagic',
+  });
+  assert.ok(results.length > 0);
+  assert.ok(results.every((species) => species.category === '魚類'));
+  assert.ok(results.every((species) => speciesMatchesOcean(species, 'pacific')));
+  assert.ok(
+    results.every((species) => getDepthZoneIds(species.depth).includes('bathypelagic')),
+  );
 });
