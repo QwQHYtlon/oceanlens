@@ -41,90 +41,114 @@ const Explore = () => {
           align="center"
         />
 
-        <DepthSelector
-          depths={oceanData.depths}
-          selectedDepth={selectedDepth.depth}
-          onSelect={setSelectedDepth}
-        />
+        <div className="explore__workspace">
+          <aside className="explore__depth-panel">
+            <DepthSelector
+              depths={oceanData.depths}
+              selectedDepth={selectedDepth.depth}
+              onSelect={setSelectedDepth}
+            />
+          </aside>
 
-        <div className="explore__scene">
-          <ErrorBoundary
-            fallback={({ reset }) => (
-              <Fallback3D message="3D 海洋場景載入失敗，請重試。" onRetry={reset} />
-            )}
-          >
-            <Suspense
-              fallback={
-                <div className="explore__scene-fallback">
-                  <Loading3D message="正在載入 3D 海洋場景…" />
-                </div>
-              }
+          <div className="explore__main">
+            <div className="explore__scene">
+              <ErrorBoundary
+                fallback={({ reset }) => (
+                  <Fallback3D
+                    message="3D 海洋場景載入失敗，請重試。"
+                    onRetry={reset}
+                  />
+                )}
+              >
+                <Suspense
+                  fallback={
+                    <div className="explore__scene-fallback">
+                      <Loading3D message="正在載入 3D 海洋場景…" />
+                    </div>
+                  }
+                >
+                  <OceanScene
+                    depth={selectedDepth.depth}
+                    creatureType={creatureType}
+                  />
+                </Suspense>
+              </ErrorBoundary>
+
+              <div className="explore__scene-label">
+                <strong>{depthInfo.depth}m</strong>
+                <span>{depthInfo.zone}</span>
+              </div>
+            </div>
+
+            <motion.div
+              className="explore__content"
+              key={selectedDepth.depth}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              aria-live="polite"
             >
-              <OceanScene depth={selectedDepth.depth} creatureType={creatureType} />
-            </Suspense>
-          </ErrorBoundary>
-        </div>
-
-        <motion.div
-          className="explore__content"
-          key={selectedDepth.depth}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          aria-live="polite"
-        >
-          <div className="explore__info">
-            <Card variant="glass" className="explore__card" hover={false}>
-              <div className="explore__header">
-                <h2 className="explore__depth">{depthInfo.depth}m</h2>
-                <span className="explore__zone">{depthInfo.zone}</span>
-              </div>
-
-              <div className="explore__metrics">
-                <div className="explore__metric">
-                  <Droplets className="explore__metric-icon" aria-hidden="true" />
-                  <div>
-                    <div className="explore__metric-label">光線</div>
-                    <div className="explore__metric-value">{depthInfo.light}</div>
+              <div className="explore__info">
+                <Card variant="glass" className="explore__card" hover={false}>
+                  <div className="explore__header">
+                    <h2 className="explore__depth">{depthInfo.depth}m</h2>
+                    <span className="explore__zone">{depthInfo.zone}</span>
                   </div>
-                </div>
 
-                <div className="explore__metric">
-                  <Thermometer className="explore__metric-icon" aria-hidden="true" />
-                  <div>
-                    <div className="explore__metric-label">溫度</div>
-                    <div className="explore__metric-value">{depthInfo.temperature}</div>
+                  <div className="explore__metrics">
+                    <div className="explore__metric">
+                      <Droplets className="explore__metric-icon" aria-hidden="true" />
+                      <div>
+                        <div className="explore__metric-label">光線</div>
+                        <div className="explore__metric-value">{depthInfo.light}</div>
+                      </div>
+                    </div>
+
+                    <div className="explore__metric">
+                      <Thermometer
+                        className="explore__metric-icon"
+                        aria-hidden="true"
+                      />
+                      <div>
+                        <div className="explore__metric-label">溫度</div>
+                        <div className="explore__metric-value">
+                          {depthInfo.temperature}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="explore__metric">
+                      <Gauge className="explore__metric-icon" aria-hidden="true" />
+                      <div>
+                        <div className="explore__metric-label">水壓</div>
+                        <div className="explore__metric-value">
+                          {depthInfo.pressure}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
 
-                <div className="explore__metric">
-                  <Gauge className="explore__metric-icon" aria-hidden="true" />
-                  <div>
-                    <div className="explore__metric-label">水壓</div>
-                    <div className="explore__metric-value">{depthInfo.pressure}</div>
+                  <div className="explore__environment">
+                    <h3 className="explore__section-title">環境介紹</h3>
+                    <p className="explore__description">{depthInfo.environment}</p>
                   </div>
-                </div>
-              </div>
 
-              <div className="explore__environment">
-                <h3 className="explore__section-title">環境介紹</h3>
-                <p className="explore__description">{depthInfo.environment}</p>
+                  <div className="explore__creatures">
+                    <h3 className="explore__section-title">主要生物</h3>
+                    <div className="explore__creature-list">
+                      {depthInfo.creatures.map((creature) => (
+                        <span key={creature} className="explore__creature-tag">
+                          <Fish size={16} aria-hidden="true" />
+                          {creature}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Card>
               </div>
-
-              <div className="explore__creatures">
-                <h3 className="explore__section-title">主要生物</h3>
-                <div className="explore__creature-list">
-                  {depthInfo.creatures.map((creature) => (
-                    <span key={creature} className="explore__creature-tag">
-                      <Fish size={16} aria-hidden="true" />
-                      {creature}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Card>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
