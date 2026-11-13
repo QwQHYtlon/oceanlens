@@ -12,6 +12,20 @@ const OceanSceneContent = ({ depth, creatureType }) => {
       <CameraController position={[0, 0, 8]} />
       <DepthEnvironment depth={depth} />
       <OceanParticles depth={depth} />
+      <pointLight
+        position={[4, 3, 6]}
+        intensity={depth > 1000 ? 24 : 2}
+        color="#64ffda"
+        distance={30}
+        decay={2}
+      />
+      <pointLight
+        position={[-4, 1, -4]}
+        intensity={depth > 1000 ? 8 : 0.8}
+        color="#0077b6"
+        distance={24}
+        decay={2}
+      />
 
       {creatureType && (
         <MarineCreature type={creatureType} scale={1.5} position={[0, 0, 0]} />

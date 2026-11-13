@@ -1,5 +1,6 @@
 import { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
+import { AdditiveBlending } from 'three';
 
 // Deterministic value noise keeps particle generation pure across renders.
 const pseudoRandom = (index, salt, depth) => {
@@ -32,8 +33,8 @@ const OceanParticles = ({ depth = 0 }) => {
   // Calculate particle size based on depth
   const particleSize = useMemo(() => {
     // Smaller particles at deeper depths
-    const baseSize = 0.05;
-    const depthFactor = 1 - (Math.min(depth, 6000) / 6000) * 0.5;
+    const baseSize = 0.065;
+    const depthFactor = 1 - (Math.min(depth, 6000) / 6000) * 0.35;
     return baseSize * depthFactor;
   }, [depth]);
   
@@ -41,9 +42,9 @@ const OceanParticles = ({ depth = 0 }) => {
   const particleColor = useMemo(() => {
     // Lighter at shallow depths, darker at deep depths
     if (depth < 200) return 0x00b4d8;
-    if (depth < 1000) return 0x0077b6;
-    if (depth < 4000) return 0x023e8a;
-    return 0x03045e;
+    if (depth < 1000) return 0x48cae4;
+    if (depth < 4000) return 0x90e0ef;
+    return 0x64ffda;
   }, [depth]);
   
   useFrame(() => {
@@ -79,8 +80,10 @@ const OceanParticles = ({ depth = 0 }) => {
         size={particleSize}
         color={particleColor}
         transparent
-        opacity={0.6}
+        opacity={0.7}
         sizeAttenuation
+        depthWrite={false}
+        blending={AdditiveBlending}
       />
     </points>
   );

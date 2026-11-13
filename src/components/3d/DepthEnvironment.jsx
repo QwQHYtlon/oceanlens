@@ -21,8 +21,8 @@ const DepthEnvironment = ({ depth = 0 }) => {
         fogNear: 5,
         fogFar: 30,
         backgroundColor: 0x0077b6,
-        ambientIntensity: 0.5,
-        directionalIntensity: 0.5,
+        ambientIntensity: 0.55,
+        directionalIntensity: 0.55,
         lightColor: 0x88ccff
       };
     } else if (depth < 4000) {
@@ -32,8 +32,8 @@ const DepthEnvironment = ({ depth = 0 }) => {
         fogNear: 3,
         fogFar: 20,
         backgroundColor: 0x023e8a,
-        ambientIntensity: 0.3,
-        directionalIntensity: 0.2,
+        ambientIntensity: 0.45,
+        directionalIntensity: 0.35,
         lightColor: 0x4466aa
       };
     } else if (depth < 6000) {
@@ -43,8 +43,8 @@ const DepthEnvironment = ({ depth = 0 }) => {
         fogNear: 2,
         fogFar: 15,
         backgroundColor: 0x03045e,
-        ambientIntensity: 0.15,
-        directionalIntensity: 0.1,
+        ambientIntensity: 0.3,
+        directionalIntensity: 0.22,
         lightColor: 0x223355
       };
     } else {
@@ -54,8 +54,8 @@ const DepthEnvironment = ({ depth = 0 }) => {
         fogNear: 1,
         fogFar: 10,
         backgroundColor: 0x020c1b,
-        ambientIntensity: 0.08,
-        directionalIntensity: 0.05,
+        ambientIntensity: 0.22,
+        directionalIntensity: 0.15,
         lightColor: 0x112233
       };
     }
