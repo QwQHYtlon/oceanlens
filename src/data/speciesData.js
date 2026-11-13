@@ -1,4 +1,6 @@
-export const speciesData = [
+import { extraSpecies } from './speciesExtra.js';
+
+const baseSpecies = [
   {
     id: 'anglerfish',
     name: '深海鮟鱇魚',
@@ -4495,6 +4497,8 @@ export const speciesData = [
     ]
   }
 ];
+
+export const speciesData = [...baseSpecies, ...extraSpecies];
 
 export const speciesCategories = [
   { id: 'all', name: '全部', category: null },

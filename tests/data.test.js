@@ -151,8 +151,10 @@ test('ocean filter tags are strict and keep global species separate', () => {
   assert.ok(global.every((species) => getSpeciesOceans(species.habitat).includes('global')));
 
   const freshwater = filterSpecies(speciesData, { ocean: 'freshwater' });
-  assert.equal(freshwater.length, 2);
+  assert.equal(freshwater.length, 3);
   assert.ok(freshwater.every((species) => speciesMatchesOcean(species, 'freshwater')));
+  assert.ok(freshwater.some((species) => species.id === 'electric-eel'));
+  assert.ok(freshwater.some((species) => species.id === 'amazon-river-dolphin'));
 
   assert.ok(!pacific.some((species) => species.id === 'whale'));
   assert.ok(global.some((species) => species.id === 'whale'));
@@ -182,4 +184,13 @@ test('pressure multiplier chart matches the current ecosystem score', () => {
   assert.equal(series[series.length - 1].x, 150);
   assert.equal(series.length, 16);
   assert.ok(series.every((point) => point.y >= 0 && point.y <= 100));
+});
+
+
+test('species catalog reaches at least 300 entries', () => {
+  assert.ok(speciesData.length >= 300);
+  assert.ok(speciesData.some((species) => species.id === 'blue-tang'));
+  assert.ok(speciesData.some((species) => species.id === 'emperor-penguin'));
+  assert.ok(speciesData.some((species) => species.id === 'giant-pacific-octopus'));
+  assert.ok(speciesData.some((species) => species.id === 'seagrass'));
 });
