@@ -17,10 +17,11 @@
 }
 
 .explore__workspace {
+  --explore-scene-height: clamp(480px, 54vh, 600px);
   display: grid;
-  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+  grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);
   align-items: start;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
   margin-top: var(--spacing-lg);
 }
 
@@ -39,7 +40,11 @@
 
 .explore__scene {
   position: relative;
-  min-height: 400px;
+  min-height: var(--explore-scene-height);
+}
+
+.explore__scene .ocean-scene-container {
+  height: var(--explore-scene-height);
 }
 
 .explore__scene-label {
@@ -74,12 +79,12 @@
 }
 
 .explore__scene-fallback {
-  height: 400px;
+  height: var(--explore-scene-height);
 }
 
 .explore__scene-fallback .loading-3d {
   height: 100%;
-  min-height: 400px;
+  min-height: var(--explore-scene-height);
 }
 
 .explore__content {
@@ -194,6 +199,7 @@
 
 @media (max-width: 900px) {
   .explore__workspace {
+    --explore-scene-height: clamp(380px, 50vh, 520px);
     grid-template-columns: minmax(0, 1fr);
     gap: var(--spacing-lg);
   }
@@ -208,14 +214,18 @@
 }
 
 @media (max-width: 768px) {
+  .explore__workspace {
+    --explore-scene-height: 340px;
+  }
+
   .explore__scene,
   .explore__scene-fallback,
   .explore__scene-fallback .loading-3d {
-    min-height: 300px;
+    min-height: var(--explore-scene-height);
   }
 
   .explore__scene-fallback {
-    height: 300px;
+    height: var(--explore-scene-height);
   }
 
   .explore__depth {
