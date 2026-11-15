@@ -4,6 +4,8 @@ import {
   OFF_TOPIC_RESPONSE,
 } from '../src/utils/oceanTopic.js';
 
+export const config = { maxDuration: 60 };
+
 const DEFAULT_MODEL = 'deepseek-chat';
 const DEFAULT_API_URL = 'https://api.deepseek.com/chat/completions';
 const MODEL = process.env.DEEPSEEK_MODEL?.trim() || DEFAULT_MODEL;
