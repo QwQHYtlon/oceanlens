@@ -9,7 +9,7 @@
 - **互動式海洋深度探索** - 探索不同深度的海洋環境與生物（含 3D 場景）
 - **海洋生物資料庫** - 329 種海洋生物的搜尋／分類／大洋分布／深度分層／排序與詳細介紹（含 3D 模型檢視器）
 - **生態系統模擬** - 即時模擬環境變化對海洋生態的影響
-- **AI 科普助手** - 智能問答系統（UI 已完成，預留 API 整合空間）
+- **AI 科普助手** - DeepSeek 驅動的海洋限定問答（含 Vercel Serverless 代理與無金鑰示範模式）
 - **3D 沉浸式體驗** - Three.js 3D 海洋場景與生物模型（Phase 2 完成）
 - **WebAR 探索體驗** - 手機 AR 海洋生物觀察（Phase 3 完成）
 
@@ -52,6 +52,7 @@ src/
 │   ├── SliderControl/  # 滑桿控制器
 │   ├── ChartCard/      # 圖表卡片
 │   ├── ChatMessage/    # 聊天訊息
+│   ├── OceanAiMark/    # OceanLens AI 自訂圖案
 │   └── 3d/             # 3D 元件
 │       ├── OceanScene.jsx        # 海洋場景
 │       ├── DepthEnvironment.jsx   # 深度環境
@@ -86,17 +87,21 @@ src/
 │   ├── species3D.js    # 3D 模型資料
 │   └── arModels.js     # AR 模型資料
 ├── services/           # 服務層
-│   └── aiService.js    # AI 服務（預留 API 整合）
+│   └── aiService.js    # AI 服務（DeepSeek + 示範模式）
 ├── styles/             # 樣式檔案
 │   ├── variables.css   # CSS 變數
 │   └── global.css      # 全域樣式
 └── App.jsx             # 應用程式入口
 
+api/
+└── chat.js              # Vercel Serverless：DeepSeek 代理與海洋限定
+
 scripts/
 └── validate-data.mjs    # 生物／模擬／導覽資料驗證
 
 tests/
-└── data.test.js         # Node 內建 test runner 測試
+├── data.test.js         # 資料與深度分層測試
+└── oceanTopic.test.js   # 海洋主題限制測試
 ```
 
 ## 安裝與執行
@@ -128,6 +133,53 @@ npm run validate  # 生物／模擬／導覽資料驗證
 npm test          # Node 內建 test runner
 npm run check     # lint + validate + test + build
 ```
+
+## AI 助手 API 設定（DeepSeek）
+
+`/ai` 頁面預設會在沒有金鑰時使用「示範模式」；設定金鑰後會自動切換為即時 DeepSeek 回覆。
+
+### 1. 環境變數
+
+請在 Vercel 專案 → Settings → Environment Variables 新增：
+
+```bash
+DEEPSEEK_API_KEY=你的金鑰
+DEEPSEEK_MODEL=deepseek-chat   # 選填
+```
+
+`DEEPSEEK_API_KEY` 只供 `api/chat.js` 在伺服器端使用，**不要**加上 `VITE_` 前綴，也不要提交到 Git。
+
+### 2. Vercel 部署
+
+將變更 push 到 `main` 後由 Vercel 自動部署。部署完成後：
+
+- `GET /api/chat` → 回傳 `{ configured: true/false, model }`
+- `POST /api/chat` → 送出 `{ message, history }`，由伺服器呼叫 DeepSeek
+
+若尚未設定金鑰，`POST /api/chat` 會回傳 `503 AI_NOT_CONFIGURED`，前端會自動顯示示範模式。
+
+### 3. 本機測試
+
+`vite` 本身不會執行 `/api`，本機要測試真實 API 請使用 Vercel CLI：
+
+```bash
+cp .env.example .env.local
+# 在 .env.local 填入 DEEPSEEK_API_KEY
+npx vercel dev
+```
+
+### 4. 海洋限定規則
+
+- 伺服器先以 `src/utils/oceanTopic.js` 檢查主題，非海洋／水域／相關地球科學問題直接拒答。
+- 伺服器 system prompt 再次限制 DeepSeek 只能回答海洋與水域科學。
+- 前端也會先做一次相同檢查，避免無關問題送出。
+- 支援海洋生物、生態、深度、洋流、污染、酸化、暖化、保育與海洋地理等主題。
+
+### 5. 安全與成本
+
+- API Key 只存在 Vercel 環境變數，不會進入前端 bundle。
+- 後端限制單次問題 300 字、最多 8 則歷史訊息、每分鐘最多 12 次請求（單一 Serverless instance 的盡力限制）。
+- 請勿把金鑰貼在對話、Issue 或 commit 中。
 
 ## HTTPS 部署注意事項
 
@@ -218,7 +270,9 @@ npm run dev
 - 現代化聊天介面
 - 建議問題提示
 - Mock 回應系統
-- 預留 AI API 整合空間
+- DeepSeek API 整合（Vercel Serverless `/api/chat`）
+- 無金鑰時自動使用示範模式
+- 海洋主題限制與拒答
 
 ## Design System
 
@@ -273,9 +327,9 @@ npm run dev
 - ⏳ TODO: HTTPS 生產環境部署
 
 ### Phase 4: AI API
-- OpenAI API 整合
+- DeepSeek API 整合
 - 智譜 API 整合
-- 真實 AI 問答系統
+- 真實 AI 問答系統（需設定 DEEPSEEK_API_KEY）
 
 ### Phase 5: 後端
 - Node.js 後端服務
@@ -423,7 +477,7 @@ npm run dev
 
 - **3D 模型**：目前使用幾何體 placeholder，尚未載入授權的 GLB/GLTF 模型。
 - **WebAR**：MindAR 流程、錯誤處理與桌面 QR fallback 已完成，但仍需在 iOS/Android 實機與 HTTPS 環境驗證相機與 marker 追蹤。
-- **AI 助手**：目前為本機 mock 回覆，尚未連接 AI API。
+- **AI 助手**：DeepSeek API 與海洋限定已完成；部署環境需設定 `DEEPSEEK_API_KEY`，未設定時使用示範模式。
 - **後端 / 資料庫**：尚未實作登入、學習進度與資料持久化。
 - **AR 控制器元件**：ARControls / ARPermission 尚未接入實際 AR 場景。
 

@@ -1,0 +1,5 @@
+.ocean-ai-mark {
+  display: block;
+  flex-shrink: 0;
+  filter: drop-shadow(0 8px 22px rgba(0, 245, 212, 0.18));
+}
