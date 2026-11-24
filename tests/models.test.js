@@ -36,3 +36,16 @@ test('coral model attribution files are shipped', () => {
   assert.ok(fs.existsSync(path.join(root, 'public', 'models', 'LICENSE-Dina3D.txt')));
   assert.ok(fs.existsSync(path.join(root, 'public', 'models', 'ATTRIBUTION.md')));
 });
+
+test('all four coral AR entries point at the same dedicated GLBs', async () => {
+  const { getARModelData, getARModelInfo } = await import('../src/data/arModels.js');
+  for (const id of CORAL_IDS) {
+    const data = getARModelData(id);
+    assert.ok(data, `${id} should have AR data`);
+    assert.equal(data.placeholder, false);
+    assert.ok(data.modelPath.endsWith(`${id}.glb`) || data.modelPath.includes(`${id}.glb`));
+    const file = path.join(root, 'public', data.modelPath.replace(/^\//, ''));
+    assert.ok(fs.existsSync(file), `${id} AR GLB should exist at ${file}`);
+    assert.ok(getARModelInfo(id));
+  }
+});

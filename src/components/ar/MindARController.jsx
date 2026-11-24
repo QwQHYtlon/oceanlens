@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { getARModelData } from '../../data/arModels';
 import './MindARController.css';
 
 const THREE_CDN_URLS = [
@@ -9,6 +10,9 @@ const THREE_CDN_URLS = [
 
 const MINDAR_MODULE_URL =
   'https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-three.prod.js';
+
+const GLTF_LOADER_URL =
+  'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js';
 
 const loadScript = (url) =>
   new Promise((resolve, reject) => {
@@ -53,7 +57,13 @@ const createPlaceholderCreature = (THREE) => {
   return group;
 };
 
-const MindARController = ({ onAnchorFound, onAnchorLost, onError, onReady }) => {
+const MindARController = ({
+  speciesId,
+  onAnchorFound,
+  onAnchorLost,
+  onError,
+  onReady,
+}) => {
   const containerRef = useRef(null);
   const mindarThreeRef = useRef(null);
   const animationFrameRef = useRef(null);
@@ -77,6 +87,7 @@ const MindARController = ({ onAnchorFound, onAnchorLost, onError, onReady }) => 
     let timeoutId = null;
     let renderer = null;
     let failed = false;
+    let gltfLoaderScript = null;
 
     const setStep = (message) => {
       stepRef.current = message;
@@ -105,6 +116,47 @@ const MindARController = ({ onAnchorFound, onAnchorLost, onError, onReady }) => 
       const errorObject = new Error(errorMessage, { cause: err });
       errorObject.details = details;
       callbacksRef.current.onError?.(errorObject);
+    };
+
+    const loadDedicatedModel = async (anchor, placeholder, arModel) => {
+      if (!arModel?.modelPath || arModel.placeholder) return;
+
+      try {
+        if (!window.THREE?.GLTFLoader) {
+          gltfLoaderScript = await loadScript(GLTF_LOADER_URL);
+        }
+        if (cancelled || failed || !window.THREE?.GLTFLoader) return;
+
+        const loader = new window.THREE.GLTFLoader();
+        loader.load(
+          arModel.modelPath,
+          (gltf) => {
+            if (cancelled) return;
+            const model = gltf.scene;
+            const box = new window.THREE.Box3().setFromObject(model);
+            const center = box.getCenter(new window.THREE.Vector3());
+            const scale = arModel.scale ?? 0.7;
+
+            model.scale.setScalar(scale);
+            model.position.set(
+              -center.x * scale,
+              box.isEmpty() ? 0 : -box.min.y * scale,
+              -center.z * scale,
+            );
+            model.name = arModel.modelName || 'coral-model';
+
+            anchor.group.remove(placeholder);
+            anchor.group.add(model);
+          },
+          undefined,
+          (error) => {
+            console.warn('[OceanLens AR] Dedicated model failed, using placeholder:', error);
+          },
+        );
+      } catch (error) {
+        // AR must remain usable even if the optional GLB loader is unavailable.
+        console.warn('[OceanLens AR] GLTFLoader unavailable, using placeholder:', error);
+      }
     };
 
     const loadAR = async () => {
@@ -170,7 +222,14 @@ const MindARController = ({ onAnchorFound, onAnchorLost, onError, onReady }) => 
         // MindAR expects anchors to exist before start().
         setStep('正在準備海洋生物...');
         const anchor = mindarThree.addAnchor(0);
-        anchor.group.add(createPlaceholderCreature(window.THREE));
+        const placeholder = createPlaceholderCreature(window.THREE);
+        anchor.group.add(placeholder);
+
+        const arModel = getARModelData(speciesId);
+        if (arModel && !arModel.placeholder) {
+          // Load in the background; the AR feed should not wait for a 2-6 MB scan.
+          loadDedicatedModel(anchor, placeholder, arModel);
+        }
 
         anchor.onTargetFound = () => {
           if (cancelled) return;
@@ -254,8 +313,9 @@ const MindARController = ({ onAnchorFound, onAnchorLost, onError, onReady }) => 
         mindarThreeRef.current = null;
       }
       if (threeScript?.parentNode) threeScript.parentNode.removeChild(threeScript);
+      if (gltfLoaderScript?.parentNode) gltfLoaderScript.parentNode.removeChild(gltfLoaderScript);
     };
-  }, []);
+  }, [speciesId]);
 
   if (error) {
     return (

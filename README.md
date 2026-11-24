@@ -11,7 +11,7 @@
 - **生態系統模擬** - 即時模擬環境變化對海洋生態的影響
 - **AI 科普助手** - DeepSeek 驅動的海洋限定問答（含 Vercel Serverless 代理與無金鑰示範模式）
 - **3D 沉浸式體驗** - Three.js 3D 海洋場景；珊瑚條目已接上真實掃描 GLB 模型
-- **WebAR 探索體驗** - 手機 AR 海洋生物觀察（Phase 3 完成）
+- **WebAR 探索體驗** - 手機 AR 海洋生物觀察；四種珊瑚已接入專用 GLB（Phase 3 完成）
 
 ## 技術堆疊
 
@@ -190,6 +190,7 @@ npx vercel dev
 - 模型與授權明細：[`public/models/ATTRIBUTION.md`](public/models/ATTRIBUTION.md)
 - Dina3D 模型：MIT，保留 `public/models/LICENSE-Dina3D.txt`
 - Smithsonian 模型：CC0
+- AR：同一個 GLB 由 `MindARController` 透過 GLTFLoader 載入；四種珊瑚以外的 AR 物種仍使用 placeholder
 
 ## HTTPS 部署注意事項
 
@@ -326,7 +327,7 @@ npm run dev
 - ✅ 步驟式載入訊息（初始化/相機/Marker/模型）
 - ✅ 增強錯誤處理（7 種錯誤類型）
 - ✅ 真實 QR Code 生成（qrcode.react）
-- ✅ AR 模型資料結構（目前使用 placeholder 幾何體）
+- ✅ AR 模型資料結構（四種珊瑚使用專用 GLB，其餘為 placeholder）
 - ✅ 完整 AR 模型資料結構
 - ✅ Lazy loading 3D/AR 元件
 - ✅ HTTPS 部署說明文件
@@ -448,7 +449,7 @@ npm run dev
 ### Phase 3.5 完成項目
 
 ### 新增檔案
-- `src/components/ar/MarineARModel.jsx` - AR 模型擴充元件（目前使用 placeholder）
+- `src/components/ar/MarineARModel.jsx` - 非珊瑚 AR 物種的 placeholder 擴充元件
 - `src/components/ar/ARInstructions.jsx` - AR 使用說明
 - `src/components/ar/ARInstructions.css` - AR 說明樣式
 - `public/ar/oceanlens-marker.png` - AR Marker placeholder
@@ -477,7 +478,7 @@ npm run dev
 - **步驟式載入**: 初始化 → 相機 → Marker → 模型
 - **增強錯誤處理**: 7 種錯誤類型精確處理
 - **真實 QR Code**: 使用 qrcode.react 動態生成
-- **GLB/GLTF 擴充點**: MarineARModel 目前使用 placeholder，待授權模型接入
+- **GLB/GLTF 擴充點**: 四種珊瑚在 `MindARController` 透過 GLTFLoader 載入專用模型；其他物種使用 placeholder
 - **完整資料結構**: arModels.js 包含所有必要資訊
 - **Lazy Loading**: 3D/AR 元件按需載入，優化效能
 - **HTTPS 部署說明**: 完整部署指南
@@ -485,7 +486,7 @@ npm run dev
 
 ## 目前限制
 
-- **3D 模型**：珊瑚、紅珊瑚、冷水珊瑚、印度洋珊瑚已使用真實掃描 GLB；其餘物種仍使用 placeholder 幾何體。
+- **3D 模型**：珊瑚、紅珊瑚、冷水珊瑚、印度洋珊瑚在 3D 檢視器與 AR 中都使用真實掃描 GLB；其餘物種仍使用 placeholder 幾何體。
 - **WebAR**：MindAR 流程、錯誤處理與桌面 QR fallback 已完成，但仍需在 iOS/Android 實機與 HTTPS 環境驗證相機與 marker 追蹤。
 - **AI 助手**：DeepSeek API 與海洋限定已完成；部署環境需設定 `DEEPSEEK_API_KEY`，未設定時使用示範模式。
 - **後端 / 資料庫**：尚未實作登入、學習進度與資料持久化。

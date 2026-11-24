@@ -4,7 +4,7 @@ import ARError from './ARError';
 import ARFallback from './ARFallback';
 import ARInstructions from './ARInstructions';
 import ARInfoCard from './ARInfoCard';
-import { getARModelInfo } from '../../data/arModels';
+import { getARModelData, getARModelInfo } from '../../data/arModels';
 import './ARScene.css';
 
 const detectMobileOrTablet = () => {
@@ -24,6 +24,7 @@ const ARScene = ({ speciesId, onClose }) => {
   const [retryKey, setRetryKey] = useState(0);
 
   const arModelInfo = getARModelInfo(speciesId);
+  const arModel = getARModelData(speciesId);
   const isDebug = import.meta.env.VITE_AR_DEBUG === 'true';
 
   useEffect(() => {
@@ -103,6 +104,7 @@ const ARScene = ({ speciesId, onClose }) => {
     <div className="ar-scene" role="dialog" aria-modal="true" aria-label="AR 探索">
       <MindARController
         key={retryKey}
+        speciesId={speciesId}
         onAnchorFound={handleAnchorFound}
         onAnchorLost={handleAnchorLost}
         onError={handleARError}
@@ -123,7 +125,7 @@ const ARScene = ({ speciesId, onClose }) => {
           <div>AR Engine: MindAR</div>
           <div>Camera: {arReady ? 'READY' : 'INITIALIZING'}</div>
           <div>Target: {isTracking ? 'FOUND' : 'LOST'}</div>
-          <div>Model: LOADED (placeholder)</div>
+          <div>Model: {arModel && !arModel.placeholder ? 'GLB' : 'PLACEHOLDER'}</div>
         </div>
       )}
 

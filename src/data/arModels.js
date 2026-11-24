@@ -1,6 +1,5 @@
-// AR Model Data Structure for Marine Creatures
-// TODO: Replace placeholder types with actual GLB/GLTF models
-// Future: Licensed 3D models from sources like Sketchfab, TurboSquid, etc.
+// AR model data. Four coral entries load dedicated GLB scans through
+// MindARController; remaining creatures still use shared placeholder geometry.
 
 export const arModelsData = {
   anglerfish: {
@@ -82,16 +81,73 @@ export const arModelsData = {
     id: 'coral',
     speciesId: 'coral',
     type: 'coral',
-    modelPath: '/models/coral.glb', // TODO: Replace with actual model
+    modelPath: '/models/coral.glb',
     markerPath: '/ar/oceanlens-marker.png',
-    scale: 1.0,
+    scale: 0.7,
     rotation: [0, 0, 0],
     position: [0, 0, 0],
+    modelName: 'Acropora cytherea',
+    credit: 'Komang / Dina3D · Dinacon 2025',
+    license: 'MIT',
     nameZh: '珊瑚',
     nameEn: 'Coral',
     depth: '0–100 m',
     description: '海洋生態系統的基礎，為無數海洋生物提供棲息地。',
-    placeholder: true
+    placeholder: false
+  },
+  'red-coral': {
+    id: 'red-coral',
+    speciesId: 'red-coral',
+    type: 'coral',
+    modelPath: '/models/red-coral.glb',
+    markerPath: '/ar/oceanlens-marker.png',
+    scale: 0.7,
+    rotation: [0, 0, 0],
+    position: [0, 0, 0],
+    modelName: 'Pleurocorallium niveum',
+    credit: 'Smithsonian NMNH, USNM 56807',
+    license: 'CC0',
+    nameZh: '紅珊瑚',
+    nameEn: 'Red Coral',
+    depth: '10–300 m',
+    description: '生長緩慢的珍貴紅珊瑚，因過度採集而瀕危。',
+    placeholder: false
+  },
+  'cold-water-coral': {
+    id: 'cold-water-coral',
+    speciesId: 'cold-water-coral',
+    type: 'coral',
+    modelPath: '/models/cold-water-coral.glb',
+    markerPath: '/ar/oceanlens-marker.png',
+    scale: 0.7,
+    rotation: [0, 0, 0],
+    position: [0, 0, 0],
+    modelName: 'Desmophyllum pertusum',
+    credit: 'Smithsonian NMNH, USNM 1071877',
+    license: 'CC0',
+    nameZh: '冷水珊瑚',
+    nameEn: 'Cold-water Coral',
+    depth: '200–1000 m',
+    description: '生活在深海冷水環境，不需要光合作用也能形成礁體。',
+    placeholder: false
+  },
+  'indian-ocean-coral': {
+    id: 'indian-ocean-coral',
+    speciesId: 'indian-ocean-coral',
+    type: 'coral',
+    modelPath: '/models/indian-ocean-coral.glb',
+    markerPath: '/ar/oceanlens-marker.png',
+    scale: 0.7,
+    rotation: [0, 0, 0],
+    position: [0, 0, 0],
+    modelName: 'Porites lutea',
+    credit: 'Anten / Dina3D · Dinacon 2025',
+    license: 'MIT',
+    nameZh: '印度洋珊瑚',
+    nameEn: 'Indian Ocean Coral',
+    depth: '0–50 m',
+    description: '印度洋礁區常見的團塊狀珊瑚，適應高溫高鹽環境。',
+    placeholder: false
   }
 };
 
