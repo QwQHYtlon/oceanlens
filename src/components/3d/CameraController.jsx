@@ -2,6 +2,7 @@ import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 
 const CameraController = ({ 
   position = [0, 0, 5],
+  target = [0, 0, 0],
   enableZoom = true,
   enableRotate = true,
   enablePan = false,
@@ -12,6 +13,7 @@ const CameraController = ({
     <>
       <PerspectiveCamera makeDefault position={position} fov={50} />
       <OrbitControls
+        target={target}
         enableZoom={enableZoom}
         enableRotate={enableRotate}
         enablePan={enablePan}

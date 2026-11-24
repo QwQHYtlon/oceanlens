@@ -10,7 +10,7 @@
 - **海洋生物資料庫** - 329 種海洋生物的搜尋／分類／大洋分布／深度分層／排序與詳細介紹（含 3D 模型檢視器）
 - **生態系統模擬** - 即時模擬環境變化對海洋生態的影響
 - **AI 科普助手** - DeepSeek 驅動的海洋限定問答（含 Vercel Serverless 代理與無金鑰示範模式）
-- **3D 沉浸式體驗** - Three.js 3D 海洋場景與生物模型（Phase 2 完成）
+- **3D 沉浸式體驗** - Three.js 3D 海洋場景；珊瑚條目已接上真實掃描 GLB 模型
 - **WebAR 探索體驗** - 手機 AR 海洋生物觀察（Phase 3 完成）
 
 ## 技術堆疊
@@ -58,7 +58,7 @@ src/
 │       ├── DepthEnvironment.jsx   # 深度環境
 │       ├── OceanParticles.jsx     # 海洋粒子
 │       ├── MarineCreature.jsx     # 海洋生物（Placeholder）
-│       ├── MarineCreatureViewer.jsx # 3D 檢視器
+│       ├── MarineCreatureViewer.jsx # 3D 檢視器（GLB + placeholder fallback）
 │       ├── CameraController.jsx   # 相機控制
 │       ├── Loading3D.jsx          # 載入狀態
 │       └── Fallback3D.jsx          # 錯誤回退
@@ -84,7 +84,7 @@ src/
 │   ├── speciesData.js  # 生物資料
 │   ├── simulationData.js # 模擬數據
 │   ├── chatData.js     # 聊天數據
-│   ├── species3D.js    # 3D 模型資料
+│   ├── species3D.js    # 3D 模型資料（含四個珊瑚 GLB）
 │   └── arModels.js     # AR 模型資料
 ├── services/           # 服務層
 │   └── aiService.js    # AI 服務（DeepSeek + 示範模式）
@@ -181,6 +181,16 @@ npx vercel dev
 - 後端限制單次問題 300 字、最多 8 則歷史訊息、每分鐘最多 12 次請求（單一 Serverless instance 的盡力限制）。
 - 請勿把金鑰貼在對話、Issue 或 commit 中。
 
+## 珊瑚 3D 模型
+
+`/species/coral`、`/species/red-coral`、`/species/cold-water-coral`、`/species/indian-ocean-coral` 使用專用 GLB 掃描模型，不再共用球體 placeholder。
+
+- 模型檔案：`public/models/*.glb`
+- 載入方式：`MarineCreatureViewer` 使用 `useGLTF`，依包圍盒置中、底部對齊地面
+- 模型與授權明細：[`public/models/ATTRIBUTION.md`](public/models/ATTRIBUTION.md)
+- Dina3D 模型：MIT，保留 `public/models/LICENSE-Dina3D.txt`
+- Smithsonian 模型：CC0
+
 ## HTTPS 部署注意事項
 
 ### WebAR 相機功能要求
@@ -254,7 +264,7 @@ npm run dev
 - 點擊進入詳情頁
 
 ### 生物詳情 (`/species/:id`)
-- **3D 模型檢視器** - 可旋轉、縮放、自動旋轉
+- **3D 模型檢視器** - 可旋轉、縮放、自動旋轉；珊瑚條目載入真實掃描 GLB
 - **AR 探索按鈕** - 手機 AR 體驗
 - 詳細生物介紹
 - 基本資訊（體型、食性、保育狀況）
@@ -294,9 +304,9 @@ npm run dev
 - ✅ Three.js 3D 海洋場景
 - ✅ 深度環境動態變化（0m-6000m）
 - ✅ 3D 粒子效果與氣泡動畫
-- ✅ 3D 生物模型檢視器
+- ✅ 3D 生物模型檢視器（四個珊瑚 GLB 已接入，其餘為 placeholder）
 - ✅ Placeholder 海洋生物（使用幾何體）
-- ⏳ TODO: 替換為授權 GLB/GLTF 模型
+- ⏳ TODO: 其餘珊瑚與海洋生物替換為授權 GLB/GLTF 模型
 
 ### Phase 3: WebAR ✅ 已完成
 - ✅ MindAR WebAR 整合
@@ -358,7 +368,7 @@ npm run dev
 - `src/components/3d/OceanScene.jsx` - 海洋場景主元件
 - `src/components/3d/DepthEnvironment.jsx` - 深度環境控制
 - `src/components/3d/OceanParticles.jsx` - 粒子效果
-- `src/components/3d/MarineCreature.jsx` - Placeholder 生物模型
+- `src/components/3d/MarineCreature.jsx` - 非珊瑚物種的 placeholder 生物模型
 - `src/components/3d/MarineCreatureViewer.jsx` - 3D 檢視器
 - `src/components/3d/CameraController.jsx` - 相機控制
 - `src/components/3d/Loading3D.jsx` - 載入狀態
@@ -443,7 +453,7 @@ npm run dev
 - `src/components/ar/ARInstructions.css` - AR 說明樣式
 - `public/ar/oceanlens-marker.png` - AR Marker placeholder
 - `public/ar/README.md` - Marker 使用說明
-- `public/models/` - 模型資料夾（待放入 GLB 模型）
+- `public/models/` - 珊瑚 GLB 模型、授權與 `ATTRIBUTION.md`
 
 ### 修改檔案
 - `src/components/ar/ARScene.jsx` - 整合新元件與資料結構
@@ -475,7 +485,7 @@ npm run dev
 
 ## 目前限制
 
-- **3D 模型**：目前使用幾何體 placeholder，尚未載入授權的 GLB/GLTF 模型。
+- **3D 模型**：珊瑚、紅珊瑚、冷水珊瑚、印度洋珊瑚已使用真實掃描 GLB；其餘物種仍使用 placeholder 幾何體。
 - **WebAR**：MindAR 流程、錯誤處理與桌面 QR fallback 已完成，但仍需在 iOS/Android 實機與 HTTPS 環境驗證相機與 marker 追蹤。
 - **AI 助手**：DeepSeek API 與海洋限定已完成；部署環境需設定 `DEEPSEEK_API_KEY`，未設定時使用示範模式。
 - **後端 / 資料庫**：尚未實作登入、學習進度與資料持久化。

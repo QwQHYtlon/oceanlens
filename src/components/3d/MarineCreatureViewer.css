@@ -44,11 +44,13 @@
 
 .creature-viewer__canvas {
   width: 100%;
-  height: 400px;
+  height: 440px;
   border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid var(--glass-border);
-  background: var(--color-deep-dark);
+  background:
+    radial-gradient(circle at 50% 44%, rgba(0, 180, 216, 0.13), transparent 58%),
+    var(--color-deep-dark);
 }
 
 .creature-viewer__hints {
@@ -76,4 +78,29 @@
   .creature-viewer__toggle {
     width: 100%;
   }
+}
+
+.creature-viewer__model {
+  margin: 0.18rem 0 0;
+  color: var(--color-accent-secondary);
+  font-size: 0.75rem;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.creature-viewer__credit {
+  margin: 0.35rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.68rem;
+  line-height: 1.55;
+}
+
+.creature-viewer__credit a {
+  color: var(--color-ocean-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.creature-viewer__credit a:hover {
+  color: var(--color-accent);
 }

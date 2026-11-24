@@ -84,7 +84,7 @@ const SpeciesDetail = () => {
                       </div>
                     }
                   >
-                    <MarineCreatureViewer creatureType={creatureType} />
+                    <MarineCreatureViewer creatureType={creatureType} speciesId={species.id} />
                   </Suspense>
                 </ErrorBoundary>
 

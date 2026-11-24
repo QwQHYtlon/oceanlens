@@ -52,12 +52,67 @@ export const species3DData = {
   coral: {
     id: 'coral',
     type: 'coral',
-    model: '/models/coral.glb', // TODO: Replace with actual model
+    model: '/models/coral.glb',
+    modelName: 'Acropora cytherea',
+    credit: 'Komang / Dina3D · Dinacon 2025',
+    license: 'MIT',
+    source: 'https://scan3d.dinacon.org/',
     scale: 1,
     rotation: [0, 0, 0],
     position: [0, 0, 0],
-    placeholder: true
+    camera: { position: [0, 0.9, 3.0], target: [0, 0.45, 0] },
+    placeholder: false
+  },
+  'red-coral': {
+    id: 'red-coral',
+    type: 'coral',
+    model: '/models/red-coral.glb',
+    modelName: 'Pleurocorallium niveum',
+    credit: 'Smithsonian NMNH, USNM 56807',
+    license: 'CC0',
+    source:
+      'https://www.si.edu/object/3d/corallium-sp%3A7fd1cb15-599b-44e5-8a14-579dfb749434',
+    scale: 1,
+    rotation: [0, 0, 0],
+    position: [0, 0, 0],
+    camera: { position: [0, 1.3, 3.4], target: [0, 0.9, 0] },
+    placeholder: false
+  },
+  'cold-water-coral': {
+    id: 'cold-water-coral',
+    type: 'coral',
+    model: '/models/cold-water-coral.glb',
+    modelName: 'Desmophyllum pertusum',
+    credit: 'Smithsonian NMNH, USNM 1071877',
+    license: 'CC0',
+    source:
+      'https://3d.si.edu/object/3d/lophelia-pertusa%3A212a8c08-42e9-4895-803b-2bfc54e82c22',
+    scale: 1,
+    rotation: [0, 0, 0],
+    position: [0, 0, 0],
+    camera: { position: [0, 1.4, 3.5], target: [0, 1.0, 0] },
+    placeholder: false
+  },
+  'indian-ocean-coral': {
+    id: 'indian-ocean-coral',
+    type: 'coral',
+    model: '/models/indian-ocean-coral.glb',
+    modelName: 'Porites lutea',
+    credit: 'Anten / Dina3D · Dinacon 2025',
+    license: 'MIT',
+    source: 'https://scan3d.dinacon.org/',
+    scale: 1,
+    rotation: [0, 0, 0],
+    position: [0, 0, 0],
+    camera: { position: [0, 1.0, 3.1], target: [0, 0.5, 0] },
+    placeholder: false
   }
+};
+
+// Return a real GLB configuration only when the species has a dedicated asset.
+export const getSpecies3DModel = (speciesId) => {
+  const data = species3DData[speciesId];
+  return data && !data.placeholder && data.model ? data : null;
 };
 
 // Helper function to get creature type from species ID
